@@ -53,23 +53,23 @@ const HeroSection = () => {
   }, [api]);
 
   return (
-    <section className="bg-cuptime-light flex h-[calc(100vh-80px)] flex-col items-center justify-center px-16 pt-12">
-      <Carousel setApi={setApi} className="flex-1">
+    <section className="bg-cuptime-light flex h-[calc(100vh-80px)] flex-col items-center justify-center px-4 sm:px-8 md:px-16 pt-12 overflow-hidden">
+      <Carousel setApi={setApi} className="flex-1 w-full">
         <CarouselContent>
           {heroContents.map((content, index) => (
             <CarouselItem key={index}>
               <div className="flex h-full flex-col items-center justify-center gap-4 md:flex-row">
-                <div className="flex w-full flex-col gap-6 md:w-1/2">
-                  <div className="text-5xl font-bold text-zinc-900">
+                <div className="flex w-full flex-col gap-4 md:gap-6 md:w-1/2">
+                  <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-zinc-900">
                     {content.title}
                   </div>
-                  <div className="text-lg">{content.description}</div>
+                  <div className="text-base md:text-lg">{content.description}</div>
 
-                  <div className="flex gap-2">
-                    <button className="bg-cuptime-black rounded-lg px-6 py-3 font-semibold text-white">
+                  <div className="flex flex-col sm:flex-row gap-2">
+                    <button className="bg-cuptime-black rounded-lg px-4 md:px-6 py-2 md:py-3 font-semibold text-white text-sm md:text-base">
                       Become a Franchise
                     </button>
-                    <button className="from-cuptime-orange to-cuptime-red rounded-lg bg-gradient-to-tr px-4 py-3 font-semibold text-white">
+                    <button className="from-cuptime-orange to-cuptime-red rounded-lg bg-gradient-to-tr px-4 py-2 md:py-3 font-semibold text-white text-sm md:text-base">
                       Start Serving Wellness
                     </button>
                   </div>
