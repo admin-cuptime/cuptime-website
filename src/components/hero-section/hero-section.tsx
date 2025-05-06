@@ -22,18 +22,24 @@ const HeroSection = () => {
       description:
         'Surprise your team, clients, or visitors with handcrafted beverages made the way they should be — no machines, no shortcuts, just pure Madurai tradition in every sip.',
       image: images.heroSection.heroSplash.src,
+      heroFrame: 'Boost workplace daily healthy drinks',
+      icon: images.heroframe.heromuscle.src,
     },
     {
       title: 'Quality in Every Cup.',
       description:
         'Experience the authentic flavors of premium beverages crafted with care and traditional methods that make every sip special.',
       image: images.heroSection.heroSplash.src,
+      heroFrame: '100% natural, made fresh every Day',
+      icon: images.heroframe.heromuscle.src,
     },
     {
       title: 'Elevate Your Workspace Experience.',
       description:
         'Bring the rich heritage of authentic beverages to your modern environment with our traditional brewing methods and premium ingredients.',
       image: images.heroSection.heroSplash.src,
+      heroFrame: 'Signature beverages rooted in tradition',
+      icon: images.heroframe.heromuscle.src,
     },
   ];
 
@@ -53,7 +59,7 @@ const HeroSection = () => {
   }, [api]);
 
   return (
-    <section className="bg-cuptime-light flex h-[calc(100vh-80px)] flex-col items-center justify-center px-4 sm:px-8 md:px-16 pt-12 overflow-hidden">
+    <section className="bg-cuptime-light flex lg:h-[calc(105vh-80px)] md:h-[calc(100vh-80px)] sm:h-[calc(165vh-80px)] flex-col items-center justify-center px-4 sm:px-8 md:px-16 pt-12 overflow-hidden">
       <Carousel setApi={setApi} className="flex-1 w-full">
         <CarouselContent>
           {heroContents.map((content, index) => (
@@ -85,6 +91,23 @@ const HeroSection = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
+
+        {/* Hero Frame */}
+        <div className="flex lg:flex-row md:flex-row flex-col items-center justify-center text-center lg:gap-9 gap-3 mt-5 italic">
+          {heroContents.map((content, index) => (
+            <div
+              key={index}
+              className="flex flex-row justify-center text-center items-center lg:w-full w-auto lg:h-13 bg-white rounded-4xl gap-4 p-4"
+            >
+              <img
+                src={content.icon}
+                alt={`icon-${index}`}
+                className="h-6 w-6 mb-1 mt-1"
+              />
+              <p className="font-semibold lg:text-lg text-sm">{content.heroFrame}</p>
+            </div>
+          ))}
+        </div>
       </Carousel>
 
       {/* Pagination Dots */}
