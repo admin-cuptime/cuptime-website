@@ -2,6 +2,9 @@
 
 import React, { useState } from 'react';
 import { images } from '@/assets/png/images';
+import heroleft from '@/assets/png/hero-art-left.png';
+import heroright from '@/assets/png/hero-art-right.png';
+import { useEffect } from 'react';
 import {
   Carousel,
   CarouselContent,
@@ -57,14 +60,48 @@ const HeroSection = () => {
       api.off('select', onSelect);
     };
   }, [api]);
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsLargeScreen(window.innerWidth >= 1024); // lg breakpoint in Tailwind
+    };
+
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
+
+  const backgroundImages = isLargeScreen
+    ? `url(${heroleft.src}), url(${heroright.src})`
+    : `url(${heroleft.src})`;
+
+  const backgroundPosition = isLargeScreen
+    ? 'left top, right bottom'
+    : 'left top';
+
+  const backgroundRepeat = isLargeScreen
+    ? 'no-repeat, no-repeat'
+    : 'no-repeat';
+
+    const backgroundSize = isLargeScreen
+    ? 'contain, w-90 h-90'
+    : 'contain';
 
   return (
-    <section className="bg-cuptime-light flex lg:h-[calc(105vh-80px)] md:h-[calc(100vh-80px)] sm:h-[calc(165vh-80px)] flex-col items-center justify-center px-4 sm:px-8 md:px-16 pt-12 overflow-hidden">
+    <section className="bg-cuptime-light flex min-h-[calc(105vh-80px)] flex-col items-center justify-center px-4 sm:px-8 md:px-16 pt-12 overflow-hidden"
+    style={{
+      backgroundImage: backgroundImages,
+        backgroundRepeat: backgroundRepeat,
+        backgroundPosition: backgroundPosition,
+        backgroundSize: backgroundSize,
+    }}>
       <Carousel setApi={setApi} className="flex-1 w-full">
         <CarouselContent>
           {heroContents.map((content, index) => (
             <CarouselItem key={index}>
-              <div className="flex h-full flex-col items-center justify-center gap-4 md:flex-row">
+              <div className="flex h-full flex-col items-center justify-center gap-4 md:flex-row"
+              >
                 <div className="flex w-full flex-col gap-4 md:gap-6 md:w-1/2">
                   <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-zinc-900">
                     {content.title}
@@ -97,14 +134,14 @@ const HeroSection = () => {
           {heroContents.map((content, index) => (
             <div
               key={index}
-              className="flex flex-row justify-center text-center items-center lg:w-full w-auto lg:h-13 bg-white rounded-4xl gap-4 p-4"
+              className="flex flex-row justify-between text-center items-center lg:h-13 bg-white rounded-4xl gap-4 p-4"
             >
               <img
                 src={content.icon}
                 alt={`icon-${index}`}
                 className="h-6 w-6 mb-1 mt-1"
               />
-              <p className="font-semibold lg:text-lg text-sm">{content.heroFrame}</p>
+              <p className="font-semibold text-sm">{content.heroFrame}</p>
             </div>
           ))}
         </div>
