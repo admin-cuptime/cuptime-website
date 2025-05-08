@@ -1,3 +1,4 @@
+import EntrepreneurialJourney from "@/components/entrepreneurial-journey/entrepreneurial-journey";
 import FeatureCard from "@/components/feature-card/feature-card";
 import HeroSection from "@/components/hero-section/hero-section";
 import TraditionWorkplace from "@/components/tradition-workplace/tradition-workplace";
@@ -10,6 +11,7 @@ export default function Home() {
       <FeatureCard />
       <TrustDelivery/>
       <TraditionWorkplace />
+      <EntrepreneurialJourney />
     </main>
   );
 }
