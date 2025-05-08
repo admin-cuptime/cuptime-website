@@ -41,7 +41,7 @@ const TraditionWorkplace = () => {
   ];
 
   return (
-    <section className="flex items-center justify-center overflow-hidden sm:px-8 md:px-16">
+    <section className="flex items-center justify-center overflow-hidden px-8 md:px-16">
       <div className="bg-cuptime-light w-full items-center justify-center rounded-2xl px-4 lg:px-8">
         <h2 className="mb-2 flex flex-col items-center justify-between py-12 text-center text-2xl font-bold text-zinc-900 md:text-3xl lg:text-4xl">
           Bringing Tradition to Every Workplace
@@ -50,7 +50,7 @@ const TraditionWorkplace = () => {
           From early mornings to late-night shifts, we serve a wide range of
           industries with fresh, authentic <br /> beverages — brewed the Madurai
           way. Wherever there are teams that need energy and warmth, <br />
-          CupTime delivers.
+          Cup Time delivers.
         </p>
         <div className="flex flex-col lg:flex-row lg:justify-between">
           {/* Left Image Section */}

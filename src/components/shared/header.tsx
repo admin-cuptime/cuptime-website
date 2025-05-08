@@ -22,7 +22,7 @@ const Header = () => {
           <li className="cursor-pointer hover:text-cuptime-red">Our Products</li>
           <li className="cursor-pointer hover:text-cuptime-red">Franchise</li>
           <li className="cursor-pointer hover:text-cuptime-red">About Us</li>
-          <li className="cursor-pointer hover:text-cuptime-red">Cuptime mobile</li>
+          <li className="cursor-pointer hover:text-cuptime-red">Cup Time mobile</li>
           <li className="cursor-pointer hover:text-cuptime-red">Contact Us</li>
           <li className="cursor-pointer hover:text-cuptime-red">More</li>
         </ul>
