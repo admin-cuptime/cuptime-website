@@ -1,6 +1,6 @@
 "use client";
 
-import cuptimeLogo from '@/assets/svg/cuptime-logo.svg';
+import CupTimeLogo from '@/assets/svg/cuptime-logo.svg';
 import { Button } from '../ui/button';
 import { Menu } from 'lucide-react'; 
 import {
@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <nav className="sticky top-0 z-20 max-w-screen-3xl mx-auto flex items-center justify-between bg-white px-4 lg:px-24 py-3">
       <div>
-        <img src={cuptimeLogo.src} alt="cuptime-logo" className="h-auto w-16" />
+        <CupTimeLogo className="h-auto w-16" />
       </div>
       
       {/* Desktop Navigation */}

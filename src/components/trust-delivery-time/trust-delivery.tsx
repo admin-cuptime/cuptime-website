@@ -27,9 +27,9 @@ const TrustDelivery = () => {
 
     return (
         <section className="flex items-center h-full justify-center bg-white sm:px-8 md:px-16 overflow-hidden">
-            <div className="flex flex-col lg:flex-row lg:justify-between items-center justify-center">
+            <div className="flex flex-col lg:flex-row lg:justify-between items-center justify-center gap-4">
                 {/* Left Content Section */}
-                <div className="content-section lg:w-1/2 relative flex flex-col justify-center p-8 gap-4">
+                <div className="content-section lg:w-1/2 relative flex flex-col justify-center gap-4">
                     <h2 className="lg:text-4xl text-2xl md:text-3xl font-bold text-zinc-900 mb-4">Trusted. Timed. Delivered.</h2>
                     
                     <p className="text-base md:text-lg mb-3">
@@ -37,7 +37,7 @@ const TrustDelivery = () => {
                     <span className="font-bold md:text-lg mb-3 p-1">
                          punctual delivery of every cup — hot, fresh, and on schedule.</span>
                     </p>
-                    <div className="space-y-6">
+                    <div className="space-y-5">
                         {deliveries.map((timing, index) => (
                             <motion.div key={index} className="flex items-center gap-2">
                                 <Image
@@ -45,10 +45,9 @@ const TrustDelivery = () => {
                                     alt={timing.title}
                                     width={30}
                                     height={30}
-                                    className="mr-4"
                                 />
                                 <div>
-                                    <h3 className="md:text-lg text-base font-bold text-zinc-900">{timing.title}</h3>
+                                    <h3 className="text-base font-bold text-zinc-900">{timing.title}</h3>
                                 </div>
                             </motion.div>
                         ))}
@@ -56,7 +55,7 @@ const TrustDelivery = () => {
                 </div>
 
                 {/* Right Image Section */}
-                <div className="image-section lg:w-1/2 flex items-center justify-between p-8">
+                <div className="image-section lg:w-1/2 flex items-center justify-between">
                     <Image
                         src={deliveryImage}
                         alt="Delivery Team"

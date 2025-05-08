@@ -4,36 +4,39 @@ import React from 'react';
 import Image from 'next/image';
 import deliveryImage from '@/assets/png/tradition-girl.png';
 import { motion } from 'framer-motion';
-import { images } from '@/assets/png/images';
-
+import Office from '@/assets/svg/office.svg';
+import Retail from '@/assets/svg/shops.svg';
+import College from '@/assets/svg/colleges.svg';
+import Hospital from '@/assets/svg/hospitals.svg';
+import Manufacturing from '@/assets/svg/manufacturing.svg';
 const TraditionWorkplace = () => {
   const workplaceDetails = [
     {
-      icon: images.traditionalimages.building.src,
+      Icon: Office,
       title: 'IT & Corporate Offices',
       description:
         'Supporting high-performing teams with time-slotted, hot beverage delivery — straight to desks.',
     },
     {
-      icon: images.traditionalimages.city.src,
+      Icon: Retail,
       title: 'Retail Shops & Marketplaces',
       description:
         'Helping retailers stay refreshed during busy hours with on-the-go beverages.',
     },
     {
-      icon: images.traditionalimages.school.src,
+      Icon: College,
       title: 'Colleges & Schools',
       description:
         'Trusted by educators and students alike — for those much-needed refreshment breaks.',
     },
     {
-      icon: images.traditionalimages.hospital.src,
+      Icon: Hospital,
       title: 'Hospitals',
       description:
         'Supplying healthy, comforting drinks for caregivers, patients, and healthcare staff 24/7.',
     },
     {
-      icon: images.traditionalimages.university.src,
+      Icon: Manufacturing,
       title: 'Manufacturing Units',
       description:
         'Fueling factory floors with strong filter coffee and traditional drinks that keep productivity flowing.',
@@ -41,52 +44,49 @@ const TraditionWorkplace = () => {
   ];
 
   return (
-    <section className="flex items-center justify-center overflow-hidden px-8 md:px-16">
-      <div className="bg-cuptime-light w-full items-center justify-center rounded-2xl px-4 lg:px-8">
-        <h2 className="mb-2 flex flex-col items-center justify-between py-12 text-center text-2xl font-bold text-zinc-900 md:text-3xl lg:text-4xl">
-          Bringing Tradition to Every Workplace
-        </h2>
-        <p className="flex flex-col items-center justify-between text-center text-base text-zinc-700 md:text-lg">
-          From early mornings to late-night shifts, we serve a wide range of
-          industries with fresh, authentic <br /> beverages — brewed the Madurai
-          way. Wherever there are teams that need energy and warmth, <br />
-          Cup Time delivers.
-        </p>
+    <section className="flex items-center justify-center overflow-hidden px-0 md:px-16">
+      <div className="bg-cuptime-light flex h-full w-full flex-col items-center justify-center gap-7 rounded-2xl p-4 md:p-12">
+        <div className="flex flex-col gap-6">
+          <h2 className="text-center text-2xl font-bold text-zinc-900 md:text-3xl lg:text-4xl">
+            Bringing Tradition to Every Workplace
+          </h2>
+          <p className="flex flex-col items-center justify-between text-center text-base text-zinc-700 md:text-lg px-0 md:px-28">
+            From early mornings to late-night shifts, we serve a wide range of
+            industries with fresh, authentic beverages — brewed the Madurai way.
+            Wherever there are teams that need energy and warmth, CupTime
+            delivers.
+          </p>
+        </div>
+
+
         <div className="flex flex-col lg:flex-row lg:justify-between">
           {/* Left Image Section */}
-          <div className="flex justify-center p-8 lg:w-1/2">
+          <div className="w-full p-2 md:p-8 lg:w-1/2">
             <Image
               src={deliveryImage}
               alt="Tradition Delivery"
-              className="h-auto w-full rounded-lg" // Added w-full and h-auto for responsiveness
+              className="h-auto w-full rounded-lg"
             />
           </div>
           {/* Right Content Section */}
-          <div className="flex flex-col items-center justify-center gap-6 p-8 py-8 lg:w-1/2">
+          <div className="flex flex-col items-center justify-center gap-6 p-2 py-8 md:p-8 lg:w-1/2">
             <div className="space-y-6">
               {workplaceDetails.map((tradition, index) => (
                 <motion.div
                   key={index}
-                  className="flex items-center gap-6"
+                  className="flex items-start gap-6"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
                 >
-                  {/* Render the icon using the Image component */}
                   <div className="mb-4 flex-shrink-0">
-                    <Image
-                      src={tradition.icon}
-                      alt={tradition.title}
-                      width={40}
-                      height={40}
-                      className="w-10 h-10 mb-4"
-                    />
+                    <tradition.Icon className="h-auto w-7" />
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-zinc-900 md:text-2xl">
+                  <div className="flex flex-col gap-1">
+                    <h3 className="text-lg font-bold text-zinc-800">
                       {tradition.title}
                     </h3>
-                    <p className="text-base text-zinc-700 md:text-lg">
+                    <p className="text-sm text-zinc-700 md:text-base">
                       {tradition.description}
                     </p>
                   </div>
@@ -95,8 +95,8 @@ const TraditionWorkplace = () => {
             </div>
           </div>
         </div>
-        <div className="mb-12 flex justify-center">
-          <button className="bg-cuptime-black rounded-lg px-6 py-3 text-base font-medium text-white hover:bg-zinc-800">
+        <div className="flex justify-center">
+          <button className="bg-cuptime-black hover:bg-cuptime-black/80 cursor-pointer rounded-lg px-6 py-3 text-base font-semibold text-white transition-all">
             Start Serving Wellness
           </button>
         </div>
