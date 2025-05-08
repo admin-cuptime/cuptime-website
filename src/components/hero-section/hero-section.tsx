@@ -89,7 +89,7 @@ const HeroSection = () => {
     : 'contain';
 
   return (
-    <section className="bg-cuptime-light flex min-h-[calc(105vh-80px)] flex-col items-center justify-center px-4 sm:px-8 md:px-16 pt-12 overflow-hidden"
+    <section className="bg-cuptime-light flex h-full flex-col items-center justify-center px-4 sm:px-8 md:px-16 pt-12 overflow-hidden"
     style={{
       backgroundImage: backgroundImages,
         backgroundRepeat: backgroundRepeat,

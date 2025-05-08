@@ -27,7 +27,7 @@ const FeatureCard = () => {
       },
     ];
     return (
-          <div className="flex items-center justify-center mt-8 mb-8 lg:h-[42vh] h-auto bg-white sm:px-8 md:px-16 overflow-hidden ">
+          <div className="flex items-center justify-center h-auto bg-white sm:px-8 md:px-16 overflow-hidden ">
             {/* Centered container */}
             <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {features.map((feature, index) => (
@@ -42,7 +42,7 @@ const FeatureCard = () => {
                     stiffness: 100,
                     delay: index * 0.1,
                   }}
-                  className="bg-frost rounded-lg p-6 text-left"
+                  className=" rounded-lg p-6 text-left bg-frost"
                 >
                   <div className="mb-4 items-center">
                     <Image
