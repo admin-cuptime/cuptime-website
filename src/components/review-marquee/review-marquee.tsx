@@ -94,7 +94,7 @@ const ReviewMarquee = () => {
         <InfiniteMovingCards
           items={testimonials}
           direction="left"
-          speed="slow"
+          speed="normal"
         />
       </div>
     </section>
