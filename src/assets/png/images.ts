@@ -14,7 +14,10 @@ import hospital from '@/assets/png/hospital.png';
 import school from '@/assets/png/school.png';
 import university from '@/assets/png/university.png';
 import getAppSplash from '@/assets/png/get-app.png';
-
+import cmaward from '@/assets/png/milestone-1.png';
+import vikatan from '@/assets/png/milestone-2.png';
+import mou from '@/assets/png/milestone-3.png';
+import yourStory from '@/assets/png/milestone-4.png';
 
 export const images = {
   heroSection: {
@@ -45,4 +48,10 @@ export const images = {
   getAppImages: {
     getAppSplash,
   },
+  milestone: {
+    cmaward,
+    vikatan,
+    mou,
+    yourStory,
+  }
 } as const;
