@@ -18,12 +18,16 @@ import cmaward from '@/assets/png/milestone-1.png';
 import vikatan from '@/assets/png/milestone-2.png';
 import mou from '@/assets/png/milestone-3.png';
 import yourStory from '@/assets/png/milestone-4.png';
+import heroSplash2 from '@/assets/png/hero-splash-2.png';
+import leafArt from '@/assets/png/leaf-art.png';
 
 export const images = {
   heroSection: {
     heroSplash,
+    heroSplash2,
     heroleft,
     heroright,
+    leafArt,
   },
   heroframe: {
     heromuscle,

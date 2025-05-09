@@ -47,7 +47,7 @@ const TraditionWorkplace = () => {
     <section className="flex items-center justify-center overflow-hidden px-0 md:px-16">
       <div className="bg-cuptime-light flex h-full w-full flex-col items-center justify-center gap-7 rounded-2xl p-4 md:p-12">
         <div className="flex flex-col gap-6">
-          <h2 className="text-center text-2xl font-bold text-zinc-900 md:text-3xl lg:text-4xl">
+          <h2 className="text-center text-3xl font-bold text-zinc-900 md:text-4xl lg:text-4xl">
             Bringing Tradition to Every Workplace
           </h2>
           <p className="flex flex-col items-center justify-between text-center text-base text-zinc-700 md:text-lg px-0 md:px-28">
