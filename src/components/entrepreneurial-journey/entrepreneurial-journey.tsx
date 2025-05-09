@@ -1,7 +1,5 @@
 'use client';
 
-import React, { useState } from 'react';
-import { useEffect } from 'react';
 import Image from 'next/image';
 import journeygirl from '@/assets/png/journeygirl.png';
 import { Check } from 'lucide-react';
@@ -21,33 +19,13 @@ const EntrepreneurialJourney = () => {
     },
   ];
 
-  const [isLargeScreen, setIsLargeScreen] = useState(false);
-
-  useEffect(() => {
-    const checkScreenSize = () => {
-      setIsLargeScreen(window.innerWidth >= 1024); // lg breakpoint in Tailwind
-    };
-
-    checkScreenSize();
-    window.addEventListener('resize', checkScreenSize);
-    return () => window.removeEventListener('resize', checkScreenSize);
-  }, []);
-
-  const backgroundImages = isLargeScreen
-    ? `url(${EntrepreneurialBg.src})`
-    : `url(${EntrepreneurialBg.src})`;
-
-  const backgroundRepeat = isLargeScreen ? 'no-repeat' : 'no-repeat';
-
   return (
     <section className="flex items-center justify-center overflow-hidden px-8 md:px-16">
-      <div className="from-cuptime-orange to-cuptime-red w-full items-center justify-center rounded-2xl bg-gradient-to-tr">
+      <div className="from-cuptime-orange to-cuptime-red w-full items-center justify-center rounded-2xl bg-gradient-to-tr ">
         <div
-          className="flex flex-col lg:flex-row"
+          className="flex flex-col bg-cover bg-bottom bg-no-repeat lg:flex-row"
           style={{
-            backgroundImage: backgroundImages,
-            backgroundRepeat: backgroundRepeat,
-            backgroundSize: 'cover',
+            backgroundImage: `url(${EntrepreneurialBg.src})`,
           }}
         >
           {/* Left Image Section */}
@@ -62,7 +40,7 @@ const EntrepreneurialJourney = () => {
                 </span>{' '}
                 with Cup Time
               </h2>
-              <p className="text-lg text-white  md:text-xl lg:py-3 py-1.5">
+              <p className="py-1.5 text-lg text-white md:text-xl lg:py-3">
                 Join Cup Time’s growing franchise network with our flexible,{' '}
                 <br />
                 profitable FICO model
@@ -85,18 +63,18 @@ const EntrepreneurialJourney = () => {
                 </motion.div>
               ))}
               <div className="flex">
-                <button className="bg-white rounded-lg px-6 py-3 text-base font-bold text-zinc-900">
-                Become a Cuptime Franchisee
+                <button className="rounded-lg bg-white px-6 py-3 text-base font-bold text-zinc-900">
+                  Become a Cuptime Franchisee
                 </button>
               </div>
             </div>
           </div>
           {/* Right Content Section */}
-          <div className="flex justify-center p-8 lg:w-1/2">
+          <div className="shrink-0 flex justify-center p-8 lg:w-1/2">
             <Image
               src={journeygirl}
               alt="Entrepreneurial Journey"
-              className="h-auto w-full rounded-lg" // Added w-full and h-auto for responsiveness
+              className="h-auto w-full rounded-lg" 
             />
           </div>
         </div>

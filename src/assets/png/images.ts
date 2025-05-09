@@ -13,6 +13,7 @@ import building from '@/assets/png/building.png';
 import hospital from '@/assets/png/hospital.png';
 import school from '@/assets/png/school.png';
 import university from '@/assets/png/university.png';
+import getAppSplash from '@/assets/png/get-app.png';
 
 
 export const images = {
@@ -40,5 +41,8 @@ export const images = {
     hospital,
     school,
     university,
+  },
+  getAppImages: {
+    getAppSplash,
   },
 } as const;
