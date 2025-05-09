@@ -81,7 +81,7 @@ const ReviewMarquee = () => {
         </div>
       </Pointer>
       <div className="flex flex-col items-center justify-center gap-2 px-4 md:flex-row md:px-24">
-        <div className="text-4xl font-bold text-zinc-800">
+        <div className="text-3xl md:text-4xl font-bold text-zinc-800">
           Loved by Thousands Across Industries
         </div>
         <div>

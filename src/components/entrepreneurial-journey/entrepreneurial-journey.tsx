@@ -20,18 +20,18 @@ const EntrepreneurialJourney = () => {
   ];
 
   return (
-    <section className="flex items-center justify-center overflow-hidden px-8 md:px-16">
-      <div className="from-cuptime-orange to-cuptime-red w-full items-center justify-center rounded-2xl bg-gradient-to-tr ">
+    <section className="flex items-center justify-center overflow-hidden px-0 md:px-8">
+      <div className="from-cuptime-orange to-cuptime-red w-full items-center justify-center rounded-2xl bg-gradient-to-tr">
         <div
-          className="flex flex-col bg-cover bg-bottom bg-no-repeat lg:flex-row"
+          className="flex flex-col gap-4 bg-cover bg-bottom bg-no-repeat lg:flex-row p-4 md:p-12"
           style={{
             backgroundImage: `url(${EntrepreneurialBg.src})`,
           }}
         >
           {/* Left Image Section */}
-          <div className="flex flex-col items-center justify-center gap-6 p-4 py-8 lg:w-1/2">
+          <div className="flex flex-col items-center justify-center gap-6 lg:w-1/2">
             <div className="space-y-6">
-              <h2 className="mb-2 text-2xl font-bold text-white md:text-3xl lg:text-4xl">
+              <h2 className="mb-2 text-3xl font-bold text-white md:text-4xl text-center md:text-left">
                 Start Your{' '}
                 <span className="italic underline">
                   {' '}
@@ -40,12 +40,11 @@ const EntrepreneurialJourney = () => {
                 </span>{' '}
                 with Cup Time
               </h2>
-              <p className="py-1.5 text-lg text-white md:text-xl lg:py-3">
-                Join Cup Time’s growing franchise network with our flexible,{' '}
-                <br />
+              <p className="py-1.5 text-base text-white md:text-xl md:py-3">
+                Join Cup Time’s growing franchise network with our flexible,
                 profitable FICO model
               </p>
-              {entrepreneurialJourney.map((tradition, index) => (
+              <div className='flex flex-col justify-center items-start'>{entrepreneurialJourney.map((tradition, index) => (
                 <motion.div
                   key={index}
                   className="flex items-center gap-6"
@@ -61,16 +60,17 @@ const EntrepreneurialJourney = () => {
                     </p>
                   </div>
                 </motion.div>
-              ))}
+              ))}</div>
+              
               <div className="flex">
-                <button className="rounded-lg bg-white px-6 py-3 text-base font-bold text-zinc-900">
+                <button className="rounded-lg bg-white px-6 py-3 text-sm md:text-base font-bold text-zinc-900">
                   Become a Cuptime Franchisee
                 </button>
               </div>
             </div>
           </div>
           {/* Right Content Section */}
-          <div className="shrink-0 flex justify-center p-8 lg:w-1/2">
+          <div className="shrink-0 flex justify-center lg:w-1/2">
             <Image
               src={journeygirl}
               alt="Entrepreneurial Journey"

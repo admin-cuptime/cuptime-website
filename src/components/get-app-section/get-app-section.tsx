@@ -14,7 +14,7 @@ const GetAppSection = () => {
         <div className="flex h-full flex-col gap-12">
           <div className="flex flex-col gap-3">
             <CuptimeLogoWhite className="h-auto w-20" />
-            <div className="text-3xl font-bold text-white md:text-5xl">
+            <div className="text-3xl font-bold text-white md:text-4xl">
               Get the CupTime App Now
             </div>
             <div className="text-sm text-white md:text-base">

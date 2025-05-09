@@ -14,13 +14,17 @@ import hospital from '@/assets/png/hospital.png';
 import school from '@/assets/png/school.png';
 import university from '@/assets/png/university.png';
 import getAppSplash from '@/assets/png/get-app.png';
+import heroSplash2 from '@/assets/png/hero-splash-2.png';
+import leafArt from '@/assets/png/leaf-art.png';
 
 
 export const images = {
   heroSection: {
     heroSplash,
+    heroSplash2,
     heroleft,
     heroright,
+    leafArt,
   },
   heroframe: {
     heromuscle,

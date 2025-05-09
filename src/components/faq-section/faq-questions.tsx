@@ -25,7 +25,7 @@ const FAQsection = () => {
   ];
 
   return (
-    <section className="flex h-full items-start justify-center overflow-hidden bg-white px-8 md:px-16">
+    <section className="flex h-full items-start justify-center overflow-hidden bg-white px-4 md:px-16">
       <div className="flex w-full flex-col gap-8 lg:flex-row lg:items-start lg:justify-between md:px-16">
         {/* Left Content Section */}
         <div className="relative flex flex-col justify-start gap-6 lg:w-1/2">
@@ -35,7 +35,7 @@ const FAQsection = () => {
                 <faqsec.Icon/>
               </div>
               <div>
-                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-zinc-900 lg:mb-6 mb-4">
+                <h3 className="text-3xl md:text-4xl font-bold text-zinc-900 lg:mb-6 mb-4">
                   {faqsec.title}
                 </h3>
               </div>
@@ -52,8 +52,8 @@ const FAQsection = () => {
           <Accordion type="single" collapsible>
             {faqData.map((faq, index) => (
               <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger className='text-base text-zinc-900 font-bold md:text-xl'>{faq.title}</AccordionTrigger>
-                <AccordionContent className='text-sm text-gray-700 md:text-lg'>{faq.content}</AccordionContent>
+                <AccordionTrigger className='text-base text-zinc-900 font-bold md:text-lg'>{faq.title}</AccordionTrigger>
+                <AccordionContent className='text-sm text-gray-700 md:text-base'>{faq.content}</AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
