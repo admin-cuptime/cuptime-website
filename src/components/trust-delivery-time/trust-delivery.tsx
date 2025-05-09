@@ -2,24 +2,27 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { images } from '@/assets/png/images';
 import { motion } from 'framer-motion';
 import deliveryImage from '@/assets/png/trust-delivery-time.png';
+import trust1 from '@/assets/svg/fi_6046785.svg';
+import trust2 from '@/assets/svg/peak-hour.svg';
+import trust3 from '@/assets/svg/quality-check.svg';
 
 const TrustDelivery = () => {
     const deliveries = [
         {
-            icon: images.deliveryimage.trust1.src,
+            // icon: images.deliveryimage.trust1.src,
+            icon: trust1,
             title: "Real-time Order tracking via our mobile app",
             
         },
         {
-            icon: images.deliveryimage.trust2.src,
+            icon: trust2,
             title: "Time-slotted Delivery for peak-hours convenience",
             
         },
         {
-            icon: images.deliveryimage.trust3.src,
+            icon: trust3,
             title: "Quality-packed in insulated flasks for temperature lock",
             
         },
@@ -39,21 +42,20 @@ const TrustDelivery = () => {
                     </p>
                     <div className="space-y-5">
                         {deliveries.map((timing, index) => (
-                            <motion.div key={index} className="flex items-center gap-2">
-                                <Image
-                                    src={timing.icon}
-                                    alt={timing.title}
-                                    width={30}
-                                    height={30}
-                                />
-                                <div>
-                                    <h3 className="text-base font-bold text-zinc-900">{timing.title}</h3>
+                            <motion.div key={index} className="flex items-center gap-4">
+                                {/* Render the icon using the Image component */}
+                                <div className="flex-shrink-0">
+                                  <timing.icon className="h-auto w-7" />
+                                </div>
+                                <div className="flex flex-col gap-1">
+                                    <h3 className="text-lg font-bold text-zinc-800">
+                                      {timing.title}
+                                    </h3>
                                 </div>
                             </motion.div>
                         ))}
                     </div>
                 </div>
-
                 {/* Right Image Section */}
                 <div className="image-section lg:w-1/2 flex items-center justify-between">
                     <Image
