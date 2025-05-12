@@ -4,18 +4,17 @@ import EntrepreneurialJourney from '@/components/entrepreneurial-journey/entrepr
 import GetAppSection from '@/components/get-app-section/get-app-section';
 import MilestonesMedia from '@/components/milestones-media/milestones-media';
 import ProductsHero from '@/components/our-products-hero/our-products-hero';
+import ProductsSection from '@/components/products-section/products-section';
 import ReviewMarquee from '@/components/review-marquee/review-marquee';
 import React from 'react';
 
-const products = [
-  
-];
 
 export default function OurProducts() {
   return (
-    <div className="our-products">
+    <div className="max-w-screen-3xl mx-auto">
         <ProductsHero/>
-      <div className="product-list">
+      <div className="-mt-0 md:-mt-24">
+        <ProductsSection />
       </div>
       <div className="lg:space-y-18 space-y-9">
         <MilestonesMedia />
