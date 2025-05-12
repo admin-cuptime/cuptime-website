@@ -50,7 +50,7 @@ const CuptimeRoadmap = () => {
                       value={option.toLowerCase()}
                       className="mr-2 h-4 w-4 accent-cuptime-red"
                     />
-                    <span className="text-zinc-700">{option}</span>
+                    <span className="font-medium">{option}</span>
                   </label>
                 ))}
               </div>
@@ -117,7 +117,7 @@ const CuptimeRoadmap = () => {
                 Contact Us
               </h3>
             </div>
-            <div className="space-y-2 px-4 md:px-10 text-zinc-700 text-sm md:text-base">
+            <div className="space-y-2 px-4 md:px-10 font-medium text-sm md:text-base">
               <p>
                 No 35, Alagaradi 1st Street, 
                 <br />
