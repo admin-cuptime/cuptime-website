@@ -10,7 +10,7 @@ import {
   IconTeapot,
 } from '@tabler/icons-react';
 import React from 'react';
-// import Leaf from "@/assets/png/LeafTimeline.png"
+import Leaf from '@/assets/png/LeafTimeline.png';
 
 const deliveryStepsData = [
   {
@@ -59,7 +59,10 @@ const deliveryStepsData = [
 
 const DeliverySteps = () => {
   return (
-    <section className="bg-cuptime-black flex flex-col gap-16 items-center justify-center py-20 text-white">
+    <section
+      className="bg-cuptime-black flex flex-col items-center justify-center bg-no-repeat bg-right gap-16 bg-contain py-20 text-white"
+      style={{ backgroundImage: `url(${Leaf.src})`, backgroundSize: "auto 350px" }}
+    >
       <div className="flex flex-col gap-2">
         <motion.h2
           className="text-center text-3xl font-bold text-zinc-50 md:text-4xl lg:text-4xl"
@@ -83,9 +86,16 @@ const DeliverySteps = () => {
       <div className="mx-auto w-full max-w-4xl">
         <div className="-my-6">
           {deliveryStepsData.map((step, index) => (
-            <div key={index} className="group relative py-6 pl-8 sm:pl-32 select-none">
+            <div
+              key={index}
+              className="group relative py-6 pl-8 select-none sm:pl-32"
+            >
               <div className="flex items-center gap-2 rounded-3xl border-2 border-zinc-500/5 p-3 hover:bg-zinc-500/20">
-                <div className={`${index === 0 ? 'opacity-100' : 'opacity-40 group-hover:opacity-100'} rounded-2xl bg-[#1E1E1E] p-2`}>{step.icon}</div>
+                <div
+                  className={`${index === 0 ? 'opacity-100' : 'opacity-40 group-hover:opacity-100'} rounded-2xl bg-[#1E1E1E] p-2`}
+                >
+                  {step.icon}
+                </div>
 
                 <div>
                   <div className="text-lg font-medium text-white">
@@ -102,7 +112,7 @@ const DeliverySteps = () => {
                     </time>
                   </div>
 
-                  <div className="text-sm md:text-nowrap text-wrap text-zinc-400">
+                  <div className="text-sm text-wrap text-zinc-400 md:text-nowrap">
                     {step.description}
                   </div>
                 </div>
@@ -113,9 +123,9 @@ const DeliverySteps = () => {
       </div>
 
       <div>
-      <button className="bg-zinc-50 cursor-pointer rounded-lg px-6 py-3 text-base font-semibold text-zinc-900 transition-all">
-            Start Serving Wellness
-          </button>
+        <button className="cursor-pointer rounded-lg bg-zinc-50 px-6 py-3 text-base font-semibold text-zinc-900 transition-all">
+          Start Serving Wellness
+        </button>
       </div>
     </section>
   );
