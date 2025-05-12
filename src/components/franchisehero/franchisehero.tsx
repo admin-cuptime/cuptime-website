@@ -1,52 +1,25 @@
 'use client';
 
 import React, { useState,useEffect } from 'react';
-import heroleft from "@/assets/png/hero-art-right.png";
-import heroright from "@/assets/png/hero-art-left.png"
+// import heroleft from "@/assets/png/hero-art-right.png";
+// import heroright from "@/assets/png/hero-art-left.png"
+import Franchisebg from "@/assets/png/franchise.png"
 import Image from 'next/image';
 import deliveryImage from '@/assets/png/trust-delivery-time.png';
 
 const FranchiseHero = () => {
 
-    const [isLargeScreen, setIsLargeScreen] = useState(false);
-
-    useEffect(() => {
-        const checkScreenSize = () => {
-          setIsLargeScreen(window.innerWidth >= 1024); // lg breakpoint in Tailwind
-        };
-    
-        checkScreenSize();
-        window.addEventListener('resize', checkScreenSize);
-        return () => window.removeEventListener('resize', checkScreenSize);
-      }, []);
-
-     const backgroundImages = isLargeScreen
-    ? `url(${heroleft.src}), url(${heroright.src})`
-    : `url(${heroleft.src})`;
-
-  const backgroundPosition = isLargeScreen
-    ? 'left top, right bottom'
-    : 'left top';
-
-  const backgroundRepeat = isLargeScreen ? 'no-repeat, no-repeat' : 'no-repeat';
-
-  const backgroundSize = isLargeScreen ? 'contain' : 'contain';
   return (
     <section className="bg-cuptime-light w-full">
       <div
-        className="relative w-full flex-1 md:px-16 px-8"
+        className="relative w-full flex-1 px-4 bg-no-repeat bg-cover justify-end "
+        style={{ backgroundImage: `url(${Franchisebg.src})`, backgroundSize: "full full" }}
       >
         <section className="relative -ml-0 py-16">
-          {/* First Carousel Item */}
+          {/* Franchise Hero Item */}
           <div className="flex basis-full pl-0">
             <div
               className="flex flex-col px-4 md:px-10"
-              style={{
-                backgroundImage: backgroundImages,
-                backgroundRepeat: backgroundRepeat,
-                backgroundPosition: backgroundPosition,
-                backgroundSize: backgroundSize,
-              }}
             >
               <div className="flex h-full flex-col items-center justify-center gap-4 md:flex-row">
                 <div className="flex w-full flex-col gap-4 md:w-1/2 md:gap-6">
