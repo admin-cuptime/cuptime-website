@@ -50,7 +50,7 @@ const MilestonesMedia = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center gap-6 bg-white px-4 sm:px-8 md:px-16">
+    <div className="flex flex-col items-center justify-center gap-6 bg-white px-4 sm:px-8 md:px-16 overflow-hidden">
       <h2 className="text-center text-2xl font-bold text-zinc-900 md:text-3xl lg:text-4xl">
         Our Milestones & Media Recognition
       </h2>
@@ -60,61 +60,86 @@ const MilestonesMedia = () => {
         These recognitions reflect our commitment to quality, entrepreneurship,
         and empowering local talent.
       </p>
-      <Carousel
-        opts={{
-          align: 'start',
-          loop: true,
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{
+          type: 'spring',
+          damping: 12,
+          stiffness: 100,
         }}
-        className="w-full"
-        setApi={setApi}
+        className="flex-1"
       >
-        <CarouselContent className="-ml-1">
-          {milestones.map((milestone, index) => (
-            <CarouselItem
-              key={index}
-              className="pl-1 sm:basis-1/2 lg:basis-1/4"
+        <Carousel
+          opts={{
+            align: "center",
+            loop: true,
+          }}
+          className="w-full"
+          setApi={setApi}
+        >
+          <CarouselContent className="-ml-1">
+            {milestones.map((milestone, index) => (
+              <CarouselItem
+                key={index}
+                className= "-pl-1 sm:basis-1/2 md:basis-1/3 lg:basis-1/4 px-2"
+              >
+                <div className="flex flex-col items-center justify-between text-center">
+                  <div className="relative w-full aspect-[3/4] rounded-lg">
+                    <div
+                      className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                      style={{
+                        backgroundImage: `url(${milestone.image.src})`,
+                        width: '100%',
+                        height: '100%',
+                      }}
+                    />
+                  </div>
+                  {/* <div className="relative h-[450px] md:h-[500px] rounded-lg overflow-hidden group">
+                  <div
+                    className="absolute inset-0 bg-cover bg-center"
+                    style={{
+                      backgroundImage: `url(${milestone.image.src})`,
+                    }}
+                  />
+                  </div> */}
+                  <div className="space-y-2">
+                    <h3 className="text-sm font-semibold md:text-lg">
+                      {milestone.title}
+                    </h3>
+                    {milestone.description && (
+                      <p className="text-cuptime-red text-sm font-semibold underline md:text-lg">
+                        {milestone.description}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <div className="flex justify-center gap-2 py-4">
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={() => api?.scrollPrev()}
+              className="size-8 rounded-full"
             >
-              <div className="flex flex-col items-center text-center">
-                <Image
-                  src={milestone.image}
-                  alt={milestone.title}
-                  className="rounded-lg"
-                />
-                <h3 className="text-sm font-semibold md:text-lg">
-                  {milestone.title}
-                </h3>
-                {milestone.description && (
-                  <p className="text-cuptime-red text-sm font-semibold underline md:text-lg">
-                    {milestone.description}
-                  </p>
-                )}
-              </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <div className="flex justify-center gap-2 py-4">
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={() => api?.scrollPrev()}
-            className="size-8 rounded-full"
-            disabled={!api?.canScrollPrev()}
-          >
-            <ArrowLeft className="h-4 w-4" />
-            <span className="sr-only">Previous slide</span>
-          </Button>
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={() => api?.scrollNext()}
-            className="size-8 rounded-full"
-            disabled={!api?.canScrollNext()}
-          >
-            <ArrowRight className="h-4 w-4" />
-            <span className="sr-only">Next slide</span>
-          </Button>
-        </div>
-      </Carousel>
+              <ArrowLeft className="h-4 w-4" />
+              <span className="sr-only">Previous slide</span>
+            </Button>
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={() => api?.scrollNext()}
+              className="size-8 rounded-full"
+            >
+              <ArrowRight className="h-4 w-4" />
+              <span className="sr-only">Next slide</span>
+            </Button>
+          </div>
+        </Carousel>
+      </motion.div>
     </div>
   );
 };

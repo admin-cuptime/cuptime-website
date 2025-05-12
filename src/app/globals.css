@@ -8,6 +8,9 @@
   --color-cuptime-orange: #ff7654;
   --color-cuptime-light: #fff6f6;
   --color-cuptime-black: #2f2d30;
+  --color-cuptime-gray: #d4d4d8;
+  --color-cuptime-shadow : #282828;
+  --color-cuptime-pistha: #F5F5F5;
   --breakpoint-3xl: 120rem;
 }
 
@@ -31,6 +34,7 @@
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
+  --color-cuptime-border: #d4d4d8;
   --color-destructive: var(--destructive);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent: var(--accent);

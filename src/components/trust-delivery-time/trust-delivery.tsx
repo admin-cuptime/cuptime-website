@@ -42,7 +42,7 @@ const TrustDelivery = () => {
           </p>
           <div className="space-y-5">
             {deliveries.map((timing, index) => (
-              <motion.div key={index} className="flex flex-col md:flex-row items-center gap-1">
+              <motion.div key={index} className="flex flex-col md:flex-row items-center gap-4">
                 {/* Render the icon using the Image component */}
                 <div className="flex-shrink-0">
                   <timing.icon className="h-auto w-7" />
