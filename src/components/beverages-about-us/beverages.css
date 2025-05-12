@@ -1,0 +1,9 @@
+.beverages-container {
+    background-color: #ffffff;
+    padding: 2rem 0;
+}
+
+.beverage-col:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}

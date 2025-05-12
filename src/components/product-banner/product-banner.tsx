@@ -37,7 +37,7 @@ const ProductBanner = () => {
             className="flex flex-col items-center justify-center gap-6 lg:w-1/2"
           >
             <div className="space-y-6">
-              <h2 className="mb-2 text-center text-3xl font-bold text-white md:text-left md:text-4xl">
+              <h2 className="mb-2 text-center md:text-3xl font-bold text-white md:text-left text-2xl">
                 Want to Partner or Franchise with Us?
               </h2>
             </div>
