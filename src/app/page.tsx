@@ -1,5 +1,6 @@
 
 import CuptimeRoadmap from '@/components/cuptime-roadmap/cuptime-roadmap';
+import DeliverySteps from '@/components/delivery-steps/delivery-steps';
 import EntrepreneurialJourney from '@/components/entrepreneurial-journey/entrepreneurial-journey';
 import FAQsection from '@/components/faq-section/faq-questions';
 import FeatureCard from '@/components/feature-card/feature-card';
@@ -19,6 +20,7 @@ export default function Home() {
       <MilestonesMedia/>
       <TrustDelivery />
       <TraditionWorkplace />
+      <DeliverySteps />
       <EntrepreneurialJourney />
       <FAQsection />
       <section>

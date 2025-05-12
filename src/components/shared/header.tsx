@@ -1,10 +1,12 @@
 "use client";
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import CupTimeLogo from '@/assets/svg/cuptime-logo.svg';
 import { Button } from '../ui/button';
 import { Menu } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { motion } from 'framer-motion';
 
 const navLinks = [
   
@@ -17,11 +19,23 @@ const navLinks = [
 ];
 
 const Header = () => {
+  const pathname = usePathname();
+  
   return (
     <nav className="max-w-screen-3xl sticky top-0 z-20 mx-auto flex items-center justify-between bg-white px-4 py-3 lg:px-24">
-      <div>
+      <div className='transition-all hover:brightness-90'>
         <Link href="/">
-          <CupTimeLogo className="h-auto w-16" />
+          <motion.div
+            whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 1.1 }}
+            transition={{ 
+              type: "spring", 
+              stiffness: 300, 
+              damping: 10 
+            }}
+          >
+            <CupTimeLogo className="h-auto w-16" />
+          </motion.div>
         </Link>
       </div>
       {/* Desktop Navigation */}
@@ -29,7 +43,12 @@ const Header = () => {
         <ul className="flex gap-8">
           {navLinks.map(({ href, label }) => (
             <li key={href}>
-              <Link href={href} className="hover:text-cuptime-red cursor-pointer">
+              <Link 
+                href={href} 
+                className={`cursor-pointer hover:text-cuptime-red pb-1 ${
+                  pathname === href ? "border-b-2 border-cuptime-red text-zinc-900 font-semibold" : ""
+                }`}
+              >
                 {label}
               </Link>
             </li>
@@ -58,7 +77,12 @@ const Header = () => {
               <ul className="flex flex-col gap-4">
                 {navLinks.map(({ href, label }) => (
                   <li key={href}>
-                    <Link href={href} className="hover:text-cuptime-red cursor-pointer">
+                    <Link 
+                      href={href} 
+                      className={`cursor-pointer hover:text-cuptime-red pb-1 ${
+                        pathname === href ? "border-b-2 border-cuptime-red font-semibold" : ""
+                      }`}
+                    >
                       {label}
                     </Link>
                   </li>
