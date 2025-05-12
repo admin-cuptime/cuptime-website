@@ -28,7 +28,7 @@ const ProductsHero = () => {
 
   const backgroundSize = isLargeScreen ? 'contain' : 'contain';
   return (
-    <section className="bg-cuptime-pistha w-full">
+    <section className="bg-cuptime-pistha w-full h-auto">
       <div
         className="relative w-full flex-1 md:px-16 px-8"
       >
@@ -45,8 +45,8 @@ const ProductsHero = () => {
                 height: '350px'
               }}
             >
-              <div className="flex h-full flex-col items-center justify-center gap-4">
-                <div className="flex w-full flex-col gap-4 md:gap-6">
+              <div className="flex h-full flex-col  gap-4">
+                <div className="flex w-full flex-col gap-4 md:gap-6 items-center justify-center">
                   <div className="text-3xl font-bold text-zinc-900 md:text-4xl lg:text-5xl">
                     Authentic South Indian Flavors,<br />Delivered Fresh
                   </div>
@@ -55,10 +55,10 @@ const ProductsHero = () => {
                   </div>
 
                   <div className="flex flex-col gap-4 sm:flex-row justify-center">
-                    <button className="bg-cuptime-black rounded-lg px-4 py-2 text-sm font-semibold text-white md:px-6 md:py-3 md:text-base">
+                    <button className="bg-cuptime-black rounded-lg px-4 py-2 text-sm font-semibold text-white md:px-6 w-40 md:py-3 md:text-base">
                       View Menu
                     </button>
-                    <button className="from-cuptime-orange to-cuptime-red rounded-lg bg-gradient-to-tr px-4 py-2 text-sm font-semibold text-white md:py-3 md:text-base">
+                    <button className="from-cuptime-orange to-cuptime-red rounded-lg bg-gradient-to-tr px-4 py-2 text-sm w-40 font-semibold text-white md:py-3 md:text-base">
                       Order Now
                     </button>
                   </div>

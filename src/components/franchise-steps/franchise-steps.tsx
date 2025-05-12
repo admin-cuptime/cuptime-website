@@ -2,62 +2,54 @@
 
 import { motion } from 'framer-motion';
 import {
-  IconBottleFilled,
+  IconAccessPoint,
   IconMapPin,
-  IconMoped,
-  IconQrcode,
-  IconShoppingCartCopy,
+  IconMessageDots,
+  IconProgressCheck,
   IconTeapot,
 } from '@tabler/icons-react';
 import React from 'react';
-// import Leaf from "@/assets/png/LeafTimeline.png"
 
 const deliveryStepsData = [
   {
-    icon: <IconShoppingCartCopy className="h-7 w-7" />,
-    title: 'Receive Order',
+    icon: <IconProgressCheck className="h-7 w-7" />,
+    title: 'Apply Online',
     date: 'Step 1',
     description:
-      'Orders are placed through our easy-to-use mobile app — anytime, anywhere.',
-  },
-  {
-    icon: <IconTeapot className="h-7 w-7" />,
-    title: 'Prepare Fresh Batches',
-    date: 'Step 2',
-    description:
-      'Freshly made beverages are poured into food-grade, sanitized flasks to retain heat and hygiene.',
-  },
-  {
-    icon: <IconBottleFilled className="h-7 w-7" />,
-    title: 'Transfer to Sanitized Flasks',
-    date: 'Step 3',
-    description:
-      'Freshly made beverages are poured into food-grade, sanitized flasks to retain heat and hygiene.',
-  },
-  {
-    icon: <IconQrcode className="h-7 w-7" />,
-    title: 'Attach QR Code with Details',
-    date: 'Step 4',
-    description:
-      'Each flask is labeled with a QR code containing product and delivery details for full traceability.',
-  },
-  {
-    icon: <IconMoped className="h-7 w-7" />,
-    title: 'Delivery Person Collection',
-    date: 'Step 5',
-    description:
-      'Our trained delivery partners collect the batched order, ready for safe and quick transportation.',
+      'Fill out our franchise application form. We’ll review your interest and connect with you quickly.',
   },
   {
     icon: <IconMapPin className="h-7 w-7" />,
-    title: 'Delivery at Your Doorsteps',
-    date: 'Step 6',
+    title: 'Location & Feasibility Check',
+    date: 'Step 2',
     description:
-      'Your order is delivered hot and fresh — right to your business location, ready to serve.',
+      'We assess your proposed location to ensure it meets the market need and setup requirements.',
+  },
+  {
+    icon: <IconTeapot className="h-7 w-7" />,
+    title: 'Setup & Training',
+    date: 'Step 3',
+    description:
+      'Once approved, we help with kitchen setup, provide branded materials, and train your team on beverage',
+    subdescription: ' preparation and hygiene.',
+  },
+  {
+    icon: <IconAccessPoint className="h-7 w-7" />,
+    title: 'Go Live',
+    date: 'Step 4',
+    description:
+      'Start preparing and delivering fresh beverages to businesses in your area under the CupTime brand.',
+  },
+  {
+    icon: <IconMessageDots className="h-7 w-7" />,
+    title: 'Ongoing Support',
+    date: 'Step 5',
+    description:
+      'Receive continuous marketing support, product updates, operational guidance, and more as you grow.',
   },
 ];
 
-const DeliverySteps = () => {
+const FranchiseSteps = () => {
   return (
     <section className="bg-cuptime-black flex flex-col gap-16 items-center justify-center py-20 text-white">
       <div className="flex flex-col gap-2">
@@ -68,7 +60,7 @@ const DeliverySteps = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          How Cuptime Delivers Tradition to Your Workplace
+          How It Works – Start Your Franchise in 5 Easy Steps
         </motion.h2>
         <motion.p
           className="flex flex-col items-center justify-between px-0 text-center text-base text-zinc-400 md:px-28 md:text-lg"
@@ -80,7 +72,7 @@ const DeliverySteps = () => {
           From Order to Sip – A Seamless 5-Step Journey
         </motion.p>
       </div>
-      <div className="mx-auto w-full max-w-4xl">
+      <div className="mx-auto w-full max-w-4xl overflow-hidden">
         <div className="-my-6">
           {deliveryStepsData.map((step, index) => (
             <div key={index} className="group relative py-6 pl-8 sm:pl-32 select-none">
@@ -103,7 +95,8 @@ const DeliverySteps = () => {
                   </div>
 
                   <div className="text-sm md:text-nowrap text-wrap text-zinc-400">
-                    {step.description}
+                    {step.description} <br />
+                    {step.subdescription}
                   </div>
                 </div>
               </div>
@@ -114,11 +107,11 @@ const DeliverySteps = () => {
 
       <div>
       <button className="bg-zinc-50 cursor-pointer rounded-lg px-6 py-3 text-base font-semibold text-zinc-900 transition-all">
-            Start Serving Wellness
+            Order Now
           </button>
       </div>
     </section>
   );
 };
 
-export default DeliverySteps;
+export default FranchiseSteps;
