@@ -1,22 +1,23 @@
-import type { Metadata } from "next";
-import { Figtree, Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import Header from "@/components/shared/header";
+import type { Metadata } from 'next';
+import { Figtree, Geist } from 'next/font/google';
+import './globals.css';
+import Header from '@/components/shared/header';
+import Footer from '@/components/shared/footer';
 
 const figtree = Figtree({
-  variable: "--font-figtree",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  variable: '--font-figtree',
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
 });
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
-  title: "Cuptime Website",
-  description: "Cuptime Website",
+  title: 'Cuptime Website',
+  description: 'Cuptime Website',
 };
 
 export default function RootLayout({
@@ -26,11 +27,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${figtree.variable} ${geistSans.variable} antialiased`}
-      >
+      <body className={`${figtree.variable} ${geistSans.variable} antialiased`}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

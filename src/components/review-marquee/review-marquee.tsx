@@ -44,7 +44,11 @@ const testimonials = [
 
 const ReviewMarquee = () => {
   return (
-    <section className="bg-zinc-100 py-18">
+    <section className="relative bg-zinc-100 py-18 overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[600px] rounded-full blur-2xl opacity-10 bg-radial from-blue-500 to-cuptime-red"></div>
+      </div>
+      
       <Pointer>
         <div>
           <motion.div

@@ -28,11 +28,11 @@ const CuptimeRoadmap = () => {
 
   return (
     <section>
-      <div className="px-4 md:px-8">
-        <h2 className="text-center text-2xl font-bold text-zinc-900 md:text-3xl lg:text-4xl pb-10">
-          Reach Out to CUP TIME
+      <div className="px-4 md:px-8 flex flex-col gap-10">
+        <h2 className="text-center text-3xl font-bold text-zinc-900 md:text-4xl">
+          Reach Out to CupTime
         </h2>
-        <div className="mx-auto grid grid-cols-1 gap-8 overflow-hidden px-4 sm:px-8 md:px-36 lg:grid-cols-3">
+        <div className="mx-auto grid grid-cols-1 gap-8 overflow-hidden px-4 md:px-36 lg:grid-cols-3">
           {/* Left Section - Contact Form (01) - Spans full height */}
           <div className="row-span-2 rounded-4xl border-2 bg-white p-6 shadow-cuptime-gray md:p-8 lg:col-span-2">
             <h3 className="mb-6 text-sm font-semibold text-zinc-900 lg:text-2xl">
