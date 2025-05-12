@@ -21,7 +21,6 @@ export default function Home() {
       <ProductOverview />
       <MilestonesMedia/>
       <TrustDelivery />
-      <TraditionWorkplace />
       <DeliverySteps />
       <EntrepreneurialJourney />
       <FAQsection />
