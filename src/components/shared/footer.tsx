@@ -56,7 +56,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-cuptime-black max-w-screen-3xl mx-auto flex flex-col gap-10 px-4 py-10 md:px-24 mt-16">
+    <footer className="bg-cuptime-black max-w-screen-3xl mx-auto flex flex-col gap-10 px-4 py-10 md:px-24">
       <div className="flex flex-col justify-between gap-10 md:flex-row">
         <div className="flex w-32 flex-col gap-4">
           <CuptimeLogoWhite className="h-auto w-full" />
