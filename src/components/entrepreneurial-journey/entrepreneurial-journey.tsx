@@ -90,8 +90,8 @@ const EntrepreneurialJourney = () => {
           </motion.div>
           {/* Right Content Section */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{
               type: 'spring',

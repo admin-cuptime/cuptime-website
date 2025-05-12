@@ -20,6 +20,12 @@ import mou from '@/assets/png/milestone-3.png';
 import yourStory from '@/assets/png/milestone-4.png';
 import heroSplash2 from '@/assets/png/hero-splash-2.png';
 import leafArt from '@/assets/png/leaf-art.png';
+import productTea from '@/assets/png/tea.png';
+import productCoffee from '@/assets/png/coffee.png';
+import productRose from '@/assets/png/rose-milk.png';
+import productBerry from '@/assets/png/berry-milk.png';
+import productSukku from '@/assets/png/sukku-kappi.png';
+import productCane from '@/assets/png/sugar-juice.png';
 
 export const images = {
   heroSection: {
@@ -57,5 +63,13 @@ export const images = {
     vikatan,
     mou,
     yourStory,
+  },
+  product: {
+    productTea,
+    productCoffee,
+    productRose,
+    productBerry,
+    productSukku,
+    productCane,
   }
 } as const;

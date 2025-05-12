@@ -39,7 +39,7 @@ const Header = () => {
         </Link>
       </div>
       {/* Desktop Navigation */}
-      <div className="hidden lg:block">
+      <div className="hidden lg:block text-sm md:text-sm lg:text-base">
         <ul className="flex gap-8">
           {navLinks.map(({ href, label }) => (
             <li key={href}>

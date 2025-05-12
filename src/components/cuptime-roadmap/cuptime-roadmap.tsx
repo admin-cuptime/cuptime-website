@@ -28,22 +28,21 @@ const CuptimeRoadmap = () => {
 
   return (
     <section>
-      <div className="px-4 md:px-8 flex flex-col gap-10">
+      <div className="px-2 md:px-8 flex flex-col gap-10">
         <h2 className="text-center text-3xl font-bold text-zinc-900 md:text-4xl">
           Reach Out to CupTime
         </h2>
-        <div className="mx-auto grid grid-cols-1 gap-8 overflow-hidden px-4 md:px-36 lg:grid-cols-3">
+        <div className="mx-auto grid grid-cols-1 gap-8 overflow-hidden md:px-36 lg:grid-cols-3">
           {/* Left Section - Contact Form (01) - Spans full height */}
-          <div className="row-span-2 rounded-4xl border-2 bg-white p-6 shadow-cuptime-gray md:p-8 lg:col-span-2">
+          <div className="row-span-2 rounded-lg md:rounded-4xl border-2 bg-white p-3 shadow-cuptime-gray md:p-8 lg:col-span-2">
             <h3 className="mb-6 text-sm font-semibold text-zinc-900 lg:text-2xl">
               How can we help you?
             </h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6 text-sm md:text-base">
               <div className="flex flex-wrap gap-4">
                 {options.map((option) => (
                   <label key={option} className="flex items-center">
                     <input
-                      // type="radio"
                       type="checkbox"
                       name="inquiry_type"
                       checked={selectedOption === option}
@@ -114,11 +113,11 @@ const CuptimeRoadmap = () => {
               <div className="h-auto w-7">
                 <MySVG />
               </div>
-              <h3 className="mb-4 text-xl font-bold text-zinc-900">
+              <h3 className="mb-4 text-lg md:text-xl font-bold text-zinc-900">
                 Contact Us
               </h3>
             </div>
-            <div className="space-y-2 px-10 text-zinc-700">
+            <div className="space-y-2 px-4 md:px-10 text-zinc-700 text-sm md:text-base">
               <p>
                 No 35, Alagaradi 1st Street, 
                 <br />

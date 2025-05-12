@@ -51,15 +51,30 @@ const MilestonesMedia = () => {
 
   return (
     <div className="flex flex-col items-center justify-center gap-6 bg-white px-4 sm:px-8 md:px-16 overflow-hidden">
-      <h2 className="text-center text-2xl font-bold text-zinc-900 md:text-3xl lg:text-4xl">
-        Our Milestones & Media Recognition
-      </h2>
-      <p className="text-center text-base sm:px-8 md:px-16 md:text-lg">
-        From the Chief Minister’s appreciation to media spotlights, Cup Time’s
+      <div className="flex flex-col gap-4">
+          <motion.h2 
+            className="text-center text-3xl font-bold text-zinc-900 md:text-4xl lg:text-4xl"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            Our Milestones & Media Recognition
+          </motion.h2>
+          <motion.p 
+            className="flex flex-col items-center justify-between text-center text-base text-zinc-700 md:text-lg px-0 md:px-28"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            From the Chief Minister’s appreciation to media spotlights, Cup Time’s
         journey has been marked by trust, innovation, and community impact.
         These recognitions reflect our commitment to quality, entrepreneurship,
         and empowering local talent.
-      </p>
+          </motion.p>
+        </div>
+      
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -69,7 +84,7 @@ const MilestonesMedia = () => {
           damping: 12,
           stiffness: 100,
         }}
-        className="flex-1"
+        className="flex-1 py-6"
       >
         <Carousel
           opts={{
