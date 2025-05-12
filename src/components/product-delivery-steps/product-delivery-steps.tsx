@@ -2,60 +2,67 @@
 
 import { motion } from 'framer-motion';
 import {
-  IconAccessPoint,
+  IconBottleFilled,
   IconMapPin,
-  IconMessageDots,
-  IconProgressCheck,
+  IconMoped,
+  IconQrcode,
+  IconShoppingCartCopy,
   IconTeapot,
 } from '@tabler/icons-react';
 import React from 'react';
-import Beans from '@/assets/png/coffee-beans.png';
+import CoffeeBeans from '@/assets/png/coffee-beans.png';
 
-const deliveryStepsData = [
+const productdeliveryStepsData = [
   {
-    icon: <IconProgressCheck className="h-7 w-7" />,
-    title: 'Apply Online',
+    icon: <IconShoppingCartCopy className="h-7 w-7" />,
+    title: 'Receive Order',
     date: 'Step 1',
     description:
-      'Fill out our franchise application form. We’ll review your interest and connect with you quickly.',
-  },
-  {
-    icon: <IconMapPin className="h-7 w-7" />,
-    title: 'Location & Feasibility Check',
-    date: 'Step 2',
-    description:
-      'We assess your proposed location to ensure it meets the market need and setup requirements.',
+      'Orders are placed through our easy-to-use mobile app — anytime, anywhere.',
   },
   {
     icon: <IconTeapot className="h-7 w-7" />,
-    title: 'Setup & Training',
+    title: 'Prepare Fresh Batches',
+    date: 'Step 2',
+    description:
+      'Freshly made beverages are poured into food-grade, sanitized flasks to retain heat and hygiene.',
+  },
+  {
+    icon: <IconBottleFilled className="h-7 w-7" />,
+    title: 'Transfer to Sanitized Flasks',
     date: 'Step 3',
     description:
-      'Once approved, we help with kitchen setup, provide branded materials, and train your team on beverage',
-    subdescription: ' preparation and hygiene.',
+      'Freshly made beverages are poured into food-grade, sanitized flasks to retain heat and hygiene.',
   },
   {
-    icon: <IconAccessPoint className="h-7 w-7" />,
-    title: 'Go Live',
+    icon: <IconQrcode className="h-7 w-7" />,
+    title: 'Attach QR Code with Details',
     date: 'Step 4',
     description:
-      'Start preparing and delivering fresh beverages to businesses in your area under the CupTime brand.',
+      'Each flask is labeled with a QR code containing product and delivery details for full traceability.',
   },
   {
-    icon: <IconMessageDots className="h-7 w-7" />,
-    title: 'Ongoing Support',
+    icon: <IconMoped className="h-7 w-7" />,
+    title: 'Delivery Person Collection',
     date: 'Step 5',
     description:
-      'Receive continuous marketing support, product updates, operational guidance, and more as you grow.',
+      'Our trained delivery partners collect the batched order, ready for safe and quick transportation.',
+  },
+  {
+    icon: <IconMapPin className="h-7 w-7" />,
+    title: 'Delivery at Your Doorsteps',
+    date: 'Step 6',
+    description:
+      'Your order is delivered hot and fresh — right to your business location, ready to serve.',
   },
 ];
 
-const FranchiseSteps = () => {
+const ProductSteps = () => {
   return (
     <section
-      className="bg-cuptime-black flex flex-col items-center justify-center gap-16 bg-contain bg-bottom-right bg-no-repeat py-20 text-white"
+      className="bg-cuptime-black flex flex-col items-center justify-center gap-16 bg-contain bg-top-right bg-no-repeat py-20 text-white"
       style={{
-        backgroundImage: `url(${Beans.src})`,
+        backgroundImage: `url(${CoffeeBeans.src})`,
         backgroundSize: '350px auto',
       }}
     >
@@ -67,7 +74,7 @@ const FranchiseSteps = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          How It Works – Start Your Franchise in 5 Easy Steps
+          How Cuptime Delivers Tradition to Your Workplace
         </motion.h2>
         <motion.p
           className="flex flex-col items-center justify-between px-0 text-center text-base text-zinc-400 md:px-28 md:text-lg"
@@ -79,9 +86,9 @@ const FranchiseSteps = () => {
           From Order to Sip – A Seamless 5-Step Journey
         </motion.p>
       </div>
-      <div className="mx-auto w-full max-w-4xl overflow-hidden">
+      <div className="mx-auto w-full max-w-4xl">
         <div className="-my-6">
-          {deliveryStepsData.map((step, index) => (
+          {productdeliveryStepsData.map((step, index) => (
             <div
               key={index}
               className="group relative py-6 pl-8 select-none sm:pl-32"
@@ -109,8 +116,7 @@ const FranchiseSteps = () => {
                   </div>
 
                   <div className="text-sm text-wrap text-zinc-400 md:text-nowrap">
-                    {step.description} <br />
-                    {step.subdescription}
+                    {step.description}
                   </div>
                 </div>
               </div>
@@ -121,11 +127,11 @@ const FranchiseSteps = () => {
 
       <div>
         <button className="cursor-pointer rounded-lg bg-zinc-50 px-6 py-3 text-base font-semibold text-zinc-900 transition-all">
-          Order Now
+          Start Serving Wellness
         </button>
       </div>
     </section>
   );
 };
 
-export default FranchiseSteps;
+export default ProductSteps;
