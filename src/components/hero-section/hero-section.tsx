@@ -214,25 +214,9 @@ const HeroSection = () => {
           ))}
         </div>
       </Carousel>
-
       {/* Pagination Dots */}
     </section>
   );
 };
 
 export default HeroSection;
-{/* <CarouselItem key={index}>
-                                      <div className="flex h-full flex-col items-center justify-center gap-4 md:flex-row"
-                                      >
-                                        <div className="flex w-full flex-col gap-4 md:gap-6 md:w-1/2">
-                                          <div className="w-full">
-                                            <img
-                                            src={milestoneContent.image}
-                                            alt="hero-splash"
-                                            className="h-auto w-full"
-                                           />
-                                          </div>
-                                          <div className="text-base md:text-lg">{milestoneContent.description}</div>
-                                        </div>
-                                      </div>
-                                    </CarouselItem> */}

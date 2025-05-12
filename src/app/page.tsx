@@ -1,4 +1,5 @@
 
+import CuptimeRoadmap from '@/components/cuptime-roadmap/cuptime-roadmap';
 import EntrepreneurialJourney from '@/components/entrepreneurial-journey/entrepreneurial-journey';
 import FAQsection from '@/components/faq-section/faq-questions';
 import FeatureCard from '@/components/feature-card/feature-card';
@@ -24,6 +25,7 @@ export default function Home() {
         <ReviewMarquee />
         <GetAppSection />
       </section>
+      <CuptimeRoadmap />
     </main>
   );
 }

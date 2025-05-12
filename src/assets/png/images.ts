@@ -52,7 +52,7 @@ export const images = {
   getAppImages: {
     getAppSplash,
   },
-  milestone: {
+  milestoneImages: {
     cmaward,
     vikatan,
     mou,
