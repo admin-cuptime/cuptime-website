@@ -103,7 +103,7 @@ const products: Product[] = [
 const ProductCard = ({ product }: { product: Product }) => {
   return (
     <CardContainer className="">
-      <CardBody className='h-full w-full md:w-[560px] flex flex-col md:flex-row items-center gap-3 rounded-lg bg-white p-3 drop-shadow-xl transition-all hover:drop-shadow-2xl md:h-[300px] md:p-5 select-none'>
+      <CardBody className="flex h-full w-full flex-col items-center gap-3 rounded-lg bg-white p-3 drop-shadow-xl transition-all select-none hover:drop-shadow-2xl md:h-[300px] md:w-[560px] md:flex-row md:p-5">
         <div
           className="h-[200px] w-full shrink-0 rounded-lg bg-contain bg-center bg-no-repeat md:h-full md:w-[230px] md:bg-cover"
           style={{ backgroundImage: `url(${product.image.src})` }}
@@ -146,7 +146,11 @@ const ProductCard = ({ product }: { product: Product }) => {
 
 const ProductsSection = () => {
   return (
-    <section className="mx-auto max-w-[90%] pb-20">
+    <section className="relative mx-auto max-w-[90%] pb-20">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute top-1/2 left-1/2 h-[50%] w-[50%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-radial from-violet-500 to-blue-500 opacity-10 blur-3xl"></div>
+        <div className="from-cuptime-orange to-cuptime-red absolute top-1/3 left-1/3 h-[60%] w-[60%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-radial opacity-10 blur-3xl"></div>
+      </div>
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
         {products.map((product, index) => (
           <div
