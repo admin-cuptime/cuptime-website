@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 
 const CeoCard = () => {
   return (
-    <section className="flex items-center justify-center overflow-hidden px-8 md:px-32">
+    <section className="flex items-center justify-center overflow-hidden px-8 md:px-16">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -76,14 +76,15 @@ const CeoCard = () => {
             </div>
           </motion.div>
         </div>
-        <div className="grid grid-cols-2 gap-6 rounded-lg p-6 md:p-16 lg:grid-cols-3">
-          <div className="relative ">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 rounded-lg p-6 md:p-16 lg:grid-cols-3">
+          <div className="relative">
             <Image
               src={ceoImage}
               alt="CEO Image"
-              className="h-auto w-100 rounded-lg"
+              width={350}
+                height={80}
             />
-            <div className="absolute bottom-0 left-0 w-full rounded-b-3xl bg-white/40 p-3 text-center">
+            <div className="absolute bottom-0 left-0 w-auto rounded-b-3xl bg-white/40 p-3 text-center">
               <h3 className="text-cuptime-red text-sm font-bold italic md:text-xl">
                 Ram
               </h3>
@@ -97,9 +98,10 @@ const CeoCard = () => {
             <Image
               src={ceoImage}
               alt="Team Member"
-              className="h-auto w-100 rounded-lg"
+             width={350}
+                height={80}
             />
-            <div className="absolute bottom-0 left-0 w-full rounded-b-3xl bg-white/40 p-3 text-center">
+            <div className="absolute bottom-0 left-0 w-auto rounded-b-3xl bg-white/40 p-3 text-center">
               <h3 className="text-cuptime-red text-sm font-bold italic md:text-xl">
                 Prabaharan Venugopal
               </h3>
@@ -113,9 +115,10 @@ const CeoCard = () => {
             <Image
               src={ceoImage}
               alt="Team Member"
-              className="h-auto w-100 rounded-lg"
+             width={350}
+                height={80}
             />
-            <div className="absolute bottom-0 left-0 w-full rounded-b-3xl bg-white/40 p-3 text-center">
+            <div className="absolute bottom-0 left-0 w-auto rounded-b-3xl bg-white/40 p-3 text-center">
               <h3 className="text-cuptime-red text-sm font-bold italic md:text-xl">
                 Prabaharan Venugopal
               </h3>
