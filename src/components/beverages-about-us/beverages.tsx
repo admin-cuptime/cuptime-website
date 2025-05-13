@@ -49,10 +49,10 @@ const Beverages = () => {
             containerClassName='w-full md:w-[250px]'
             className="border-2 border-zinc-300 flex flex-col gap-1 rounded-lg bg-white px-4 text-center py-8 w-full md:w-[250px] "
           >
-            <CardItem asChild translateZ={30} className="flex flex-shrink-0 items-center justify-center">
+            <CardItem translateZ={30} className="flex flex-shrink-0 items-center justify-center">
               <beverageitem.icon className="h-auto w-9" />
             </CardItem>
-            <CardItem asChild translateZ={50}>
+            <CardItem translateZ={50}>
               <h3 className="text-3xl md:text-4xl font-bold text-gray-800">
                 {beverageitem.isPercentage ? (
                   beverageitem.title
@@ -68,7 +68,7 @@ const Beverages = () => {
                 )}
               </h3>
             </CardItem>
-            <CardItem asChild translateZ={30}>
+            <CardItem translateZ={30}>
               <p className="text-zinc-700 text-sm font-semibold">
                 {beverageitem.subtitle}
               </p>

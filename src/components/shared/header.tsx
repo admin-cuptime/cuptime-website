@@ -7,6 +7,7 @@ import { Button } from '../ui/button';
 import { Menu } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
 const navLinks = [
   
@@ -20,9 +21,29 @@ const navLinks = [
 
 const Header = () => {
   const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+  const isAboutUsPage = pathname === "/about-us";
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+  
+  const navBackground = isAboutUsPage 
+    ? scrolled 
+      ? "bg-white" 
+      : "bg-transparent"
+    : "bg-white";
   
   return (
-    <nav className="max-w-screen-3xl sticky top-0 z-20 mx-auto flex items-center justify-between bg-white px-4 py-3 lg:px-24">
+    <nav className={`max-w-screen-3xl h-16 sticky top-0 z-20 mx-auto flex items-center justify-between ${navBackground} px-4 lg:px-24 transition-colors duration-300`}>
       <div className='transition-all hover:brightness-90'>
         <Link href="/">
           <motion.div
@@ -34,7 +55,7 @@ const Header = () => {
               damping: 10 
             }}
           >
-            <CupTimeLogo className="h-auto w-16" />
+            <CupTimeLogo className={`h-auto w-16 ${isAboutUsPage && !scrolled ? 'filter brightness-0 invert' : ''}`} />
           </motion.div>
         </Link>
       </div>
@@ -46,7 +67,9 @@ const Header = () => {
               <Link 
                 href={href} 
                 className={`cursor-pointer hover:text-cuptime-red pb-1 ${
-                  pathname === href ? "border-b-2 border-cuptime-red text-zinc-900 font-semibold" : ""
+                  pathname === href 
+                    ? "border-b-2 border-cuptime-red font-semibold " + (isAboutUsPage && !scrolled ? "text-white" : "")
+                    : isAboutUsPage && !scrolled ? "text-white" : ""
                 }`}
               >
                 {label}
@@ -57,7 +80,7 @@ const Header = () => {
       </div>
       {/* Desktop Buttons */}
       <div className="hidden gap-2 lg:flex">
-        <button className="text-cuptime-red border-foreground cursor-pointer rounded-xl border-2 bg-white px-6 py-2 font-semibold">
+        <button className={`${isAboutUsPage && !scrolled ? "text-white border-white" : "text-cuptime-red border-foreground"} cursor-pointer rounded-xl border-2 bg-transparent px-6 py-2 font-semibold`}>
           Franchise
         </button>
         <button className="from-cuptime-orange to-cuptime-red cursor-pointer rounded-xl bg-gradient-to-tr px-6 py-2 font-semibold text-white hover:opacity-90">
@@ -68,7 +91,7 @@ const Header = () => {
       <div className="lg:hidden">
         <Sheet>
           <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" className="lg:hidden">
+            <Button variant="ghost" size="icon" className={`lg:hidden ${isAboutUsPage && !scrolled ? "text-white" : ""}`}>
               <Menu className="h-6 w-6" />
             </Button>
           </SheetTrigger>
@@ -103,4 +126,5 @@ const Header = () => {
     </nav>
   );
 };
+
 export default Header;
