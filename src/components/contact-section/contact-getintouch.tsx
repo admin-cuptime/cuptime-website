@@ -2,14 +2,15 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { images } from '@/assets/png/images';
 import MySVGlocation from '@/assets/svg/location-09.svg';
 import MySVGweb from '@/assets/svg/web-protection.svg';
 import MySVGmobile from '@/assets/svg/call-ringing-02.svg';
+import { FlipText } from '../magicui/flip-text';
+import { TypingAnimation } from '../magicui/typing-animation';
+import ContactBusinessCard from '@/components/contact-businesscard/contact-businesscard';
 
 const GetinTouch = () => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
   const options = ['Price', 'Services we offer', 'Call Back', 'Others'];
@@ -21,22 +22,27 @@ const GetinTouch = () => {
       setSelectedOption(option);
     }
   };
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-  };
 
   return (
-    <section className="flex items-center justify-center overflow-hidden px-10 md:px-36">
+    <section className="flex flex-col items-center justify-center gap-4">
+      <div
+        className="flex h-[200px] w-full flex-col items-center justify-center bg-cover bg-center md:h-[350px]"
+        style={{
+          backgroundImage: `url(${images.contact.contactBanner.src})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <TypingAnimation className="mb-0 text-3xl font-bold text-white md:mb-20 md:text-5xl">
+          Get in Touch
+        </TypingAnimation>
+      </div>
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="bg-cuptime-pistha w-full items-center justify-center rounded-2xl bg-gradient-to-tr"
+        className="bg-cuptime-pistha mx-auto -mt-0 w-full items-center justify-center rounded-2xl bg-gradient-to-tr md:-mt-20 md:w-[80%]"
       >
         <div className="flex flex-col justify-between gap-4 p-4 md:p-12 lg:flex-row">
           {/* Left Image Section */}
@@ -44,32 +50,34 @@ const GetinTouch = () => {
             <h3 className="mb-4 text-start text-lg font-bold text-zinc-900 md:text-2xl">
               Let’s Brew a Conversation
             </h3>
-            <div className="space-y-3 text-sm font-medium md:space-y-5 md:text-base">
+            <div className="space-y-2 text-sm font-medium md:space-y-4 md:text-base">
               <p>
                 We’d love to hear from you — whether you’re a business looking
                 to serve traditional beverages, a franchise <br />
                 enthusiast, or someone who just loves great coffee.
               </p>
-              <p className='flex flex-row gap-3 py-2 text-black'>
+              <div className="flex flex-row gap-3 py-2 text-black">
                 <div className="h-auto w-7">
-                <MySVGlocation />
-                 </div>
+                  <MySVGlocation />
+                </div>
                 No 35, Alagaradi 1st Street, 
                 <br />
                 (Next to Madurai Muthu Middle School)
                 <br />
                 Arappalayam, Madurai – 625016
-              </p>
-              <p className='flex flex-row gap-3 py-2 text-black'>
-                <div className='h-auto w-7'>
-                    <MySVGweb />
+              </div>
+              <div className="flex flex-row gap-3 py-2 text-black">
+                <div className="h-auto w-7">
+                  <MySVGweb />
                 </div>
-                reach@cuptime.in</p>
-              <p className='flex flex-row gap-3 py-2 text-black'>
-                <div className='h-auto w-7'>
-                    <MySVGmobile/>
+                reach@cuptime.in
+              </div>
+              <div className="flex flex-row gap-3 py-2 text-black">
+                <div className="h-auto w-7">
+                  <MySVGmobile />
                 </div>
-                Tel: +91 916 9161110</p>
+                Tel: +91 916 9161110
+              </div>
             </div>
           </div>
           {/* Right Content Section */}
@@ -77,10 +85,7 @@ const GetinTouch = () => {
             <h3 className="mb-6 text-sm font-semibold text-zinc-900 lg:text-2xl">
               How can we help you?
             </h3>
-            <form
-              onSubmit={handleSubmit}
-              className="space-y-6 text-sm md:text-base"
-            >
+            <form className="space-y-6 text-sm md:text-base">
               <div className="flex flex-wrap gap-4">
                 {options.map((option) => (
                   <label key={option} className="flex items-center">
