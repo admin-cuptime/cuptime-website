@@ -8,6 +8,7 @@ import ReviewMarquee from '@/components/review-marquee/review-marquee';
 import CeoCard from '@/components/ceo-card/ceo-card';
 import AboutUsHero from '@/components/about-us-hero/about-us-hero';
 
+
 const AboutPage = () => {
   return (
       <main className="max-w-screen-3xl mx-auto space-y-32">
