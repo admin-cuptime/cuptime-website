@@ -7,6 +7,7 @@ import ProductBanner from '@/components/product-banner/product-banner';
 import ReviewMarquee from '@/components/review-marquee/review-marquee';
 
 import React from 'react';
+import CeoCard from '@/components/ceo-card/ceo-card';
 
 const AboutPage = () => {
   return (
@@ -17,6 +18,7 @@ const AboutPage = () => {
             <TraditionWorkplace />
             <ProductBanner />
             <ReviewMarquee />
+            <CeoCard/>
             <CuptimeRoadmap />
           </div>
         </section>
