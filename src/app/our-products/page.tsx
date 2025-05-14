@@ -14,7 +14,7 @@ export default function OurProducts() {
   return (
     <div className="max-w-screen-3xl mx-auto">
         <ProductsHero/>
-      <div className="-mt-0 md:-mt-24">
+      <div className="-mt-0 lg:-mt-24">
         <ProductsSection />
       </div>
       <div className="lg:space-y-18 space-y-9">

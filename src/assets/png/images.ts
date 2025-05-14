@@ -27,6 +27,7 @@ import productBerry from '@/assets/png/berry-milk.png';
 import productSukku from '@/assets/png/sukku-kappi.png';
 import productCane from '@/assets/png/sugar-juice.png';
 import contactBanner from '@/assets/png/get-in-touch.png';
+import cuptimeMobileSplash from '@/assets/png/cuptime-mobile-splash.png';
 
 export const images = {
   heroSection: {
@@ -72,6 +73,9 @@ export const images = {
     productBerry,
     productSukku,
     productCane,
+  },
+  cuptimeMobileSection: {
+    cuptimeMobileSplash,
   },
   contact: {
     contactBanner,

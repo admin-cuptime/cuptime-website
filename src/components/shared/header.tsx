@@ -4,24 +4,41 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import CupTimeLogo from '@/assets/svg/cuptime-logo.svg';
 import { Button } from '../ui/button';
-import { Menu } from 'lucide-react';
+import { Menu, ChevronDown, ArrowRight, ChevronRight } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { 
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger 
+} from '@/components/ui/dropdown-menu';
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 const navLinks = [
-  
   { href: "/our-products", label: "Our Products" },
   { href: "/franchise", label: "Franchise" },
   { href: "/about-us", label: "About Us" },
-  { href: "/cup-time-mobile", label: "Cup Time Mobile" },
+  { href: "/cup-time-mobile", label: "CupTime Mobile" },
   { href: "/contact-us", label: "Contact Us" },
-  { href: "/more", label: "More" }
+];
+
+const moreLinks = [
+  { href: "/careers", label: "Our Careers" },
+  { href: "/blogs", label: "Blog" },
+  { href: "/events", label: "Events" },
+  { href: "/technology", label: "Technology" },
+  { href: "/privacy-policy", label: "Privacy Policy" },
+  { href: "/terms-conditions", label: "Terms & Conditions" },
+  { href: "/cancellation-refund", label: "Cancellation & Refund" },
 ];
 
 const Header = () => {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
+  const [moreMenuOpen, setMoreMenuOpen] = useState(false);
+  const [mobileMoreOpen, setMobileMoreOpen] = useState(false);
+  const moreMenuRef = useRef<HTMLLIElement | null>(null);
   const isAboutUsPage = pathname === "/about-us";
   
   useEffect(() => {
@@ -35,6 +52,19 @@ const Header = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+  
+  useEffect(() => {
+    const handleClickOutside = (event: any) => {
+      if (moreMenuRef.current && !moreMenuRef.current.contains(event.target)) {
+        setMoreMenuOpen(false);
+      }
+    };
+    
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [moreMenuRef]);
   
   const navBackground = isAboutUsPage 
     ? scrolled 
@@ -76,6 +106,37 @@ const Header = () => {
               </Link>
             </li>
           ))}
+          {/* More Dropdown */}
+          <li ref={moreMenuRef} className="relative">
+            <button
+              onClick={() => setMoreMenuOpen(!moreMenuOpen)}
+              className={`cursor-pointer hover:text-cuptime-red pb-1 flex items-center ${
+                moreLinks.some(link => pathname === link.href)
+                  ? "border-b-2 border-cuptime-red font-semibold " + (isAboutUsPage && !scrolled ? "text-white" : "")
+                  : isAboutUsPage && !scrolled ? "text-white" : ""
+              }`}
+            >
+              More
+              <ChevronDown className={`ml-1 h-4 w-4 transition-transform ${moreMenuOpen ? 'rotate-180' : ''}`} />
+            </button>
+            {moreMenuOpen && (
+              <div className="absolute mt-2 w-56 rounded-md drop-shadow-xl bg-white z-50 text-center">
+                <div className="py-1">
+                  {moreLinks.map(({ href, label }) => (
+                    <Link 
+                      key={href}
+                      href={href}
+                      className={`block px-4 py-2 text-sm hover:bg-gray-100 hover:text-cuptime-red ${
+                        pathname === href ? "text-cuptime-red font-semibold" : "text-gray-700"
+                      }`}
+                    >
+                      {label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </li>
         </ul>
       </div>
       {/* Desktop Buttons */}
@@ -102,14 +163,38 @@ const Header = () => {
                   <li key={href}>
                     <Link 
                       href={href} 
-                      className={`cursor-pointer hover:text-cuptime-red pb-1 ${
-                        pathname === href ? "border-b-2 border-cuptime-red font-semibold" : ""
+                      className={`cursor-pointer flex items-center hover:text-cuptime-red pb-1 ${
+                        pathname === href ? "text-cuptime-red font-semibold" : ""
                       }`}
                     >
                       {label}
                     </Link>
                   </li>
                 ))}
+                <li>
+                  <DropdownMenu onOpenChange={setMobileMoreOpen}>
+                    <DropdownMenuTrigger asChild>
+                      <button className="flex items-center gap-1 w-full text-left cursor-pointer hover:text-cuptime-red">
+                        <span className="font-semibold">More</span>
+                        <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${mobileMoreOpen ? 'rotate-180' : ''}`} />
+                      </button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent className="w-full" align="start">
+                      {moreLinks.map(({ href, label }) => (
+                        <DropdownMenuItem key={href} asChild>
+                          <Link 
+                            href={href} 
+                            className={`w-full cursor-pointer ${
+                              pathname === href ? "text-cuptime-red font-semibold" : ""
+                            }`}
+                          >
+                            {label}
+                          </Link>
+                        </DropdownMenuItem>
+                      ))}
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                </li>
               </ul>
               <div className="mt-4 flex flex-col gap-1">
                 <button className="text-cuptime-red border-foreground cursor-pointer rounded-xl border-2 bg-white px-6 py-2 font-semibold">

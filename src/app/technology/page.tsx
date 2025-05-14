@@ -8,16 +8,12 @@ import React from 'react';
 
 const TechnologyPage = () => {
   return (
-      <div className="max-w-screen-3xl mx-auto space-y-32">
-        <TechnologyHero/>
-        <section>
-          <div className="space-y-32">
-            <CuptimeStandout/>
-            <CupTimeMobileOrder/>
-            <ReviewMarquee/>
-          </div>
-        </section>
-      </div>
+    <section className="max-w-screen-3xl mx-auto space-y-32">
+      <TechnologyHero />
+      <CuptimeStandout />
+      <CupTimeMobileOrder />
+      <ReviewMarquee />
+    </section>
   );
 };
 export default TechnologyPage;
