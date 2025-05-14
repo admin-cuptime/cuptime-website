@@ -27,6 +27,7 @@ import productBerry from '@/assets/png/berry-milk.png';
 import productSukku from '@/assets/png/sukku-kappi.png';
 import productCane from '@/assets/png/sugar-juice.png';
 import contactBanner from '@/assets/png/get-in-touch.png';
+import friends from '@/assets/png/event-hero-bg.png';
 import cuptimeMobileSplash from '@/assets/png/cuptime-mobile-splash.png';
 
 export const images = {
@@ -79,5 +80,8 @@ export const images = {
   },
   contact: {
     contactBanner,
+  },
+  event: {
+    friends,
   }
 } as const;
