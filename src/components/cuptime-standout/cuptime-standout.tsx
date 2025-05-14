@@ -11,7 +11,9 @@ import cuptimemobileorder6 from '@/assets/png/Cuptimemobilescan.png';
 import cuptimemobileorder7 from '@/assets/png/Cuptimemobileorder.png';
 import cuptimemobileorder8 from '@/assets/png/Cuptimemobilescan.png';
 import { Check } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
+import { images } from '@/assets/png/images';
+import { div } from 'framer-motion/client';
 
 type StandoutSectionProps = {
   title: string;
@@ -26,18 +28,24 @@ const StandoutSection = ({
   onLinkClick,
   activeIndex,
 }: StandoutSectionProps) => (
-  <div className="flex flex-col gap-3">
-    <div className="flex flex-col gap-1 space-y-5 text-lg font-bold md:text-xl">
-      {links.map((link, index) => (
-        <button
-          className={`hover:text-cuptime-red text-left ${activeIndex === index ? 'text-cuptime-red' : ''}`}
-          key={index}
+  
+  <div dir='ltr' className="scrollbar scrollbar-thumb-cuptime-red scrollbar-track-white/50 scrollbar-h-2 relative flex w-full snap-x scroll-ml-11 flex-row items-center overflow-x-auto gap-0 lg:gap-6 py-4 text-lg text-nowrap md:text-xl lg:w-fit lg:flex-col lg:items-start lg:py-0">
+    {links.map((link, index) => (
+      <div key={index} className="snap-start scroll-ms-11">
+        <motion.button
+          className={`ml-6 mr-3 cursor-pointer text-left ${activeIndex === index ? '!text-cuptime-red font-bold' : 'font-medium'}`}
           onClick={() => onLinkClick(index)}
+          whileHover={{ 
+            x: 8,
+            color: '#E51937',
+            transition: { duration: 0.2 }
+          }}
         >
           {link.text}
-        </button>
-      ))}
-    </div>
+        </motion.button>
+      </div>
+    ))}
+    
   </div>
 );
 
@@ -46,7 +54,7 @@ const CuptimeStandout = () => {
 
   const aboutLinks = [
     { text: 'Product Selection', href: '/cup-time-mobile' },
-    { text: 'Monthlly Subscriptions', href: '/cup-time-mobile' },
+    { text: 'Monthly Subscriptions', href: '/cup-time-mobile' },
     { text: 'My Orders & Invoice', href: '/cup-time-mobile' },
     { text: 'Track My Delivery', href: '/cup-time-mobile' },
     { text: 'Flask Management', href: '/cup-time-mobile' },
@@ -58,7 +66,7 @@ const CuptimeStandout = () => {
   const featuresContent = [
     {
       title: 'Product Selection',
-      image: cuptimemobileorder1,
+      image: images.appScreenshot.screenshot1,
       features: [
         'Browse from a wide range of filter coffee, tea, and snacks',
         'Customization options (sugar, milk, flavor)',
@@ -66,7 +74,7 @@ const CuptimeStandout = () => {
     },
     {
       title: 'Monthly Subscriptions',
-      image: cuptimemobileorder2,
+      image: images.appScreenshot.screenshot2,
       features: [
         'Flexible subscription plans',
         'Exclusive discounts for members',
@@ -74,12 +82,12 @@ const CuptimeStandout = () => {
     },
     {
       title: 'My Orders & Invoice',
-      image: cuptimemobileorder3,
+      image: images.appScreenshot.screenshot1,
       features: ['Track your orders easily', 'Download invoices anytime'],
     },
     {
       title: 'Track My Delivery',
-      image: cuptimemobileorder4,
+      image: images.appScreenshot.screenshot4,
       features: [
         'Real-time delivery tracking',
         'Notifications for delivery updates',
@@ -87,22 +95,22 @@ const CuptimeStandout = () => {
     },
     {
       title: 'Flask Management',
-      image: cuptimemobileorder5,
+      image: images.appScreenshot.screenshot5,
       features: ['Manage your flask inventory', 'Request flask replacements'],
     },
     {
       title: 'Event Booking',
-      image: cuptimemobileorder6,
+      image: images.appScreenshot.screenshot1,
       features: ['Book events with ease', 'Customizable event packages'],
     },
     {
       title: 'My Cup Tracker',
-      image: cuptimemobileorder7,
+      image: images.appScreenshot.screenshot2,
       features: ['Track your cup usage', 'Monitor sustainability impact'],
     },
     {
       title: 'Notifications',
-      image: cuptimemobileorder8,
+      image: images.appScreenshot.screenshot3,
       features: ['Receive timely updates', 'Stay informed about offers'],
     },
   ];
@@ -112,17 +120,17 @@ const CuptimeStandout = () => {
   };
 
   return (
-    <section className="flex items-center justify-center overflow-hidden px-6 md:px-16">
+    <section className="flex flex-col items-center justify-center overflow-hidden px-4 lg:px-16">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="w-full items-center justify-center rounded-2xl"
+        className="w-full rounded-2xl flex flex-col gap-10 lg:gap-0"
       >
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-4">
           <motion.h2
-            className="text-center text-3xl font-bold text-zinc-900 md:text-4xl lg:text-4xl"
+            className="text-center text-3xl font-bold text-zinc-900 lg:text-4xl"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -138,86 +146,92 @@ const CuptimeStandout = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             From hassle-free scheduling to personalized flavors and sustainable
-            delivery, CupTime is built to <br />
-            enhance your beverage experience. Discover the features that make
-            every sip smarter, smoother, <br />
-            and more satisfying.
+            delivery, CupTime is built to enhance your beverage experience.
+            Discover the features that make every sip smarter, smoother, and
+            more satisfying.
           </motion.p>
         </div>
-        <div className="flex flex-col gap-4 p-6 md:p-12 lg:flex-row">
+        <div className="flex flex-col gap-6 p-1 lg:flex-row lg:gap-0 lg:p-14">
           {/*section-1*/}
-          <div className="flex flex-col items-center justify-center gap-6 md:w-1/3">
+          <div className="relative flex flex-col items-center justify-center gap-6 px-0 lg:px-20">
+            
             <StandoutSection
               title="About Cuptime"
               links={aboutLinks}
               onLinkClick={handleLinkClick}
               activeIndex={activeIndex}
             />
-          </div>
-          {/* Vertical Line */}
-          <div className="border-cuptime-border h-auto border-l-2 sm:hidden md:block">
+            <div className="block lg:hidden from-background pointer-events-none absolute inset-y-0 left-0 w-1/6 bg-gradient-to-r"></div>
+            <div className="block lg:hidden from-background pointer-events-none absolute inset-y-0 right-0 w-1/6 bg-gradient-to-l"></div>
           </div>
           {/* Section-2 */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{
-              type: 'spring',
-              damping: 12,
-              stiffness: 100,
-              delay: 0.4,
-            }}
-            className="flex flex-col items-center justify-center p-5 md:w-1/3"
-          >
-            <Image
-              src={featuresContent[activeIndex]?.image || cuptimemobileorder1}
-              alt="Cup Time Mobile App"
-              className="h-auto w-[200px] rounded-lg object-contain sm:w-[250px] md:h-[578px] md:w-[310px]"
-            />
-          </motion.div>
-          {/* Section-3 */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{
-              type: 'spring',
-              damping: 12,
-              stiffness: 100,
-              delay: 0.4,
-            }}
-            className="flex flex-col items-center justify-center px-4 md:items-start lg:w-1/2"
-          >
-            <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-zinc-900 md:text-3xl lg:text-4xl">
-                {featuresContent[activeIndex]?.title || 'Product Selection'}
-              </h2>
-              <div className="grid grid-cols-1 gap-6">
-                {featuresContent[activeIndex]?.features.map(
-                  (feature, index) => (
-                    <motion.div
-                      key={index}
-                      className="flex flex-col gap-2"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.3, delay: index * 0.1 }}
-                    >
-                      <div className="flex items-center space-x-2">
-                        <Check
-                          className="text-cuptime-red justify-center"
-                          strokeWidth={4}
-                        />
-                        <p className="text-sm font-semibold text-zinc-700 md:text-lg">
-                          {feature}
-                        </p>
-                      </div>
-                    </motion.div>
-                  )
-                )}
-              </div>
-            </div>
-          </motion.div>
+          <div className="flex h-full w-full items-center border-l-0 border-zinc-300 px-1 lg:border-l-2 lg:px-20">
+            <AnimatePresence mode="popLayout">
+              <motion.div
+                key={activeIndex}
+                initial={{ opacity: 0, y: 80 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -50 }}
+                transition={{
+                  type: 'spring',
+                  damping: 12,
+                  stiffness: 100,
+                }}
+                className="flex w-full flex-col items-center justify-center gap-6 lg:flex-row"
+              >
+                <img
+                  src={
+                    featuresContent[activeIndex]?.image.src ||
+                    cuptimemobileorder1.src
+                  }
+                  alt="Cup Time Mobile App"
+                  className="h-auto w-[300px] rounded-lg object-contain drop-shadow-2xl sm:w-[250px] md:h-[578px] md:w-[310px]"
+                />
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    type: 'spring',
+                    damping: 12,
+                    stiffness: 100,
+                    delay: 0.4,
+                  }}
+                  className="flex w-full flex-col"
+                >
+                  <div className="space-y-6 text-center md:text-left">
+                    <h2 className="text-2xl font-bold text-zinc-900 md:text-3xl lg:text-4xl">
+                      {featuresContent[activeIndex]?.title ||
+                        'Product Selection'}
+                    </h2>
+                    <div className="flex flex-col gap-3 items-center lg:items-start">
+                      {featuresContent[activeIndex]?.features.map(
+                        (feature, index) => (
+                          <motion.div
+                            key={index}
+                            className="flex flex-col gap-2"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.3, delay: index * 0.1 }}
+                          >
+                            <div className="flex items-center space-x-2">
+                              <Check
+                                className="text-cuptime-red justify-center"
+                                strokeWidth={4}
+                              />
+                              <p className="text-sm font-semibold text-zinc-700 md:text-lg">
+                                {feature}
+                              </p>
+                            </div>
+                          </motion.div>
+                        )
+                      )}
+                    </div>
+                  </div>
+                </motion.div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
       </motion.div>
     </section>

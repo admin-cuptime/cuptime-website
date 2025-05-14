@@ -4,13 +4,13 @@ import { privacyPolicyData } from './privacy-policy-data';
 
 const PrivacyPolicyQuestion = () => {
   return (
-    <section className="flex items-center justify-center overflow-hidden px-6 md:px-16">
+    <section className="flex items-center justify-center overflow-hidden px-0 md:px-16">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="mb-10 bg-white p-3 shadow-xl/30 w-full items-center justify-center rounded-2xl"
+        className="mb-10 bg-white p-3 drop-shadow-xl w-full items-center justify-center rounded-2xl"
       >
         <div className="flex flex-col gap-8 md:p-12">
           <div className="mb-6 space-y-6">

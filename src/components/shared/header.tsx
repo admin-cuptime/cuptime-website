@@ -98,8 +98,8 @@ const Header = () => {
                 href={href} 
                 className={`cursor-pointer hover:text-cuptime-red pb-1 ${
                   pathname === href 
-                    ? "border-b-2 border-cuptime-red font-semibold " + (isAboutUsPage && !scrolled ? "text-white" : "")
-                    : isAboutUsPage && !scrolled ? "text-white" : ""
+                    ? "border-b-2 border-cuptime-red  font-semibold " + (isAboutUsPage && !scrolled ? "text-white" : "text-zinc-900")
+                    : isAboutUsPage && !scrolled ? "text-white" : "text-zinc-900"
                 }`}
               >
                 {label}

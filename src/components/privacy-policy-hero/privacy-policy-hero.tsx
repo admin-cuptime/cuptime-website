@@ -1,14 +1,12 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-// import heroleft from '@/assets/png/hero-art-left.png';
-// import Bag from "@/assets/png/Bagbg.png";
+import React from 'react';
 import BagPrinter from "@/assets/png/bag&printer-bg.png"
 
 const PrivacypolicyHero = () => {
     
   return (
-    <section className="bg-cuptime-pistha h-[70vh] w-full">
+    <section className="bg-cuptime-pistha h-full lg:h-[70vh] w-full">
       <div
         className="flex flex-col shrink-0 gap-4 bg-cover bg-bottom bg-no-repeat p-4 md:p-12 lg:flex-row"
         style={{
