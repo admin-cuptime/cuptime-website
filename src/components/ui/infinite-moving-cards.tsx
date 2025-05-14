@@ -125,9 +125,7 @@ export const InfiniteMovingCards = ({
                   </div>
                 </div>
 
-                <div>
-                  <QuoteLine className="h-auto w-8" />
-                </div>
+                <QuoteLine className="h-auto w-8 shrink-0" />
               </div>
             </blockquote>
           </li>

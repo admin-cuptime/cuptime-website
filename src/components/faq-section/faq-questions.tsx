@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { images } from '@/assets/png/images';
 import { motion } from 'framer-motion';
-import teacup from '@/assets/svg/cuptime-faq.svg';
+import TeaCup from '@/assets/svg/cuptime-faq.svg';
 import { faqData } from './faqData';
 
 import {
@@ -17,7 +17,6 @@ import {
 const FAQsection = () => {
   const deliveries = [
     {
-      Icon: teacup,
       title: 'FAQ – Your Questions, Answered',
       description:
         ' We know you care about quality, timing, and service. Here are answers to some of the most common questions our customers ask.',
@@ -32,7 +31,7 @@ const FAQsection = () => {
           {deliveries.map((faqsec, index) => (
             <motion.div key={index} className="items-start gap-4">
               <div className="flex-shrink-0 w-35 h-auto lg:mb-6 mb-4">
-                <faqsec.Icon/>
+                <TeaCup className='w-35 h-auto'/>
               </div>
               <div>
                 <h3 className="text-3xl md:text-4xl font-bold text-zinc-900 lg:mb-6 mb-4">
