@@ -1,30 +1,49 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
-import cuptimemobileorder from '@/assets/png/Cuptimemobileorder.png';
+import cuptimemobileorder1 from '@/assets/png/Cuptimemobileorder.png';
+import cuptimemobileorder2 from '@/assets/png/Cuptimemobilescan.png';
+import cuptimemobileorder3 from '@/assets/png/Cuptimemobileorder.png';
+import cuptimemobileorder4 from '@/assets/png/Cuptimemobilescan.png';
+import cuptimemobileorder5 from '@/assets/png/Cuptimemobileorder.png';
+import cuptimemobileorder6 from '@/assets/png/Cuptimemobilescan.png';
+import cuptimemobileorder7 from '@/assets/png/Cuptimemobileorder.png';
+import cuptimemobileorder8 from '@/assets/png/Cuptimemobilescan.png';
 import { Check } from 'lucide-react';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
 
 type StandoutSectionProps = {
   title: string;
   links: { text: string; href: string }[];
+  onLinkClick: (index: number) => void;
+  activeIndex: number;
 };
 
-const StandoutSection = ({ title, links }: StandoutSectionProps) => (
+const StandoutSection = ({
+  title,
+  links,
+  onLinkClick,
+  activeIndex,
+}: StandoutSectionProps) => (
   <div className="flex flex-col gap-3">
     <div className="flex flex-col gap-1 space-y-5 text-lg font-bold md:text-xl">
       {links.map((link, index) => (
-        <Link className="hover:text-cuptime-red" key={index} href={link.href}>
+        <button
+          className={`hover:text-cuptime-red text-left ${activeIndex === index ? 'text-cuptime-red' : ''}`}
+          key={index}
+          onClick={() => onLinkClick(index)}
+        >
           {link.text}
-        </Link>
+        </button>
       ))}
     </div>
   </div>
 );
 
 const CuptimeStandout = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   const aboutLinks = [
     { text: 'Product Selection', href: '/cup-time-mobile' },
     { text: 'Monthlly Subscriptions', href: '/cup-time-mobile' },
@@ -35,14 +54,62 @@ const CuptimeStandout = () => {
     { text: 'My Cup Tracker', href: '/cup-time-mobile' },
     { text: 'Notifications', href: '/cup-time-mobile' },
   ];
-  const standoutfeatures = [
+
+  const featuresContent = [
     {
-      description: 'Browse from a wide range of filter coffee, tea, and snacks',
+      title: 'Product Selection',
+      image: cuptimemobileorder1,
+      features: [
+        'Browse from a wide range of filter coffee, tea, and snacks',
+        'Customization options (sugar, milk, flavor)',
+      ],
     },
     {
-      description: 'Customization options (sugar, milk, flavor)',
+      title: 'Monthly Subscriptions',
+      image: cuptimemobileorder2,
+      features: [
+        'Flexible subscription plans',
+        'Exclusive discounts for members',
+      ],
+    },
+    {
+      title: 'My Orders & Invoice',
+      image: cuptimemobileorder3,
+      features: ['Track your orders easily', 'Download invoices anytime'],
+    },
+    {
+      title: 'Track My Delivery',
+      image: cuptimemobileorder4,
+      features: [
+        'Real-time delivery tracking',
+        'Notifications for delivery updates',
+      ],
+    },
+    {
+      title: 'Flask Management',
+      image: cuptimemobileorder5,
+      features: ['Manage your flask inventory', 'Request flask replacements'],
+    },
+    {
+      title: 'Event Booking',
+      image: cuptimemobileorder6,
+      features: ['Book events with ease', 'Customizable event packages'],
+    },
+    {
+      title: 'My Cup Tracker',
+      image: cuptimemobileorder7,
+      features: ['Track your cup usage', 'Monitor sustainability impact'],
+    },
+    {
+      title: 'Notifications',
+      image: cuptimemobileorder8,
+      features: ['Receive timely updates', 'Stay informed about offers'],
     },
   ];
+
+  const handleLinkClick = (index: number) => {
+    setActiveIndex(index);
+  };
 
   return (
     <section className="flex items-center justify-center overflow-hidden px-6 md:px-16">
@@ -77,10 +144,18 @@ const CuptimeStandout = () => {
             and more satisfying.
           </motion.p>
         </div>
-        <div className="flex flex-col gap-4 md:p-12 lg:flex-row">
+        <div className="flex flex-col gap-4 p-6 md:p-12 lg:flex-row">
           {/*section-1*/}
           <div className="flex flex-col items-center justify-center gap-6 md:w-1/3">
-            <StandoutSection title="About Cuptime" links={aboutLinks} />
+            <StandoutSection
+              title="About Cuptime"
+              links={aboutLinks}
+              onLinkClick={handleLinkClick}
+              activeIndex={activeIndex}
+            />
+          </div>
+          {/* Vertical Line */}
+          <div className="border-cuptime-border h-auto border-l-2 sm:hidden md:block">
           </div>
           {/* Section-2 */}
           <motion.div
@@ -96,9 +171,8 @@ const CuptimeStandout = () => {
             className="flex flex-col items-center justify-center p-5 md:w-1/3"
           >
             <Image
-              src={cuptimemobileorder}
+              src={featuresContent[activeIndex]?.image || cuptimemobileorder1}
               alt="Cup Time Mobile App"
-              //   className="h-full w-auto rounded-lg md:h-[578px] md:w-[310px]"
               className="h-auto w-[200px] rounded-lg object-contain sm:w-[250px] md:h-[578px] md:w-[310px]"
             />
           </motion.div>
@@ -113,32 +187,34 @@ const CuptimeStandout = () => {
               stiffness: 100,
               delay: 0.4,
             }}
-            className="flex flex-col items-center justify-center gap-6 px-4 lg:w-1/2"
+            className="flex flex-col items-center justify-center px-4 md:items-start lg:w-1/2"
           >
-            <div className=" space-y-6">
+            <div className="space-y-6">
               <h2 className="text-2xl font-bold text-zinc-900 md:text-3xl lg:text-4xl">
-                Product Selection
+                {featuresContent[activeIndex]?.title || 'Product Selection'}
               </h2>
               <div className="grid grid-cols-1 gap-6">
-                {standoutfeatures.map((standout, index) => (
-                  <motion.div
-                    key={index}
-                    className="flex flex-col gap-2"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
-                  >
-                    <div className="flex items-center space-x-2">
-                      <Check
-                        className="text-cuptime-red justify-center"
-                        strokeWidth={4}
-                      />
-                      <p className="text-sm font-semibold text-zinc-700 md:text-lg">
-                        {standout.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
+                {featuresContent[activeIndex]?.features.map(
+                  (feature, index) => (
+                    <motion.div
+                      key={index}
+                      className="flex flex-col gap-2"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3, delay: index * 0.1 }}
+                    >
+                      <div className="flex items-center space-x-2">
+                        <Check
+                          className="text-cuptime-red justify-center"
+                          strokeWidth={4}
+                        />
+                        <p className="text-sm font-semibold text-zinc-700 md:text-lg">
+                          {feature}
+                        </p>
+                      </div>
+                    </motion.div>
+                  )
+                )}
               </div>
             </div>
           </motion.div>

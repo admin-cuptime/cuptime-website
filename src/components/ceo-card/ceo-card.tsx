@@ -59,11 +59,11 @@ const CeoCard = () => {
               <Image
                 src={ceoImage}
                 alt="CEO Image"
-                className="rounded-3xl outline-3 outline-offset-2 outline-cuptime-orange"
+                className="outline-cuptime-orange rounded-3xl outline-3 outline-offset-2"
                 width={350}
                 height={80}
               />
-              <div className="absolute bottom-0 left-0 w-full rounded-b-3 p-3">
+              <div className="rounded-b-3 absolute bottom-0 left-0 w-full p-3">
                 <div className="absolute bottom-0 left-0 w-full rounded-b-3xl bg-white/40 p-3 text-center">
                   <h3 className="text-cuptime-red text-sm font-bold italic md:text-xl">
                     Prabaharan Venugopal
@@ -76,25 +76,29 @@ const CeoCard = () => {
             </div>
           </motion.div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 rounded-lg p-6 md:p-16 lg:grid-cols-3">
-          <div className="relative">
+        {/* images card */}
+        <div className="grid grid-cols-1 gap-3 rounded-lg p-6 px-10 md:grid-cols-2 md:p-16 lg:grid-cols-3 justify-items-center items-center">
+          <div className="relative flex w-fit justify-center">
             <Image
               src={ceoImage}
               alt="CEO Image"
+              className="rounded-3xl"
               width={350}
-                height={80}
+              height={80}
             />
-            <div className="absolute bottom-0 left-0 w-auto rounded-b-3xl bg-white/40 p-3 text-center">
-              <h3 className="text-cuptime-red text-sm font-bold italic md:text-xl">
-                Ram
-              </h3>
-              <p className="text-sm font-bold text-zinc-700 md:text-lg">
-                Tech Team Advisor
-              </p>
+            <div className="rounded-b-3 absolute bottom-0 left-0 w-full p-3">
+              <div className="absolute bottom-0 left-0 w-full rounded-b-3xl bg-white/40 p-3 text-center">
+                <h3 className="text-cuptime-red text-sm font-bold italic md:text-xl">
+                  Prabaharan Venugopal
+                </h3>
+                <p className="text-sm font-bold text-zinc-700 md:text-lg">
+                  CEO Of Cuptime
+                </p>
+              </div>
             </div>
           </div>
 
-          <div className="relative">
+          {/* <div className="relative">
             <Image
               src={ceoImage}
               alt="Team Member"
@@ -109,22 +113,44 @@ const CeoCard = () => {
                 CEO Of Cuptime
               </p>
             </div>
-          </div>
-
-          <div className="relative">
+          </div> */}
+          <div className="relative flex w-fit justify-center">
             <Image
               src={ceoImage}
-              alt="Team Member"
-             width={350}
-                height={80}
+              alt="CEO Image"
+              className="rounded-3xl"
+              width={350}
+              height={80}
             />
-            <div className="absolute bottom-0 left-0 w-auto rounded-b-3xl bg-white/40 p-3 text-center">
-              <h3 className="text-cuptime-red text-sm font-bold italic md:text-xl">
-                Prabaharan Venugopal
-              </h3>
-              <p className="text-sm font-bold text-zinc-700 md:text-lg">
-                CEO Of Cuptime
-              </p>
+            <div className="rounded-b-3 absolute bottom-0 left-0 w-full p-3">
+              <div className="absolute bottom-0 left-0 w-full rounded-b-3xl bg-white/40 p-3 text-center">
+                <h3 className="text-cuptime-red text-sm font-bold italic md:text-xl">
+                  Prabaharan Venugopal
+                </h3>
+                <p className="text-sm font-bold text-zinc-700 md:text-lg">
+                  CEO Of Cuptime
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="relative flex w-fit justify-center">
+            <Image
+              src={ceoImage}
+              alt="CEO Image"
+              className="rounded-3xl"
+              width={350}
+              height={80}
+            />
+            <div className="rounded-b-3 absolute bottom-0 left-0 w-full p-3">
+              <div className="absolute bottom-0 left-0 w-full rounded-b-3xl bg-white/40 p-3 text-center">
+                <h3 className="text-cuptime-red text-sm font-bold italic md:text-xl">
+                  Prabaharan Venugopal
+                </h3>
+                <p className="text-sm font-bold text-zinc-700 md:text-lg">
+                  CEO Of Cuptime
+                </p>
+              </div>
             </div>
           </div>
         </div>

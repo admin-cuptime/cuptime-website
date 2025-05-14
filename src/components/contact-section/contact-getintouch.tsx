@@ -80,8 +80,11 @@ const GetinTouch = () => {
               </div>
             </div>
           </div>
+          {/* Vertical Line */}
+          <div className="border-cuptime-border h-auto border-l-2 sm:hidden md:block">
+          </div>
           {/* Right Content Section */}
-          <div className="row-span-2 rounded-lg md:rounded-4xl lg:col-span-2 lg:w-3/5">
+          <div className="row-span-2 rounded-lg md:rounded-4xl lg:col-span-2 lg:px-4 lg:w-3/5">
             <h3 className="mb-6 text-sm font-semibold text-zinc-900 lg:text-2xl">
               How can we help you?
             </h3>
