@@ -3,17 +3,9 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import cuptimemobileorder1 from '@/assets/png/Cuptimemobileorder.png';
-import cuptimemobileorder2 from '@/assets/png/Cuptimemobilescan.png';
-import cuptimemobileorder3 from '@/assets/png/Cuptimemobileorder.png';
-import cuptimemobileorder4 from '@/assets/png/Cuptimemobilescan.png';
-import cuptimemobileorder5 from '@/assets/png/Cuptimemobileorder.png';
-import cuptimemobileorder6 from '@/assets/png/Cuptimemobilescan.png';
-import cuptimemobileorder7 from '@/assets/png/Cuptimemobileorder.png';
-import cuptimemobileorder8 from '@/assets/png/Cuptimemobilescan.png';
 import { Check } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { images } from '@/assets/png/images';
-import { div } from 'framer-motion/client';
 
 type StandoutSectionProps = {
   title: string;

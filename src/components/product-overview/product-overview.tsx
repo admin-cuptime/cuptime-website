@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { images } from '@/assets/png/images';
 import { IconArrowUpRight } from '@tabler/icons-react';
+import FlaskHand from '@/assets/png/flask-hand.png';
 
 const products = [
   {
@@ -71,8 +72,28 @@ const ProductCard = ({ product }: { product: any }) => {
 const ProductOverview = () => {
   return (
     <section className="bg-cuptime-black relative flex flex-col items-center justify-center gap-12 py-20">
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{
+          type: 'spring',
+          damping: 12,
+          stiffness: 100,
+          delay: 0.4,
+        }}
+        className="hidden md:block absolute -top-18 right-0 z-10 w-40 transform drop-shadow-xl md:h-60"
+      >
+        <img
+          src={FlaskHand.src}
+          alt="Delivery Executive"
+          style={{
+            transform: '',
+          }}
+        />
+      </motion.div>
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute top-1/2 left-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-radial from-violet-500 to-blue-500 opacity-10 blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 h-full w-full md:h-96 md:w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-radial from-violet-500 to-blue-500 opacity-10 blur-3xl"></div>
         <div className="from-cuptime-orange to-cuptime-red absolute top-1/3 left-1/3 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-radial opacity-10 blur-3xl"></div>
       </div>
       <div className="flex flex-col gap-4">

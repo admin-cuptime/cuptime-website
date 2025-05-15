@@ -10,7 +10,7 @@ const testimonials = [
     quote:
       'Nice and good taste, fresh tea and coffee and delivery on time. Useful for my staff for ontime refreshments',
     name: 'SRINI Madurai',
-    title: 'A Tale of Two Cities',
+    title: 'Customer',
     rating: 4,
   },
   {

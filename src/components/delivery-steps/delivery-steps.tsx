@@ -11,6 +11,7 @@ import {
 } from '@tabler/icons-react';
 import React from 'react';
 import Leaf from '@/assets/png/LeafTimeline.png';
+import GirlVehicle from '@/assets/png/Girlbike.png';
 
 const deliveryStepsData = [
   {
@@ -59,6 +60,28 @@ const deliveryStepsData = [
 
 const DeliverySteps = () => {
   return (
+    <div className="relative">
+      {/*Vehicle Image*/}
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{
+          type: 'spring',
+          damping: 12,
+          stiffness: 100,
+          delay: 0.4,
+        }}
+      >
+        <img
+          src={GirlVehicle.src}
+          alt="Delivery Executive"
+          className="absolute md:top-[-200px] top-[-130px] left-0 z-20 w-40 drop-shadow-xl md:w-70"
+          style={{
+            transform: 'rotate(-2deg)',
+          }}
+        />
+      </motion.div>
     <section
       className="bg-cuptime-black flex flex-col items-center justify-center bg-no-repeat bg-right gap-16 bg-contain py-20 text-white"
       style={{ backgroundImage: `url(${Leaf.src})`, backgroundSize: "auto 350px" }}
@@ -128,6 +151,7 @@ const DeliverySteps = () => {
         </button>
       </div>
     </section>
+    </div>
   );
 };
 
