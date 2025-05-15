@@ -1,104 +1,50 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import MeasurementFlask from '@/assets/svg/measurement.svg';
 import SugarCubes from '@/assets/svg/sugar-cube.svg';
 import ServedHot from '@/assets/svg/served-hot.svg';
 import NoChemicals from '@/assets/svg/no-chemicals.svg';
-import { images } from '@/assets/png/images';
+import CupWhite from '@/assets/svg/cup-white.svg';
 import { GlareCard } from '../ui/glare-card';
 import { CardBody, CardContainer } from '../ui/3d-card';
+import { fetchProductsData } from '@/app/api/products';
 
 interface Product {
   name: string;
   description: string;
-  image: any;
+  image: string;
   measurement: string;
   sugar: string;
   isServedHot: boolean;
   isNoChemicals: boolean;
 }
 
-const products: Product[] = [
-  {
-    name: 'Karupatti Sukku Kaapi',
-    description:
-      'A traditional herbal decoction brewed with palm jaggery and dry ginger — perfect for boosting immunity.',
-    image: images.product.productTea,
-    measurement: '350ml, 500ml & 1000ml Flask',
-    sugar: 'With/Without Sugar',
-    isServedHot: true,
-    isNoChemicals: true,
-  },
-  {
-    name: 'Karupatti Sukku Kaapi',
-    description:
-      'A traditional herbal decoction brewed with palm jaggery and dry ginger — perfect for boosting immunity.',
-    image: images.product.productCoffee,
-    measurement: '350ml, 500ml & 1000ml Flask',
-    sugar: 'With/Without Sugar',
-    isServedHot: true,
-    isNoChemicals: true,
-  },
-  {
-    name: 'Karupatti Sukku Kaapi',
-    description:
-      'A traditional herbal decoction brewed with palm jaggery and dry ginger — perfect for boosting immunity.',
-    image: images.product.productBerry,
-    measurement: '350ml, 500ml & 1000ml Flask',
-    sugar: 'With/Without Sugar',
-    isServedHot: true,
-    isNoChemicals: true,
-  },
-  {
-    name: 'Karupatti Sukku Kaapi',
-    description:
-      'A traditional herbal decoction brewed with palm jaggery and dry ginger — perfect for boosting immunity.',
-    image: images.product.productCane,
-    measurement: '350ml, 500ml & 1000ml Flask',
-    sugar: 'With/Without Sugar',
-    isServedHot: true,
-    isNoChemicals: true,
-  },
-  {
-    name: 'Karupatti Sukku Kaapi',
-    description:
-      'A traditional herbal decoction brewed with palm jaggery and dry ginger — perfect for boosting immunity.',
-    image: images.product.productRose,
-    measurement: '350ml, 500ml & 1000ml Flask',
-    sugar: 'With/Without Sugar',
-    isServedHot: true,
-    isNoChemicals: true,
-  },
-  {
-    name: 'Karupatti Sukku Kaapi',
-    description:
-      'A traditional herbal decoction brewed with palm jaggery and dry ginger — perfect for boosting immunity.',
-    image: images.product.productSukku,
-    measurement: '350ml, 500ml & 1000ml Flask',
-    sugar: 'With/Without Sugar',
-    isServedHot: true,
-    isNoChemicals: true,
-  },
-  {
-    name: 'Karupatti Sukku Kaapi',
-    description:
-      'A traditional herbal decoction brewed with palm jaggery and dry ginger — perfect for boosting immunity.',
-    image: images.product.productTea,
-    measurement: '350ml, 500ml & 1000ml Flask',
-    sugar: 'With/Without Sugar',
-    isServedHot: true,
-    isNoChemicals: true,
-  },
-  {
-    name: 'Karupatti Sukku Kaapi',
-    description:
-      'A traditional herbal decoction brewed with palm jaggery and dry ginger — perfect for boosting immunity.',
-    image: images.product.productCoffee,
-    measurement: '350ml, 500ml & 1000ml Flask',
-    sugar: 'With/Without Sugar',
-    isServedHot: true,
-    isNoChemicals: true,
-  },
-];
+const SkeletonCard = () => (
+  <CardContainer>
+    <CardBody className="flex h-full w-full flex-col items-center gap-3 rounded-lg bg-white p-3 drop-shadow-xl select-none md:h-[300px] lg:w-[560px] md:flex-row md:p-5 animate-pulse">
+      <div className="h-[200px] w-full shrink-0 rounded-lg bg-gray-200 flex items-center justify-center md:h-full md:w-[230px] md:bg-cover">
+        <CupWhite className="h-16 w-16 md:h-24 md:w-24 text-gray-300 animate-pulse" />
+      </div>
+      <div className="flex flex-col gap-2 md:gap-4 w-full">
+        <div className="flex flex-col gap-2">
+          <div className="h-6 w-1/2 bg-gray-200 rounded" />
+          <div className="h-4 w-3/4 bg-gray-200 rounded" />
+        </div>
+        <div className="flex items-center gap-2">
+          <div className="h-5 w-5 bg-gray-200 rounded" />
+          <div className="h-4 w-24 bg-gray-200 rounded" />
+        </div>
+        <div className="flex items-center gap-2">
+          <div className="h-5 w-5 bg-gray-200 rounded" />
+          <div className="h-4 w-24 bg-gray-200 rounded" />
+        </div>
+        <div className="flex items-center gap-2">
+          <div className="h-5 w-20 bg-gray-200 rounded" />
+          <div className="h-5 w-20 bg-gray-200 rounded" />
+        </div>
+      </div>
+    </CardBody>
+  </CardContainer>
+);
 
 const ProductCard = ({ product }: { product: Product }) => {
   return (
@@ -106,7 +52,7 @@ const ProductCard = ({ product }: { product: Product }) => {
       <CardBody className="flex h-full w-full flex-col items-center gap-3 rounded-lg bg-white p-3 drop-shadow-xl transition-all select-none hover:drop-shadow-2xl md:h-[300px] lg:w-[560px] md:flex-row md:p-5">
         <div
           className="h-[200px] w-full shrink-0 rounded-lg bg-contain bg-center bg-no-repeat md:h-full md:w-[230px] md:bg-cover"
-          style={{ backgroundImage: `url(${product.image.src})` }}
+          style={{ backgroundImage: `url(${product.image})` }}
         />
         <div className="flex flex-col gap-2 md:gap-4">
           <div className="flex flex-col">
@@ -145,6 +91,27 @@ const ProductCard = ({ product }: { product: Product }) => {
 };
 
 const ProductsSection = () => {
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      const data = await fetchProductsData();
+      if (Array.isArray(data)) {
+        setProducts(
+          data.map((item) => ({
+            ...item,
+            isServedHot: item.isServedHot === 'TRUE',
+            isNoChemicals: item.isNoChemicals === 'TRUE',
+          }))
+        );
+      }
+      setLoading(false);
+    };
+    fetchData();
+  }, []);
+
   return (
     <section className="relative mx-auto max-w-[90%] pb-20">
       <div className="pointer-events-none absolute inset-0">
@@ -152,14 +119,20 @@ const ProductsSection = () => {
         <div className="from-cuptime-orange to-cuptime-red absolute top-1/3 left-1/3 h-[60%] w-[60%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-radial opacity-10 blur-3xl"></div>
       </div>
       <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
-        {products.map((product, index) => (
-          <div
-            key={index}
-            className={`flex ${index % 2 === 0 ? 'justify-end' : 'justify-start'}`}
-          >
-            <ProductCard product={product} />
-          </div>
-        ))}
+        {loading
+          ? Array.from({ length: 4 }).map((_, idx) => (
+              <div key={idx} className={`flex ${idx % 2 === 0 ? 'justify-end' : 'justify-start'}`}>
+                <SkeletonCard />
+              </div>
+            ))
+          : products.map((product, index) => (
+              <div
+                key={index}
+                className={`flex ${index % 2 === 0 ? 'justify-end' : 'justify-start'}`}
+              >
+                <ProductCard product={product} />
+              </div>
+            ))}
       </div>
     </section>
   );
