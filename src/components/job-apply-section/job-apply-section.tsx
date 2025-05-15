@@ -18,11 +18,10 @@ const JobCard = ({ job, index }: { job: Job; index: number }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="flex flex-col items-start gap-4 rounded-xl bg-white p-6 drop-shadow-xl transition-shadow md:flex-row md:items-center md:justify-between md:gap-8 md:px-10"
+      className="flex flex-col items-start gap-4 rounded-xl bg-white p-6 drop-shadow-xl transition-all hover:drop-shadow-2xl md:flex-row md:items-center md:justify-between md:gap-8 md:px-10"
     >
-      {/* Left section: icon + job details */}
       <div className="flex flex-row items-start gap-4">
-        <div className="mt-1 h-6 w-6 text-gray-800">
+        <div className="mt-1 h-6 w-6 shrink-0 text-gray-800">
           <MySVGBag />
         </div>
         <div className="flex flex-col space-y-1">
@@ -45,7 +44,6 @@ const JobCard = ({ job, index }: { job: Job; index: number }) => {
         </div>
       </div>
 
-      {/* Right section: Apply Button */}
       <motion.div
         initial={{ opacity: 0, x: 50 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -65,6 +63,7 @@ const JobCard = ({ job, index }: { job: Job; index: number }) => {
     </motion.div>
   );
 };
+
 const JobApplySection = () => {
   const jobsData = [
     {

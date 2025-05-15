@@ -29,7 +29,7 @@ const CuptimeJobApplication = () => {
 
   return (
     <section>
-      <div className="flex flex-col gap-10 px-2 py-12 md:px-8">
+      <div className="flex flex-col gap-10 px-2 md:px-8">
         <div className="flex flex-col justify-center gap-4 p-4 md:p-12 lg:flex-row lg:items-center">
           {/* summary section */}
           <div className="space-y-2 text-sm font-medium md:space-y-4 md:text-base lg:w-1/3">

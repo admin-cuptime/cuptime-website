@@ -125,11 +125,11 @@ const Header = () => {
               }}
               className={`hover:text-cuptime-red flex cursor-pointer items-center pb-1 ${
                 moreLinks.some((link) => pathname === link.href)
-                  ? 'border-cuptime-red border-b-2 font-semibold ' +
+                  ? 'border-cuptime-red border-b-2 font-semibold text-zinc-900' +
                     (isAboutUsPage && !scrolled ? 'text-white' : '')
                   : isAboutUsPage && !scrolled
                     ? 'text-white'
-                    : ''
+                    : 'text-zinc-900'
               }`}
               aria-expanded={moreMenuOpen}
               aria-haspopup="true"

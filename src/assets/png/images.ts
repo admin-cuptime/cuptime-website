@@ -34,6 +34,7 @@ import screenshot2 from '@/assets/png/screen-2.png';
 import screenshot3 from '@/assets/png/screen-3.png';
 import screenshot4 from '@/assets/png/screen-4.png';
 import screenshot5 from '@/assets/png/screen-5.png';
+import printerArtwork from '@/assets/png/bag&printer-bg.png';
 
 export const images = {
   heroSection: {
@@ -95,5 +96,8 @@ export const images = {
     screenshot3,
     screenshot4,
     screenshot5,
+  },
+  backgroundArtwork: {
+    printerArtwork,
   },
 } as const;
