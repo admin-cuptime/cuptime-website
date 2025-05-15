@@ -59,8 +59,7 @@ const FicoFranchise = () => {
                 What You Need to Get Started
               </h2>
               <p className="py-1.5 text-base text-white md:py-3 md:text-xl">
-                Join Cuptime’s growing franchise network with our flexible,
-                profitable FICO model
+                Join Cup Time’s growing franchise network with our flexible, profitable franchise model.
               </p>
               <div className="flex flex-col items-start justify-center gap-3">
                 {ficoJourney.map((ficomodel, index) => (

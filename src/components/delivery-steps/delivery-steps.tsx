@@ -23,7 +23,7 @@ const deliveryStepsData = [
   },
   {
     icon: <IconTeapot className="h-7 w-7" />,
-    title: 'Prepare Fresh Batches',
+    title: 'Prepare Fresh Batches (Twice in a Day)',
     date: 'Step 2',
     description:
       'Freshly made beverages are poured into food-grade, sanitized flasks to retain heat and hygiene.',
