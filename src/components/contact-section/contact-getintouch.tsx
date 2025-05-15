@@ -12,14 +12,57 @@ import ContactBusinessCard from '@/components/contact-businesscard/contact-busin
 
 const GetinTouch = () => {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
+  const [form, setForm] = useState({
+    name: '',
+    'mobile-number': '',
+    email: '',
+    'company-name': '',
+    message: '',
+  });
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   const options = ['Price', 'Services we offer', 'Call Back', 'Others'];
 
   const handleCheckboxChange = (option: string) => {
-    if (selectedOption === option) {
+    setSelectedOption(selectedOption === option ? null : option);
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setSuccess(null);
+    setError(null);
+
+    try {
+      await fetch('https://script.google.com/macros/s/AKfycbxGp1oat2ce5Yh6lrnvcg6lRj8DcOYgHzGlgHErRqPWdHili0H07TkggIJArz8vJMlrRw/exec', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        mode: 'no-cors',
+        body: JSON.stringify({
+          ...form,
+          reason: selectedOption || '',
+        }),
+      });
+
+      setSuccess('Thank you! Your message has been sent. We will reach out to you soon.');
+      setForm({
+        name: '',
+        'mobile-number': '',
+        email: '',
+        'company-name': '',
+        message: '',
+      });
       setSelectedOption(null);
-    } else {
-      setSelectedOption(option);
+    } catch (err: any) {
+      setError(`Network error. Please try again. ${err?.message ? 'Details: ' + err.message : ''}`);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -88,7 +131,7 @@ const GetinTouch = () => {
             <h3 className="mb-6 text-sm font-semibold text-zinc-900 lg:text-2xl">
               How can we help you?
             </h3>
-            <form className="space-y-6 text-sm md:text-base">
+            <form className="space-y-6 text-sm md:text-base" onSubmit={handleSubmit}>
               <div className="flex flex-wrap gap-4">
                 {options.map((option) => (
                   <label key={option} className="flex items-center">
@@ -108,36 +151,61 @@ const GetinTouch = () => {
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 <input
                   type="text"
+                  name="name"
                   placeholder="Name"
+                  value={form.name}
+                  onChange={handleChange}
                   className="border-cuptime-gray focus:border-cuptime-red w-full rounded-md border-2 px-4 py-3 focus:outline-none"
+                  required
                 />
                 <input
                   type="tel"
+                  name="mobile-number"
                   placeholder="Mobile Number"
+                  value={form['mobile-number']}
+                  onChange={handleChange}
                   className="border-cuptime-gray focus:border-cuptime-red w-full rounded-md border-2 px-4 py-3 focus:outline-none"
+                  required
                 />
               </div>
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 <input
                   type="text"
+                  name="company-name"
                   placeholder="Company Name"
+                  value={form['company-name']}
+                  onChange={handleChange}
                   className="border-cuptime-gray focus:border-cuptime-red w-full rounded-md border-2 px-4 py-3 focus:outline-none"
                 />
                 <input
                   type="email"
+                  name="email"
                   placeholder="Email"
+                  value={form.email}
+                  onChange={handleChange}
                   className="border-cuptime-gray focus:border-cuptime-red w-full rounded-md border-2 px-4 py-3 focus:outline-none"
+                  required
                 />
               </div>
               <textarea
+                name="message"
                 placeholder="Message"
                 rows={5}
+                value={form.message}
+                onChange={handleChange}
                 className="border-cuptime-gray focus:border-cuptime-red w-full rounded-md border-2 px-4 py-3 focus:outline-none"
               ></textarea>
 
+              {success && <div className="text-green-600">{success}</div>}
+              {error && <div className="text-red-600">{error}</div>}
+
               <div className="text-center">
-                <button className="from-cuptime-orange to-cuptime-red rounded-lg bg-gradient-to-tr px-4 py-3 text-sm font-semibold text-white md:py-3 md:text-base">
-                  Contact to Cuptime
+                <button
+                  type="submit"
+                  className="from-cuptime-orange to-cuptime-red rounded-lg bg-gradient-to-tr px-4 py-3 text-sm font-semibold text-white md:py-3 md:text-base"
+                  disabled={loading}
+                >
+                  {loading ? 'Sending...' : 'Contact to Cuptime'}
                 </button>
               </div>
             </form>
