@@ -70,13 +70,13 @@ const DeliverySteps = () => {
           type: 'spring',
           damping: 12,
           stiffness: 100,
-          delay: 0.4,
+          delay: 0.6,
         }}
       >
         <img
           src={GirlVehicle.src}
           alt="Delivery Executive"
-          className="absolute md:top-[-200px] top-[-130px] left-0 z-20 w-40 drop-shadow-xl md:w-70"
+          className="absolute md:top-[-200px] top-[-130px] left-0 z-10 w-40 drop-shadow-xl md:w-70"
           style={{
             transform: 'rotate(-2deg)',
           }}
