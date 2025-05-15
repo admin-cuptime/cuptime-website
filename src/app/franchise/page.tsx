@@ -1,6 +1,6 @@
 'use client';
 
-import CuptimeImageMedia from '@/components/cuptime-image-section/cuptime-images';
+import CuptimeImageMedia from '@/components/cuptime-image-media/cuptime-image-media';
 import CuptimeRoadmap from '@/components/cuptime-roadmap/cuptime-roadmap';
 import FicoFranchise from '@/components/entrepreneurial-model-2/fico-franchise';
 import FranchiseSteps from '@/components/franchise-steps/franchise-steps';

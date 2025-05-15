@@ -59,7 +59,7 @@ const CuptimeImageMedia = () => {
               <CarouselItem key={groupIndex} className="w-full">
                 
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                  {group.map(( img, index) => (
+                  {group.map(( img: any, index: any) => (
                     <div
                       key={index}
                       className=" overflow-hidden"

@@ -36,6 +36,7 @@ import screenshot4 from '@/assets/png/screen-4.png';
 import screenshot5 from '@/assets/png/screen-5.png';
 import flaskhand from '@/assets/png/flask-hand.png'
 import printerArtwork from '@/assets/png/bag&printer-bg.png';
+import gallery1 from '@/assets/png/event-gallery-1.png';
 
 export const images = {
   heroSection: {
@@ -90,6 +91,7 @@ export const images = {
   },
   event: {
     friends,
+    gallery1,
   },
   appScreenshot: {
     screenshot1,
