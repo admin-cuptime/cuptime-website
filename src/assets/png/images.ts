@@ -88,7 +88,7 @@ export const images = {
   },
   event: {
     friends,
-  }
+  },
   appScreenshot: {
     screenshot1,
     screenshot2,
