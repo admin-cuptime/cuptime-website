@@ -1,53 +1,18 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { images } from '@/assets/png/images';
 import { IconArrowUpRight } from '@tabler/icons-react';
 import FlaskHand from '@/assets/png/flask-hand.png';
+import { fetchProductsData } from '@/app/api/products';
 
-const products = [
-  {
-    title: 'Tea',
-    description: '350ml, 500ml & 1000ml Flask With/Without Sugar',
-    image: images.product.productTea,
-  },
-  {
-    title: 'Coffee',
-    description: '350ml, 500ml & 1000ml Flask With/Without Sugar',
-    image: images.product.productCoffee,
-  },
-  {
-    title: 'Hot Chocolate',
-    description: '350ml, 500ml & 1000ml Flask With/Without Sugar',
-    image: images.product.productRose,
-  },
-  {
-    title: 'Matcha Latte',
-    description: '350ml, 500ml & 1000ml Flask With/Without Sugar',
-    image: images.product.productBerry,
-  },
-  {
-    title: 'Chai',
-    description: '350ml, 500ml & 1000ml Flask With/Without Sugar',
-    image: images.product.productSukku,
-  },
-  {
-    title: 'Herbal Infusion',
-    description: '350ml, 500ml & 1000ml Flask With/Without Sugar',
-    image: images.product.productCane,
-  },
-  {
-    title: 'Tea',
-    description: '350ml, 500ml & 1000ml Flask With/Without Sugar',
-    image: images.product.productTea,
-  },
-  {
-    title: 'Hot Chocolate',
-    description: '350ml, 500ml & 1000ml Flask With/Without Sugar',
-    image: images.product.productRose,
-  },
-];
+const SkeletonCard = () => (
+  <div className="bg-zinc-800 rounded-xl w-full h-[300px] md:w-[250px] animate-pulse flex flex-col items-center justify-center">
+    <div className="h-[200px] w-[200px] bg-zinc-700 rounded mb-4" />
+    <div className="h-6 w-1/2 bg-zinc-700 rounded mb-2" />
+    <div className="h-4 w-3/4 bg-zinc-700 rounded" />
+  </div>
+);
 
 const ProductCard = ({ product }: { product: any }) => {
   return (
@@ -57,10 +22,10 @@ const ProductCard = ({ product }: { product: any }) => {
       </div>
       <div
         className="h-[200px] w-[200px] bg-contain bg-center bg-no-repeat transition-all duration-300 md:group-hover:h-[160px] md:group-hover:w-[160px]"
-        style={{ backgroundImage: `url(${product.image.src})` }}
+        style={{ backgroundImage: `url(${product.image})` }}
       ></div>
       <div className="flex w-full flex-col items-center justify-center rounded-xl bg-white/10 p-2 text-white">
-        <div className="text-lg font-semibold">{product.title}</div>
+        <div className="text-lg font-semibold">{product.name}</div>
         <div className="flex flex-col items-center justify-center overflow-hidden text-center text-xs transition-all duration-300 md:max-h-0 md:opacity-0 md:group-hover:max-h-20 md:group-hover:opacity-100">
           {product.description}
         </div>
@@ -70,6 +35,21 @@ const ProductCard = ({ product }: { product: any }) => {
 };
 
 const ProductOverview = () => {
+  const [products, setProducts] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      const data = await fetchProductsData();
+      if (Array.isArray(data)) {
+        setProducts(data);
+      }
+      setLoading(false);
+    };
+    fetchData();
+  }, []);
+
   return (
     <section className="bg-cuptime-black relative flex flex-col items-center justify-center gap-12 py-20">
       <motion.div
@@ -119,9 +99,11 @@ const ProductOverview = () => {
       </div>
 
       <div className="mx-auto grid w-full grid-cols-1 place-items-center items-center justify-center gap-8 px-2 md:w-[80%] md:grid-cols-2 md:px-0 lg:grid-cols-4">
-        {products.map((product, index) => (
-          <ProductCard key={index} product={product} />
-        ))}
+        {loading
+          ? Array.from({ length: 8 }).map((_, idx) => <SkeletonCard key={idx} />)
+          : products.map((product, index) => (
+              <ProductCard key={index} product={product} />
+            ))}
       </div>
 
       <div>
