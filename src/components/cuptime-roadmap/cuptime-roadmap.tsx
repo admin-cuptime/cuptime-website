@@ -9,6 +9,16 @@ const CuptimeRoadmap = () => {
 
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
+  const [form, setForm] = useState({
+    name: '',
+    'mobile-number': '',
+    email: '',
+    'company-name': '',
+    message: '',
+  });
+  const [success, setSuccess] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
   const options = ['Price', 'Services we offer', 'Call Back', 'Others'];
 
   const handleCheckboxChange = (option: string) => {
@@ -18,12 +28,43 @@ const CuptimeRoadmap = () => {
       setSelectedOption(option);
     }
   };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+    setSuccess(null);
+    setError(null);
+
+    try {
+      await fetch('https://script.google.com/macros/s/AKfycbxGp1oat2ce5Yh6lrnvcg6lRj8DcOYgHzGlgHErRqPWdHili0H07TkggIJArz8vJMlrRw/exec', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        mode: 'no-cors',
+        body: JSON.stringify({
+          ...form,
+          reason: selectedOption || '',
+        }),
+      });
+
+      setSuccess('Thank you! Your message has been sent. We will reach out to you soon.');
+      setForm({
+        name: '',
+        'mobile-number': '',
+        email: '',
+        'company-name': '',
+        message: '',
+      });
+      setSelectedOption(null);
+      setIsSubmitted(true);
+    } catch (err: any) {
+      setError(`Network error. Please try again. ${err?.message ? 'Details: ' + err.message : ''}`);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -33,7 +74,6 @@ const CuptimeRoadmap = () => {
           Reach Out to CupTime
         </h2>
         <div className="mx-auto grid grid-cols-1 gap-8 overflow-hidden md:px-36 lg:grid-cols-3">
-          {/* Left Section - Contact Form (01) - Spans full height */}
           <div className="row-span-2 rounded-lg md:rounded-4xl border-2 bg-white p-3 shadow-cuptime-gray md:p-8 lg:col-span-2">
             <h3 className="mb-6 text-sm font-semibold text-zinc-900 lg:text-2xl">
               How can we help you?
@@ -58,43 +98,73 @@ const CuptimeRoadmap = () => {
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 <input
                   type="text"
+                  name="name"
                   placeholder="Name"
+                  value={form.name}
+                  onChange={handleChange}
                   className="w-full rounded-md border-2 border-cuptime-gray px-4 py-2 focus:border-cuptime-red focus:outline-none"
+                  required
                 />
                 <input
                   type="tel"
+                  name="mobile-number"
                   placeholder="Mobile Number"
+                  value={form['mobile-number']}
+                  onChange={e => {
+                    // Only allow numbers and +
+                    const value = e.target.value.replace(/[^0-9+]/g, '');
+                    setForm({ ...form, 'mobile-number': value });
+                  }}
+                  pattern="^[0-9+]*$"
+                  inputMode="tel"
                   className="w-full rounded-md border-2 border-cuptime-gray px-4 py-2 focus:border-cuptime-red focus:outline-none"
+                  required
                 />
               </div>
 
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 <input
                   type="text"
+                  name="company-name"
                   placeholder="Company Name"
+                  value={form['company-name']}
+                  onChange={handleChange}
                   className="w-full rounded-md border-2 border-cuptime-gray px-4 py-2 focus:border-cuptime-red focus:outline-none"
                 />
                 <input
                   type="email"
+                  name="email"
                   placeholder="Email"
+                  value={form.email}
+                  onChange={handleChange}
                   className="w-full rounded-md border-2 border-cuptime-gray px-4 py-2 focus:border-cuptime-red focus:outline-none"
+                  required
                 />
               </div>
               <textarea
+                name="message"
                 placeholder="Message"
                 rows={5}
+                value={form.message}
+                onChange={handleChange}
+                maxLength={250}
                 className="w-full rounded-md border-2 border-cuptime-gray px-4 py-2 focus:border-cuptime-red focus:outline-none"
               ></textarea>
 
+              {success && <div className="text-green-600">{success}</div>}
+              {error && <div className="text-red-600">{error}</div>}
+
               <div className="text-center">
-                <button className="from-cuptime-orange to-cuptime-red rounded-lg bg-gradient-to-tr px-4 py-2 text-sm font-semibold text-white md:py-3 md:text-base">
-                  Contact to Cuptime
+                <button
+                  type="submit"
+                  className="from-cuptime-orange to-cuptime-red rounded-lg bg-gradient-to-tr px-4 py-2 text-sm font-semibold text-white md:py-3 md:text-base"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Sending...' : 'Contact to Cuptime'}
                 </button>
               </div>
             </form>
           </div>
-
-          {/* Right Top Section - Map (02) */}
           <div className="min-h-72 overflow-hidden rounded-4xl bg-white border-cuptime-gray border-2">
             <iframe
               title="Location Map"
@@ -106,8 +176,6 @@ const CuptimeRoadmap = () => {
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
-          {/* Right Bottom Section - Address (03) */}
-          {/* <div className="bg-white p-6 rounded-lg shadow-sm"> */}
           <div>
             <div className="flex flex-row gap-3">
               <div className="h-auto w-7">
