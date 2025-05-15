@@ -270,7 +270,7 @@ const HeroSection = () => {
                 <div className="pointer-events-none absolute inset-0">
                   <div className="absolute top-1/6 left-1/2 md:top-1/3 md:left-1/3 h-[80%] md:h-[500px] w-[80%] md:w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-radial from-white to-white/70 blur-2xl"></div>
                 </div>
-                <div className="relative w-full p-4 md:p-12 md:w-1/2 text-center md:text-left">
+                <div className="relative w-full p-5 lg:p-16 md:w-1/2 text-center md:text-left">
                   <div
                     className="flex flex-col gap-4 bg-cover bg-left bg-no-repeat"
                     
