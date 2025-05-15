@@ -29,6 +29,11 @@ import productCane from '@/assets/png/sugar-juice.png';
 import contactBanner from '@/assets/png/get-in-touch.png';
 import friends from '@/assets/png/event-hero-bg.png';
 import cuptimeMobileSplash from '@/assets/png/cuptime-mobile-splash.png';
+import screenshot1 from '@/assets/png/screen-1.png';
+import screenshot2 from '@/assets/png/screen-2.png';
+import screenshot3 from '@/assets/png/screen-3.png';
+import screenshot4 from '@/assets/png/screen-4.png';
+import screenshot5 from '@/assets/png/screen-5.png';
 
 export const images = {
   heroSection: {
@@ -84,4 +89,11 @@ export const images = {
   event: {
     friends,
   }
+  appScreenshot: {
+    screenshot1,
+    screenshot2,
+    screenshot3,
+    screenshot4,
+    screenshot5,
+  },
 } as const;

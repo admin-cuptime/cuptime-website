@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { motion } from 'framer-motion';
 import Franchisebg from '@/assets/png/franchise.png';
 import deliveryImage from '@/assets/png/trust-delivery-time.png';
 
@@ -15,26 +16,65 @@ const FranchiseHero = () => {
         }}
       >
         <div className="flex h-full flex-col items-center justify-center gap-4 md:flex-row">
-          <div className="flex w-full flex-col gap-4 md:gap-8 text-center md:text-left">
-            <div className="text-3xl font-bold text-zinc-900 md:text-4xl lg:text-5xl">
+          <div className="flex w-full flex-col gap-4 text-center md:gap-8 md:text-left">
+            <motion.div
+              className="text-3xl font-bold text-zinc-900 md:text-4xl lg:text-5xl"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                type: 'spring',
+                damping: 12,
+                stiffness: 100,
+              }}
+            >
               Partner with Us – Serve {``} Tradition, Brew Success
-            </div>
-            <div className="text-base md:text-lg">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                type: 'spring',
+                damping: 12,
+                stiffness: 100,
+                delay: 0.2,
+              }}
+              className="text-base md:text-lg"
+            >
               Become a part of the CupTime family. Bring authentic South Indian
               beverages to your community with a proven business model rooted in
               tradition and trust.
-            </div>
+            </motion.div>
 
-            <div className="flex flex-col items-center gap-2 sm:flex-row">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                type: 'spring',
+                damping: 12,
+                stiffness: 100,
+                delay: 0.4,
+              }}
+              className="flex flex-col items-center gap-2 sm:flex-row"
+            >
               <button className="bg-cuptime-black w-50 rounded-lg px-4 py-2 text-sm font-semibold text-white md:px-6 md:py-3 md:text-base">
                 Apply Now
               </button>
               <button className="from-cuptime-orange to-cuptime-red w-50 rounded-lg bg-gradient-to-tr px-4 py-2 text-sm font-semibold text-white md:w-60 md:py-3 md:text-base">
                 Download Franchise Kit
               </button>
-            </div>
+            </motion.div>
           </div>
-          <div className="w-full">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              type: 'spring',
+              damping: 12,
+              stiffness: 100,
+              delay: 0.6,
+            }}
+            className="w-full"
+          >
             <div className="image-section flex items-center justify-between">
               <img
                 src={deliveryImage.src}
@@ -42,7 +82,7 @@ const FranchiseHero = () => {
                 className="h-auto w-full rounded-lg brightness-70"
               />
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
