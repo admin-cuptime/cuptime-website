@@ -93,7 +93,7 @@ const Header = () => {
           </motion.div>
         </Link>
       </div>
-      {/* Desktop Navigation */}
+      {/* Desktop Navigation starts here ma dude*/}
       <div className="hidden text-sm md:text-sm lg:block lg:text-base">
         <ul className="flex gap-8">
           {navLinks.map(({ href, label }) => (
@@ -186,7 +186,7 @@ const Header = () => {
           Order Now
         </button>
       </div>
-      {/* Mobile Navigation */}
+      {/* Mobile Navigation starts here ma dude */}
       <div className="lg:hidden">
         <Sheet>
           <SheetTrigger asChild>
@@ -220,8 +220,8 @@ const Header = () => {
                     <DropdownMenuTrigger asChild>
                       <button
                         className="hover:text-cuptime-red flex w-full cursor-pointer items-center gap-1 text-left"
-                        aria-expanded={mobileMoreOpen} // Add this
-                        aria-haspopup="true" // Add this
+                        aria-expanded={mobileMoreOpen}
+                        aria-haspopup="true"
                       >
                         <span className="font-semibold">More</span>
                         <ChevronDown
