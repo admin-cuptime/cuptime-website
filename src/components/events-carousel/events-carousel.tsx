@@ -121,14 +121,14 @@ const EventsCarousel = () => {
                     className="h-full w-full object-cover"
                   />
                   <div className="bg-cuptime-red absolute bottom-4 left-4 max-w-xs rounded-bl-2xl rounded-tr-2xl p-4 text-white flex flex-col gap-2">
-                    <h3 className="text-lg md:text-xl font-bold">{event.title}</h3>
+                    <h3 className="text-xs md:text-xl font-bold">{event.title}</h3>
                     <div className="flex items-center gap-1">
                       <Calendar className="size-4" />
-                      <span className="text-sm">{event.date}</span>
+                      <span className="text-xs md:text-sm">{event.date}</span>
                     </div>
                     <div className="flex items-center gap-1">
                       <MapPin className="size-4" />
-                      <span className="text-sm">{event.location}</span>
+                      <span className="text-xs md:text-sm">{event.location}</span>
                     </div>
                   </div>
                 </div>
