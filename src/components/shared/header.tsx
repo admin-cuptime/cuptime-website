@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -6,31 +6,31 @@ import CupTimeLogo from '@/assets/svg/cuptime-logo.svg';
 import { Button } from '../ui/button';
 import { Menu, ChevronDown, ArrowRight, ChevronRight } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { 
+import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger 
+  DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { motion } from 'framer-motion';
 import { useEffect, useState, useRef } from 'react';
 
 const navLinks = [
-  { href: "/our-products", label: "Our Products" },
-  { href: "/franchise", label: "Franchise" },
-  { href: "/about-us", label: "About Us" },
-  { href: "/cup-time-mobile", label: "CupTime Mobile" },
-  { href: "/contact-us", label: "Contact Us" },
+  { href: '/our-products', label: 'Our Products' },
+  { href: '/franchise', label: 'Franchise' },
+  { href: '/about-us', label: 'About Us' },
+  { href: '/cup-time-mobile', label: 'CupTime Mobile' },
+  { href: '/contact-us', label: 'Contact Us' },
 ];
 
 const moreLinks = [
-  { href: "/careers", label: "Our Careers" },
-  { href: "/blogs", label: "Blog" },
-  { href: "/events", label: "Events" },
-  { href: "/technology", label: "Technology" },
-  { href: "/privacy-policy", label: "Privacy Policy" },
-  { href: "/terms-conditions", label: "Terms & Conditions" },
-  { href: "/cancellation-refund", label: "Cancellation & Refund" },
+  { href: '/careers', label: 'Our Careers' },
+  { href: '/blogs', label: 'Blog' },
+  { href: '/events', label: 'Events' },
+  { href: '/technology', label: 'Technology' },
+  { href: '/privacy-policy', label: 'Privacy Policy' },
+  { href: '/terms-conditions', label: 'Terms & Conditions' },
+  { href: '/cancellation-refund', label: 'Cancellation & Refund' },
 ];
 
 const Header = () => {
@@ -39,58 +39,62 @@ const Header = () => {
   const [moreMenuOpen, setMoreMenuOpen] = useState(false);
   const [mobileMoreOpen, setMobileMoreOpen] = useState(false);
   const moreMenuRef = useRef<HTMLLIElement | null>(null);
-  const isAboutUsPage = pathname === "/about-us";
-  
+  const isAboutUsPage = pathname === '/about-us';
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-    
+
     window.addEventListener('scroll', handleScroll);
-    
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-  
+
   useEffect(() => {
     const handleClickOutside = (event: any) => {
       if (moreMenuRef.current && !moreMenuRef.current.contains(event.target)) {
         setMoreMenuOpen(false);
       }
     };
-    
+
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [moreMenuRef]);
-  
-  const navBackground = isAboutUsPage 
-    ? scrolled 
-      ? "bg-white" 
-      : "bg-transparent"
-    : "bg-white";
-  
+
+  const navBackground = isAboutUsPage
+    ? scrolled
+      ? 'bg-white'
+      : 'bg-transparent'
+    : 'bg-white';
+
   return (
-    <nav className={`max-w-screen-3xl h-16 sticky top-0 z-20 mx-auto flex items-center justify-between ${navBackground} px-4 lg:px-24 transition-colors duration-300`}>
-      <div className='transition-all hover:brightness-90'>
+    <nav
+      className={`max-w-screen-3xl sticky top-0 z-20 mx-auto flex h-16 items-center justify-between ${navBackground} px-4 transition-colors duration-300 lg:px-24`}
+    >
+      <div className="transition-all hover:brightness-90">
         <Link href="/">
           <motion.div
             whileTap={{ scale: 0.9 }}
             whileHover={{ scale: 1.1 }}
-            transition={{ 
-              type: "spring", 
-              stiffness: 300, 
-              damping: 10 
+            transition={{
+              type: 'spring',
+              stiffness: 300,
+              damping: 10,
             }}
           >
-            <CupTimeLogo className={`h-auto w-16 ${isAboutUsPage && !scrolled ? 'filter brightness-0 invert' : ''}`} />
+            <CupTimeLogo
+              className={`h-auto w-16 ${isAboutUsPage && !scrolled ? 'brightness-0 invert filter' : ''}`}
+            />
           </motion.div>
         </Link>
       </div>
       {/* Desktop Navigation */}
-      <div className="hidden lg:block text-sm md:text-sm lg:text-base">
+      <div className="hidden text-sm md:text-sm lg:block lg:text-base">
         <ul className="flex gap-8">
           {navLinks.map(({ href, label }) => (
             <li key={href}>
@@ -110,25 +114,57 @@ const Header = () => {
           <li ref={moreMenuRef} className="relative">
             <button
               onClick={() => setMoreMenuOpen(!moreMenuOpen)}
-              className={`cursor-pointer hover:text-cuptime-red pb-1 flex items-center ${
-                moreLinks.some(link => pathname === link.href)
-                  ? "border-b-2 border-cuptime-red font-semibold " + (isAboutUsPage && !scrolled ? "text-white" : "")
-                  : isAboutUsPage && !scrolled ? "text-white" : ""
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === 'Space') {
+                  e.preventDefault();
+                  setMoreMenuOpen(!moreMenuOpen);
+                }
+                if (e.key === 'Escape') {
+                  setMoreMenuOpen(false);
+                }
+              }}
+              className={`hover:text-cuptime-red flex cursor-pointer items-center pb-1 ${
+                moreLinks.some((link) => pathname === link.href)
+                  ? 'border-cuptime-red border-b-2 font-semibold ' +
+                    (isAboutUsPage && !scrolled ? 'text-white' : '')
+                  : isAboutUsPage && !scrolled
+                    ? 'text-white'
+                    : ''
               }`}
+              aria-expanded={moreMenuOpen}
+              aria-haspopup="true"
             >
               More
-              <ChevronDown className={`ml-1 h-4 w-4 transition-transform ${moreMenuOpen ? 'rotate-180' : ''}`} />
+              <ChevronDown
+                className={`ml-1 h-4 w-4 transition-transform ${moreMenuOpen ? 'rotate-180' : ''}`}
+              />
             </button>
             {moreMenuOpen && (
-              <div className="absolute mt-2 w-56 rounded-md drop-shadow-xl bg-white z-50 text-center">
+              <div
+                className="absolute z-50 mt-2 w-56 rounded-md bg-white text-center drop-shadow-xl"
+                role="menu"
+                aria-orientation="vertical"
+              >
                 <div className="py-1">
                   {moreLinks.map(({ href, label }) => (
-                    <Link 
+                    <Link
                       key={href}
                       href={href}
-                      className={`block px-4 py-2 text-sm hover:bg-gray-100 hover:text-cuptime-red ${
-                        pathname === href ? "text-cuptime-red font-semibold" : "text-gray-700"
+                      className={`hover:text-cuptime-red block px-4 py-2 text-sm hover:bg-gray-100 ${
+                        pathname === href
+                          ? 'text-cuptime-red font-semibold'
+                          : 'text-gray-700'
                       }`}
+                      onClick={() => setMoreMenuOpen(false)}
+                      role="menuitem"
+                      tabIndex={0}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === 'Space') {
+                          e.preventDefault();
+                          setMoreMenuOpen(false);
+                          window.location.href = href;
+                        }
+                      }}
                     >
                       {label}
                     </Link>
@@ -141,7 +177,9 @@ const Header = () => {
       </div>
       {/* Desktop Buttons */}
       <div className="hidden gap-2 lg:flex">
-        <button className={`${isAboutUsPage && !scrolled ? "text-white border-white" : "text-cuptime-red border-foreground"} cursor-pointer rounded-xl border-2 bg-transparent px-6 py-2 font-semibold`}>
+        <button
+          className={`${isAboutUsPage && !scrolled ? 'border-white text-white' : 'text-cuptime-red border-foreground'} cursor-pointer rounded-xl border-2 bg-transparent px-6 py-2 font-semibold`}
+        >
           Franchise
         </button>
         <button className="from-cuptime-orange to-cuptime-red cursor-pointer rounded-xl bg-gradient-to-tr px-6 py-2 font-semibold text-white hover:opacity-90">
@@ -152,7 +190,11 @@ const Header = () => {
       <div className="lg:hidden">
         <Sheet>
           <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" className={`lg:hidden ${isAboutUsPage && !scrolled ? "text-white" : ""}`}>
+            <Button
+              variant="ghost"
+              size="icon"
+              className={`lg:hidden ${isAboutUsPage && !scrolled ? 'text-white' : ''}`}
+            >
               <Menu className="h-6 w-6" />
             </Button>
           </SheetTrigger>
@@ -161,10 +203,12 @@ const Header = () => {
               <ul className="flex flex-col gap-4">
                 {navLinks.map(({ href, label }) => (
                   <li key={href}>
-                    <Link 
-                      href={href} 
-                      className={`cursor-pointer flex items-center hover:text-cuptime-red pb-1 ${
-                        pathname === href ? "text-cuptime-red font-semibold" : ""
+                    <Link
+                      href={href}
+                      className={`hover:text-cuptime-red flex cursor-pointer items-center pb-1 ${
+                        pathname === href
+                          ? 'text-cuptime-red font-semibold'
+                          : ''
                       }`}
                     >
                       {label}
@@ -174,18 +218,26 @@ const Header = () => {
                 <li>
                   <DropdownMenu onOpenChange={setMobileMoreOpen}>
                     <DropdownMenuTrigger asChild>
-                      <button className="flex items-center gap-1 w-full text-left cursor-pointer hover:text-cuptime-red">
+                      <button
+                        className="hover:text-cuptime-red flex w-full cursor-pointer items-center gap-1 text-left"
+                        aria-expanded={mobileMoreOpen} // Add this
+                        aria-haspopup="true" // Add this
+                      >
                         <span className="font-semibold">More</span>
-                        <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${mobileMoreOpen ? 'rotate-180' : ''}`} />
+                        <ChevronDown
+                          className={`h-4 w-4 transition-transform duration-200 ${mobileMoreOpen ? 'rotate-180' : ''}`}
+                        />
                       </button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent className="w-full" align="start">
                       {moreLinks.map(({ href, label }) => (
                         <DropdownMenuItem key={href} asChild>
-                          <Link 
-                            href={href} 
+                          <Link
+                            href={href}
                             className={`w-full cursor-pointer ${
-                              pathname === href ? "text-cuptime-red font-semibold" : ""
+                              pathname === href
+                                ? 'text-cuptime-red font-semibold'
+                                : ''
                             }`}
                           >
                             {label}

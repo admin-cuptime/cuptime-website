@@ -8,37 +8,44 @@ import { motion } from 'motion/react';
 const testimonials = [
   {
     quote:
-      'It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.',
-    name: 'Charles Dickens',
+      'Nice and good taste, fresh tea and coffee and delivery on time. Useful for my staff for ontime refreshments',
+    name: 'SRINI Madurai',
     title: 'A Tale of Two Cities',
     rating: 4,
   },
   {
     quote:
-      "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
-    name: 'William Shakespeare',
-        title: 'Hamlet',
+      "Everyday me and my staffs boost up with cup time tea Thank you so much for your hygienic tea and perfect time delivery",
+    name: 'Hari Rajaprabhu',
+        title: 'Customer',
     rating: 5,
   },
   {
-    quote: 'All that we see or seem is but a dream within a dream.',
-    name: 'Edgar Allan Poe',
-    title: 'A Dream Within a Dream',
-    rating: 3,
-  },
-  {
-    quote:
-      'It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.',
-    name: 'Jane Austen',
-    title: 'Pride and Prejudice',
+    quote: 'We purchase coffee and tea for our office . Prompt delivery and excellent taste every day . Highly recommended for your daily dose of coffee/tea.',
+    name: 'Swathik Prasanna',
+    title: 'Customer',
     rating: 4,
   },
   {
     quote:
-      'Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.',
-    name: 'Herman Melville',
-    title: 'Moby-Dick',
+      'Sweetly savoury, rich and deep. Dark in aroma and cup.very syrupy mouthfeel. Notes of coffee blended with undertones of taste, resonate in the finish.',
+    name: 'Dinesh kumar',
+    title: 'Customer',
+    rating: 5,
+  },
+  {
+    quote:
+      'Best Masala Tea and Filter Coffee Servicing Company and Easily Ordered with this App',
+    name: 'Dawood Farhan',
+    title: 'Customer',
     rating: 4,
+  },
+  {
+    quote:
+      'Tastes are Good, especially with Masala Tea',
+    name: 'Harikaran K',
+    title: 'Customer',
+    rating: 5,
   },
 ];
 
