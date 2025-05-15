@@ -163,7 +163,13 @@ const GetinTouch = () => {
                   name="mobile-number"
                   placeholder="Mobile Number"
                   value={form['mobile-number']}
-                  onChange={handleChange}
+                  onChange={e => {
+                    // Only allow numbers and +
+                    const value = e.target.value.replace(/[^0-9+]/g, '');
+                    setForm({ ...form, 'mobile-number': value });
+                  }}
+                  pattern="^[0-9+]*$"
+                  inputMode="tel"
                   className="border-cuptime-gray focus:border-cuptime-red w-full rounded-md border-2 px-4 py-3 focus:outline-none"
                   required
                 />
@@ -193,6 +199,7 @@ const GetinTouch = () => {
                 rows={5}
                 value={form.message}
                 onChange={handleChange}
+                maxLength={250}
                 className="border-cuptime-gray focus:border-cuptime-red w-full rounded-md border-2 px-4 py-3 focus:outline-none"
               ></textarea>
 

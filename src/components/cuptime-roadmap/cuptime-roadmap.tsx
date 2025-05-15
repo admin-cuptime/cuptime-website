@@ -110,7 +110,13 @@ const CuptimeRoadmap = () => {
                   name="mobile-number"
                   placeholder="Mobile Number"
                   value={form['mobile-number']}
-                  onChange={handleChange}
+                  onChange={e => {
+                    // Only allow numbers and +
+                    const value = e.target.value.replace(/[^0-9+]/g, '');
+                    setForm({ ...form, 'mobile-number': value });
+                  }}
+                  pattern="^[0-9+]*$"
+                  inputMode="tel"
                   className="w-full rounded-md border-2 border-cuptime-gray px-4 py-2 focus:border-cuptime-red focus:outline-none"
                   required
                 />
@@ -141,6 +147,7 @@ const CuptimeRoadmap = () => {
                 rows={5}
                 value={form.message}
                 onChange={handleChange}
+                maxLength={250}
                 className="w-full rounded-md border-2 border-cuptime-gray px-4 py-2 focus:border-cuptime-red focus:outline-none"
               ></textarea>
 
