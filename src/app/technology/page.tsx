@@ -1,5 +1,6 @@
 'use client';
 
+import CoreTechnologyPage from '@/components/core-card-technology-section/core-technology';
 import CupTimeMobileOrder from '@/components/cuptime-mobile-order/cuptime-mobileorder';
 import CuptimeStandout from '@/components/cuptime-standout/cuptime-standout';
 import TechnologyHero from '@/components/cuptime-technology-hero/technologyhero';
@@ -12,6 +13,7 @@ const TechnologyPage = () => {
       <TechnologyHero />
       <CuptimeStandout />
       <CupTimeMobileOrder />
+      <CoreTechnologyPage/>
       <ReviewMarquee />
     </section>
   );
