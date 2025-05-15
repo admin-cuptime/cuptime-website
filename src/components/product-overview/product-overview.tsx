@@ -71,7 +71,7 @@ const ProductCard = ({ product }: { product: any }) => {
 
 const ProductOverview = () => {
   return (
-    <section className="bg-cuptime-black relative flex flex-col items-center justify-center gap-12 py-20">
+    <section className="bg-cuptime-black relative flex flex-col items-center justify-center gap-12 py-20 overflow-x-clip">
       <motion.div
         initial={{ opacity: 0, x: 50 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -87,9 +87,6 @@ const ProductOverview = () => {
         <img
           src={FlaskHand.src}
           alt="Delivery Executive"
-          style={{
-            transform: '',
-          }}
         />
       </motion.div>
       <div className="pointer-events-none absolute inset-0">
