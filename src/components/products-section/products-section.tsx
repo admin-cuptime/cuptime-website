@@ -117,7 +117,7 @@ const ProductsSection = () => {
         <div className="from-cuptime-orange to-cuptime-red absolute top-1/3 left-1/3 h-[60%] w-[60%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-radial opacity-10 blur-3xl"></div>
       </div>
       <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
-        {!loading
+        {loading
           ? Array.from({ length: 4 }).map((_, idx) => (
               <div
                 key={idx}
