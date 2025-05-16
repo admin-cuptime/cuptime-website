@@ -60,13 +60,13 @@ const BlogsData = () => {
   );
 
   return (
-    <div className="mx-auto w-full px-4 py-10 md:px-24">
+    <div className="mx-auto w-full px-4 py-10 md:px-52">
       {/* Header */}
       <div className="mb-8 flex items-center justify-between">
         <h2 className="text-cuptime-midnight text-xl font-semibold md:text-3xl">
           Blogs ({filteredBlogs.length})
         </h2>
-        <div className="focus-within:ring-cuptime-red flex w-72 md:w-100 items-center gap-2 rounded-full border px-4 py-2 text-zinc-800 focus-within:ring-2">
+        <div className="focus-within:ring-cuptime-red flex w-72 items-center gap-2 rounded-full border px-4 py-2 text-zinc-800 focus-within:ring-2 md:w-100">
           <div className="h-auto w-5 shrink-0 text-zinc-700">
             <MySVGSearch />
           </div>
@@ -80,33 +80,26 @@ const BlogsData = () => {
         </div>
       </div>
       {/* Blog List */}
-      <div className="grid grid-cols-1 md:gap-16 gap-8">
+      <div className="grid grid-cols-1 gap-8 md:gap-16">
         {filteredBlogs.map((blog, index) => (
-          <div
-            key={index}
-            className="overflow-hidden rounded-xl bg-white"
-          >
-            <div className="relative h-80 w-full md:h-200">
-              <div
-                className="absolute rounded-b-2xl inset-0 bg-cover bg-center"
-                style={{
-                  backgroundImage: `url(${blog.image.src})`,
-                  width: '100%',
-                  height: '100%',
-                }}
-              />
-            </div>
-            <div className='md:py-5 py-2'>
-              <div className="gap-5 flex items-center sm:gap-2 py-2 md:py-5">
+          <div key={index} className="overflow-hidden rounded-xl bg-white">
+            <div
+              style={{
+                backgroundImage: `url(${blog.image.src})`,
+              }}
+              className="relative h-80 w-full bg-cover rounded-2xl md:h-[500px]"
+            ></div>
+            <div className="py-2 md:py-5">
+              <div className="flex items-center gap-5 py-2 sm:gap-2 md:py-5">
                 {blog.tags.map((tag, i) => (
                   <span
                     key={i}
-                    className="bg-cuptime-pink font-sm text-cuptime-red rounded-full px-2 md:px-4 py-1 text-base md:font-bold"
+                    className="bg-cuptime-pink font-sm text-cuptime-red rounded-full px-2 py-1 text-base md:px-4 md:font-bold"
                   >
                     {tag}
                   </span>
                 ))}
-                <span className="flex items-center gap-2 px-4 text-sm text-zinc-900 md:text-lg">
+                <span className="flex items-center gap-2 px-4 text-sm text-zinc-900 md:text-base">
                   <div className="h-auto w-7 shrink-0">
                     <MySVGcalender />
                   </div>
@@ -114,12 +107,12 @@ const BlogsData = () => {
                 </span>
               </div>
               <div>
-              <h3 className="text-cuptime-midnight text-xl font-bold md:text-3xl">
-                {blog.title}
-              </h3>
-              <p className="text-sm text-zinc-700 md:text-base py-2 md:py-5">
-                {blog.description}
-              </p>
+                <h3 className="text-cuptime-midnight text-xl font-bold md:text-3xl">
+                  {blog.title}
+                </h3>
+                <p className="py-2 text-sm text-zinc-700 md:py-5 md:text-base">
+                  {blog.description}
+                </p>
               </div>
               <a
                 href=""
