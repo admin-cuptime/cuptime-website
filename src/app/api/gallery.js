@@ -1,4 +1,4 @@
-const fetchProductsData = async (sheetTab = "1") => {
+const fetchGalleryData = async (sheetTab = "2") => {
   try {
     const sheetId = "1akGWMfXXJXlqJLSKcYJ-NUr2fGrzuGEEHGnO3y8S_-c";
     const baseUrl = "https://opensheet.elk.sh/";
@@ -16,9 +16,9 @@ const fetchProductsData = async (sheetTab = "1") => {
 
     return await response.json();
   } catch (error) {
-    console.error("Error fetching Products data:", error);
+    console.error("Error fetching Gallery data:", error);
     return null;
   }
 };
 
-export { fetchProductsData };
+export { fetchGalleryData };
