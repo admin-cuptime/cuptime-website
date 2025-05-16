@@ -87,7 +87,7 @@ const HorizontelTimeline = () => {
         {/* Desktop lg+ view: Horizontal Timeline */}
         <div className="relative hidden px-5 lg:block">
           <div className="absolute top-6 right-20 left-20 z-0 h-0.5 bg-zinc-700"></div>
-          <div className="relative flex justify-between">
+          <div className="relative flex justify-between gap-2">
             {timelineData
               .filter((item) =>
                 ['2018', '2019', '2020', '2021', '2022'].includes(item.year)
@@ -111,7 +111,7 @@ const HorizontelTimeline = () => {
                   </button>
                   {/* Card Content */}
                   <div
-                    className={`hover:border-cuptime-red xl:h-80 h-auto rounded-lg border-1 border-zinc-700 p-4 transition-all hover:border-2 ${index === 0 ? 'bg-cuptime-black' : 'bg-transparent'} hover:bg-cuptime-shadow hover:border-cuptime-red`}
+                    className={`hover:border-cuptime-red xl:h-80 h-auto rounded-lg border-1 border-zinc-700 p-4 transition-all hover:border-1 ${index === 0 ? 'bg-cuptime-black' : 'bg-transparent'} hover:bg-cuptime-shadow hover:border-cuptime-red`}
                   >
                     <h3 className="mb-2 text-lg font-bold">{item.title}</h3>
                     <p className="text-base text-zinc-400">
