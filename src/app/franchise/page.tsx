@@ -22,7 +22,6 @@ const FranchisePage = () => {
             <CuptimeImageMedia/>
             <HorizontelTimeline/>
             <FicoFranchise />
-            <CuptimeImageMedia/>
             <CuptimeRoadmap />
           </div>
         </section>

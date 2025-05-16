@@ -37,6 +37,11 @@ import screenshot5 from '@/assets/png/screen-5.png';
 import flaskhand from '@/assets/png/flask-hand.png'
 import printerArtwork from '@/assets/png/bag&printer-bg.png';
 import gallery1 from '@/assets/png/event-gallery-1.png';
+import Blogs1 from '@/assets/png/Blogs-1.png';
+import Blogs2 from '@/assets/png/Blogs-2.png';
+import Blogs3 from '@/assets/png/Blogs-3.png';
+import Blogs4 from '@/assets/png/Blogs-1.png';
+import Blogs5 from '@/assets/png/Blogs-2.png';
 
 export const images = {
   heroSection: {
@@ -82,6 +87,13 @@ export const images = {
     productBerry,
     productSukku,
     productCane,
+  },
+  blogs: {
+    Blogs1,
+    Blogs2,
+    Blogs3,
+    Blogs4,
+    Blogs5,
   },
   cuptimeMobileSection: {
     cuptimeMobileSplash,

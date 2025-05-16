@@ -1,8 +1,13 @@
+import BlogsData from '@/components/blogs/blogs';
 import React from 'react'
 
 const BlogsPage = () => {
   return (
-    <div>BlogsPage</div>
+    <>
+      <div className="max-w-screen-3xl mx-auto space-y-20">
+        <BlogsData/>
+      </div>
+    </>
   )
 }
 
