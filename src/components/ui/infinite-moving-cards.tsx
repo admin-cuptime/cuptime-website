@@ -107,7 +107,7 @@ export const InfiniteMovingCards = ({
                   <div className="relative mt-6 flex flex-col gap-1">
                     {item.rating && (
                       <div className="flex flex-row items-center gap-2">
-                        {[...Array(item.rating)].map((_, index) => (
+                        {[...Array(Math.max(1, Math.min(5, parseInt(item.rating as any, 10))))].map((_, index) => (
                           <RatingStar key={index} className="h-auto w-5" />
                         ))}
                       </div>
