@@ -1,37 +1,53 @@
 'use client';
 
-import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { images } from '@/assets/png/images';
 import { CardBody, CardContainer, CardItem } from '@/components/ui/3d-card';
-import CupRed from '@/assets/svg/cup-red.svg';
-import LeafRed from '@/assets/svg/leaf-red.svg';
-import OfficeRed from '@/assets/svg/office-red.svg';
+import Handshake from '@/assets/svg/handshake.svg';
+import { IconBriefcase, IconClock2, IconCoffee, IconDeviceMobileMessage, IconTruck, IconTruckFilled } from '@tabler/icons-react';
 
 const FeatureCard = () => {
   const features = [
     {
-      icon: CupRed,
-      title: 'Handcrafted Recipes',
+      icon: IconCoffee,
+      title: 'Unmatched Refreshment',
       description:
-        'Authentic flavors prepared the traditional way — no machines, no shortcuts.',
+        'From authentic filter coffee to flavorful teas, every cup is brewed fresh with premium ingredients—keeping your team energized, focused, and satisfied.',
     },
     {
-      icon: LeafRed,
-      title: 'Natural, Pure Ingredients',
+      icon: IconClock2,
+      title: 'Ultimate Convenience',
       description:
-        'Only fresh, regional ingredients. No artificial additives or preservatives.',
+        'Say goodbye to long tea breaks or messy DIY setups. We deliver ready-to-drink beverages right to your doorstep, hassle-free and on time.',
     },
     {
-      icon: OfficeRed,
-      title: 'Made for Modern Workspaces',
+      icon: IconDeviceMobileMessage,
+      title: 'Customer Mobile App Access',
       description:
-        'Bringing homemade-style drinks directly to corporate spaces, schools, hospitals, and events.',
+        'Manage your daily subscription with ease through our mobile app. Pause, resume, or customize your orders anytime, anywhere—total control at your fingertips.',
+    },
+    {
+      icon: IconTruck,
+      title: 'Reliable Delivery System',
+      description:
+        'Whether it’s daily office service or event-based orders, we ensure timely delivery with zero compromise on quality or temperature.',
+    },
+    {
+      icon: IconBriefcase,
+      title: 'Office-Friendly Solutions',
+      description:
+        'Designed for workspaces, our beverage plans and menus fit seamlessly into your routine. Whether it’s 5 cups or 500, we’ve got you covered.',
+    },
+    {
+      icon: Handshake,
+      title: 'Trusted by 800+ Businesses',
+      description:
+        'Our growing network of happy clients across Tamil Nadu is proof of our consistency, service and value.',
     },
   ];
+
   return (
-    <div className="flex h-auto items-center justify-center overflow-hidden bg-white sm:px-8 md:px-16">
-      <div className="container mx-auto flex flex-col gap-4 md:flex-row">
+    <div className="flex h-auto items-center justify-center overflow-hidden bg-white px-4 sm:px-8 md:px-16">
+      <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {features.map((feature, index) => (
           <motion.div
             key={index}
@@ -44,12 +60,11 @@ const FeatureCard = () => {
               stiffness: 100,
               delay: index * 0.1,
             }}
-            className="flex-1"
           >
-            <CardContainer containerClassName="py-4" key={index}>
-              <CardBody className="hover:border-cuptime-red flex h-fit w-fit flex-col items-center justify-center gap-4 rounded-lg border-2 border-transparent p-6 text-center transition-all duration-300 select-none md:items-start md:text-left">
+            <CardContainer containerClassName="py-4">
+              <CardBody className="hover:border-cuptime-red flex h-full w-full flex-col items-center justify-center gap-4 rounded-lg border-2 border-transparent p-6 text-center transition-all duration-300 select-none md:items-start md:text-left">
                 <CardItem translateZ="30">
-                  <feature.icon className="h-auto w-9" />
+                  <feature.icon className="h-auto w-9 text-cuptime-red" />
                 </CardItem>
                 <CardItem
                   as="p"
@@ -73,4 +88,5 @@ const FeatureCard = () => {
     </div>
   );
 };
+
 export default FeatureCard;
