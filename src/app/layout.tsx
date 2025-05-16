@@ -16,8 +16,8 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: 'Cuptime Website',
-  description: 'Cuptime Website',
+  title: 'Cup Time Website',
+  description: 'Cup Time Website',
 };
 
 export default function RootLayout({
