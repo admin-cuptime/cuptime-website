@@ -26,33 +26,33 @@ const Footer = () => {
   const aboutLinks = [
     { text: 'About Us', href: '/about-us' },
     { text: 'Our Story', href: '/about-us' },
-    { text: 'Careers', href: '/about-us' },
+    { text: 'Careers', href: '/careers' },
     { text: 'Media & Press', href: '/about-us' },
   ];
 
   const productLinks = [
-    { text: 'Our Products', href: '/about-us' },
-    { text: 'Mobile App', href: '/about-us' },
-    { text: 'Franchise Opportunities', href: '/about-us' },
+    { text: 'Our Products', href: '/our-products' },
+    { text: 'Mobile App', href: '/cup-time-mobile' },
+    { text: 'Franchise Opportunities', href: '/franchise' },
   ];
 
   const connectedLinks = [
-    { text: 'Join Our Events', href: '/about-us' },
+    { text: 'Join Our Events', href: '/events' },
     { text: 'Corporate Gifting', href: '/about-us' },
     { text: 'App Download', href: '/about-us' },
   ];
 
   const resourceLinks = [
-    { text: 'Blog', href: '/about-us' },
-    { text: 'Events', href: '/about-us' },
+    { text: 'Blog', href: '/blogs' },
+    { text: 'Events', href: '/events' },
     { text: 'Customer Stories', href: '/about-us' },
   ];
 
   const legalLinks = [
-    { text: 'Terms & Conditions', href: '/about-us' },
-    { text: 'Privacy Policy', href: '/about-us' },
+    { text: 'Terms & Conditions', href: '/terms-conditions' },
+    { text: 'Privacy Policy', href: '/privacy-policy' },
     { text: 'Cookie Policy', href: '/about-us' },
-    { text: 'Return & Refund Policy', href: '/about-us' },
+    { text: 'Return & Refund Policy', href: '/cancellation-refund' },
   ];
 
   return (
