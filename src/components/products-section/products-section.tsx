@@ -19,37 +19,35 @@ interface Product {
 }
 
 const SkeletonCard = () => (
-  <CardContainer>
-    <CardBody className="flex h-full w-full flex-col items-center gap-3 rounded-lg bg-white p-3 drop-shadow-xl select-none md:h-[300px] lg:w-[560px] md:flex-row md:p-5 animate-pulse">
-      <div className="h-[200px] w-full shrink-0 rounded-lg bg-gray-200 flex items-center justify-center md:h-full md:w-[230px] md:bg-cover">
-        <CupWhite className="h-16 w-16 md:h-24 md:w-24 text-gray-300 animate-pulse" />
+  <div className="flex h-full w-full animate-pulse flex-col items-center gap-3 rounded-lg bg-white p-3 drop-shadow-xl select-none md:h-[300px] md:flex-row md:p-5 lg:w-[560px]">
+    <div className="flex h-[200px] w-full shrink-0 items-center justify-center rounded-lg bg-gray-200 md:h-full md:w-[230px] md:bg-cover">
+      <CupWhite className="h-28 w-28 animate-pulse text-gray-300 md:h-24 md:w-24" />
+    </div>
+    <div className="flex w-full flex-col gap-2 md:gap-4">
+      <div className="flex flex-col gap-2">
+        <div className="h-6 w-1/2 rounded bg-gray-200" />
+        <div className="h-4 w-3/4 rounded bg-gray-200" />
       </div>
-      <div className="flex flex-col gap-2 md:gap-4 w-full">
-        <div className="flex flex-col gap-2">
-          <div className="h-6 w-1/2 bg-gray-200 rounded" />
-          <div className="h-4 w-3/4 bg-gray-200 rounded" />
-        </div>
-        <div className="flex items-center gap-2">
-          <div className="h-5 w-5 bg-gray-200 rounded" />
-          <div className="h-4 w-24 bg-gray-200 rounded" />
-        </div>
-        <div className="flex items-center gap-2">
-          <div className="h-5 w-5 bg-gray-200 rounded" />
-          <div className="h-4 w-24 bg-gray-200 rounded" />
-        </div>
-        <div className="flex items-center gap-2">
-          <div className="h-5 w-20 bg-gray-200 rounded" />
-          <div className="h-5 w-20 bg-gray-200 rounded" />
-        </div>
+      <div className="flex items-center gap-2">
+        <div className="h-5 w-5 rounded bg-gray-200" />
+        <div className="h-4 w-24 rounded bg-gray-200" />
       </div>
-    </CardBody>
-  </CardContainer>
+      <div className="flex items-center gap-2">
+        <div className="h-5 w-5 rounded bg-gray-200" />
+        <div className="h-4 w-24 rounded bg-gray-200" />
+      </div>
+      <div className="flex items-center gap-2">
+        <div className="h-5 w-20 rounded bg-gray-200" />
+        <div className="h-5 w-20 rounded bg-gray-200" />
+      </div>
+    </div>
+  </div>
 );
 
 const ProductCard = ({ product }: { product: Product }) => {
   return (
     <CardContainer className="">
-      <CardBody className="flex h-full w-full flex-col items-center gap-3 rounded-lg bg-white p-3 drop-shadow-xl transition-all select-none hover:drop-shadow-2xl md:h-[300px] lg:w-[560px] md:flex-row md:p-5">
+      <CardBody className="flex h-full w-full flex-col items-center gap-3 rounded-lg bg-white p-3 drop-shadow-xl transition-all select-none hover:drop-shadow-2xl md:h-[300px] md:flex-row md:p-5 lg:w-[560px]">
         <div
           className="h-[200px] w-full shrink-0 rounded-lg bg-contain bg-center bg-no-repeat md:h-full md:w-[230px] md:bg-cover"
           style={{ backgroundImage: `url(${product.image})` }}
@@ -119,9 +117,12 @@ const ProductsSection = () => {
         <div className="from-cuptime-orange to-cuptime-red absolute top-1/3 left-1/3 h-[60%] w-[60%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-radial opacity-10 blur-3xl"></div>
       </div>
       <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
-        {loading
+        {!loading
           ? Array.from({ length: 4 }).map((_, idx) => (
-              <div key={idx} className={`flex ${idx % 2 === 0 ? 'justify-end' : 'justify-start'}`}>
+              <div
+                key={idx}
+                className={`flex ${idx % 2 === 0 ? 'justify-end' : 'justify-start'}`}
+              >
                 <SkeletonCard />
               </div>
             ))
