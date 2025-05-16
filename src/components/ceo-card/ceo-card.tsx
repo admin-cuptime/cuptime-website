@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 
 const CeoCard = () => {
   return (
-    <section className="flex items-center justify-center overflow-hidden px-8 md:px-16">
+    <section className="flex items-center justify-center overflow-hidden px-3 md:px-16">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -29,12 +29,12 @@ const CeoCard = () => {
             }}
             className="flex flex-col items-center lg:w-1/2"
           >
-            <div className="space-y-6">
+            <div className="flex flex-col items-center gap-3 text-center md:items-start md:text-left">
               <CuptimeLogo className="h-40 w-40" />
-              <h2 className="mb-2 text-center text-3xl font-bold text-white md:text-left md:text-4xl">
+              <h2 className="text-center text-3xl font-bold text-white md:text-left md:text-4xl">
                 Guided by Purpose, Driven by <br /> Passion
               </h2>
-              <p className="py-1.5 text-base text-white md:py-3 md:text-xl">
+              <p className="text-base text-zinc-300 md:py-3 md:text-lg">
                 At CupTime, we believe leadership is about vision and values.
                 Our founders and core team lead with the purpose of making
                 authentic, traditional beverages accessible — all while creating
@@ -53,15 +53,13 @@ const CeoCard = () => {
               stiffness: 100,
               delay: 0.4,
             }}
-            className="flex shrink-0 justify-center lg:w-1/3"
+            className="flex w-full shrink-0 justify-center lg:w-1/3"
           >
             <div className="relative">
-              <Image
-                src={ceoImage}
+              <img
+                src={ceoImage.src}
                 alt="CEO Image"
-                className="outline-cuptime-orange rounded-3xl outline-3 outline-offset-2"
-                width={350}
-                height={80}
+                className="h-auto w-full rounded-3xl md:w-[350px]"
               />
               <div className="rounded-b-3 absolute bottom-0 left-0 w-full p-3">
                 <div className="absolute bottom-0 left-0 w-full rounded-b-3xl bg-white/40 p-3 text-center">
@@ -77,14 +75,12 @@ const CeoCard = () => {
           </motion.div>
         </div>
         {/* images card */}
-        <div className="grid grid-cols-1 gap-3 rounded-lg p-6 px-10 md:grid-cols-2 md:p-16 lg:grid-cols-3 justify-items-center items-center">
+        <div className="grid grid-cols-1 items-center justify-items-center gap-3 rounded-lg p-6 px-10 md:grid-cols-2 md:p-16 lg:grid-cols-3">
           <div className="relative flex w-fit justify-center">
-            <Image
-              src={ceoImage}
+            <img
+              src={ceoImage.src}
               alt="CEO Image"
-              className="rounded-3xl"
-              width={350}
-              height={80}
+              className="h-auto w-full rounded-3xl md:w-[300px]"
             />
             <div className="rounded-b-3 absolute bottom-0 left-0 w-full p-3">
               <div className="absolute bottom-0 left-0 w-full rounded-b-3xl bg-white/40 p-3 text-center">
@@ -98,29 +94,12 @@ const CeoCard = () => {
             </div>
           </div>
 
-          {/* <div className="relative">
-            <Image
-              src={ceoImage}
-              alt="Team Member"
-             width={350}
-                height={80}
-            />
-            <div className="absolute bottom-0 left-0 w-auto rounded-b-3xl bg-white/40 p-3 text-center">
-              <h3 className="text-cuptime-red text-sm font-bold italic md:text-xl">
-                Prabaharan Venugopal
-              </h3>
-              <p className="text-sm font-bold text-zinc-700 md:text-lg">
-                CEO Of Cuptime
-              </p>
-            </div>
-          </div> */}
+          
           <div className="relative flex w-fit justify-center">
-            <Image
-              src={ceoImage}
+            <img
+              src={ceoImage.src}
               alt="CEO Image"
-              className="rounded-3xl"
-              width={350}
-              height={80}
+              className="h-auto w-full rounded-3xl md:w-[300px]"
             />
             <div className="rounded-b-3 absolute bottom-0 left-0 w-full p-3">
               <div className="absolute bottom-0 left-0 w-full rounded-b-3xl bg-white/40 p-3 text-center">
@@ -135,12 +114,10 @@ const CeoCard = () => {
           </div>
 
           <div className="relative flex w-fit justify-center">
-            <Image
-              src={ceoImage}
+            <img
+              src={ceoImage.src}
               alt="CEO Image"
-              className="rounded-3xl"
-              width={350}
-              height={80}
+              className="h-auto w-full rounded-3xl md:w-[300px]"
             />
             <div className="rounded-b-3 absolute bottom-0 left-0 w-full p-3">
               <div className="absolute bottom-0 left-0 w-full rounded-b-3xl bg-white/40 p-3 text-center">
