@@ -1,61 +1,32 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { InfiniteMovingCards } from '@/components/ui/infinite-moving-cards';
 import { Pointer } from '@/components/magicui/pointer';
 import { motion } from 'motion/react';
-
-const testimonials = [
-  {
-    quote:
-      'Nice and good taste, fresh tea and coffee and delivery on time. Useful for my staff for ontime refreshments',
-    name: 'SRINI Madurai',
-    title: 'Customer',
-    rating: 4,
-  },
-  {
-    quote:
-      "Everyday me and my staffs boost up with cup time tea Thank you so much for your hygienic tea and perfect time delivery",
-    name: 'Hari Rajaprabhu',
-        title: 'Customer',
-    rating: 5,
-  },
-  {
-    quote: 'We purchase coffee and tea for our office . Prompt delivery and excellent taste every day . Highly recommended for your daily dose of coffee/tea.',
-    name: 'Swathik Prasanna',
-    title: 'Customer',
-    rating: 4,
-  },
-  {
-    quote:
-      'Sweetly savoury, rich and deep. Dark in aroma and cup.very syrupy mouthfeel. Notes of coffee blended with undertones of taste, resonate in the finish.',
-    name: 'Dinesh kumar',
-    title: 'Customer',
-    rating: 5,
-  },
-  {
-    quote:
-      'Best Masala Tea and Filter Coffee Servicing Company and Easily Ordered with this App',
-    name: 'Dawood Farhan',
-    title: 'Customer',
-    rating: 4,
-  },
-  {
-    quote:
-      'Tastes are Good, especially with Masala Tea',
-    name: 'Harikaran K',
-    title: 'Customer',
-    rating: 5,
-  },
-];
+import { fetchReviewsData } from '@/app/api/reviews';
 
 const ReviewMarquee = () => {
+  const [reviews, setReviews] = useState<
+    { quote: string; name: string; title: string; rating?: number }[]
+  >([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const getReviews = async () => {
+      setLoading(true);
+      const data = await fetchReviewsData();
+      if (Array.isArray(data)) setReviews(data);
+      setLoading(false);
+    };
+    getReviews();
+  }, []);
+
   return (
     <section className="relative bg-zinc-100 py-18 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[600px] rounded-full blur-2xl opacity-10 bg-radial from-blue-500 to-cuptime-red"></div>
       </div>
-      
       <Pointer>
         <div>
           <motion.div
@@ -100,13 +71,34 @@ const ReviewMarquee = () => {
           who believe in bringing traditional flavors to modern workplaces.
         </div>
       </div>
-
-      <div className="relative flex flex-col items-center justify-center overflow-hidden rounded-md pt-10 antialiased">
-        <InfiniteMovingCards
-          items={testimonials}
-          direction="left"
-          speed="normal"
-        />
+      <div className="relative flex flex-col items-center justify-center overflow-hidden rounded-md pt-10 antialiased min-h-[260px] w-full">
+        {loading ? (
+          <div className="scroller relative max-w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]">
+            <ul className="flex w-max min-w-full shrink-0 flex-nowrap gap-4 animate-scroll">
+              {[...Array(4)].map((_, i) => (
+                <li
+                  key={i}
+                  className="min-h-[220px] w-[350px] max-w-full md:w-[450px] rounded-lg border-2 border-zinc-200 bg-white animate-pulse flex flex-col justify-between px-8 py-6 cursor-pointer"
+                  style={{ animationDelay: `${i * 0.1}s` }}
+                >
+                  <div className="h-5 w-3/4 bg-zinc-100 rounded mb-4"></div>
+                  <div className="h-4 w-2/3 bg-zinc-100 rounded mb-2"></div>
+                  <div className="h-4 w-1/2 bg-zinc-100 rounded mb-2"></div>
+                  <div className="flex items-center gap-2 mt-auto">
+                    <div className="h-4 w-16 bg-zinc-100 rounded"></div>
+                    <div className="h-4 w-10 bg-zinc-100 rounded"></div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : (
+          <InfiniteMovingCards
+            items={reviews}
+            direction="left"
+            speed="normal"
+          />
+        )}
       </div>
     </section>
   );

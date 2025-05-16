@@ -1,41 +1,64 @@
 'use client';
 
-import React from 'react';
-import cmAward from '@/assets/png/milestone-4.png';
-import vikatan from '@/assets/png/milestone-3.png';
-import mou from '@/assets/png/milestone-1.png';
-import yourStory from '@/assets/png/milestone-2.png';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import {
   Carousel,
   CarouselApi,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from '@/components/ui/carousel';
 import { Button } from '../ui/button';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { fetchGalleryData } from '@/app/api/gallery';
 
 const CuptimeImageMedia = () => {
   const [api, setApi] = React.useState<CarouselApi>();
+  const [images, setImages] = useState<{ src: string; alt?: string }[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  const images = [
-    cmAward, vikatan, mou, yourStory,
-    cmAward, vikatan, mou, yourStory,
-    cmAward, vikatan, mou, yourStory,
-    cmAward, vikatan
-  ];
+  useEffect(() => {
+    const getGallery = async () => {
+      setLoading(true);
+      const data = await fetchGalleryData();
+      if (Array.isArray(data)) {
+        setImages(
+          data.map((img: any, idx: number) => ({
+            src: img.images || '',
+            alt: `Image ${idx + 1}`,
+          }))
+        );
+      }
+      setLoading(false);
+    };
+    getGallery();
+  }, []);
+
+  // Loader: 8 pulsing rectangles like image items
+  const Loader = () => (
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      {[...Array(8)].map((_, i) => (
+        <div
+          key={i}
+          className="w-full aspect-square rounded-lg bg-gray-200 animate-pulse"
+          style={{
+            minHeight: '120px',
+            animationDelay: `${i * 0.08}s`,
+          }}
+        />
+      ))}
+    </div>
+  );
 
   // Group images by layout
   const getSlides = () => {
-  const groups: any[] = [];
-  const perGroup = 8; // 4 per row x 2 rows for lg
-  for (let i = 0; i < images.length; i += perGroup) {
-    groups.push(images.slice(i, i + perGroup));
-  }
-  return groups;
-};
+    const groups: any[] = [];
+    const perGroup = 8; // 4 per row x 2 rows for lg
+    for (let i = 0; i < images.length; i += perGroup) {
+      groups.push(images.slice(i, i + perGroup));
+    }
+    return groups;
+  };
 
   return (
     <div className="bg-white px-4 py-8 sm:px-8 md:px-16">
@@ -55,25 +78,27 @@ const CuptimeImageMedia = () => {
           className="w-full"
         >
           <CarouselContent>
-            {getSlides().map((group, groupIndex) => (
-              <CarouselItem key={groupIndex} className="w-full">
-                
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                  {group.map(( img: any, index: any) => (
-                    <div
-                      key={index}
-                      className=" overflow-hidden"
-                    >
-                      <img
-                        src={img.src}
-                        alt={`Image ${index + 1}`}
-                        className="h-full w-full object-cover"
-                      />
-                    </div>
-                  ))}
-                </div>
+            {loading ? (
+              <CarouselItem className="w-full">
+                <Loader />
               </CarouselItem>
-            ))}
+            ) : (
+              getSlides().map((group, groupIndex) => (
+                <CarouselItem key={groupIndex} className="w-full">
+                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                    {group.map((img: any, index: any) => (
+                      <div key={index} className="overflow-hidden">
+                        <img
+                          src={img.src}
+                          alt={img.alt || `Image ${index + 1}`}
+                          className="h-full w-full object-cover"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </CarouselItem>
+              ))
+            )}
           </CarouselContent>
           <div className="flex justify-center gap-2 py-4">
             <Button
