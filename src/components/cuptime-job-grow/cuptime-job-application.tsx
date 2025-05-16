@@ -34,7 +34,7 @@ const CuptimeJobApplication = () => {
           {/* summary section */}
           <div className="space-y-2 text-sm font-medium md:space-y-4 md:text-base lg:w-1/3">
             <h2 className="text-2xl font-bold text-zinc-900 md:text-3xl">
-              Join the CupTime team
+              Join the Cup Time team
             </h2>
             <p>
               We're always on the lookout for energetic, passionate individuals
