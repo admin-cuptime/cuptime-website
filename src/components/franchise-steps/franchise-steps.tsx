@@ -76,7 +76,7 @@ const FranchiseSteps = () => {
         />
       </motion.div>
       <section
-        className="bg-cuptime-black flex flex-col items-center justify-center gap-16 bg-contain bg-bottom-right bg-no-repeat py-20 text-white"
+        className="bg-cuptime-black flex flex-col items-center justify-center gap-16 bg-contain bg-bottom-right bg-no-repeat py-20 text-white px-4 md:px-0"
         style={{
           backgroundImage: `url(${Beans.src})`,
           backgroundSize: '350px auto',
@@ -109,7 +109,7 @@ const FranchiseSteps = () => {
                 key={index}
                 className="group relative py-6 pl-8 select-none sm:pl-32"
               >
-                <div className="flex items-center gap-2 rounded-3xl border-2 border-zinc-500/5 p-3 hover:bg-zinc-500/20">
+                <div className="bg-cuptime-black flex items-center gap-2 rounded-3xl border-2 border-zinc-500/5 p-3 hover:bg-zinc-500/20">
                   <div
                     className={`${index === 0 ? 'opacity-100' : 'opacity-40 group-hover:opacity-100'} rounded-2xl bg-[#1E1E1E] p-2`}
                   >

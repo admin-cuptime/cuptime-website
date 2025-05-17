@@ -83,7 +83,7 @@ const DeliverySteps = () => {
         />
       </motion.div>
     <section
-      className="bg-cuptime-black flex flex-col items-center justify-center bg-no-repeat bg-right gap-16 bg-contain py-20 text-white"
+      className="bg-cuptime-black flex flex-col items-center px-4 md:px-0 justify-center bg-no-repeat bg-right gap-16 bg-contain py-20 text-white"
       style={{ backgroundImage: `url(${Leaf.src})`, backgroundSize: "auto 350px" }}
     >
       <div className="flex flex-col gap-2">
