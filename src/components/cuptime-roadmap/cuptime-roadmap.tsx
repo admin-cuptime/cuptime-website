@@ -193,7 +193,8 @@ const CuptimeRoadmap = () => {
                 <br />
                 Arappalayam, Madurai – 625016
               </p>
-              <p>reach@cuptime.in</p>
+              <p>For franchise Enquiry <br /> franchise@cuptime.in</p>
+              <p>For order and other Enquiry <br />reach@cuptime.in</p>
               <p>Tel: +91 916 9161110</p>
             </div>
           </div>
