@@ -12,9 +12,13 @@ type FooterSectionProps = {
 const FooterSection = ({ title, links }: FooterSectionProps) => (
   <div className="flex flex-col gap-3">
     <div className="font-semibold text-white">{title}</div>
-    <div className="flex flex-col gap-1 ">
+    <div className="flex flex-col gap-1">
       {links.map((link, index) => (
-        <Link className='hover:underline hover:text-cuptime-red' key={index} href={link.href}>
+        <Link
+          className="hover:text-cuptime-red hover:underline"
+          key={index}
+          href={link.href}
+        >
           {link.text}
         </Link>
       ))}
@@ -27,7 +31,7 @@ const Footer = () => {
     { text: 'About Us', href: '/about-us' },
     { text: 'Our Story', href: '/about-us' },
     { text: 'Careers', href: '/careers' },
-    { text: 'Media & Press', href: '/about-us' },
+    { text: 'Media & Press', href: '/events' },
   ];
 
   const productLinks = [
@@ -38,50 +42,47 @@ const Footer = () => {
 
   const connectedLinks = [
     { text: 'Join Our Events', href: '/events' },
-    { text: 'Corporate Gifting', href: '/about-us' },
     { text: 'App Download', href: '/about-us' },
   ];
 
   const resourceLinks = [
     { text: 'Blog', href: '/blogs' },
     { text: 'Events', href: '/events' },
-    { text: 'Customer Stories', href: '/about-us' },
+    // { text: 'Customer Stories', href: '/about-us' },
   ];
 
-  const legalLinks = [
-    { text: 'Terms & Conditions', href: '/terms-conditions' },
-    { text: 'Privacy Policy', href: '/privacy-policy' },
-    { text: 'Cookie Policy', href: '/about-us' },
-    { text: 'Return & Refund Policy', href: '/cancellation-refund' },
-  ];
+  // const legalLinks = [
+  //   { text: 'Terms & Conditions', href: '/terms-conditions' },
+  //   { text: 'Privacy Policy', href: '/privacy-policy' },
+  //   { text: 'Cookie Policy', href: '/about-us' },
+  //   { text: 'Return & Refund Policy', href: '/cancellation-refund' },
+  // ];
 
   return (
-    <footer className="bg-cuptime-black max-w-screen-3xl mx-auto flex flex-col gap-10 px-4 py-10 md:px-24">
+    <footer className="bg-cuptime-black max-w-screen-3xl mx-auto flex flex-col gap-10 px-4 py-10 md:px-4">
       <div className="flex flex-col justify-between gap-10 md:flex-row">
         <div className="flex w-32 flex-col gap-4">
           <CuptimeLogoWhite className="h-auto w-full" />
-          <div className="text-xs text-cuptime-red text-center">
+          <div className="text-cuptime-red text-center text-xs">
             Brewing Connections, One Cup at a Time
           </div>
         </div>
 
         <FooterSection title="About Cuptime" links={aboutLinks} />
-
+        <FooterSection title="Connected / Join Us" links={connectedLinks} />
         <div className="flex flex-col gap-10">
           <FooterSection title="Products" links={productLinks} />
-          <FooterSection title="Connected / Join Us" links={connectedLinks} />
+          {/* <FooterSection title="Connected / Join Us" links={connectedLinks} /> */}
         </div>
-
         <FooterSection title="Resources" links={resourceLinks} />
-
         <div className="flex flex-col gap-10">
-          <FooterSection title="Legal" links={legalLinks} />
-
+          {/* <FooterSection title="Legal" links={legalLinks} /> */}
           <div className="flex flex-col gap-3">
             <div className="font-semibold text-white">Contact</div>
             <div className="flex w-fit flex-col">
-              <Link href="/about-us">support@cuptime.com</Link>
-              <Link href="/about-us">+91 98765 43210</Link>
+              <Link href=""> reach@cuptime.in</Link>
+              <Link href=""> ⁠franchise@cuptime.in</Link>
+              <Link href="/">+91 98765 43210</Link>
               <div className="text-wrap">
                 No. 12, Main Street
                 <div>Madurai – 625001,</div>

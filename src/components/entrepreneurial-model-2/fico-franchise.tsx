@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import Image from 'next/image';
 import journeygirl from '@/assets/png/journeygirl.png';
 import { Check } from 'lucide-react';
@@ -83,7 +84,7 @@ const FicoFranchise = () => {
 
               <div className="flex">
                 <button className="rounded-lg bg-white px-6 py-3 text-sm font-bold text-zinc-900 md:text-base">
-                  Become a Cuptime Franchisee
+                  <Link href="/franchise"> Become a Cuptime Franchisee</Link>
                 </button>
               </div>
             </div>

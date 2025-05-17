@@ -1,9 +1,10 @@
 'use client';
-
+import Link from 'next/link';
 import React from 'react';
 import { motion } from 'framer-motion';
 import Franchisebg from '@/assets/png/franchise.png';
 import deliveryImage from '@/assets/png/trust-delivery-time.png';
+// import { Link } from 'lucide-react';
 
 const FranchiseHero = () => {
   return (
@@ -57,7 +58,7 @@ const FranchiseHero = () => {
               className="flex flex-col items-center gap-2 sm:flex-row"
             >
               <button className="bg-cuptime-black w-50 rounded-lg px-4 py-2 text-sm font-semibold text-white md:px-6 md:py-3 md:text-base">
-                Apply Now
+               <Link href="/contact-us">Apply Now</Link>
               </button>
               <button className="from-cuptime-orange to-cuptime-red w-50 rounded-lg bg-gradient-to-tr px-4 py-2 text-sm font-semibold text-white md:w-60 md:py-3 md:text-base">
                 Download Franchise Kit
