@@ -64,7 +64,7 @@ const Footer = () => {
         <div className="flex w-32 flex-col gap-4">
           <CuptimeLogoWhite className="h-auto w-full" />
           <div className="text-cuptime-red text-center text-xs">
-            Brewing Connections, One Cup at a Time
+            Delivering Tradition, Enhanced by Innovation.
           </div>
         </div>
 
