@@ -9,6 +9,7 @@ const ContactBusinessCard = () => {
       title: 'Franchise Partnership',
       description: 'We’ll help you build your own success story.',
       subtitle: 'Start a Franchise',
+      
     },
     {
       title: ' Bulk Orders / B2B',
