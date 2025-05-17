@@ -2,6 +2,8 @@
 
 import React from 'react';
 import CuptimeLogoWhite from '@/assets/svg/cuptime-logo-white.svg';
+import PlayStore from '@/assets/svg/playstore.svg';
+import AppStore from '@/assets/svg/apple-logo.svg';
 import { images } from '@/assets/png/images';
 import { Check } from 'lucide-react';
 import { motion } from 'motion/react';
@@ -74,6 +76,37 @@ const GetAppSection = () => {
               </motion.div>
             ))}
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{
+              type: 'spring',
+              damping: 12,
+              stiffness: 100,
+            }}
+            className="flex w-full flex-col justify-center gap-2 text-[#0E1633] md:w-fit md:flex-row"
+          >
+            <div className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-white px-6 py-2 transition-all duration-300 hover:bg-white/80 md:w-fit">
+              <PlayStore className="h-8 w-8" />
+              <div className="flex flex-col leading-none">
+                <span className="text-[8px] font-semibold">GET IT ON</span>
+                <span className="text-base leading-none font-semibold">
+                  Google Play
+                </span>
+              </div>
+            </div>
+            <div className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-white px-6 py-2 transition-all duration-300 hover:bg-white/80 md:w-fit">
+              <AppStore className="h-8 w-8" />
+              <div className="flex flex-col leading-none">
+                <span className="text-[8px]">GET IT ON</span>
+                <span className="text-base leading-none font-semibold">
+                  App Store
+                </span>
+              </div>
+            </div>
+          </motion.div>
         </motion.div>
 
         <motion.div

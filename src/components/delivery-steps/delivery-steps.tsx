@@ -106,7 +106,7 @@ const DeliverySteps = () => {
           From Order to Sip – A Seamless 5-Step Journey
         </motion.p>
       </div>
-      <div className="mx-auto w-full max-w-4xl">
+      <div className="mx-auto w-full max-w-4xl px-4 md:px-0">
         <div className="-my-6">
           {deliveryStepsData.map((step, index) => (
             <div

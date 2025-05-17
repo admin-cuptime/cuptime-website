@@ -60,10 +60,9 @@ const productdeliveryStepsData = [
 const ProductSteps = () => {
   return (
     <section
-      className="bg-cuptime-black flex flex-col items-center justify-center gap-16 bg-contain bg-top-right bg-no-repeat py-20 text-white"
+      className="bg-cuptime-black flex flex-col items-center justify-center gap-16 bg-size-[200px] md:bg-contain bg-top-right bg-no-repeat py-20 text-white"
       style={{
         backgroundImage: `url(${CoffeeBeans.src})`,
-        backgroundSize: '350px auto',
       }}
     >
       <div className="flex flex-col gap-2">
@@ -86,7 +85,7 @@ const ProductSteps = () => {
           From Order to Sip – A Seamless 5-Step Journey
         </motion.p>
       </div>
-      <div className="mx-auto w-full max-w-4xl">
+      <div className="mx-auto w-full max-w-4xl px-4 md:px-0">
         <div className="-my-6">
           {productdeliveryStepsData.map((step, index) => (
             <div

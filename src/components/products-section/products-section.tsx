@@ -47,7 +47,7 @@ const SkeletonCard = () => (
 const ProductCard = ({ product }: { product: Product }) => {
   return (
     <CardContainer className="">
-      <CardBody className="flex h-full w-full flex-col items-center gap-3 rounded-lg bg-white p-3 drop-shadow-xl transition-all select-none hover:drop-shadow-2xl md:h-[300px] md:flex-row md:p-5 lg:w-[560px]">
+      <CardBody className="flex h-full w-full flex-col items-center gap-3 rounded-lg bg-white p-5 drop-shadow-xl transition-all select-none hover:drop-shadow-2xl md:h-[300px] md:flex-row md:p-5 lg:w-[560px]">
         <div
           className="h-[200px] w-full shrink-0 rounded-lg bg-contain bg-center bg-no-repeat md:h-full md:w-[230px] md:bg-cover"
           style={{ backgroundImage: `url(${product.image})` }}
