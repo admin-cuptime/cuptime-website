@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import React, { useState } from 'react';
 import { images } from '@/assets/png/images';
 import heroleft from '@/assets/png/hero-art-left.png';
@@ -151,7 +152,7 @@ const HeroSection = () => {
 
                   <div className="flex flex-col items-center gap-2 sm:flex-row">
                     <button className="bg-cuptime-black w-50 rounded-lg px-4 py-2 text-sm font-semibold text-white md:px-6 md:py-3 md:text-base">
-                      Become a Franchise
+                      <Link href="/franchise">Become a Franchise</Link>
                     </button>
                     <button className="from-cuptime-orange to-cuptime-red w-50 rounded-lg bg-gradient-to-tr px-4 py-2 text-sm font-semibold text-white md:py-3 md:text-base">
                       Start Serving Wellness
@@ -212,7 +213,7 @@ const HeroSection = () => {
                       Experience our Innovation
                     </button>
                     <button className="rounded-lg bg-white px-4 py-2 text-sm font-semibold text-zinc-900 md:px-6 md:py-3 md:text-base">
-                      See How It Works
+                      <Link href="/cup-time-mobile">See How It Works</Link>
                     </button>
                   </div>
                 </div>
@@ -289,7 +290,7 @@ const HeroSection = () => {
 
                     <div className="flex flex-col items-center gap-2 sm:flex-row">
                       <button className="bg-cuptime-black rounded-lg px-4 py-2 text-sm font-semibold text-white md:px-6 md:py-3 md:text-base">
-                        Place your Order Now
+                        <Link href="/https://play.google.com/store/apps/details?id=com.cuptime.customer">Place your Order Now</Link>
                       </button>
                     </div>
                   </div>

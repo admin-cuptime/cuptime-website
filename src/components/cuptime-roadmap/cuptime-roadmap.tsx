@@ -19,7 +19,7 @@ const CuptimeRoadmap = () => {
   const [success, setSuccess] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
-  const options = ['Price', 'Services we offer', 'Call Back', 'Others'];
+  const options = ['Price','Franchise', 'Services we offer', 'Call Back', 'Others'];
 
   const handleCheckboxChange = (option: string) => {
     if (selectedOption === option) {
@@ -83,7 +83,7 @@ const CuptimeRoadmap = () => {
                 {options.map((option) => (
                   <label key={option} className="flex items-center">
                     <input
-                      type="checkbox"
+                      type="radio"
                       name="inquiry_type"
                       checked={selectedOption === option}
                       onChange={() => handleCheckboxChange(option)}

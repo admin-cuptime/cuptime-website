@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import React from 'react';
 import Image from 'next/image';
 import deliveryBoyImage from '@/assets/png/deliveryboy.png';
@@ -134,7 +135,7 @@ const WhyChoose = () => {
           }}
         >
           <button className="bg-cuptime-black hover:bg-cuptime-black/80 cursor-pointer rounded-lg px-6 py-3 text-base font-semibold text-white transition-all">
-            Become a Franchisee
+            <Link href="/franchise">Become a Franchisee</Link>
           </button>
         </motion.div>
       </div>

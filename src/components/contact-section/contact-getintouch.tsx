@@ -23,7 +23,7 @@ const GetinTouch = () => {
   const [success, setSuccess] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
-  const options = ['Price', 'Services we offer', 'Call Back', 'Others'];
+  const options = ['Price','Franchise', 'Services we offer', 'Call Back', 'Others'];
 
   const handleCheckboxChange = (option: string) => {
     setSelectedOption(selectedOption === option ? null : option);

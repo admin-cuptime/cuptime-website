@@ -186,10 +186,10 @@ const Header = () => {
         <button
           className={`${isAboutUsPage && !scrolled ? 'border-white text-white' : 'text-cuptime-red border-foreground'} cursor-pointer rounded-xl border-2 bg-transparent px-6 py-2 font-semibold`}
         >
-          Franchise
+          <Link href="/franchise">Franchise</Link>
         </button>
         <button className="from-cuptime-orange to-cuptime-red cursor-pointer rounded-xl bg-gradient-to-tr px-6 py-2 font-semibold text-white hover:opacity-90">
-          Order Now
+          <Link href="">Order Now</Link>
         </button>
       </div>
       {/* Mobile Navigation starts here ma dude */}

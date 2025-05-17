@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { IconArrowUpRight } from '@tabler/icons-react';
@@ -16,7 +17,7 @@ const SkeletonCard = () => (
 
 const ProductCard = ({ product }: { product: any }) => {
   return (
-    <div className="bg-cuptime-midnight hover:bg-cuptime-midnight group relative flex h-[300px] w-full flex-col items-center justify-between rounded-xl border-1 border-transparent p-5 transition-all duration-300 hover:border-zinc-300 md:w-[250px] md:bg-transparent">
+    <div className="bg-cuptime-midnight hover:bg-cuptime-midnight group relative flex h-[300px] w-full flex-col items-center justify-between rounded-xl border-1 border-transparent p-5 transition-all duration-300 hover:border-zinc-300 md:w-[300px] md:bg-transparent">
       <div className="absolute top-2 right-2 hidden transition-all duration-300 group-hover:flex">
         <IconArrowUpRight className="h-6 w-6 text-white" />
       </div>
@@ -105,7 +106,7 @@ const ProductOverview = () => {
 
       <div>
         <button className="from-cuptime-orange to-cuptime-red cursor-pointer rounded-xl bg-gradient-to-tr px-6 py-2 font-semibold text-white hover:opacity-90">
-          View All Products
+          <Link href="/our-products">View All Products</Link>
         </button>
       </div>
     </section>
