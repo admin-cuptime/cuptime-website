@@ -40,6 +40,7 @@ const Header = () => {
   const [mobileMoreOpen, setMobileMoreOpen] = useState(false);
   const moreMenuRef = useRef<HTMLLIElement | null>(null);
   const isAboutUsPage = pathname === '/about-us';
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -98,12 +99,17 @@ const Header = () => {
         <ul className="flex gap-8">
           {navLinks.map(({ href, label }) => (
             <li key={href}>
-              <Link 
-                href={href} 
-                className={`cursor-pointer hover:text-cuptime-red pb-1 ${
-                  pathname === href 
-                    ? "border-b-2 border-cuptime-red  font-semibold " + (isAboutUsPage && !scrolled ? "text-white" : "text-zinc-900")
-                    : isAboutUsPage && !scrolled ? "text-white" : "text-zinc-900"
+              <Link
+                href={href}
+                className={`hover:text-cuptime-red cursor-pointer pb-1 ${
+                  pathname === href
+                    ? 'border-cuptime-red border-b-2 font-semibold ' +
+                      (isAboutUsPage && !scrolled
+                        ? 'text-white'
+                        : 'text-zinc-900')
+                    : isAboutUsPage && !scrolled
+                      ? 'text-white'
+                      : 'text-zinc-900'
                 }`}
               >
                 {label}
@@ -188,7 +194,7 @@ const Header = () => {
       </div>
       {/* Mobile Navigation starts here ma dude */}
       <div className="lg:hidden">
-        <Sheet>
+        <Sheet open={isMobileNavOpen} onOpenChange={setIsMobileNavOpen}>
           <SheetTrigger asChild>
             <Button
               variant="ghost"
@@ -205,6 +211,7 @@ const Header = () => {
                   <li key={href}>
                     <Link
                       href={href}
+                      onClick={() => setIsMobileNavOpen(false)} // Close drawer
                       className={`hover:text-cuptime-red flex cursor-pointer items-center pb-1 ${
                         pathname === href
                           ? 'text-cuptime-red font-semibold'
@@ -234,6 +241,7 @@ const Header = () => {
                         <DropdownMenuItem key={href} asChild>
                           <Link
                             href={href}
+                            onClick={() => setIsMobileNavOpen(false)} // Close drawer
                             className={`w-full cursor-pointer ${
                               pathname === href
                                 ? 'text-cuptime-red font-semibold'
@@ -249,10 +257,16 @@ const Header = () => {
                 </li>
               </ul>
               <div className="mt-4 flex flex-col gap-1">
-                <button className="text-cuptime-red border-foreground cursor-pointer rounded-xl border-2 bg-white px-6 py-2 font-semibold">
+                <button
+                  onClick={() => setIsMobileNavOpen(false)}
+                  className="text-cuptime-red border-foreground cursor-pointer rounded-xl border-2 bg-white px-6 py-2 font-semibold"
+                >
                   Franchise
                 </button>
-                <button className="from-cuptime-orange to-cuptime-red cursor-pointer rounded-xl bg-gradient-to-tr px-6 py-2 font-semibold text-white hover:opacity-90">
+                <button
+                  onClick={() => setIsMobileNavOpen(false)}
+                  className="from-cuptime-orange to-cuptime-red cursor-pointer rounded-xl bg-gradient-to-tr px-6 py-2 font-semibold text-white hover:opacity-90"
+                >
                   Order Now
                 </button>
               </div>

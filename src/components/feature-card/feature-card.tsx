@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { CardBody, CardContainer, CardItem } from '@/components/ui/3d-card';
 import Handshake from '@/assets/svg/handshake.svg';
-import { IconBriefcase, IconClock2, IconCoffee, IconDeviceMobileMessage, IconTruck, IconTruckFilled } from '@tabler/icons-react';
+import { IconBriefcase, IconClock2, IconCoffee, IconDeviceMobileMessage, IconTruck } from '@tabler/icons-react';
 
 const FeatureCard = () => {
   const features = [
