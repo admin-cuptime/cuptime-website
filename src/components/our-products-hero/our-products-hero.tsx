@@ -1,6 +1,8 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { handleAppRedirect } from '@/utils/helper';
 import { motion } from 'framer-motion';
 import heroleft from '@/assets/png/hero-art-left.png';
 
@@ -61,8 +63,16 @@ const ProductsHero = () => {
                     <button className="bg-cuptime-black w-40 rounded-lg px-4 py-2 text-sm font-semibold text-white md:px-6 md:py-3 md:text-base">
                       View Menu
                     </button>
-                    <button className="from-cuptime-orange to-cuptime-red w-40 rounded-lg bg-gradient-to-tr px-4 py-2 text-sm font-semibold text-white md:py-3 md:text-base">
-                      Order Now
+                    <button
+                      onClick={handleAppRedirect}
+                      className="cursor-pointer from-cuptime-orange to-cuptime-red w-40 rounded-lg bg-gradient-to-tr px-4 py-2 text-sm font-semibold text-white md:py-3 md:text-base"
+                    >
+                      <Link
+                        href="https://play.google.com/store/apps/details?id=com.cuptime.customer"
+                        target="_blank"
+                      >
+                        Order Now
+                      </Link>
                     </button>
                   </motion.div>
                 </div>

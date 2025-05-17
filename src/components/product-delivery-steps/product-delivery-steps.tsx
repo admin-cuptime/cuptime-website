@@ -60,9 +60,11 @@ const productdeliveryStepsData = [
 const ProductSteps = () => {
   return (
     <section
-      className="bg-cuptime-black flex flex-col items-center justify-center gap-16 bg-size-[200px] md:bg-contain bg-top-right bg-no-repeat py-20 text-white px-4 md:px-0"
+      className="bg-cuptime-black flex flex-col items-center justify-center gap-16 bg-size-[200px] bg-top-right bg-no-repeat px-4 py-20 text-white md:bg-size-[400px] md:px-0"
       style={{
         backgroundImage: `url(${CoffeeBeans.src})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'top right',
       }}
     >
       <div className="flex flex-col gap-2">

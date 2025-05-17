@@ -1,6 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { handleAppRedirect } from '@/utils/helper';
 import {
   IconAccessPoint,
   IconMapPin,
@@ -69,17 +71,18 @@ const FranchiseSteps = () => {
         <img
           src={GirlVehicle.src}
           alt="Delivery Executive"
-          className="absolute md:top-[-200px] top-[-130px] left-0 z-20 w-40 drop-shadow-xl md:w-70"
+          className="absolute top-[-130px] left-0 z-20 w-40 drop-shadow-xl md:top-[-200px] md:w-70"
           style={{
             transform: 'rotate(-2deg)',
           }}
         />
       </motion.div>
       <section
-        className="bg-cuptime-black flex flex-col items-center justify-center gap-16 bg-contain bg-bottom-right bg-no-repeat py-20 text-white px-4 md:px-0"
+        className="bg-cuptime-black flex flex-col items-center justify-center gap-16 bg-size-[200px] bg-bottom-right bg-no-repeat px-4 py-20 text-white md:bg-size-[400px] md:px-0"
         style={{
           backgroundImage: `url(${Beans.src})`,
-          backgroundSize: '350px auto',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'right bottom',
         }}
       >
         <div className="flex flex-col gap-2">
@@ -143,8 +146,16 @@ const FranchiseSteps = () => {
         </div>
 
         <div>
-          <button className="cursor-pointer rounded-lg bg-zinc-50 px-6 py-3 text-base font-semibold text-zinc-900 transition-all">
-            Order Now
+          <button
+            onClick={handleAppRedirect}
+            className="cursor-pointer rounded-lg bg-zinc-50 px-6 py-3 text-base font-semibold text-zinc-900 transition-all"
+          >
+            <Link
+              href="https://play.google.com/store/apps/details?id=com.cuptime.customer"
+              target="_blank"
+            >
+              Order Now
+            </Link>
           </button>
         </div>
       </section>
