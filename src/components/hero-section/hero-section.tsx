@@ -151,13 +151,13 @@ const HeroSection = () => {
                     shortcuts, just pure Madurai tradition in every sip.
                   </div>
 
-                  <div className="flex flex-col items-center gap-2 sm:flex-row">
+                  <div className="flex flex-col items-center sm:flex-row">
                     <button className="bg-cuptime-black w-50 rounded-lg px-4 py-2 text-sm font-semibold text-white md:px-6 md:py-3 md:text-base">
                       <Link href="/franchise">Become a Franchise</Link>
                     </button>
-                    <button className="from-cuptime-orange to-cuptime-red w-50 rounded-lg bg-gradient-to-tr px-4 py-2 text-sm font-semibold text-white md:py-3 md:text-base">
+                    {/* <button className="from-cuptime-orange to-cuptime-red w-50 rounded-lg bg-gradient-to-tr px-4 py-2 text-sm font-semibold text-white md:py-3 md:text-base">
                       Start Serving Wellness
-                    </button>
+                    </button> */}
                   </div>
                 </div>
                 <div className="w-full md:w-1/2">
@@ -211,7 +211,7 @@ const HeroSection = () => {
 
                   <div className="flex flex-col items-center gap-2 sm:flex-row">
                     <button className="bg-cuptime-black rounded-lg px-4 py-2 text-sm font-semibold text-white md:px-6 md:py-3 md:text-base">
-                      Experience our Innovation
+                      <Link href="/technology">Experience our Inovation</Link>
                     </button>
                     <button className="rounded-lg bg-white px-4 py-2 text-sm font-semibold text-zinc-900 md:px-6 md:py-3 md:text-base">
                       <Link href="/cup-time-mobile">See How It Works</Link>
