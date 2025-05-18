@@ -123,7 +123,7 @@ const TraditionWorkplace = () => {
             </div>
           </div>
         </div>
-        <motion.div 
+        {/* <motion.div 
           className="flex justify-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -137,7 +137,7 @@ const TraditionWorkplace = () => {
           <button className="bg-cuptime-black hover:bg-cuptime-black/80 cursor-pointer rounded-lg px-6 py-3 text-base font-semibold text-white transition-all">
             Start Serving Wellness
           </button>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

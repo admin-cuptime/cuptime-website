@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { images } from '@/assets/png/images';
@@ -23,13 +24,21 @@ const GetinTouch = () => {
   const [success, setSuccess] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
-  const options = ['Price','Franchise', 'Services we offer', 'Call Back', 'Others'];
+  const options = [
+    'Price',
+    'Franchise',
+    'Services we offer',
+    'Call Back',
+    'Others',
+  ];
 
   const handleCheckboxChange = (option: string) => {
     setSelectedOption(selectedOption === option ? null : option);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
@@ -40,17 +49,22 @@ const GetinTouch = () => {
     setError(null);
 
     try {
-      await fetch('https://script.google.com/macros/s/AKfycbxGp1oat2ce5Yh6lrnvcg6lRj8DcOYgHzGlgHErRqPWdHili0H07TkggIJArz8vJMlrRw/exec', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        mode: 'no-cors',
-        body: JSON.stringify({
-          ...form,
-          reason: selectedOption || '',
-        }),
-      });
+      await fetch(
+        'https://script.google.com/macros/s/AKfycbxGp1oat2ce5Yh6lrnvcg6lRj8DcOYgHzGlgHErRqPWdHili0H07TkggIJArz8vJMlrRw/exec',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          mode: 'no-cors',
+          body: JSON.stringify({
+            ...form,
+            reason: selectedOption || '',
+          }),
+        }
+      );
 
-      setSuccess('Thank you! Your message has been sent. We will reach out to you soon.');
+      setSuccess(
+        'Thank you! Your message has been sent. We will reach out to you soon.'
+      );
       setForm({
         name: '',
         'mobile-number': '',
@@ -60,7 +74,9 @@ const GetinTouch = () => {
       });
       setSelectedOption(null);
     } catch (err: any) {
-      setError(`Network error. Please try again. ${err?.message ? 'Details: ' + err.message : ''}`);
+      setError(
+        `Network error. Please try again. ${err?.message ? 'Details: ' + err.message : ''}`
+      );
     } finally {
       setLoading(false);
     }
@@ -113,25 +129,27 @@ const GetinTouch = () => {
                 <div className="h-auto w-7">
                   <MySVGweb />
                 </div>
-                reach@cuptime.in
+                <Link href="mailto:reach@cuptime.in">reach@cuptime.in</Link>
               </div>
               <div className="flex flex-row gap-3 py-2 text-black">
                 <div className="h-auto w-7">
                   <MySVGmobile />
                 </div>
-                Tel: +91 916 9161110
+                <Link href="tel:+919876543210">+91 98765 43210</Link>
               </div>
             </div>
           </div>
           {/* Vertical Line */}
-          <div className="border-cuptime-border h-auto border-l-2 sm:hidden md:block">
-          </div>
+          <div className="border-cuptime-border h-auto border-l-2 sm:hidden md:block"></div>
           {/* Right Content Section */}
-          <div className="row-span-2 rounded-lg md:rounded-4xl lg:col-span-2 lg:px-4 lg:w-3/5">
+          <div className="row-span-2 rounded-lg md:rounded-4xl lg:col-span-2 lg:w-3/5 lg:px-4">
             <h3 className="mb-6 text-sm font-semibold text-zinc-900 lg:text-2xl">
               How can we help you?
             </h3>
-            <form className="space-y-6 text-sm md:text-base" onSubmit={handleSubmit}>
+            <form
+              className="space-y-6 text-sm md:text-base"
+              onSubmit={handleSubmit}
+            >
               <div className="flex flex-wrap gap-4">
                 {options.map((option) => (
                   <label key={option} className="flex items-center">
@@ -163,7 +181,7 @@ const GetinTouch = () => {
                   name="mobile-number"
                   placeholder="Mobile Number"
                   value={form['mobile-number']}
-                  onChange={e => {
+                  onChange={(e) => {
                     // Only allow numbers and +
                     const value = e.target.value.replace(/[^0-9+]/g, '');
                     setForm({ ...form, 'mobile-number': value });
