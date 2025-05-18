@@ -41,7 +41,14 @@ const ProductCard = ({ product }: { product: any }) => {
         </>
       )}
       <div className="absolute top-2 right-2 hidden transition-all duration-300 group-hover:flex">
-        <IconArrowUpRight className="h-6 w-6 text-white" />
+        <Link
+          href="https://apps.apple.com/in/app/cup-time/id1645852379"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="absolute top-2 right-2 hidden transition-all duration-300 group-hover:flex"
+        >
+          <IconArrowUpRight className="h-6 w-6 text-white" />
+        </Link>
       </div>
       <div
         className="h-[200px] w-[200px] bg-contain bg-center bg-no-repeat transition-all duration-300 md:group-hover:h-[160px] md:group-hover:w-[160px]"

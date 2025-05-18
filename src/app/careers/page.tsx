@@ -11,8 +11,10 @@ const CareersPage = () => {
     <main className="max-w-screen-3xl mx-auto space-y-20">
       <CareersHero />
       <JobApplySection />
-      <CuptimeJobApplication />
-      <HorizontelTimeline/>
+      <div id="job-application-section" className='scroll-mt-24'>
+        <CuptimeJobApplication />
+      </div>
+      <HorizontelTimeline />
       <ReviewMarquee />
       <CuptimeImageMedia />
     </main>

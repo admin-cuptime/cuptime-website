@@ -7,7 +7,7 @@ import ReviewMarquee from '@/components/review-marquee/review-marquee';
 
 const CuptimeMobilepage = () => {
   return (
-    <section className="max-w-screen-3xl mx-auto space-y-32">
+    <section className="max-w-screen-3xl mx-auto space-y-16 md:space-y-32">
       <CuptimeMobileHero />
       <CupTimeMobileOrder />
       <CuptimeStandout />

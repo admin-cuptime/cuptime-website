@@ -13,7 +13,7 @@ import CuptimeImageMedia from '@/components/cuptime-image-media/cuptime-image-me
 
 const AboutPage = () => {
   return (
-      <main className="max-w-screen-3xl mx-auto space-y-32">
+      <main className="max-w-screen-3xl mx-auto space-y-16 md:space-y-32">
         <AboutUsHero/>
         <section className='-mt-32'>
         <HorizontelTimeline/></section>

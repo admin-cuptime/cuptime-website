@@ -129,13 +129,14 @@ const GetinTouch = () => {
                 <div className="h-auto w-7">
                   <MySVGweb />
                 </div>
-                <Link href="mailto:reach@cuptime.in">reach@cuptime.in</Link>
+                <Link href="mailto:reach@cuptime.in" className='hover:text-cuptime-red'>reach@cuptime.in</Link>
+                <Link href="mailto:franchise@cuptime.in" className='hover:text-cuptime-red flex-col'>franchise@cuptime.in</Link>
               </div>
               <div className="flex flex-row gap-3 py-2 text-black">
                 <div className="h-auto w-7">
                   <MySVGmobile />
                 </div>
-                <Link href="tel:+919876543210">+91 98765 43210</Link>
+                <Link href="tel:+919876543210" className='hover:text-cuptime-red'>+91 98765 43210</Link>
               </div>
             </div>
           </div>
@@ -154,7 +155,7 @@ const GetinTouch = () => {
                 {options.map((option) => (
                   <label key={option} className="flex items-center">
                     <input
-                      type="checkbox"
+                      type="radio"
                       name="inquiry_type"
                       checked={selectedOption === option}
                       onChange={() => handleCheckboxChange(option)}
