@@ -15,7 +15,7 @@ import TrustDelivery from '@/components/trust-delivery-time/trust-delivery';
 
 export default function Home() {
   return (
-    <main className="max-w-screen-3xl mx-auto space-y-32">
+    <main className="max-w-screen-3xl mx-auto space-y-16 md:space-y-32">
       <HeroSection />
       <FeatureCard />
       <ProductOverview />

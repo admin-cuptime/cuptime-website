@@ -214,16 +214,16 @@ const CuptimeRoadmap = () => {
               </p>
               <p>
                 For franchise Enquiry <br />{' '}
-                <Link href="mailto:⁠franchise@cuptime.in">
+                <Link href="mailto:⁠franchise@cuptime.in" className='text-cuptime-red'>
                   ⁠franchise@cuptime.in
                 </Link>
               </p>
               <p>
                 For order and other Enquiry <br />
-                <Link href="mailto:reach@cuptime.in">reach@cuptime.in</Link>
+                <Link href="mailto:reach@cuptime.in" className='text-cuptime-red'>reach@cuptime.in</Link>
               </p>
               <p>
-                <Link href="tel:+919876543210">Tel: +91 916 9161110</Link>
+                <Link href="tel:+919876543210" className='hover:text-cuptime-red'>Tel: +91 916 9161110</Link>
               </p>
             </div>
           </div>

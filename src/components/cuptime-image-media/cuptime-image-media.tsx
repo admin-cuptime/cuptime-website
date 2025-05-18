@@ -12,10 +12,23 @@ import { Button } from '../ui/button';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { fetchGalleryData } from '@/app/api/gallery';
 
+const useMediaQuery = (query: string): boolean => {
+  const [matches, setMatches] = useState(false);
+  useEffect(() => {
+    const media = window.matchMedia(query);
+    setMatches(media.matches);
+    const listener = () => setMatches(media.matches);
+    media.addEventListener('change', listener);
+    return () => media.removeEventListener('change', listener);
+  }, [query]);
+  return matches;
+};
+
 const CuptimeImageMedia = () => {
   const [api, setApi] = React.useState<CarouselApi>();
   const [images, setImages] = useState<{ src: string; alt?: string }[]>([]);
   const [loading, setLoading] = useState(true);
+  const isMobile = useMediaQuery('(max-width: 640px)');
 
   useEffect(() => {
     const getGallery = async () => {
@@ -34,13 +47,12 @@ const CuptimeImageMedia = () => {
     getGallery();
   }, []);
 
-  // Loader: 8 pulsing rectangles like image items
   const Loader = () => (
-    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-      {[...Array(8)].map((_, i) => (
+    <div className="grid grid-cols-1 gap-4">
+      {[...Array(1)].map((_, i) => (
         <div
           key={i}
-          className="w-full aspect-square rounded-lg bg-gray-200 animate-pulse"
+          className="aspect-square w-full animate-pulse rounded-lg bg-gray-200"
           style={{
             minHeight: '120px',
             animationDelay: `${i * 0.08}s`,
@@ -49,15 +61,20 @@ const CuptimeImageMedia = () => {
       ))}
     </div>
   );
-
-  // Group images by layout
+  
   const getSlides = () => {
-    const groups: any[] = [];
-    const perGroup = 8; // 4 per row x 2 rows for lg
-    for (let i = 0; i < images.length; i += perGroup) {
-      groups.push(images.slice(i, i + perGroup));
+    if (isMobile) {
+      // One image per slide for mobile
+      return images.map((img) => [img]);
+    } else {
+      // Group by 8 images for larger screens
+      const groups: any[] = [];
+      const perGroup = 8;
+      for (let i = 0; i < images.length; i += perGroup) {
+        groups.push(images.slice(i, i + perGroup));
+      }
+      return groups;
     }
-    return groups;
   };
 
   return (
@@ -85,16 +102,23 @@ const CuptimeImageMedia = () => {
             ) : (
               getSlides().map((group, groupIndex) => (
                 <CarouselItem key={groupIndex} className="w-full">
-                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                    {group.map((img: any, index: any) => (
-                      <div key={index} className="overflow-hidden">
-                        <img
-                          src={img.src}
-                          alt={img.alt || `Image ${index + 1}`}
-                          className="h-full w-full object-cover"
-                        />
-                      </div>
-                    ))}
+                  <div
+                    className={`grid gap-4 ${
+                      isMobile
+                        ? 'grid-cols-1'
+                        : 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'
+                    }`}
+                  >
+                    {Array.isArray(group) &&
+                      group.map((img, index) => (
+                        <div key={index} className="overflow-hidden">
+                          <img
+                            src={img.src}
+                            alt={img.alt}
+                            className="h-full w-full rounded-md object-cover"
+                          />
+                        </div>
+                      ))}
                   </div>
                 </CarouselItem>
               ))

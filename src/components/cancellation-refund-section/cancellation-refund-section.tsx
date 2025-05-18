@@ -13,7 +13,7 @@ const CancellationRefundQuestion = () => {
         className="mb-10 w-full items-center justify-center rounded-2xl bg-white p-3 drop-shadow-xl"
       >
         <div className="flex flex-col gap-8 md:p-12">
-          <div className="mb-6 space-y-6">
+          <div className="md:mb-3 space-y-6">
             <h2 className="text-sm font-bold text-zinc-900 md:text-xl">
              How the Refund Process Works:
             </h2>
