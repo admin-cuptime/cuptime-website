@@ -61,7 +61,7 @@ const CuptimeImageMedia = () => {
   };
 
   return (
-    <div className="bg-white px-4 py-8 sm:px-8 md:px-16">
+    <div className="bg-white px-4 py-1 sm:px-8 md:px-16">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -100,7 +100,7 @@ const CuptimeImageMedia = () => {
               ))
             )}
           </CarouselContent>
-          <div className="flex justify-center gap-2 py-4">
+          <div className="flex justify-center gap-2 py-1">
             <Button
               variant="outline"
               size="icon"

@@ -2,8 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { CardBody, CardContainer, CardItem } from '@/components/ui/3d-card';
-import Handshake from '@/assets/svg/handshake.svg';
-import { IconBriefcase, IconClock2, IconCoffee, IconDeviceMobileMessage, IconTruck } from '@tabler/icons-react';
+import { IconBriefcase, IconClock2, IconCoffee, IconDeviceMobileMessage, IconHeartHandshake, IconTruck } from '@tabler/icons-react';
 
 const FeatureCard = () => {
   const features = [
@@ -38,7 +37,7 @@ const FeatureCard = () => {
         'Designed for workspaces, our beverage plans and menus fit seamlessly into your routine. Whether it’s 5 cups or 500, we’ve got you covered.',
     },
     {
-      icon: Handshake,
+      icon: IconHeartHandshake,
       title: 'Trusted by 800+ Businesses',
       description:
         'Our growing network of happy clients across Tamil Nadu is proof of our consistency, service and value.',
