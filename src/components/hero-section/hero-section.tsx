@@ -7,6 +7,7 @@ import heroleft from '@/assets/png/hero-art-left.png';
 import heroright from '@/assets/png/hero-art-right.png';
 import heroWave1 from '@/assets/png/hero-wave-1.png';
 import heroWave2 from '@/assets/png/hero-wave-2.png';
+import { handleAppRedirect } from '@/utils/helper';
 import { useEffect } from 'react';
 import {
   Carousel,
@@ -140,7 +141,7 @@ const HeroSection = () => {
               }}
             >
               <div className="flex h-full flex-col items-center justify-center gap-4 md:flex-row">
-                <div className="flex w-full flex-col gap-4 md:w-1/2 md:gap-6 text-center md:text-left">
+                <div className="flex w-full flex-col gap-4 text-center md:w-1/2 md:gap-6 md:text-left">
                   <div className="text-3xl font-bold text-zinc-900 md:text-4xl lg:text-5xl">
                     Traditional Taste. Modern Workspaces.
                   </div>
@@ -173,7 +174,7 @@ const HeroSection = () => {
                 {firstSlideTaglines.map((item, index) => (
                   <div
                     key={index}
-                    className="flex flex-row items-center justify-between gap-1 rounded-4xl bg-white/20 px-4 py-2 text-center text-zinc-900 hover:scale-105 transition-all duration-300 select-none"
+                    className="flex flex-row items-center justify-between gap-1 rounded-4xl bg-white/20 px-4 py-2 text-center text-zinc-900 transition-all duration-300 select-none hover:scale-105"
                   >
                     {item.icon}
                     <p className="text-sm font-semibold">{item.text}</p>
@@ -193,7 +194,7 @@ const HeroSection = () => {
             <div className="flex h-full flex-col justify-between bg-cover px-4 py-4 md:px-10">
               <div className="flex h-full flex-col items-center justify-center gap-4 md:flex-row">
                 <div
-                  className="flex w-full flex-col gap-4 bg-contain bg-left bg-no-repeat md:w-1/2 md:gap-6 text-center md:text-left"
+                  className="flex w-full flex-col gap-4 bg-contain bg-left bg-no-repeat text-center md:w-1/2 md:gap-6 md:text-left"
                   style={{
                     backgroundImage: `url(${images.heroSection.leafArt.src})`,
                   }}
@@ -231,7 +232,7 @@ const HeroSection = () => {
                 {secondSlideTaglines.map((item, index) => (
                   <div
                     key={index}
-                    className="flex flex-row items-center justify-between gap-1 rounded-4xl bg-black/20 px-4 py-2 text-center text-white hover:scale-105 transition-all duration-300 select-none"
+                    className="flex flex-row items-center justify-between gap-1 rounded-4xl bg-black/20 px-4 py-2 text-center text-white transition-all duration-300 select-none hover:scale-105"
                   >
                     {item.icon}
                     <p className="text-sm font-semibold">{item.text}</p>
@@ -269,14 +270,11 @@ const HeroSection = () => {
                 }}
               >
                 <div className="pointer-events-none absolute inset-0">
-                  <div className="absolute top-1/6 left-1/2 md:top-1/3 md:left-1/3 h-[80%] md:h-[500px] w-[80%] md:w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-radial from-white to-white/70 blur-2xl"></div>
+                  <div className="absolute top-1/6 left-1/2 h-[80%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-radial from-white to-white/70 blur-2xl md:top-1/3 md:left-1/3 md:h-[500px] md:w-[500px]"></div>
                 </div>
-                <div className="relative w-full p-5 lg:p-16 md:w-1/2 text-center md:text-left">
-                  <div
-                    className="flex flex-col gap-4 bg-cover bg-left bg-no-repeat"
-                    
-                  >
-                    <div className="text-3xl font-bold text-zinc-900 md:text-4xl lg:text-5xl" >
+                <div className="relative w-full p-5 text-center md:w-1/2 md:text-left lg:p-16">
+                  <div className="flex flex-col gap-4 bg-cover bg-left bg-no-repeat">
+                    <div className="text-3xl font-bold text-zinc-900 md:text-4xl lg:text-5xl">
                       Brewed Fresh. Delivered Fast. Powered by Tech.
                     </div>
                     <div className="text-sm md:text-lg">
@@ -289,8 +287,16 @@ const HeroSection = () => {
                     </div>
 
                     <div className="flex flex-col items-center gap-2 sm:flex-row">
-                      <button className="bg-cuptime-black rounded-lg px-4 py-2 text-sm font-semibold text-white md:px-6 md:py-3 md:text-base">
-                        <Link href="/https://play.google.com/store/apps/details?id=com.cuptime.customer">Place your Order Now</Link>
+                      <button
+                        onClick={handleAppRedirect}
+                        className="cursor-pointer bg-cuptime-black rounded-lg px-4 py-2 text-sm font-semibold text-white md:px-6 md:py-3 md:text-base"
+                      >
+                        <Link
+                          href="https://play.google.com/store/apps/details?id=com.cuptime.customer"
+                          target="_blank"
+                        >
+                          Place your Order Now
+                        </Link>
                       </button>
                     </div>
                   </div>
@@ -302,7 +308,7 @@ const HeroSection = () => {
                 {thirdSlideTaglines.map((item, index) => (
                   <div
                     key={index}
-                    className="flex flex-row items-center justify-between gap-1 rounded-4xl bg-black/20 px-4 py-2 text-center text-white hover:scale-105 transition-all duration-300 select-none"
+                    className="flex flex-row items-center justify-between gap-1 rounded-4xl bg-black/20 px-4 py-2 text-center text-white transition-all duration-300 select-none hover:scale-105"
                   >
                     {item.icon}
                     <p className="text-sm font-semibold">{item.text}</p>

@@ -13,6 +13,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { motion } from 'framer-motion';
+import { handleAppRedirect } from '@/utils/helper';
 import { useEffect, useState, useRef } from 'react';
 
 const navLinks = [
@@ -188,8 +189,16 @@ const Header = () => {
         >
           <Link href="/franchise">Franchise</Link>
         </button>
-        <button className="from-cuptime-orange to-cuptime-red cursor-pointer rounded-xl bg-gradient-to-tr px-6 py-2 font-semibold text-white hover:opacity-90">
-          <Link href="">Order Now</Link>
+        <button
+          onClick={handleAppRedirect}
+          className="from-cuptime-orange to-cuptime-red cursor-pointer rounded-xl bg-gradient-to-tr px-6 py-2 font-semibold text-white hover:opacity-90"
+        >
+          <Link
+            href="https://play.google.com/store/apps/details?id=com.cuptime.customer"
+            target="_blank"
+          >
+            Order Now
+          </Link>
         </button>
       </div>
       {/* Mobile Navigation starts here ma dude */}
@@ -264,10 +273,15 @@ const Header = () => {
                   Franchise
                 </button>
                 <button
-                  onClick={() => setIsMobileNavOpen(false)}
+                  onClick={handleAppRedirect}
                   className="from-cuptime-orange to-cuptime-red cursor-pointer rounded-xl bg-gradient-to-tr px-6 py-2 font-semibold text-white hover:opacity-90"
                 >
-                  Order Now
+                  <Link
+                    href="https://play.google.com/store/apps/details?id=com.cuptime.customer"
+                    target="_blank"
+                  >
+                    Order Now
+                  </Link>
                 </button>
               </div>
             </div>

@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+import { handleAppRedirect } from '@/utils/helper';
 import { motion } from 'framer-motion';
 import React from 'react';
 import Leaf from '@/assets/png/LeafTimeline.png';
@@ -157,8 +159,14 @@ const HorizontelTimeline = () => {
           ))}
         </div>
         <div className="mt-10 text-center lg:mt-16">
-          <button className="cursor-pointer rounded-lg bg-white px-6 py-3 text-base font-semibold text-black transition-all">
+          <button  onClick={handleAppRedirect}
+          className="cursor-pointer rounded-lg bg-white px-6 py-3 text-base font-semibold text-black transition-all">
+           <Link
+            href="https://play.google.com/store/apps/details?id=com.cuptime.customer"
+            target="_blank"
+          >
             Order Now
+          </Link>
           </button>
         </div>
       </div>
