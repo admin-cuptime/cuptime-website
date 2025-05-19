@@ -84,7 +84,7 @@ const FAQsection = () => {
             <Accordion type="single" collapsible>
               {faqData.map((faq, index) => (
                 <AccordionItem key={index} value={`item-${index}`}>
-                  <AccordionTrigger className="text-base text-zinc-900 font-bold md:text-lg">
+                  <AccordionTrigger className="text-base text-zinc-900 font-bold md:text-lg cursor-pointer">
                     {faq.title}
                   </AccordionTrigger>
                   <AccordionContent className="text-sm text-gray-700 md:text-base">

@@ -21,11 +21,11 @@ const JobCard = ({ job, index }: { job: Job; index: number }) => {
       className="flex flex-col items-start gap-4 rounded-xl bg-white p-6 drop-shadow-xl transition-all hover:drop-shadow-2xl md:flex-row md:items-center md:justify-between md:gap-8 md:px-10"
     >
       <div className="flex flex-row items-start gap-4">
-        <div className="mt-1 h-6 w-6 shrink-0 text-gray-800">
-          <MySVGBag />
-        </div>
         <div className="flex flex-col space-y-1">
-          <h3 className="text-xl font-bold text-gray-800">{job.title}</h3>
+          <div className="flex items-center gap-2">
+            <MySVGBag className="h-auto w-5 shrink-0" />
+            <h3 className="text-xl font-bold text-gray-800">{job.title}</h3>
+          </div>
           <p className="text-gray-600">{job.description}</p>
           <div className="mt-2 space-y-2">
             <div className="flex items-center gap-2">
@@ -56,7 +56,15 @@ const JobCard = ({ job, index }: { job: Job; index: number }) => {
         }}
         className="flex w-full justify-center md:w-1/4 md:justify-end"
       >
-        <button className="bg-cuptime-black rounded-lg px-6 py-3 text-sm font-bold text-white md:text-base">
+        <button
+          onClick={() => {
+            const el = document.getElementById('job-application-section');
+            if (el) {
+              el.scrollIntoView({ behavior: 'smooth' });
+            }
+          }}
+          className="bg-cuptime-black transition-all cursor-pointer rounded-lg px-6 py-3 text-sm font-bold text-white hover:bg-zinc-600 md:text-base"
+        >
           Apply Now
         </button>
       </motion.div>

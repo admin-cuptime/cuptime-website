@@ -210,12 +210,12 @@ const HeroSection = () => {
                   </div>
 
                   <div className="flex flex-col items-center gap-2 sm:flex-row">
-                    <button className="bg-cuptime-black rounded-lg px-4 py-2 text-sm font-semibold text-white md:px-6 md:py-3 md:text-base">
-                      <Link href="/technology">Experience our Inovation</Link>
-                    </button>
-                    <button className="rounded-lg bg-white px-4 py-2 text-sm font-semibold text-zinc-900 md:px-6 md:py-3 md:text-base">
-                      <Link href="/cup-time-mobile">See How It Works</Link>
-                    </button>
+                    <Link href="/technology" className="bg-cuptime-black hover:bg-zinc-700 rounded-lg px-4 py-2 text-sm font-semibold text-white md:px-6 md:py-3 md:text-base">
+                      Experience our Innovation
+                    </Link>
+                    <Link href="/cup-time-mobile" className="hover:bg-zinc-300 transition-all rounded-lg bg-white px-4 py-2 text-sm font-semibold text-zinc-900 md:px-6 md:py-3 md:text-base">
+                      See How It Works
+                    </Link>
                   </div>
                 </div>
                 <div className="w-full md:w-1/2">
@@ -245,12 +245,12 @@ const HeroSection = () => {
           {/* Third Carousel Item */}
           <CarouselItem className="basis-full bg-cover pl-0">
             <div className="relative h-full w-full">
-              <div className="h-[90%]">
+              <div className="h-[90%] pointer-events-none">
                 <video
                   autoPlay
                   loop
                   muted
-                  className="h-full w-full object-cover"
+                  className="pointer-events-none h-full w-full object-cover"
                   aria-label="Background video showing tea cup"
                 >
                   <source src="/teacup.webm" type="video/webm" />
@@ -264,12 +264,12 @@ const HeroSection = () => {
               </div>
 
               <div
-                className="pointer-events-none absolute inset-0 bg-cover bg-center"
+                className="absolute inset-0 bg-cover bg-center"
                 style={{
                   backgroundImage: `url(${heroWave2.src})`,
                 }}
               >
-                <div className="pointer-events-none absolute inset-0">
+                <div className="absolute inset-0">
                   <div className="absolute top-1/6 left-1/2 h-[80%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-radial from-white to-white/70 blur-2xl md:top-1/3 md:left-1/3 md:h-[500px] md:w-[500px]"></div>
                 </div>
                 <div className="relative w-full p-5 text-center md:w-1/2 md:text-left lg:p-16">
@@ -289,14 +289,9 @@ const HeroSection = () => {
                     <div className="flex flex-col items-center gap-2 sm:flex-row">
                       <button
                         onClick={handleAppRedirect}
-                        className="cursor-pointer bg-cuptime-black rounded-lg px-4 py-2 text-sm font-semibold text-white md:px-6 md:py-3 md:text-base"
+                        className="bg-cuptime-black hover:opacity-80 cursor-pointer rounded-lg px-4 py-2 text-sm font-semibold text-white md:px-6 md:py-3 md:text-base"
                       >
-                        <Link
-                          href="https://play.google.com/store/apps/details?id=com.cuptime.customer"
-                          target="_blank"
-                        >
-                          Place your Order Now
-                        </Link>
+                        Place your Order Now
                       </button>
                     </div>
                   </div>

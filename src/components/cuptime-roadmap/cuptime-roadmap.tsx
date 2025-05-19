@@ -186,8 +186,7 @@ const CuptimeRoadmap = () => {
           </div>
           <div className="border-cuptime-gray min-h-72 overflow-hidden rounded-4xl border-2 bg-white">
             <iframe
-              title="Location Map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.0695495558813!2d78.13461807490607!3d9.925402190171927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00c5d869694bad%3A0x63fa87c371d093b3!2sCuptime!5e0!3m2!1sen!2sin!4v1701834058825!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15720.10632417623!2d78.09677686443828!3d9.931744173347335!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00cf633d31d6f5%3A0x55317bec2230d715!2sCup%20Time%20-%20Delivering%20Coffee%20%26%20Tea%20in%20Madurai!5e0!3m2!1sen!2sin!4v1747494577899!5m2!1sen!2sin"
               className="h-full w-full"
               style={{ border: 0 }}
               allowFullScreen

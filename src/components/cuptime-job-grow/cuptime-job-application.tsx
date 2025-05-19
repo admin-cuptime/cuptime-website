@@ -95,11 +95,6 @@ const CuptimeJobApplication = () => {
                   placeholder="Phone number"
                   className="border-cuptime-gray focus:border-cuptime-red w-full rounded-md border-2 px-4 py-3 focus:outline-none md:text-lg"
                 />
-                {/* <input
-                  type="text"
-                  placeholder="Position"
-                  className="border-cuptime-gray focus:border-cuptime-red w-full rounded-md border-2 px-4 py-3 focus:outline-none"
-                /> */}
                 <Select>
                   <SelectTrigger className="focus:border-cuptime-red border-cuptime-gray text-cuptime-zinc w-full rounded-md border-2 px-4 py-5.5 text-sm focus:outline-none md:py-6.5 md:text-lg">
                     <SelectValue placeholder="Position" />
@@ -120,8 +115,8 @@ const CuptimeJobApplication = () => {
                   </SelectContent>
                 </Select>
               </div>
-              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                <Select>
+              {/* <div className="grid grid-cols-1 gap-4 md:grid-cols-2"> */}
+                {/* <Select>
                   <SelectTrigger className="focus:border-cuptime-red border-cuptime-gray text-cuptime-zinc w-full rounded-md border-2 px-4 py-5.5 text-sm focus:outline-none md:py-6.5 md:text-lg">
                     <SelectValue placeholder="Location" />
                   </SelectTrigger>
@@ -133,25 +128,17 @@ const CuptimeJobApplication = () => {
                       <SelectItem value="Trichy">Trichy</SelectItem>
                     </SelectGroup>
                   </SelectContent>
-                </Select>
+                </Select> */}
                 {/* <input
                   type="text"
                   placeholder="Working Location"
                   className="border-cuptime-gray focus:border-cuptime-red w-full rounded-md border-2 px-4 py-3 focus:outline-none"
                 /> */}
-                <div className="relative">
-                  <IconCloudUpload className="absolute top-1/2 left-3 h-5 w-5 -translate-y-1/2" />
-                  <input
-                    type="file"
-                    accept=".pdf,.doc,.docx"
-                    placeholder="Upload Your Resume"
-                    className="border-cuptime-gray text-cuptime-zinc focus:border-cuptime-red w-full rounded-md border-2 border-dashed px-4 py-3 pl-10 text-center focus:outline-none md:text-lg"
-                  />
-                </div>
-              </div>
+                
+              {/* </div> */}
 
               <div className="text-center">
-                <button className="from-cuptime-orange to-cuptime-red rounded-lg bg-gradient-to-tr px-4 py-3 text-sm font-semibold text-white md:px-8 md:py-3 md:text-base">
+                <button className="from-cuptime-orange to-cuptime-red hover:opacity-80 cursor-pointer transition-all rounded-lg bg-gradient-to-tr px-4 py-3 text-sm font-semibold text-white md:px-8 md:py-3 md:text-base">
                   Submit
                 </button>
               </div>
