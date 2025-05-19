@@ -191,7 +191,7 @@ const Header = () => {
         </button>
         <button
           onClick={handleAppRedirect}
-          className="from-cuptime-orange to-cuptime-red cursor-pointer rounded-xl bg-gradient-to-tr px-6 py-2 font-semibold text-white hover:opacity-90"
+          className="from-cuptime-orange to-cuptime-red cursor-pointer rounded-xl bg-gradient-to-tr px-6 py-2 font-semibold text-white hover:opacity-90 transition-all"
         >
           <Link
             href="https://play.google.com/store/apps/details?id=com.cuptime.customer"
@@ -268,9 +268,9 @@ const Header = () => {
               <div className="mt-4 flex flex-col gap-1">
                 <button
                   onClick={() => setIsMobileNavOpen(false)}
-                  className="text-cuptime-red border-foreground cursor-pointer rounded-xl border-2 bg-white px-6 py-2 font-semibold"
+                  className="text-cuptime-red border-foreground cursor-pointer rounded-xl border-2 bg-white px-6 py-2 font-semibold hover:bg-zinc-400 transition-all"
                 >
-                  Franchise
+                  Franchise 
                 </button>
                 <button
                   onClick={handleAppRedirect}

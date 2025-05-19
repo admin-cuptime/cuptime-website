@@ -176,7 +176,7 @@ const CuptimeRoadmap = () => {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="from-cuptime-orange to-cuptime-red rounded-lg bg-gradient-to-tr px-4 py-2 text-sm font-semibold text-white md:py-3 md:text-base"
+                  className="from-cuptime-orange to-cuptime-red rounded-lg bg-gradient-to-tr px-4 py-2 text-sm font-semibold text-white md:py-3 md:text-base hover:opacity-90 cursor-pointer transition-all"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? 'Sending...' : 'Contact to Cuptime'}
