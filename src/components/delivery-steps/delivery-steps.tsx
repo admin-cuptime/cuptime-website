@@ -88,7 +88,7 @@ const DeliverySteps = () => {
     >
       <div className="flex flex-col gap-2">
         <motion.h2
-          className="text-center text-3xl font-bold text-zinc-50 md:text-4xl lg:text-4xl"
+          className="text-center text-3xl font-bold text-zinc-50 sm:px-2 md:text-4xl lg:text-4xl"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -97,7 +97,7 @@ const DeliverySteps = () => {
           How Cuptime Delivers Tradition to Your Workplace
         </motion.h2>
         <motion.p
-          className="flex flex-col items-center justify-between px-0 text-center text-base text-zinc-400 md:px-28 md:text-lg"
+          className="flex flex-col items-center justify-between px-2 text-center text-base text-zinc-400 md:px-28 md:text-lg"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -106,7 +106,7 @@ const DeliverySteps = () => {
           From Order to Sip – A Seamless 5-Step Journey
         </motion.p>
       </div>
-      <div className="mx-auto w-full max-w-4xl px-4 md:px-0">
+      <div className="mx-auto w-full px-4 max-w-4xl">
         <div className="-my-6">
           {deliveryStepsData.map((step, index) => (
             <div
@@ -145,11 +145,11 @@ const DeliverySteps = () => {
         </div>
       </div>
 
-      <div>
+      {/* <div>
         <button className="cursor-pointer rounded-lg bg-zinc-50 px-6 py-3 text-base font-semibold text-zinc-900 transition-all">
           Start Serving Wellness
         </button>
-      </div>
+      </div> */}
     </section>
     </div>
   );

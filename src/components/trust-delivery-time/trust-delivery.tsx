@@ -25,7 +25,7 @@ const TrustDelivery = () => {
   ];
 
   return (
-    <section className="flex h-full items-center justify-center overflow-hidden px-4 md:px-16">
+    <section className="flex h-full items-center justify-center overflow-hidden px-5 md:px-16">
       <div className="flex flex-col items-center justify-center gap-4 lg:flex-row lg:justify-between">
         {/* Left Content Section */}
         <motion.div

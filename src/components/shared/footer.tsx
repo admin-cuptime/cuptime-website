@@ -42,7 +42,7 @@ const Footer = () => {
 
   const connectedLinks = [
     { text: 'Join Our Events', href: '/events' },
-    { text: 'App Download', href: '/about-us' },
+    { text: 'App Download', href: 'https://play.google.com/store/apps/details?id=com.cuptime.customer' },
   ];
 
   const resourceLinks = [
@@ -64,7 +64,7 @@ const Footer = () => {
         <div className="flex w-32 flex-col gap-4">
           <CuptimeLogoWhite className="h-auto w-full" />
           <div className="text-cuptime-red text-center text-xs">
-            Delivering Tradition, Enhanced by Innovation.
+            Tech-Driven Brews. Human-Driven Connections
           </div>
         </div>
 
@@ -80,9 +80,11 @@ const Footer = () => {
           <div className="flex flex-col gap-3">
             <div className="font-semibold text-white">Contact</div>
             <div className="flex w-fit flex-col">
-              <Link href=""> reach@cuptime.in</Link>
-              <Link href=""> ⁠franchise@cuptime.in</Link>
-              <Link href="/">+91 98765 43210</Link>
+              <Link href="mailto:reach@cuptime.in" className='hover:text-cuptime-red'>reach@cuptime.in</Link>
+              <Link href="mailto:⁠franchise@cuptime.in" className='hover:text-cuptime-red'>
+                ⁠franchise@cuptime.in
+              </Link>
+              <Link href="tel:+919876543210" className='hover:text-cuptime-red'>+91 98765 43210</Link>
               <div className="text-wrap">
                 No. 12, Main Street
                 <div>Madurai – 625001,</div>

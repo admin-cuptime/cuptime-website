@@ -1,8 +1,10 @@
 'use client';
 
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import BerriesBg from '@/assets/png/berries_1_.png';
 import IcecubeBg from "@/assets/png/Group.png"
+import { link } from 'fs';
 
 const ProductBanner = () => {
   return (
@@ -57,10 +59,10 @@ const ProductBanner = () => {
           >
             <div className="flex md:flex-row flex-col gap-4">
                 <button className="rounded-lg bg-cuptime-black px-6 py-3 text-sm font-bold text-white md:text-base">
-                  Join as Franchisee
+                  <Link href="/franchise">Join as Franchisee</Link>
                 </button>
                 <button className="rounded-lg bg-white px-6 py-3 text-sm font-bold text-zinc-900 md:text-base">
-                  Order for Your Business
+                  <Link href="/contact-us">Order for Your Business</Link>
                 </button>
               </div>
           </motion.div>

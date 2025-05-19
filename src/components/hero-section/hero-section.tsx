@@ -151,13 +151,13 @@ const HeroSection = () => {
                     shortcuts, just pure Madurai tradition in every sip.
                   </div>
 
-                  <div className="flex flex-col items-center gap-2 sm:flex-row">
-                    <Link href="/franchise" className="bg-cuptime-black hover:bg-zinc-600 transition-all w-50 rounded-lg px-4 py-2 text-sm font-semibold text-white md:px-6 md:py-3 md:text-base">
-                      Become a Franchise
-                    </Link>
-                    <Link href="/our-products" className="from-cuptime-orange to-cuptime-red w-50 hover:opacity-80 transition-all rounded-lg bg-gradient-to-tr px-4 py-2 text-sm font-semibold text-white md:py-3 md:text-base">
+                  <div className="flex flex-col items-center sm:flex-row">
+                    <button className="bg-cuptime-black w-50 rounded-lg px-4 py-2 text-sm font-semibold text-white md:px-6 md:py-3 md:text-base">
+                      <Link href="/franchise">Become a Franchise</Link>
+                    </button>
+                    {/* <button className="from-cuptime-orange to-cuptime-red w-50 rounded-lg bg-gradient-to-tr px-4 py-2 text-sm font-semibold text-white md:py-3 md:text-base">
                       Start Serving Wellness
-                    </Link>
+                    </button> */}
                   </div>
                 </div>
                 <div className="w-full md:w-1/2">

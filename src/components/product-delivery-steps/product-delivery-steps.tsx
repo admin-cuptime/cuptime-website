@@ -126,11 +126,11 @@ const ProductSteps = () => {
         </div>
       </div>
 
-      <div>
+      {/* <div>
         <button className="cursor-pointer rounded-lg bg-zinc-50 px-6 py-3 text-base font-semibold text-zinc-900 transition-all">
           Start Serving Wellness
         </button>
-      </div>
+      </div> */}
     </section>
   );
 };
