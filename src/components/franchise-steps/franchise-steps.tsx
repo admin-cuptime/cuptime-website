@@ -71,7 +71,7 @@ const FranchiseSteps = () => {
         <img
           src={GirlVehicle.src}
           alt="Delivery Executive"
-          className="absolute top-[-130px] left-0 z-20 w-40 drop-shadow-xl md:top-[-200px] md:w-70"
+          className="absolute top-[-130px] left-0 z-10 w-40 drop-shadow-xl md:top-[-200px] md:w-70"
           style={{
             transform: 'rotate(-2deg)',
           }}
@@ -143,20 +143,6 @@ const FranchiseSteps = () => {
               </div>
             ))}
           </div>
-        </div>
-
-        <div>
-          <button
-            onClick={handleAppRedirect}
-            className="cursor-pointer rounded-lg bg-zinc-50 px-6 py-3 text-base font-semibold text-zinc-900 transition-all"
-          >
-            <Link
-              href="https://play.google.com/store/apps/details?id=com.cuptime.customer"
-              target="_blank"
-            >
-              Order Now
-            </Link>
-          </button>
         </div>
       </section>
     </div>

@@ -1,13 +1,13 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import MySVGcalender from '@/assets/svg/calendar.svg';
 import { ChevronLeft } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { fetchReviewsData } from '@/app/api/blog.js';
 
-const BlogsDetails = () => {
+const BlogsDetailsContent = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const blogParam = searchParams.get('blog') || '0';
@@ -67,7 +67,7 @@ const BlogsDetails = () => {
       {/* Back Button */}
       <button
         onClick={() => router.back()}
-        className="text-cuptime-midnight hover:text-cuptime-red mb-6 flex items-center text-lg font-bold hover:underline md:text-2xl"
+        className="text-cuptime-midnight hover:text-cuptime-red mb-6 flex cursor-pointer items-center text-lg font-bold hover:underline md:text-2xl"
       >
         <ChevronLeft className="mr-2 h-5 w-5" />
         Back
@@ -139,7 +139,7 @@ const BlogsDetails = () => {
                 viewport={{ once: true }}
               >
                 {blog.ideaPara2 ||
-                  `That’s exactly what CupTime offers: authentic South Indian tea
+                  `That's exactly what CupTime offers: authentic South Indian tea
                   and coffee, delivered with care to your workplace or home.`}
               </motion.p>
               <motion.h2
@@ -188,7 +188,7 @@ const BlogsDetails = () => {
                 viewport={{ once: true }}
               >
                 {blog.culturePara2 ||
-                  `At CupTime, we aren’t just delivering beverages—we’re creating
+                  `At CupTime, we aren't just delivering beverages—we're creating
                   small moments of joy in your day.`}
               </motion.p>
               <motion.h2
@@ -206,9 +206,9 @@ const BlogsDetails = () => {
                 viewport={{ once: true }}
               >
                 {blog.joinPara ||
-                  `Over the months, we’ve grown not just in reach, but in love.
+                  `Over the months, we've grown not just in reach, but in love.
                   Thousands of customers rely on CupTime to power their days. If
-                  you haven’t tried us yet, this is your sign!`}
+                  you haven't tried us yet, this is your sign!`}
               </motion.p>
               <motion.p
                 className="py-1 text-sm text-zinc-700 md:py-2 md:text-base"
@@ -225,6 +225,24 @@ const BlogsDetails = () => {
         </motion.div>
       </div>
     </div>
+  );
+};
+
+const BlogsDetails = () => {
+  return (
+    <Suspense fallback={
+      <div className="mx-auto w-full px-4 py-10 md:px-52">
+        <div className="animate-pulse flex flex-col gap-6">
+          <div className="h-80 w-full rounded-2xl bg-zinc-200 md:h-[500px]" />
+          <div className="h-8 w-1/2 rounded bg-zinc-200" />
+          <div className="h-4 w-1/3 rounded bg-zinc-200" />
+          <div className="h-6 w-3/4 rounded bg-zinc-200" />
+          <div className="h-4 w-full rounded bg-zinc-200" />
+        </div>
+      </div>
+    }>
+      <BlogsDetailsContent />
+    </Suspense>
   );
 };
 

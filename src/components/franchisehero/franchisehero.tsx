@@ -57,12 +57,12 @@ const FranchiseHero = () => {
               }}
               className="flex flex-col items-center gap-2 sm:flex-row"
             >
-              <button className="bg-cuptime-black w-50 rounded-lg px-4 py-2 text-sm font-semibold text-white md:px-6 md:py-3 md:text-base">
-               <Link href="/contact-us">Apply Now</Link>
-              </button>
-              <button className="from-cuptime-orange to-cuptime-red w-50 rounded-lg bg-gradient-to-tr px-4 py-2 text-sm font-semibold text-white md:w-60 md:py-3 md:text-base">
-                Download Franchise Kit
-              </button>
+              <Link
+                href="/contact-us"
+                className="from-cuptime-orange to-cuptime-red hover:opacity-80 transition-all cursor-pointer rounded-lg bg-gradient-to-tr px-4 py-2 text-sm font-semibold text-white md:py-3 md:text-base"
+              >
+                Apply Now
+              </Link>
             </motion.div>
           </div>
           <motion.div

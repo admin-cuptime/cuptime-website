@@ -9,7 +9,7 @@ import { fetchReviewsData } from '@/app/api/blog.js';
 
 // Skeleton loader for blog card
 const BlogCardSkeleton = () => (
-  <div className="flex flex-col gap-3 overflow-hidden rounded-xl bg-white animate-pulse">
+  <div className="flex animate-pulse flex-col gap-3 overflow-hidden rounded-xl bg-white">
     <div className="relative h-80 w-full rounded-2xl bg-zinc-200 md:h-[500px]" />
     <div className="flex flex-col gap-2 px-2 py-2">
       <div className="flex items-center gap-6">
@@ -21,7 +21,7 @@ const BlogCardSkeleton = () => (
           <div className="h-auto w-5 shrink-0">
             <MySVGcalender />
           </div>
-          <span className="h-4 w-20 rounded bg-zinc-200 inline-block" />
+          <span className="inline-block h-4 w-20 rounded bg-zinc-200" />
         </span>
       </div>
       <div className="flex flex-col gap-3">
@@ -69,7 +69,7 @@ const BlogsData = () => {
         transition={{ delay: 0.1 }}
       >
         <div className="mb-8 flex items-center justify-between">
-          <h2 className="text-cuptime-midnight text-xl font-semibold md:text-3xl md:font-bold">
+          <h2 className="text-cuptime-midnight text-xl font-bold md:text-3xl">
             Blogs ({filteredBlogs.length})
           </h2>
           <div className="focus-within:ring-cuptime-red flex w-72 items-center gap-2 rounded-full border px-4 py-2 text-zinc-800 focus-within:ring-2 md:w-100">
@@ -99,20 +99,28 @@ const BlogsData = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
-              <div className="flex flex-col gap-3 overflow-hidden rounded-xl bg-white">
-                <div
-                  style={{
-                    backgroundImage: `url(${blog.image})`,
-                  }}
-                  className="relative h-80 w-full rounded-2xl bg-cover bg-center md:h-[500px]"
-                ></div>
+              <Link
+                href={`/blogs-details?blog=${index}-${slugify(blog.title || '')}`}
+                className="flex flex-col gap-3 overflow-hidden bg-white"
+              >
+                <div className="relative h-80 w-full overflow-hidden rounded-2xl md:h-[500px]">
+                  <div
+                    style={{
+                      backgroundImage: `url(${blog.image})`,
+                    }}
+                    className="relative h-full w-full bg-cover bg-center transition-transform duration-500 ease-in-out hover:scale-110"
+                  ></div>
+                </div>
                 <div className="flex flex-col gap-2">
                   <div className="flex items-center gap-6">
-                    <div className='flex items-center gap-2'>
-                      {(blog.tags ? blog.tags.split(',').map((tag: string) => tag.trim()) : []).map((tag: string, i: number) => (
+                    <div className="flex items-center gap-2">
+                      {(blog.tags
+                        ? blog.tags.split(',').map((tag: string) => tag.trim())
+                        : []
+                      ).map((tag: string, i: number) => (
                         <span
                           key={i}
-                          className="bg-cuptime-pink font-sm text-cuptime-red rounded-full px-2 py-1 text-base md:px-4 md:font-bold"
+                          className="bg-cuptime-pink font-sm text-cuptime-red rounded-full px-2 py-1 text-base font-bold md:px-4"
                         >
                           {tag}
                         </span>
@@ -132,15 +140,12 @@ const BlogsData = () => {
                     <p className="text-sm text-zinc-700 md:text-base">
                       {blog.description}
                     </p>
-                    <Link
-                      href={`/blogs-details?blog=${index}-${slugify(blog.title || '')}`}
-                      className="inline-block text-sm font-bold text-red-500 hover:underline md:text-lg"
-                    >
+                    <div className="inline-block text-sm font-bold text-red-500 hover:underline md:text-lg">
                       Read More
-                    </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             </motion.div>
           ))
         )}

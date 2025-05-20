@@ -152,9 +152,9 @@ const HeroSection = () => {
                   </div>
 
                   <div className="flex flex-col items-center sm:flex-row">
-                    <button className="bg-cuptime-black w-50 rounded-lg px-4 py-2 text-sm font-semibold text-white md:px-6 md:py-3 md:text-base">
-                      <Link href="/franchise">Become a Franchise</Link>
-                    </button>
+                    <Link href="/franchise" className="bg-cuptime-black hover:bg-zinc-700 transition-all w-50 rounded-lg px-4 py-2 text-sm font-semibold text-white md:px-6 md:py-3 md:text-base">
+                      Become a Franchise
+                    </Link>
                     {/* <button className="from-cuptime-orange to-cuptime-red w-50 rounded-lg bg-gradient-to-tr px-4 py-2 text-sm font-semibold text-white md:py-3 md:text-base">
                       Start Serving Wellness
                     </button> */}
@@ -210,10 +210,10 @@ const HeroSection = () => {
                   </div>
 
                   <div className="flex flex-col items-center gap-2 sm:flex-row">
-                    <Link href="/technology" className="bg-cuptime-black hover:bg-zinc-700 rounded-lg px-4 py-2 text-sm font-semibold text-white md:px-6 md:py-3 md:text-base">
+                    <Link href="/technology" className="bg-cuptime-black hover:bg-zinc-700 transition-all rounded-lg px-4 py-2 text-sm font-semibold text-white md:px-6 md:py-3 md:text-base">
                       Experience our Innovation
                     </Link>
-                    <Link href="/cup-time-mobile" className="hover:bg-zinc-300 transition-all rounded-lg bg-white px-4 py-2 text-sm font-semibold text-zinc-900 md:px-6 md:py-3 md:text-base">
+                    <Link href="/cup-time-mobile" className="hover:bg-zinc-300 rounded-lg bg-white px-4 py-2 text-sm font-semibold text-zinc-900 md:px-6 transition-all md:py-3 md:text-base">
                       See How It Works
                     </Link>
                   </div>
@@ -289,7 +289,7 @@ const HeroSection = () => {
                     <div className="flex flex-col items-center gap-2 sm:flex-row">
                       <button
                         onClick={handleAppRedirect}
-                        className="bg-cuptime-black hover:opacity-80 cursor-pointer rounded-lg px-4 py-2 text-sm font-semibold text-white md:px-6 md:py-3 md:text-base"
+                        className="bg-cuptime-black hover:opacity-80 transition-all cursor-pointer rounded-lg px-4 py-2 text-sm font-semibold text-white md:px-6 md:py-3 md:text-base"
                       >
                         Place your Order Now
                       </button>

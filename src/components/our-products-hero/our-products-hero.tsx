@@ -60,19 +60,17 @@ const ProductsHero = () => {
                     }}
                     className="flex flex-col justify-center gap-4 sm:flex-row"
                   >
-                    <button className="bg-cuptime-black w-40 rounded-lg px-4 py-2 text-sm font-semibold text-white md:px-6 md:py-3 md:text-base">
+                    <button 
+                      onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+                      className="bg-cuptime-black hover:bg-zinc-700 transition-all cursor-pointer w-40 rounded-lg px-4 py-2 text-sm font-semibold text-white md:px-6 md:py-3 md:text-base"
+                    >
                       View Menu
                     </button>
                     <button
                       onClick={handleAppRedirect}
-                      className="cursor-pointer from-cuptime-orange to-cuptime-red w-40 rounded-lg bg-gradient-to-tr px-4 py-2 text-sm font-semibold text-white md:py-3 md:text-base"
+                      className="from-cuptime-orange to-cuptime-red w-40 hover:opacity-80 transition-all cursor-pointer rounded-lg bg-gradient-to-tr px-4 py-2 text-sm font-semibold text-white md:py-3 md:text-base"
                     >
-                      <Link
-                        href="https://play.google.com/store/apps/details?id=com.cuptime.customer"
-                        target="_blank"
-                      >
-                        Order Now
-                      </Link>
+                      Order Now
                     </button>
                   </motion.div>
                 </div>

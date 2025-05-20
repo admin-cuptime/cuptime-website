@@ -19,7 +19,6 @@ const FranchisePage = () => {
             <WhyChoose />
             <FranchiseSteps/>
             <ReviewMarquee />
-            <CuptimeImageMedia/>
             <HorizontelTimeline/>
             <FicoFranchise />
             <CuptimeRoadmap />

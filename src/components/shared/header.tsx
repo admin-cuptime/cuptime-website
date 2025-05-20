@@ -17,6 +17,7 @@ import { handleAppRedirect } from '@/utils/helper';
 import { useEffect, useState, useRef } from 'react';
 
 const navLinks = [
+  { href: '/', label: 'Home' },
   { href: '/our-products', label: 'Our Products' },
   { href: '/franchise', label: 'Franchise' },
   { href: '/about-us', label: 'About Us' },
@@ -97,7 +98,7 @@ const Header = () => {
       </div>
       {/* Desktop Navigation starts here ma dude*/}
       <div className="hidden text-sm md:text-sm lg:block lg:text-base">
-        <ul className="flex gap-8">
+        <ul className="flex gap-7">
           {navLinks.map(({ href, label }) => (
             <li key={href}>
               <Link
@@ -220,7 +221,7 @@ const Header = () => {
                   <li key={href}>
                     <Link
                       href={href}
-                      onClick={() => setIsMobileNavOpen(false)} // Close drawer
+                      onClick={() => setIsMobileNavOpen(false)}
                       className={`hover:text-cuptime-red flex cursor-pointer items-center pb-1 ${
                         pathname === href
                           ? 'text-cuptime-red font-semibold'

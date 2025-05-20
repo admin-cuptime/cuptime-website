@@ -49,7 +49,7 @@ const WhyChoose = () => {
     <section className="flex items-center justify-center overflow-hidden px-0 md:px-16">
       <div className="bg-cuptime-light flex h-full w-full flex-col items-center justify-center gap-7 rounded-2xl p-4 md:p-12">
         <div className="flex flex-col gap-6">
-          <motion.h2 
+          <motion.h2
             className="text-center text-3xl font-bold text-zinc-900 md:text-4xl lg:text-4xl"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -58,18 +58,18 @@ const WhyChoose = () => {
           >
             Why Choose CupTime?
           </motion.h2>
-          <motion.p 
-            className="flex flex-col items-center justify-between text-center text-base text-zinc-700 md:text-lg px-0 md:px-28"
+          <motion.p
+            className="flex flex-col items-center justify-between px-0 text-center text-base text-zinc-700 md:px-28 md:text-lg"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            At CupTime, we’re not just brewing beverages — we’re brewing business success. 
-            Here's why <br /> entrepreneurs and local partners across Tamil Nadu trust us:
+            At CupTime, we’re not just brewing beverages — we’re brewing
+            business success. Here's why <br /> entrepreneurs and local partners
+            across Tamil Nadu trust us:
           </motion.p>
         </div>
-
 
         <div className="flex flex-col lg:flex-row lg:justify-between">
           {/* Left Image Section */}
@@ -82,7 +82,7 @@ const WhyChoose = () => {
                   initial={{ opacity: 0, x: 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ 
+                  transition={{
                     type: 'spring',
                     damping: 12,
                     stiffness: 100,
@@ -104,16 +104,16 @@ const WhyChoose = () => {
             </div>
           </div>
           {/* Right Content Section */}
-          <motion.div 
+          <motion.div
             className="w-full p-2 md:p-8 lg:w-1/2"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ 
+            transition={{
               type: 'spring',
               damping: 12,
               stiffness: 100,
-              delay: 0.4 
+              delay: 0.4,
             }}
           >
             <Image
@@ -123,20 +123,23 @@ const WhyChoose = () => {
             />
           </motion.div>
         </div>
-        <motion.div 
+        <motion.div
           className="flex justify-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ 
+          transition={{
             type: 'spring',
             damping: 12,
             stiffness: 100,
           }}
         >
-          <button className="bg-cuptime-black hover:bg-cuptime-black/80 cursor-pointer rounded-lg px-6 py-3 text-base font-semibold text-white transition-all">
-            <Link href="/franchise">Become a Franchisee</Link>
-          </button>
+          <Link
+            href="/contact-us"
+            className="bg-cuptime-black hover:bg-cuptime-black/80 cursor-pointer rounded-lg px-6 py-3 text-base font-semibold text-white transition-all"
+          >
+            Become a Franchise
+          </Link>
         </motion.div>
       </div>
     </section>
