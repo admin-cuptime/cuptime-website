@@ -25,7 +25,7 @@ const ProductCard = ({ product }: { product: any }) => {
           {product.isServedHot === 'TRUE' && (
             <div className="absolute top-2 left-2 hidden transition-all duration-300 group-hover:flex">
               <div className="flex items-center gap-1">
-                <ServedHot className="h-4 w-4 md:h-5 md:w-5" />
+                <ServedHot className="h-auto w-4 md:h-auto md:w-5" />
                 <div className="text-sm font-semibold text-white">Hot</div>
               </div>
             </div>
@@ -33,7 +33,7 @@ const ProductCard = ({ product }: { product: any }) => {
           {product.isServedHot === 'FALSE' && (
             <div className="absolute top-2 left-2 hidden transition-all duration-300 group-hover:flex">
               <div className="flex items-center gap-1">
-                <ServedCold className="h-4 w-4 md:h-5 md:w-5" />
+                <ServedCold className="h-auto w-4 md:h-auto md:w-5" />
                 <div className="text-sm font-semibold text-white">Cold</div>
               </div>
             </div>

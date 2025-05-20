@@ -30,9 +30,6 @@ const moreLinks = [
   { href: '/blogs', label: 'Blog' },
   { href: '/events', label: 'Events' },
   { href: '/technology', label: 'Technology' },
-  { href: '/privacy-policy', label: 'Privacy Policy' },
-  { href: '/terms-conditions', label: 'Terms & Conditions' },
-  { href: '/cancellation-refund', label: 'Cancellation & Refund' },
 ];
 
 const Header = () => {
@@ -192,14 +189,9 @@ const Header = () => {
         </button>
         <button
           onClick={handleAppRedirect}
-          className="from-cuptime-orange to-cuptime-red cursor-pointer rounded-xl bg-gradient-to-tr px-6 py-2 font-semibold text-white hover:opacity-90 transition-all"
+          className="from-cuptime-orange to-cuptime-red cursor-pointer rounded-xl bg-gradient-to-tr px-6 py-2 font-semibold text-white transition-all hover:opacity-90"
         >
-          <Link
-            href="https://play.google.com/store/apps/details?id=com.cuptime.customer"
-            target="_blank"
-          >
-            Order Now
-          </Link>
+          Order Now
         </button>
       </div>
       {/* Mobile Navigation starts here ma dude */}
@@ -269,9 +261,9 @@ const Header = () => {
               <div className="mt-4 flex flex-col gap-1">
                 <button
                   onClick={() => setIsMobileNavOpen(false)}
-                  className="text-cuptime-red border-foreground cursor-pointer rounded-xl border-2 bg-white px-6 py-2 font-semibold hover:bg-zinc-400 transition-all"
+                  className="text-cuptime-red border-foreground cursor-pointer rounded-xl border-2 bg-white px-6 py-2 font-semibold transition-all hover:bg-zinc-400"
                 >
-                  Franchise 
+                  Franchise
                 </button>
                 <button
                   onClick={handleAppRedirect}

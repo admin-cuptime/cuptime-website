@@ -17,6 +17,7 @@ import {
 } from '@/components/ui/carousel';
 import { cn } from '@/lib/utils';
 import Autoplay from 'embla-carousel-autoplay';
+import { motion } from 'framer-motion';
 import {
   BicepsFlexed,
   Coffee,
@@ -142,31 +143,73 @@ const HeroSection = () => {
             >
               <div className="flex h-full flex-col items-center justify-center gap-4 md:flex-row">
                 <div className="flex w-full flex-col gap-4 text-center md:w-1/2 md:gap-6 md:text-left">
-                  <div className="text-3xl font-bold text-zinc-900 md:text-4xl lg:text-5xl">
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      type: 'spring',
+                      damping: 12,
+                      stiffness: 100,
+                    }}
+                    className="text-3xl font-bold text-zinc-900 md:text-4xl lg:text-5xl"
+                  >
                     Traditional Taste. Modern Workspaces.
-                  </div>
-                  <div className="text-sm md:text-lg">
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      type: 'spring',
+                      damping: 12,
+                      stiffness: 100,
+                      delay: 0.3,
+                    }}
+                    className="text-sm md:text-lg"
+                  >
                     Surprise your team, clients, or visitors with handcrafted
                     beverages made the way they should be — no machines, no
                     shortcuts, just pure Madurai tradition in every sip.
-                  </div>
+                  </motion.div>
 
-                  <div className="flex flex-col items-center sm:flex-row">
-                    <Link href="/franchise" className="bg-cuptime-black hover:bg-zinc-700 transition-all w-50 rounded-lg px-4 py-2 text-sm font-semibold text-white md:px-6 md:py-3 md:text-base">
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      type: 'spring',
+                      damping: 12,
+                      stiffness: 100,
+                      delay: 0.4,
+                    }}
+                    className="flex flex-col items-center sm:flex-row"
+                  >
+                    <Link
+                      href="/franchise"
+                      className="bg-cuptime-black w-50 rounded-lg px-4 py-2 text-sm font-semibold text-white transition-all hover:bg-zinc-700 md:px-6 md:py-3 md:text-base"
+                    >
                       Become a Franchise
                     </Link>
-                    {/* <button className="from-cuptime-orange to-cuptime-red w-50 rounded-lg bg-gradient-to-tr px-4 py-2 text-sm font-semibold text-white md:py-3 md:text-base">
-                      Start Serving Wellness
-                    </button> */}
-                  </div>
+                  </motion.div>
                 </div>
-                <div className="w-full md:w-1/2">
+                <motion.div
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    type: 'spring',
+                    damping: 10,
+                    stiffness: 100,
+                  }}
+                  className="w-full md:w-1/2"
+                >
                   <img
                     src={images.heroSection.heroSplash.src}
                     alt="hero-splash"
                     className="h-auto w-full"
                   />
-                </div>
+                </motion.div>
               </div>
 
               {/* Taglines for first slide */}
@@ -199,32 +242,81 @@ const HeroSection = () => {
                     backgroundImage: `url(${images.heroSection.leafArt.src})`,
                   }}
                 >
-                  <div className="text-3xl font-bold text-white md:text-4xl lg:text-5xl">
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      type: 'spring',
+                      damping: 12,
+                      stiffness: 100,
+                    }}
+                    className="text-3xl font-bold text-white md:text-4xl lg:text-5xl"
+                  >
                     Tech in Every Step, Taste in Every Sip
-                  </div>
-                  <div className="text-sm text-zinc-100 md:text-lg">
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      type: 'spring',
+                      damping: 12,
+                      stiffness: 100,
+                      delay: 0.3,
+                    }}
+                    className="text-sm text-zinc-100 md:text-lg"
+                  >
                     CupTime blends technology with tradition to serve you the
                     perfect cup—every time. Experience the future of workplace
                     tea and coffee, crafted with care and delivered with
                     precision.
-                  </div>
+                  </motion.div>
 
-                  <div className="flex flex-col items-center gap-2 sm:flex-row">
-                    <Link href="/technology" className="bg-cuptime-black hover:bg-zinc-700 transition-all rounded-lg px-4 py-2 text-sm font-semibold text-white md:px-6 md:py-3 md:text-base">
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      type: 'spring',
+                      damping: 12,
+                      stiffness: 100,
+                      delay: 0.4,
+                    }}
+                    className="flex flex-col items-center gap-2 sm:flex-row"
+                  >
+                    <Link
+                      href="/technology"
+                      className="bg-cuptime-black rounded-lg px-4 py-2 text-sm font-semibold text-white transition-all hover:bg-zinc-700 md:px-6 md:py-3 md:text-base"
+                    >
                       Experience our Innovation
                     </Link>
-                    <Link href="/cup-time-mobile" className="hover:bg-zinc-300 rounded-lg bg-white px-4 py-2 text-sm font-semibold text-zinc-900 md:px-6 transition-all md:py-3 md:text-base">
+                    <Link
+                      href="/cup-time-mobile"
+                      className="rounded-lg bg-white px-4 py-2 text-sm font-semibold text-zinc-900 transition-all hover:bg-zinc-300 md:px-6 md:py-3 md:text-base"
+                    >
                       See How It Works
                     </Link>
-                  </div>
+                  </motion.div>
                 </div>
-                <div className="w-full md:w-1/2">
+                <motion.div
+                  initial={{ scale: 0.7, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    type: 'spring',
+                    damping: 12,
+                    stiffness: 100,
+                    delay: 0.3,
+                  }}
+                  className="w-full md:w-1/2"
+                >
                   <img
                     src={images.heroSection.heroSplash2.src}
                     alt="hero-splash"
                     className="h-auto w-[650px]"
                   />
-                </div>
+                </motion.div>
               </div>
 
               {/* Taglines for second slide */}
@@ -245,7 +337,7 @@ const HeroSection = () => {
           {/* Third Carousel Item */}
           <CarouselItem className="basis-full bg-cover pl-0">
             <div className="relative h-full w-full">
-              <div className="h-[90%] pointer-events-none">
+              <div className="pointer-events-none h-[90%]">
                 <video
                   autoPlay
                   loop
@@ -274,26 +366,54 @@ const HeroSection = () => {
                 </div>
                 <div className="relative w-full p-5 text-center md:w-1/2 md:text-left lg:p-16">
                   <div className="flex flex-col gap-4 bg-cover bg-left bg-no-repeat">
-                    <div className="text-3xl font-bold text-zinc-900 md:text-4xl lg:text-5xl">
+                    <motion.div
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{
+                        type: 'spring',
+                        damping: 12,
+                        stiffness: 100,
+                      }}
+                      className="text-3xl font-bold text-zinc-900 md:text-4xl lg:text-5xl"
+                    >
                       Brewed Fresh. Delivered Fast. Powered by Tech.
-                    </div>
-                    <div className="text-sm md:text-lg">
+                    </motion.div>
+                    <motion.div
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{
+                        type: 'spring',
+                        damping: 12,
+                        stiffness: 100,
+                        delay: 0.3,
+                      }}
+                      className="text-sm md:text-lg">
                       At Cuptime, we blend tradition with innovation. Our smart
                       delivery system ensures your favorite brew reaches you at
                       peak freshness — every time, right on schedule. Whether
                       it's a busy office morning or a relaxed afternoon break,
                       we bring café-quality coffee and tea straight to your door
                       with just a tap.
-                    </div>
+                    </motion.div>
 
-                    <div className="flex flex-col items-center gap-2 sm:flex-row">
+                    <motion.div initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{
+                        type: 'spring',
+                        damping: 12,
+                        stiffness: 100,
+                        delay: 0.4,
+                      }} className="flex flex-col items-center gap-2 sm:flex-row">
                       <button
                         onClick={handleAppRedirect}
-                        className="bg-cuptime-black hover:opacity-80 transition-all cursor-pointer rounded-lg px-4 py-2 text-sm font-semibold text-white md:px-6 md:py-3 md:text-base"
+                        className="bg-cuptime-black cursor-pointer rounded-lg px-4 py-2 text-sm font-semibold text-white transition-all hover:opacity-80 md:px-6 md:py-3 md:text-base"
                       >
                         Place your Order Now
                       </button>
-                    </div>
+                    </motion.div>
                   </div>
                 </div>
               </div>

@@ -29,7 +29,6 @@ const FooterSection = ({ title, links }: FooterSectionProps) => (
 const Footer = () => {
   const aboutLinks = [
     { text: 'About Us', href: '/about-us' },
-    { text: 'Our Story', href: '/about-us' },
     { text: 'Careers', href: '/careers' },
     { text: 'Media & Press', href: '/events' },
   ];
@@ -41,42 +40,38 @@ const Footer = () => {
   ];
 
   const connectedLinks = [
-    { text: 'Join Our Events', href: '/events' },
-    { text: 'App Download', href: 'https://play.google.com/store/apps/details?id=com.cuptime.customer' },
-  ];
-
-  const resourceLinks = [
-    { text: 'Blog', href: '/blogs' },
     { text: 'Events', href: '/events' },
-    // { text: 'Customer Stories', href: '/about-us' },
+    { text: 'App Download', href: 'https://play.google.com/store/apps/details?id=com.cuptime.customer' },
+    { text: 'Blog', href: '/blogs' },
+    
   ];
 
-  // const legalLinks = [
-  //   { text: 'Terms & Conditions', href: '/terms-conditions' },
-  //   { text: 'Privacy Policy', href: '/privacy-policy' },
-  //   { text: 'Cookie Policy', href: '/about-us' },
-  //   { text: 'Return & Refund Policy', href: '/cancellation-refund' },
-  // ];
+  const legalLinks = [
+    { text: 'Terms & Conditions', href: '/terms-conditions' },
+    { text: 'Privacy Policy', href: '/privacy-policy' },
+    { text: 'Cancellation & Refund', href: '/cancellation-refund' },
+  ];
+
+
 
   return (
-    <footer className="bg-cuptime-black max-w-screen-3xl mx-auto flex flex-col gap-10 px-4 py-10 md:px-4">
+    <footer className="bg-cuptime-black max-w-screen-3xl mx-auto flex flex-col gap-10 px-4 py-10 md:px-12">
       <div className="flex flex-col justify-between gap-10 md:flex-row">
-        <div className="flex w-32 flex-col gap-4">
-          <CuptimeLogoWhite className="h-auto w-full" />
+        <div className="flex w-32 justify-center items-center flex-col gap-4">
+          <CuptimeLogoWhite className="h-auto w-20" />
           <div className="text-cuptime-red text-center text-xs">
             Tech-Driven Brews. Human-Driven Connections
           </div>
         </div>
 
         <FooterSection title="About Cuptime" links={aboutLinks} />
-        <FooterSection title="Connected / Join Us" links={connectedLinks} />
+        <FooterSection title="Join Us / Resources" links={connectedLinks} />
         <div className="flex flex-col gap-10">
           <FooterSection title="Products" links={productLinks} />
           {/* <FooterSection title="Connected / Join Us" links={connectedLinks} /> */}
         </div>
-        <FooterSection title="Resources" links={resourceLinks} />
+        <FooterSection title="Legal" links={legalLinks} />
         <div className="flex flex-col gap-10">
-          {/* <FooterSection title="Legal" links={legalLinks} /> */}
           <div className="flex flex-col gap-3">
             <div className="font-semibold text-white">Contact</div>
             <div className="flex w-fit flex-col">
