@@ -1,8 +1,6 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
-
   webpack(config) {
     const fileLoaderRule = config.module.rules.find((rule: any) =>
       rule.test?.test?.('.svg'),
@@ -53,6 +51,9 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  trailingSlash: false,
+  output: "export",
+  distDir: "build",
   eslint: {
     ignoreDuringBuilds: true,
   },
