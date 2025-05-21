@@ -127,11 +127,18 @@ const GetinTouch = () => {
                 <div className="h-auto w-7">
                   <MySVGlocation />
                 </div>
-                No 35, Alagaradi 1st Street, 
-                <br />
-                (Next to Madurai Muthu Middle School)
-                <br />
-                Arappalayam, Madurai – 625016
+                <Link
+                  href="https://maps.app.goo.gl/UHChYbATqTrxVKp78"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-cuptime-red"
+                >
+                  No 35, Alagaradi 1st Street, 
+                  <br />
+                  (Next to Madurai Muthu Middle School)
+                  <br />
+                  Arappalayam, Madurai – 625016
+                </Link>
               </div>
               <div className="flex flex-row gap-3 py-2 text-black">
                 <div className="h-auto w-7">
