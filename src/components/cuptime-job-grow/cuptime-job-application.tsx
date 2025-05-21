@@ -14,6 +14,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import Link from 'next/link';
 
 const CuptimeJobApplication = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -47,23 +48,30 @@ const CuptimeJobApplication = () => {
               <div className="h-auto w-7">
                 <MySVGlocation />
               </div>
-              No 35, Alagaradi 1st Street, 
-              <br />
-              (Next to Madurai Muthu Middle School)
-              <br />
-              Arappalayam, Madurai – 625016
+              <Link
+                href="https://maps.app.goo.gl/UHChYbATqTrxVKp78"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-cuptime-red"
+              >
+                No 35, Alagaradi 1st Street, 
+                <br />
+                (Next to Madurai Muthu Middle School)
+                <br />
+                Arappalayam, Madurai – 625016
+              </Link>
             </div>
             <div className="flex flex-row gap-3 py-2 text-black">
               <div className="h-auto w-7">
                 <MySVGweb />
               </div>
-              reach@cuptime.in
+              <Link href="mailto:reach@cuptime.in" className='hover:text-cuptime-red'>reach@cuptime.in</Link>
             </div>
             <div className="flex flex-row gap-3 py-2 text-black">
               <div className="h-auto w-7">
                 <MySVGmobile />
               </div>
-              Tel: +91 916 9161110
+              <Link href="tel:+919169161110" className='hover:text-cuptime-red'>Tel: +91 916 9161110</Link>
             </div>
           </div>
 

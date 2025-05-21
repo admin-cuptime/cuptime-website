@@ -19,6 +19,7 @@ const CuptimeRoadmap = () => {
   });
   const [success, setSuccess] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [radioError, setRadioError] = useState<string | null>(null); 
 
   const options = [
     'Price',
@@ -47,6 +48,13 @@ const CuptimeRoadmap = () => {
     setIsSubmitting(true);
     setSuccess(null);
     setError(null);
+    setRadioError(null);
+
+    if (!selectedOption) {
+      setRadioError('Please select an option for how we can help you.');
+      setIsSubmitting(false);
+      return;
+    }
 
     try {
       await fetch(
@@ -108,12 +116,13 @@ const CuptimeRoadmap = () => {
                       onChange={() => handleCheckboxChange(option)}
                       value={option.toLowerCase()}
                       className="accent-cuptime-red mr-2 h-4 w-4"
+                      required 
                     />
                     <span className="font-medium">{option}</span>
                   </label>
                 ))}
               </div>
-
+              {radioError && <div className="text-red-600">{radioError}</div>}
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 <input
                   type="text"
@@ -205,11 +214,18 @@ const CuptimeRoadmap = () => {
             </div>
             <div className="space-y-2 px-4 text-sm font-medium md:px-10 md:text-base">
               <p>
-                No 35, Alagaradi 1st Street, 
-                <br />
-                (Next to Madurai Muthu Middle School)
-                <br />
-                Arappalayam, Madurai – 625016
+                <Link
+                  href="https://maps.app.goo.gl/UHChYbATqTrxVKp78"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-cuptime-red"
+                >
+                  No 35, Alagaradi 1st Street, 
+                  <br />
+                  (Next to Madurai Muthu Middle School)
+                  <br />
+                  Arappalayam, Madurai – 625016
+                </Link>
               </p>
               <p>
                 For franchise Enquiry <br />{' '}
