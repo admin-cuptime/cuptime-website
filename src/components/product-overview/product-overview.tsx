@@ -41,14 +41,7 @@ const ProductCard = ({ product }: { product: any }) => {
         </>
       )}
       <div className="absolute top-2 right-2 hidden transition-all duration-300 group-hover:flex">
-        <Link
-          href="https://apps.apple.com/in/app/cup-time/id1645852379"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="absolute top-2 right-2 hidden transition-all duration-300 group-hover:flex"
-        >
-          <IconArrowUpRight className="h-6 w-6 text-white" />
-        </Link>
+        <IconArrowUpRight className="h-6 w-6 text-white" />
       </div>
       <div
         className="h-[200px] w-[200px] bg-contain bg-center bg-no-repeat transition-all duration-300 md:group-hover:h-[160px] md:group-hover:w-[160px]"
@@ -57,7 +50,7 @@ const ProductCard = ({ product }: { product: any }) => {
       <div className="flex w-full flex-col items-center justify-center rounded-xl bg-white/10 p-2 text-white">
         <div className="text-lg font-semibold">{product.name}</div>
         <div className="flex flex-col items-center justify-center overflow-hidden text-center text-xs transition-all duration-300 md:max-h-0 md:opacity-0 md:group-hover:max-h-20 md:group-hover:opacity-100">
-          {product.description}
+          {product.shortDescription}
         </div>
       </div>
     </div>

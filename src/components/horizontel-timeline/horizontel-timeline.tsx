@@ -113,7 +113,7 @@ const HorizontelTimeline = () => {
                   </button>
                   {/* Card Content */}
                   <div
-                    className={`hover:border-cuptime-red xl:h-80 h-auto rounded-lg border-1 border-zinc-700 p-4 transition-all hover:border-1 ${index === 0 ? 'bg-cuptime-black' : 'bg-transparent'} hover:bg-cuptime-shadow hover:border-cuptime-red`}
+                    className={`hover:border-cuptime-red h-auto rounded-lg border-1 border-zinc-700 p-4 transition-all hover:border-1 xl:h-80 ${index === 0 ? 'bg-cuptime-black' : 'bg-transparent'} hover:bg-cuptime-shadow hover:border-cuptime-red`}
                   >
                     <h3 className="mb-2 text-lg font-bold">{item.title}</h3>
                     <p className="text-base text-zinc-400">
@@ -157,17 +157,6 @@ const HorizontelTimeline = () => {
               </div>
             </motion.div>
           ))}
-        </div>
-        <div className="mt-10 text-center lg:mt-16">
-          <button  onClick={handleAppRedirect}
-          className="cursor-pointer rounded-lg bg-white px-6 py-3 text-base font-semibold text-black transition-all">
-           <Link
-            href="https://play.google.com/store/apps/details?id=com.cuptime.customer"
-            target="_blank"
-          >
-            Order Now
-          </Link>
-          </button>
         </div>
       </div>
     </section>

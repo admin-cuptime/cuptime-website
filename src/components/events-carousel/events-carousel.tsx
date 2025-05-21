@@ -9,61 +9,35 @@ import {
   CarouselNext,
   type CarouselApi,
 } from '@/components/ui/carousel';
-import { images } from '@/assets/png/images';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 import { Calendar, MapPin } from 'lucide-react';
+import { fetchEventsData } from '@/app/api/events';
 
-// Replace with JSON data
-const eventsData = [
-  {
-    image: images.event.gallery1,
-    date: 'June 15, 2025',
-    location: 'Chennai',
-    title: 'Cuptime Lovers Meeting',
-  },
-  {
-    image: images.event.gallery1,
-    date: 'July 20, 2025',
-    location: 'Chennai',
-    title: 'Cuptime Lovers Meeting',
-  },
-  {
-    image: images.event.gallery1,
-    date: 'August 5, 2025',
-    location: 'Chennai',
-    title: 'Cuptime Lovers Meeting',
-  },
-  {
-    image: images.event.gallery1,
-    date: 'September 12, 2025',
-    location: 'Chennai',
-    title: 'Cuptime Lovers Meeting',
-  },
-  {
-    image: images.event.gallery1,
-    date: 'October 18, 2025',
-    location: 'Chennai',
-    title: 'Cuptime Lovers Meeting',
-  },
-  {
-    image: images.event.gallery1,
-    date: 'November 22, 2025',
-    location: 'Chennai',
-    title: 'Cuptime Lovers Meeting',
-  },
-  {
-    image: images.event.gallery1,
-    date: 'December 10, 2025',
-    location: 'Chennai',
-    title: 'Cuptime Lovers Meeting',
-  },
-];
+// Define the type for event data
+interface EventData {
+  image: string;
+  date: string;
+  location: string;
+  title: string;
+}
 
 const EventsCarousel = () => {
   const [mainApi, setMainApi] = useState<CarouselApi>();
   const [thumbsApi, setThumbsApi] = useState<CarouselApi>();
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [eventsData, setEventsData] = useState<EventData[]>([]);
+
+  // Fetch events data when component mounts
+  useEffect(() => {
+    const getEventsData = async () => {
+      const data = await fetchEventsData();
+      if (data) {
+        setEventsData(data);
+      }
+    };
+    getEventsData();
+  }, []);
 
   const onThumbClick = useCallback(
     (index: number) => {
@@ -116,21 +90,27 @@ const EventsCarousel = () => {
               <CarouselItem key={index} className="flex justify-center">
                 <div className="relative aspect-video w-full overflow-hidden rounded-lg">
                   <img
-                    src={event.image.src}
+                    src={event.image}
                     alt={`${event.title} - ${event.date}`}
                     className="h-full w-full object-cover"
                   />
-                  <div className="bg-cuptime-red absolute bottom-4 left-4 max-w-xs rounded-bl-2xl rounded-tr-2xl p-4 text-white flex flex-col gap-2">
-                    <h3 className="text-xs md:text-xl font-bold">{event.title}</h3>
-                    <div className="flex items-center gap-1">
-                      <Calendar className="size-4" />
-                      <span className="text-xs md:text-sm">{event.date}</span>
+                  {event.title && (
+                    <div className="bg-cuptime-red absolute bottom-4 left-4 flex max-w-xs flex-col gap-2 rounded-tr-2xl rounded-bl-2xl p-4 text-white">
+                      <h3 className="text-xs font-bold md:text-xl">
+                        {event.title}
+                      </h3>
+                      <div className="flex items-center gap-1">
+                        <Calendar className="size-4" />
+                        <span className="text-xs md:text-sm">{event.date}</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <MapPin className="size-4" />
+                        <span className="text-xs md:text-sm">
+                          {event.location}
+                        </span>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-1">
-                      <MapPin className="size-4" />
-                      <span className="text-xs md:text-sm">{event.location}</span>
-                    </div>
-                  </div>
+                  )}
                 </div>
               </CarouselItem>
             ))}
@@ -163,7 +143,7 @@ const EventsCarousel = () => {
                   )}
                 >
                   <img
-                    src={event.image.src}
+                    src={event.image}
                     alt={`Thumbnail ${index + 1}`}
                     className="aspect-square w-full object-cover"
                   />

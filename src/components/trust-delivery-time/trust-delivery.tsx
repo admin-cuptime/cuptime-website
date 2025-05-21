@@ -1,9 +1,7 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
-import deliveryImage from '@/assets/png/trust-delivery-time.png';
 import trust1 from '@/assets/svg/fi_6046785.svg';
 import trust2 from '@/assets/svg/peak-hour.svg';
 import trust3 from '@/assets/svg/quality-check.svg';
@@ -40,7 +38,7 @@ const TrustDelivery = () => {
           </h2>
 
           <p className="mb-3 text-center text-base md:text-left md:text-lg">
-            We understand that in a busy workplace, time is everything. That’s
+            We understand that in a busy workplace, time is everything. That's
             why we pride ourselves on
             <span className="mb-3 p-1 font-bold md:text-lg">
               punctual delivery of every cup — hot, fresh, and on schedule.
@@ -73,13 +71,17 @@ const TrustDelivery = () => {
           viewport={{ once: true }}
           className="image-section flex items-center justify-between lg:w-1/2"
         >
-          <Image
-            src={deliveryImage}
-            alt="Delivery Team"
-            className="rounded-lg"
-            width={580}
-            height={300}
-          />
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            controls
+            className="h-auto w-full rounded-lg [&:not(:hover)]:controls-hidden"
+          >
+            <source src="/franchise.webm" type="video/webm" />
+            Your browser does not support the video tag.
+          </video>
         </motion.div>
       </div>
     </section>

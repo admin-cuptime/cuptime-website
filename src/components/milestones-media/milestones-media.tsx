@@ -45,7 +45,6 @@ const MilestonesMedia = () => {
     {
       image: yourStory,
       title: 'Featured in Your Story',
-      description: 'Read More',
     },
   ];
 
@@ -111,23 +110,10 @@ const MilestonesMedia = () => {
                       }}
                     />
                   </div>
-                  {/* <div className="relative h-[450px] md:h-[500px] rounded-lg overflow-hidden group">
-                  <div
-                    className="absolute inset-0 bg-cover bg-center"
-                    style={{
-                      backgroundImage: `url(${milestone.image.src})`,
-                    }}
-                  />
-                  </div> */}
                   <div className="space-y-2">
                     <h3 className="text-sm font-semibold md:text-lg">
                       {milestone.title}
                     </h3>
-                    {milestone.description && (
-                      <p className="text-cuptime-red text-sm font-semibold underline md:text-lg">
-                        {milestone.description}
-                      </p>
-                    )}
                   </div>
                 </div>
               </CarouselItem>

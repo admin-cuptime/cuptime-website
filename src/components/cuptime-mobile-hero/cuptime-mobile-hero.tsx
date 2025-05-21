@@ -39,7 +39,7 @@ const CuptimeMobileHero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.7 }}
             >
-              <div className="flex w-52 cursor-pointer items-center justify-center gap-3 rounded-lg border-2 border-zinc-300 bg-white px-6 py-2 transition-all duration-300 hover:bg-white/80 md:w-fit">
+              <div className="flex w-52 cursor-pointer items-center justify-center gap-3 rounded-lg border-2 border-zinc-300 bg-white px-6 py-2 transition-all duration-300 hover:bg-zinc-300 md:w-fit">
                 <PlayStore className="h-8 w-8" />
                 <div className="flex flex-col leading-none">
                   <span className="text-[8px] font-semibold">GET IT ON</span>
@@ -48,7 +48,7 @@ const CuptimeMobileHero = () => {
                   </span>
                 </div>
               </div>
-              <div className="flex w-52 cursor-pointer items-center justify-center gap-3 rounded-lg border-2 border-zinc-300 bg-white px-6 py-2 transition-all duration-300 hover:bg-white/80 md:w-fit">
+              <div className="flex w-52 cursor-pointer items-center justify-center gap-3 rounded-lg border-2 border-zinc-300 bg-white px-6 py-2 transition-all duration-300 hover:bg-zinc-300 md:w-fit">
                 <AppStore className="h-8 w-8" />
                 <div className="flex flex-col leading-none">
                   <span className="text-[8px]">GET IT ON</span>

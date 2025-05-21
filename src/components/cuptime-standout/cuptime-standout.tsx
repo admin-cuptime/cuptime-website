@@ -9,7 +9,7 @@ import { images } from '@/assets/png/images';
 
 type StandoutSectionProps = {
   title: string;
-  links: { text: string; href: string }[];
+  links: { text: string }[];
   onLinkClick: (index: number) => void;
   activeIndex: number;
 };
@@ -20,24 +20,25 @@ const StandoutSection = ({
   onLinkClick,
   activeIndex,
 }: StandoutSectionProps) => (
-  
-  <div dir='ltr' className="scrollbar scrollbar-thumb-cuptime-red scrollbar-track-white/50 scrollbar-h-2 relative flex w-full snap-x scroll-ml-11 flex-row items-center overflow-x-auto gap-0 lg:gap-6 py-4 text-lg text-nowrap md:text-xl lg:w-fit lg:flex-col lg:items-start lg:py-0">
+  <div
+    dir="ltr"
+    className="scrollbar scrollbar-thumb-cuptime-red scrollbar-track-white/50 scrollbar-h-2 relative flex w-full snap-x scroll-ml-11 flex-row items-center gap-0 overflow-x-auto py-4 text-lg text-nowrap md:text-xl lg:w-fit lg:flex-col lg:items-start lg:gap-6 lg:py-0"
+  >
     {links.map((link, index) => (
       <div key={index} className="snap-start scroll-ms-11">
         <motion.button
-          className={`ml-6 mr-3 cursor-pointer text-left ${activeIndex === index ? '!text-cuptime-red font-bold' : 'font-medium'}`}
+          className={`mr-3 ml-6 cursor-pointer text-left ${activeIndex === index ? '!text-cuptime-red font-bold' : 'font-medium'}`}
           onClick={() => onLinkClick(index)}
-          whileHover={{ 
+          whileHover={{
             x: 8,
             color: '#E51937',
-            transition: { duration: 0.2 }
+            transition: { duration: 0.2 },
           }}
         >
           {link.text}
         </motion.button>
       </div>
     ))}
-    
   </div>
 );
 
@@ -45,41 +46,40 @@ const CuptimeStandout = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const aboutLinks = [
-    { text: 'Product Selection', href: '/cup-time-mobile' },
-    { text: 'Monthly Subscriptions', href: '/cup-time-mobile' },
-    { text: 'My Orders & Invoice', href: '/cup-time-mobile' },
-    { text: 'Track My Delivery', href: '/cup-time-mobile' },
-    { text: 'Flask Management', href: '/cup-time-mobile' },
-    { text: 'Event Booking', href: '/cup-time-mobile' },
-    { text: 'My Cup Tracker', href: '/cup-time-mobile' },
-    { text: 'Notifications', href: '/cup-time-mobile' },
+    { text: 'Product Selection' },
+    { text: 'Monthly Subscriptions' },
+    { text: 'My Orders & Invoice' },
+    { text: 'Track My Delivery' },
+    { text: 'Flask Management' },
+    { text: 'Event Booking' },
+    { text: 'Refer & Earn' },
   ];
 
   const featuresContent = [
     {
       title: 'Product Selection',
-      image: images.appScreenshot.screenshot1,
+      image: images.appScreenshot.screenProducts,
       features: [
         'Browse from a wide range of filter coffee, tea, and snacks',
-        'Customization options (sugar, milk, flavor)',
+        'Customization options',
       ],
     },
     {
       title: 'Monthly Subscriptions',
-      image: images.appScreenshot.screenshot2,
+      image: images.appScreenshot.screenSubscription,
       features: [
         'Flexible subscription plans',
-        'Exclusive discounts for members',
+        'Customizable subscription options',
       ],
     },
     {
       title: 'My Orders & Invoice',
-      image: images.appScreenshot.screenshot1,
+      image: images.appScreenshot.screenInvoices,
       features: ['Track your orders easily', 'Download invoices anytime'],
     },
     {
       title: 'Track My Delivery',
-      image: images.appScreenshot.screenshot4,
+      image: images.appScreenshot.screenTrack,
       features: [
         'Real-time delivery tracking',
         'Notifications for delivery updates',
@@ -87,23 +87,21 @@ const CuptimeStandout = () => {
     },
     {
       title: 'Flask Management',
-      image: images.appScreenshot.screenshot5,
-      features: ['Manage your flask inventory', 'Request flask replacements'],
+      image: images.appScreenshot.screenFlasks,
+      features: ['Track and manage your flask returns', 'Monitor your flask inventory and history'],
     },
     {
       title: 'Event Booking',
-      image: images.appScreenshot.screenshot1,
-      features: ['Book events with ease', 'Customizable event packages'],
+      image: images.appScreenshot.screenEvents,
+      features: ['Book events with ease', 'Manage and Track your events'],
     },
     {
-      title: 'My Cup Tracker',
-      image: images.appScreenshot.screenshot2,
-      features: ['Track your cup usage', 'Monitor sustainability impact'],
-    },
-    {
-      title: 'Notifications',
-      image: images.appScreenshot.screenshot3,
-      features: ['Receive timely updates', 'Stay informed about offers'],
+      title: 'Refer & Earn',
+      image: images.appScreenshot.screenRefer,
+      features: [
+        'Earn rewards for every referral',
+        'Share with friends and earn',
+      ],
     },
   ];
 
@@ -118,7 +116,7 @@ const CuptimeStandout = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="w-full rounded-2xl flex flex-col gap-10 lg:gap-0"
+        className="flex w-full flex-col gap-10 rounded-2xl lg:gap-0"
       >
         <div className="flex flex-col gap-4">
           <motion.h2
@@ -146,15 +144,14 @@ const CuptimeStandout = () => {
         <div className="flex flex-col gap-6 p-1 lg:flex-row lg:gap-0 lg:p-14">
           {/*section-1*/}
           <div className="relative flex flex-col items-center justify-center gap-6 px-0 lg:px-20">
-            
             <StandoutSection
               title="About Cuptime"
               links={aboutLinks}
               onLinkClick={handleLinkClick}
               activeIndex={activeIndex}
             />
-            <div className="block lg:hidden from-background pointer-events-none absolute inset-y-0 left-0 w-1/6 bg-gradient-to-r"></div>
-            <div className="block lg:hidden from-background pointer-events-none absolute inset-y-0 right-0 w-1/6 bg-gradient-to-l"></div>
+            <div className="from-background pointer-events-none absolute inset-y-0 left-0 block w-1/6 bg-gradient-to-r lg:hidden"></div>
+            <div className="from-background pointer-events-none absolute inset-y-0 right-0 block w-1/6 bg-gradient-to-l lg:hidden"></div>
           </div>
           {/* Section-2 */}
           <div className="flex h-full w-full items-center border-l-0 border-zinc-300 px-1 lg:border-l-2 lg:px-20">
@@ -196,7 +193,7 @@ const CuptimeStandout = () => {
                       {featuresContent[activeIndex]?.title ||
                         'Product Selection'}
                     </h2>
-                    <div className="flex flex-col gap-3 items-center lg:items-start">
+                    <div className="flex flex-col items-center gap-3 lg:items-start">
                       {featuresContent[activeIndex]?.features.map(
                         (feature, index) => (
                           <motion.div

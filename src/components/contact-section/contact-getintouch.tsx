@@ -231,7 +231,7 @@ const GetinTouch = () => {
                   className="from-cuptime-orange to-cuptime-red rounded-lg bg-gradient-to-tr px-4 py-3 text-sm font-semibold text-white md:py-3 md:text-base"
                   disabled={loading}
                 >
-                  {loading ? 'Sending...' : 'Contact to Cuptime'}
+                  {loading ? 'Sending...' : 'Contact Cuptime'}
                 </button>
               </div>
             </form>

@@ -3,7 +3,6 @@ import Link from 'next/link';
 import React from 'react';
 import { motion } from 'framer-motion';
 import Franchisebg from '@/assets/png/franchise.png';
-import deliveryImage from '@/assets/png/trust-delivery-time.png';
 // import { Link } from 'lucide-react';
 
 const FranchiseHero = () => {
@@ -77,11 +76,17 @@ const FranchiseHero = () => {
             className="w-full"
           >
             <div className="image-section flex items-center justify-between">
-              <img
-                src={deliveryImage.src}
-                alt="Delivery Team"
-                className="h-auto w-full rounded-lg brightness-70"
-              />
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                controls
+                className="h-auto w-full rounded-lg [&:not(:hover)]:controls-hidden"
+              >
+                <source src="/franchise.webm" type="video/webm" />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </motion.div>
         </div>

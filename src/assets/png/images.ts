@@ -29,11 +29,13 @@ import productCane from '@/assets/png/sugar-juice.png';
 import contactBanner from '@/assets/png/get-in-touch.png';
 import friends from '@/assets/png/event-hero-bg.png';
 import cuptimeMobileSplash from '@/assets/png/cuptime-mobile-splash.png';
-import screenshot1 from '@/assets/png/screen-1.png';
-import screenshot2 from '@/assets/png/screen-2.png';
-import screenshot3 from '@/assets/png/screen-3.png';
-import screenshot4 from '@/assets/png/screen-4.png';
-import screenshot5 from '@/assets/png/screen-5.png';
+import screenEvents from '@/assets/png/screen-events.png';
+import screenProducts from '@/assets/png/screen-products.png';
+import screenRefer from '@/assets/png/screen-refer.png';
+import screenSubscription from '@/assets/png/screen-subscription.png';
+import screenTrack from '@/assets/png/screen-track.png';
+import screenFlasks from '@/assets/png/screen-flasks.png';
+import screenInvoices from '@/assets/png/screen-invoices.png';
 import flaskhand from '@/assets/png/flask-hand.png'
 import printerArtwork from '@/assets/png/bag&printer-bg.png';
 import gallery1 from '@/assets/png/event-gallery-1.png';
@@ -106,11 +108,13 @@ export const images = {
     gallery1,
   },
   appScreenshot: {
-    screenshot1,
-    screenshot2,
-    screenshot3,
-    screenshot4,
-    screenshot5,
+    screenProducts,
+    screenRefer,
+    screenSubscription,
+    screenTrack,
+    screenFlasks,
+    screenEvents,
+    screenInvoices,
     flaskhand,
   },
   backgroundArtwork: {

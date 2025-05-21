@@ -17,11 +17,8 @@ export default function OurProducts() {
       <div className="md:mt-10 mt-5 lg:-mt-24">
         <ProductsSection />
       </div>
-      <div className="lg:space-y-18 space-y-9">
+      <div>
         <ProductSteps />
-        <MilestonesMedia />
-        <GetAppSection />
-        <EntrepreneurialJourney />
         <ReviewMarquee />
       </div>
     </div>
