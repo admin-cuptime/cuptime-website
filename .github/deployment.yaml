@@ -1,0 +1,46 @@
+name: Build and Deploy to S3
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  dev-build:
+    if: github.ref == 'refs/heads/develop'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+
+      - name: Install Dependencies
+        run: |
+          npm install --legacy-peer-deps
+          npx next build
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-south-1
+
+      - name: Upload build/ to S3
+        run: |
+          if [ "${{ github.ref }}" == "refs/heads/develop" ]; then
+            BUCKET="beta.cuptime.in"
+          fi
+          aws s3 sync build/ s3://$BUCKET/
+
+      - name: Invalidate CloudFront Cache
+        run: |
+          if [ "${{ github.ref }}" == "refs/heads/develop" ]; then
+            DIST_ID=${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
+          fi
+          aws cloudfront create-invalidation --distribution-id $DIST_ID --paths "/*"
