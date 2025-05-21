@@ -54,6 +54,9 @@ const nextConfig: NextConfig = {
   trailingSlash: false,
   output: "export",
   distDir: "build",
+  images: {
+    unoptimized: true,
+  },
   eslint: {
     ignoreDuringBuilds: true,
   },
