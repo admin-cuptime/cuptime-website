@@ -5,7 +5,10 @@ import CuptimeLogoWhite from '@/assets/svg/cuptime-logo-white.svg';
 import PlayStore from '@/assets/svg/playstore.svg';
 import AppStore from '@/assets/svg/apple-logo.svg';
 import Link from 'next/link';
-import { handlePlaystoreRedirect, handleAppstoreRedirect } from '@/utils/helper';
+import {
+  handlePlaystoreRedirect,
+  handleAppstoreRedirect,
+} from '@/utils/helper';
 
 type FooterSectionProps = {
   title: string;
@@ -93,11 +96,18 @@ const Footer = () => {
               <Link href="tel:+919876543210" className="hover:text-cuptime-red">
                 +91 98765 43210
               </Link>
-              <div className="text-wrap">
-                No. 12, Main Street
-                <div>Madurai – 625001,</div>
-                <div>Tamil Nadu, India</div>
-              </div>
+              <Link
+                href="https://maps.app.goo.gl/UHChYbATqTrxVKp78"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-cuptime-red"
+              >
+                <div className="text-wrap">
+                  No. 12, Main Street
+                  <div>Madurai – 625001,</div>
+                  <div>Tamil Nadu, India</div>
+                </div>
+              </Link>
             </div>
           </div>
         </div>
