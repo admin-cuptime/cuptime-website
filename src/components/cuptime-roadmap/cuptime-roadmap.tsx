@@ -130,7 +130,7 @@ const CuptimeRoadmap = () => {
                   placeholder="Name"
                   value={form.name}
                   onChange={handleChange}
-                  className="border-cuptime-gray focus:border-cuptime-red w-full rounded-md border-2 px-4 py-2 focus:outline-none"
+                  className="border-cuptime-gray focus:border-cuptime-red w-full rounded-md border-2 px-4 py-2 md:py-3 focus:outline-none"
                   required
                 />
                 <input
@@ -145,7 +145,7 @@ const CuptimeRoadmap = () => {
                   }}
                   pattern="^[0-9+]*$"
                   inputMode="tel"
-                  className="border-cuptime-gray focus:border-cuptime-red w-full rounded-md border-2 px-4 py-2 focus:outline-none"
+                  className="border-cuptime-gray focus:border-cuptime-red w-full rounded-md border-2 px-4 py-2 md:py-3 focus:outline-none"
                   required
                 />
               </div>
@@ -157,7 +157,7 @@ const CuptimeRoadmap = () => {
                   placeholder="Company Name"
                   value={form['company-name']}
                   onChange={handleChange}
-                  className="border-cuptime-gray focus:border-cuptime-red w-full rounded-md border-2 px-4 py-2 focus:outline-none"
+                  className="border-cuptime-gray focus:border-cuptime-red w-full rounded-md border-2 px-4 py-2 md:py-3 focus:outline-none"
                 />
                 <input
                   type="email"
@@ -165,7 +165,7 @@ const CuptimeRoadmap = () => {
                   placeholder="Email"
                   value={form.email}
                   onChange={handleChange}
-                  className="border-cuptime-gray focus:border-cuptime-red w-full rounded-md border-2 px-4 py-2 focus:outline-none"
+                  className="border-cuptime-gray focus:border-cuptime-red w-full rounded-md border-2 px-4 py-2 md:py-3 focus:outline-none"
                   required
                 />
               </div>
@@ -176,7 +176,7 @@ const CuptimeRoadmap = () => {
                 value={form.message}
                 onChange={handleChange}
                 maxLength={250}
-                className="border-cuptime-gray focus:border-cuptime-red w-full rounded-md border-2 px-4 py-2 focus:outline-none"
+                className="border-cuptime-gray focus:border-cuptime-red w-full rounded-md border-2 px-4 py-2 md:py-3 focus:outline-none"
               ></textarea>
 
               {success && <div className="text-green-600">{success}</div>}
@@ -185,7 +185,7 @@ const CuptimeRoadmap = () => {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="from-cuptime-orange to-cuptime-red rounded-lg bg-gradient-to-tr px-4 py-2 text-sm font-semibold text-white md:py-3 md:text-base hover:opacity-90 cursor-pointer transition-all"
+                  className="from-cuptime-orange to-cuptime-red rounded-lg bg-gradient-to-tr px-4 py-2 md:py-3 text-sm font-semibold text-white md:text-base hover:opacity-90 cursor-pointer transition-all"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? 'Sending...' : 'Contact Cuptime'}

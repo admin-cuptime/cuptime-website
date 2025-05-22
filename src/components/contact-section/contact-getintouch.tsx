@@ -191,7 +191,7 @@ const GetinTouch = () => {
                       checked={selectedOption === option}
                       onChange={() => handleCheckboxChange(option)}
                       value={option.toLowerCase()}
-                      className="accent-cuptime-red mr-2 h-4 w-4"
+                      className="accent-cuptime-red mr-2 h-4 w-4 cursor-pointer"
                       required 
                     />
                     <span className="font-medium">{option}</span>
@@ -260,7 +260,7 @@ const GetinTouch = () => {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="from-cuptime-orange to-cuptime-red rounded-lg bg-gradient-to-tr px-4 py-3 text-sm font-semibold text-white md:py-3 md:text-base"
+                  className="from-cuptime-orange cursor-pointer to-cuptime-red rounded-lg bg-gradient-to-tr px-4 py-3 text-sm font-semibold text-white md:py-3 md:text-base"
                   disabled={loading}
                 >
                   {loading ? 'Sending...' : 'Contact Cuptime'}
