@@ -45,7 +45,7 @@ const Header = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
 
     return () => {
@@ -189,7 +189,7 @@ const Header = () => {
         </button>
         <button
           onClick={handleAppRedirect}
-          className="from-cuptime-orange to-cuptime-red cursor-pointer rounded-xl bg-gradient-to-tr px-6 py-2 font-semibold text-white transition-all hover:opacity-90"
+          className="from-cuptime-orange to-cuptime-red cursor-pointer rounded-xl bg-gradient-to-tr px-6 py-2 font-semibold text-white transition-all hover:opacity-90 whitespace-nowrap"
         >
           Order Now
         </button>
