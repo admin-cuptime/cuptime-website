@@ -1,8 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import journeygirl from '@/assets/png/journeygirl.png';
+import React, { useState, useEffect } from 'react';
+import { fetchJourneyData } from '@/app/api/journey';
 import { Check } from 'lucide-react';
 import { motion } from 'framer-motion';
 import EntrepreneurialBg from '@/assets/png/entrepreneurial-bg.png';
@@ -24,8 +25,21 @@ const FicoFranchise = () => {
     {
       description: 'Commitment to hygiene and brand standards',
     },
-    
   ];
+  const [imageUrl, setImageUrl] = useState('');
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const getGallery = async () => {
+      setLoading(true);
+      const data = await fetchJourneyData();
+      if (Array.isArray(data) && data.length > 0) {
+        setImageUrl(data[0].images || ''); // Assume Cloudinary URL
+      }
+      setLoading(false);
+    };
+    getGallery();
+  }, []);
 
   return (
     <section className="flex items-center justify-center overflow-hidden px-0 md:px-8">
@@ -60,7 +74,8 @@ const FicoFranchise = () => {
                 What You Need to Get Started
               </h2>
               <p className="py-1.5 text-base text-white md:py-3 md:text-xl">
-                Join Cup Time’s growing franchise network with our flexible, profitable franchise model.
+                Join Cup Time’s growing franchise network with our flexible,
+                profitable franchise model.
               </p>
               <div className="flex flex-col items-start justify-center gap-3">
                 {ficoJourney.map((ficomodel, index) => (
@@ -102,11 +117,19 @@ const FicoFranchise = () => {
             }}
             className="flex shrink-0 justify-center lg:w-1/2"
           >
-            <Image
-              src={journeygirl}
-              alt="Entrepreneurial Journey"
-              className="h-auto w-full rounded-lg"
-            />
+            {imageUrl ? (
+              <img
+                src={imageUrl}
+                alt="Entrepreneurial Journey"
+                className="h-auto w-full rounded-lg"
+              />
+            ) : (
+              <img
+                src={journeygirl.src}
+                alt="Entrepreneurial Journey"
+                className="h-auto w-full rounded-lg"
+              />
+            )}
           </motion.div>
         </div>
       </motion.div>
