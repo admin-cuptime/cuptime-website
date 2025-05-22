@@ -13,13 +13,14 @@ import CuptimeImageMedia from '@/components/cuptime-image-media/cuptime-image-me
 
 const AboutPage = () => {
   return (
-      <main className="max-w-screen-3xl mx-auto space-y-16 md:space-y-32">
+      <main className="max-w-screen-3xl mx-auto space-y-16 md:space-y-32"id=''>
         <AboutUsHero/>
-        <section className='-mt-32'>
-        <HorizontelTimeline/></section>
-        <Beverages />
+        <section id='timeline-section' className='md:-mt-34 -mt-16'>
+        <HorizontelTimeline/>
+        </section>
         <section>
           <div className="space-y-16">
+            <Beverages/>
             <TraditionWorkplace />
             <ProductBanner />
             <ReviewMarquee />

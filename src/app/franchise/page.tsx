@@ -21,8 +21,9 @@ const FranchisePage = () => {
             <ReviewMarquee />
             <HorizontelTimeline/>
             <FicoFranchise />
-            <CuptimeRoadmap />
+            {/* <CuptimeRoadmap /> */}
           </div>
+          <CuptimeRoadmap />
         </section>
       </div>
   );

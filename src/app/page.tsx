@@ -28,8 +28,8 @@ export default function Home() {
       <section>
         <ReviewMarquee />
         <GetAppSection />
+        <CuptimeRoadmap/>
       </section>
-      <CuptimeRoadmap />
     </main>
   );
 }

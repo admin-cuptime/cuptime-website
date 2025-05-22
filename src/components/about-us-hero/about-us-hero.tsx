@@ -96,7 +96,15 @@ const AboutUsHero = () => {
                   Order Now
                 </Link>
               </button>
-              <button className="from-cuptime-orange to-cuptime-red w-full rounded-lg bg-gradient-to-tr px-4 py-2 text-sm font-semibold text-nowrap text-white md:py-3 md:text-base">
+              <button
+                onClick={() => {
+                  const el = document.getElementById('timeline-section');
+                  if (el) {
+                    el.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                className="from-cuptime-orange to-cuptime-red w-full rounded-lg bg-gradient-to-tr px-4 py-2 text-sm font-semibold text-nowrap text-white md:py-3 md:text-base"
+              >
                 Explore Our Journey
               </button>
             </motion.div>
