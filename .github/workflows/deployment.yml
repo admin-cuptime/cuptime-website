@@ -38,9 +38,9 @@ jobs:
           fi
           aws s3 sync build/ s3://$BUCKET/
 
-      # - name: Invalidate CloudFront Cache
-      #   run: |
-      #     if [ "${{ github.ref }}" == "refs/heads/develop" ]; then
-      #       DIST_ID=${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
-      #     fi
-      #     aws cloudfront create-invalidation --distribution-id $DIST_ID --paths "/*"
+      - name: Invalidate CloudFront Cache
+        run: |
+          if [ "${{ github.ref }}" == "refs/heads/develop" ]; then
+            DIST_ID=${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
+          fi
+          aws cloudfront create-invalidation --distribution-id $DIST_ID --paths "/*"
