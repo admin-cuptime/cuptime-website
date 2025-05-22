@@ -7,6 +7,8 @@ import AppStore from '@/assets/svg/apple-logo.svg';
 import { images } from '@/assets/png/images';
 import { Check } from 'lucide-react';
 import { motion } from 'motion/react';
+import { handleAppRedirect } from '@/utils/helper';
+import { handlePlaystoreRedirect } from '@/utils/ios-helper';
 
 const GetAppSection = () => {
   return (
@@ -88,7 +90,9 @@ const GetAppSection = () => {
             }}
             className="flex w-full flex-col justify-center gap-2 text-[#0E1633] md:w-fit md:flex-row"
           >
-            <div className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-white px-6 py-2 transition-all duration-300 hover:bg-white/80 md:w-fit">
+            <button className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-white px-6 py-2 transition-all duration-300 hover:bg-white/80 md:w-fit"
+            onClick={handleAppRedirect}
+            >
               <PlayStore className="h-8 w-8" />
               <div className="flex flex-col leading-none">
                 <span className="text-[8px] font-semibold">GET IT ON</span>
@@ -96,8 +100,10 @@ const GetAppSection = () => {
                   Google Play
                 </span>
               </div>
-            </div>
-            <div className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-white px-6 py-2 transition-all duration-300 hover:bg-white/80 md:w-fit">
+            </button>
+            <button className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-white px-6 py-2 transition-all duration-300 hover:bg-white/80 md:w-fit"
+            onClick={handlePlaystoreRedirect}
+            >
               <AppStore className="h-8 w-8" />
               <div className="flex flex-col leading-none">
                 <span className="text-[8px]">GET IT ON</span>
@@ -105,7 +111,7 @@ const GetAppSection = () => {
                   App Store
                 </span>
               </div>
-            </div>
+            </button>
           </motion.div>
         </motion.div>
 

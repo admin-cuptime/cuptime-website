@@ -5,6 +5,8 @@ import { images } from '@/assets/png/images';
 import PlayStore from '@/assets/svg/playstore.svg';
 import AppStore from '@/assets/svg/apple-logo.svg';
 import { motion } from 'framer-motion';
+import { handleAppRedirect } from '@/utils/helper';
+import { handlePlaystoreRedirect } from '@/utils/ios-helper';
 
 const CuptimeMobileHero = () => {
   return (
@@ -39,7 +41,9 @@ const CuptimeMobileHero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.7 }}
             >
-              <div className="flex w-52 cursor-pointer items-center justify-center gap-3 rounded-lg border-2 border-zinc-300 bg-white px-6 py-2 transition-all duration-300 hover:bg-zinc-300 md:w-fit">
+              <button className="flex w-52 cursor-pointer items-center justify-center gap-3 rounded-lg border-2 border-zinc-300 bg-white px-6 py-2 transition-all duration-300 hover:bg-zinc-300 md:w-fit"
+              onClick={handleAppRedirect}
+              >
                 <PlayStore className="h-8 w-8" />
                 <div className="flex flex-col leading-none">
                   <span className="text-[8px] font-semibold">GET IT ON</span>
@@ -47,8 +51,10 @@ const CuptimeMobileHero = () => {
                     Google Play
                   </span>
                 </div>
-              </div>
-              <div className="flex w-52 cursor-pointer items-center justify-center gap-3 rounded-lg border-2 border-zinc-300 bg-white px-6 py-2 transition-all duration-300 hover:bg-zinc-300 md:w-fit">
+              </button>
+              <button className="flex w-52 cursor-pointer items-center justify-center gap-3 rounded-lg border-2 border-zinc-300 bg-white px-6 py-2 transition-all duration-300 hover:bg-zinc-300 md:w-fit"
+              onClick={handlePlaystoreRedirect}
+              >
                 <AppStore className="h-8 w-8" />
                 <div className="flex flex-col leading-none">
                   <span className="text-[8px]">GET IT ON</span>
@@ -56,7 +62,7 @@ const CuptimeMobileHero = () => {
                     App Store
                   </span>
                 </div>
-              </div>
+              </button>
             </motion.div>
           </motion.div>
 

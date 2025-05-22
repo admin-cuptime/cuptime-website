@@ -93,7 +93,7 @@ const CuptimeRoadmap = () => {
 
   return (
     <section>
-      <div className="flex flex-col gap-10 px-2 py-12 md:px-8">
+      <div className="flex flex-col gap-10 px-2 py-8 md:py-16 md:px-8">
         <h2 className="text-center text-3xl font-bold text-zinc-900 md:text-4xl">
           Reach Out to CupTime
         </h2>
