@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import trust1 from '@/assets/svg/fi_6046785.svg';
+import trust1 from '@/assets/svg/trustmobile.svg';
 import trust2 from '@/assets/svg/peak-hour.svg';
 import trust3 from '@/assets/svg/quality-check.svg';
 
