@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { images } from '@/assets/png/images';
 import MySVGlocation from '@/assets/svg/location-09.svg';
@@ -11,6 +11,7 @@ import { FlipText } from '../magicui/flip-text';
 import { TypingAnimation } from '../magicui/typing-animation';
 import ContactBusinessCard from '@/components/contact-businesscard/contact-businesscard';
 import { useSearchParams } from 'next/navigation';
+
 
 const GetinTouch = () => {
   const searchParams = useSearchParams();
@@ -94,13 +95,13 @@ const GetinTouch = () => {
   };
   useEffect(() => {
     if (reasonParam) {
-      // Capitalize first letter to match options array
       const formatted = reasonParam.charAt(0).toUpperCase() + reasonParam.slice(1);
       setSelectedOption(formatted);
     }
   }, [reasonParam]);
 
   return (
+    <Suspense fallback={<div>Loading...</div>}>
     <section className="flex flex-col items-center justify-center gap-4">
       <div
         className="flex h-[200px] w-full flex-col items-center justify-center bg-cover bg-center md:h-[350px]"
@@ -271,6 +272,7 @@ const GetinTouch = () => {
         </div>
       </motion.div>
     </section>
+    </Suspense>
   );
 };
 
