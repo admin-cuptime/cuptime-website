@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { images } from '@/assets/png/images';
 import MySVGlocation from '@/assets/svg/location-09.svg';
@@ -10,8 +10,11 @@ import MySVGmobile from '@/assets/svg/call-ringing-02.svg';
 import { FlipText } from '../magicui/flip-text';
 import { TypingAnimation } from '../magicui/typing-animation';
 import ContactBusinessCard from '@/components/contact-businesscard/contact-businesscard';
+import { useSearchParams } from 'next/navigation';
 
 const GetinTouch = () => {
+  const searchParams = useSearchParams();
+  const reasonParam = searchParams?.get('reason');
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [form, setForm] = useState({
     name: '',
@@ -89,6 +92,13 @@ const GetinTouch = () => {
       setLoading(false);
     }
   };
+  useEffect(() => {
+    if (reasonParam) {
+      // Capitalize first letter to match options array
+      const formatted = reasonParam.charAt(0).toUpperCase() + reasonParam.slice(1);
+      setSelectedOption(formatted);
+    }
+  }, [reasonParam]);
 
   return (
     <section className="flex flex-col items-center justify-center gap-4">
@@ -144,8 +154,14 @@ const GetinTouch = () => {
                 <div className="h-auto w-7">
                   <MySVGweb />
                 </div>
-                <Link href="mailto:reach@cuptime.in" className='hover:text-cuptime-red'>reach@cuptime.in</Link>
-                <Link href="mailto:franchise@cuptime.in" className='hover:text-cuptime-red flex-col'>franchise@cuptime.in</Link>
+                <div className="flex flex-wrap gap-y-1 gap-x-4">
+                  <Link href="mailto:reach@cuptime.in" className="hover:text-cuptime-red">
+                    reach@cuptime.in
+                  </Link>
+                  <Link href="mailto:franchise@cuptime.in" className="hover:text-cuptime-red">
+                    franchise@cuptime.in
+                  </Link>
+                </div>
               </div>
               <div className="flex flex-row gap-3 py-2 text-black">
                 <div className="h-auto w-7">

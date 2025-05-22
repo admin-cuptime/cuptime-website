@@ -60,12 +60,6 @@ const ProductsHero = () => {
                     }}
                     className="flex flex-col justify-center gap-4 sm:flex-row"
                   >
-                    <button 
-                      onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
-                      className="bg-cuptime-black hover:bg-zinc-700 transition-all cursor-pointer w-40 rounded-lg px-4 py-2 text-sm font-semibold text-white md:px-6 md:py-3 md:text-base"
-                    >
-                      View Menu
-                    </button>
                     <button
                       onClick={handleAppRedirect}
                       className="from-cuptime-orange to-cuptime-red w-40 hover:opacity-80 transition-all cursor-pointer rounded-lg bg-gradient-to-tr px-4 py-2 text-sm font-semibold text-white md:py-3 md:text-base"

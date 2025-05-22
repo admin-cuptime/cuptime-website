@@ -120,10 +120,11 @@ const HeroSection = () => {
         setApi={setApi}
         opts={{
           align: 'center',
+          loop: true,
         }}
         plugins={[
           Autoplay({
-            delay: 3000,
+             delay: (scrollSnapList, emblaApi) => [5000, 5000, 10000],
             stopOnInteraction: true,
           }),
         ]}
