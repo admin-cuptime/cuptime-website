@@ -11,7 +11,15 @@ interface Job {
   tools?: string;
 }
 
-const JobCard = ({ job, index }: { job: Job; index: number }) => {
+const JobCard = ({
+  job,
+  index,
+  onApply,
+}: {
+  job: Job;
+  index: number;
+  onApply: (jobTitle: string) => void;
+}) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -58,12 +66,9 @@ const JobCard = ({ job, index }: { job: Job; index: number }) => {
       >
         <button
           onClick={() => {
-            const el = document.getElementById('job-application-section');
-            if (el) {
-              el.scrollIntoView({ behavior: 'smooth' });
-            }
+            onApply(job.title);
           }}
-          className="bg-cuptime-black transition-all cursor-pointer rounded-lg px-6 py-3 text-sm font-bold text-white hover:bg-zinc-600 md:text-base"
+          className="bg-cuptime-black whitespace-nowrap transition-all cursor-pointer rounded-lg px-6 py-3 text-sm font-bold text-white hover:bg-zinc-600 md:text-base"
         >
           Apply Now
         </button>
@@ -72,7 +77,13 @@ const JobCard = ({ job, index }: { job: Job; index: number }) => {
   );
 };
 
-const JobApplySection = () => {
+const JobApplySection = ({
+  selectedJob,
+  setSelectedJob,
+}: {
+  selectedJob?: string;
+  setSelectedJob: (job: string) => void;
+}) => {
   const jobsData = [
     {
       title: 'Delivery Executive (Hot Beverages)',
@@ -104,12 +115,25 @@ const JobApplySection = () => {
     },
   ];
 
+  const handleApply = (jobTitle: string) => {
+    setSelectedJob(jobTitle);
+    const el = document.getElementById('job-application-section');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="px-6 py-12 md:px-16">
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 gap-6">
           {jobsData.map((job, index) => (
-            <JobCard key={index} job={job} index={index} />
+            <JobCard
+              key={index}
+              job={job}
+              index={index}
+              onApply={handleApply}
+            />
           ))}
         </div>
       </div>
