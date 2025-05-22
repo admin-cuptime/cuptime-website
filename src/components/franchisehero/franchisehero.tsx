@@ -57,7 +57,7 @@ const FranchiseHero = () => {
               className="flex flex-col items-center gap-2 sm:flex-row"
             >
               <Link
-                href="/contact-us"
+                href="/contact-us?reason=franchise"
                 className="from-cuptime-orange to-cuptime-red hover:opacity-80 transition-all cursor-pointer rounded-lg bg-gradient-to-tr px-4 py-2 text-sm font-semibold text-white md:py-3 md:text-base"
               >
                 Apply Now
