@@ -71,7 +71,7 @@ const FranchiseSteps = () => {
         <img
           src={GirlVehicle.src}
           alt="Delivery Executive"
-          className="absolute top-[-130px] left-0 z-10 w-40 drop-shadow-xl md:top-[-200px] md:w-70"
+          className="absolute top-[-130px] left-0 z-10 w-40 drop-shadow-xl md:top-[-150px] md:w-70"
           style={{
             transform: 'rotate(-2deg)',
           }}

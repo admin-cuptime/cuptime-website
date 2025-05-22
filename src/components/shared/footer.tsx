@@ -5,8 +5,7 @@ import CuptimeLogoWhite from '@/assets/svg/cuptime-logo-white.svg';
 import PlayStore from '@/assets/svg/playstore.svg';
 import AppStore from '@/assets/svg/apple-logo.svg';
 import Link from 'next/link';
-import { handleAppRedirect } from '@/utils/helper';
-import { handlePlaystoreRedirect } from '@/utils/ios-helper'
+import { handlePlaystoreRedirect, handleAppstoreRedirect } from '@/utils/helper';
 
 type FooterSectionProps = {
   title: string;
@@ -45,9 +44,11 @@ const Footer = () => {
 
   const connectedLinks = [
     { text: 'Events', href: '/events' },
-    { text: 'App Download', href: 'https://play.google.com/store/apps/details?id=com.cuptime.customer' },
+    {
+      text: 'App Download',
+      href: 'https://play.google.com/store/apps/details?id=com.cuptime.customer',
+    },
     { text: 'Blog', href: '/blogs' },
-    
   ];
 
   const legalLinks = [
@@ -56,12 +57,10 @@ const Footer = () => {
     { text: 'Cancellation & Refund', href: '/cancellation-refund' },
   ];
 
-
-
   return (
     <footer className="bg-cuptime-black max-w-screen-3xl mx-auto flex flex-col gap-10 px-4 py-10 md:px-12">
       <div className="flex flex-col justify-between gap-10 md:flex-row">
-        <div className="flex w-32 justify-center items-center flex-col gap-4">
+        <div className="flex w-32 flex-col items-center justify-center gap-4">
           <CuptimeLogoWhite className="h-auto w-20" />
           <div className="text-cuptime-red text-center text-xs">
             Tech-Driven Brews. Human-Driven Connections
@@ -79,11 +78,21 @@ const Footer = () => {
           <div className="flex flex-col gap-3">
             <div className="font-semibold text-white">Contact</div>
             <div className="flex w-fit flex-col">
-              <Link href="mailto:reach@cuptime.in" className='hover:text-cuptime-red'>reach@cuptime.in</Link>
-              <Link href="mailto:⁠franchise@cuptime.in" className='hover:text-cuptime-red'>
+              <Link
+                href="mailto:reach@cuptime.in"
+                className="hover:text-cuptime-red"
+              >
+                reach@cuptime.in
+              </Link>
+              <Link
+                href="mailto:⁠franchise@cuptime.in"
+                className="hover:text-cuptime-red"
+              >
                 ⁠franchise@cuptime.in
               </Link>
-              <Link href="tel:+919876543210" className='hover:text-cuptime-red'>+91 98765 43210</Link>
+              <Link href="tel:+919876543210" className="hover:text-cuptime-red">
+                +91 98765 43210
+              </Link>
               <div className="text-wrap">
                 No. 12, Main Street
                 <div>Madurai – 625001,</div>
@@ -99,8 +108,9 @@ const Footer = () => {
           Order Now, with better Experience and trackable orders
         </div>
         <div className="flex w-full flex-col justify-center gap-2 text-[#0E1633] md:w-fit md:flex-row">
-          <button className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-white px-6 py-2 transition-all duration-300 hover:bg-white/80 md:w-fit"
-          onClick={handleAppRedirect}
+          <button
+            className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-white px-6 py-2 transition-all duration-300 hover:bg-white/80 md:w-fit"
+            onClick={handlePlaystoreRedirect}
           >
             <PlayStore className="h-8 w-8" />
             <div className="flex flex-col leading-none">
@@ -110,8 +120,9 @@ const Footer = () => {
               </span>
             </div>
           </button>
-          <button className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-white px-6 py-2 transition-all duration-300 hover:bg-white/80 md:w-fit"
-          onClick={handlePlaystoreRedirect}
+          <button
+            className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-white px-6 py-2 transition-all duration-300 hover:bg-white/80 md:w-fit"
+            onClick={handleAppstoreRedirect}
           >
             <AppStore className="h-8 w-8" />
             <div className="flex flex-col leading-none">

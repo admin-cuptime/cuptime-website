@@ -24,7 +24,6 @@ const FicoFranchise = () => {
     {
       description: 'Commitment to hygiene and brand standards',
     },
-    
   ];
 
   return (
@@ -60,7 +59,8 @@ const FicoFranchise = () => {
                 What You Need to Get Started
               </h2>
               <p className="py-1.5 text-base text-white md:py-3 md:text-xl">
-                Join Cup Time’s growing franchise network with our flexible, profitable franchise model.
+                Join Cup Time’s growing franchise network with our flexible,
+                profitable franchise model.
               </p>
               <div className="flex flex-col items-start justify-center gap-3">
                 {ficoJourney.map((ficomodel, index) => (
@@ -83,9 +83,12 @@ const FicoFranchise = () => {
               </div>
 
               <div className="flex">
-                <button className="rounded-lg bg-white px-6 py-3 text-sm font-bold text-zinc-900 md:text-base">
-                  <Link href="/franchise"> Become a Cuptime Franchisee</Link>
-                </button>
+                <Link
+                  href="/contact-us?reason=franchise"
+                  className="rounded-lg bg-white px-6 py-3 text-sm font-bold text-zinc-900 transition-all hover:bg-zinc-200 md:text-base"
+                >
+                  Become a Cuptime Franchise
+                </Link>
               </div>
             </div>
           </motion.div>

@@ -87,14 +87,9 @@ const AboutUsHero = () => {
             >
               <button
                 onClick={handleAppRedirect}
-                className="bg-cuptime-black w-full rounded-lg px-4 py-2 text-sm font-semibold text-white md:px-6 md:py-3 md:text-base"
+                className="bg-cuptime-black w-full cursor-pointer rounded-lg px-4 py-2 text-sm font-semibold text-white transition-all hover:bg-zinc-900 md:px-6 md:py-3 md:text-base"
               >
-                <Link
-                  href="https://play.google.com/store/apps/details?id=com.cuptime.customer"
-                  target="_blank"
-                >
-                  Order Now
-                </Link>
+                Order Now
               </button>
               <button
                 onClick={() => {
@@ -103,7 +98,7 @@ const AboutUsHero = () => {
                     el.scrollIntoView({ behavior: 'smooth' });
                   }
                 }}
-                className="from-cuptime-orange to-cuptime-red w-full rounded-lg bg-gradient-to-tr px-4 py-2 text-sm font-semibold text-nowrap text-white md:py-3 md:text-base"
+                className="from-cuptime-orange to-cuptime-red w-full cursor-pointer rounded-lg bg-gradient-to-tr px-4 py-2 text-sm font-semibold text-nowrap hover:opacity-80 transition-all text-white md:py-3 md:text-base"
               >
                 Explore Our Journey
               </button>

@@ -12,20 +12,18 @@ import React from 'react';
 
 const FranchisePage = () => {
   return (
-      <div className="max-w-screen-3xl mx-auto space-y-6 md:space-y-32">
-        <FranchiseHero />
-        <section>
-          <div className="space-y-16 md:space-y-32">
-            <WhyChoose />
-            <FranchiseSteps/>
-            <ReviewMarquee />
-            <HorizontelTimeline/>
-            <FicoFranchise />
-            {/* <CuptimeRoadmap /> */}
-          </div>
-          <CuptimeRoadmap />
-        </section>
-      </div>
+    <div className="max-w-screen-3xl mx-auto space-y-6 md:space-y-32">
+      <FranchiseHero />
+      <section>
+        <div className="space-y-16 md:space-y-32">
+          <FranchiseSteps />
+          <WhyChoose />
+          <HorizontelTimeline />
+          <FicoFranchise />
+        </div>
+      </section>
+      <ReviewMarquee />
+    </div>
   );
 };
 export default FranchisePage;

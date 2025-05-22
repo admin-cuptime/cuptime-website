@@ -182,14 +182,15 @@ const Header = () => {
       </div>
       {/* Desktop Buttons */}
       <div className="hidden gap-2 lg:flex">
-        <button
-          className={`${isAboutUsPage && !scrolled ? 'border-white text-white' : 'text-cuptime-red border-foreground'} cursor-pointer rounded-xl border-2 bg-transparent px-6 py-2 font-semibold`}
+        <Link
+          href="/contact-us?reason=franchise"
+          className={`${isAboutUsPage && !scrolled ? 'border-white text-white' : 'text-cuptime-red border-foreground transition-all hover:bg-zinc-200'} cursor-pointer rounded-xl border-2 px-6 py-2 font-semibold`}
         >
-          <Link href="/franchise">Franchise</Link>
-        </button>
+          Franchise
+        </Link>
         <button
           onClick={handleAppRedirect}
-          className="from-cuptime-orange to-cuptime-red cursor-pointer rounded-xl bg-gradient-to-tr px-6 py-2 font-semibold text-white transition-all hover:opacity-90 whitespace-nowrap"
+          className="from-cuptime-orange to-cuptime-red cursor-pointer rounded-xl bg-gradient-to-tr px-6 py-2 font-semibold whitespace-nowrap text-white transition-all hover:opacity-90"
         >
           Order Now
         </button>

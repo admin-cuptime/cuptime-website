@@ -18,3 +18,14 @@ export const handleAppRedirect = () => {
     );
   }
 };
+
+export const handlePlaystoreRedirect = () => {
+  window.open(
+    'https://play.google.com/store/apps/details?id=com.cuptime.customer',
+    '_blank'
+  );
+};
+
+export const handleAppstoreRedirect = () => {
+  window.open('https://apps.apple.com/in/app/cup-time/id1645852379', '_blank');
+};

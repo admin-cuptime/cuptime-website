@@ -5,8 +5,7 @@ import { images } from '@/assets/png/images';
 import PlayStore from '@/assets/svg/playstore.svg';
 import AppStore from '@/assets/svg/apple-logo.svg';
 import { motion } from 'framer-motion';
-import { handleAppRedirect } from '@/utils/helper';
-import { handlePlaystoreRedirect } from '@/utils/ios-helper';
+import { handlePlaystoreRedirect, handleAppstoreRedirect } from '@/utils/helper';
 
 const CuptimeMobileHero = () => {
   return (
@@ -42,7 +41,7 @@ const CuptimeMobileHero = () => {
               transition={{ duration: 0.5, delay: 0.7 }}
             >
               <button className="flex w-52 cursor-pointer items-center justify-center gap-3 rounded-lg border-2 border-zinc-300 bg-white px-6 py-2 transition-all duration-300 hover:bg-zinc-300 md:w-fit"
-              onClick={handleAppRedirect}
+              onClick={handlePlaystoreRedirect}
               >
                 <PlayStore className="h-8 w-8" />
                 <div className="flex flex-col leading-none">
@@ -53,7 +52,7 @@ const CuptimeMobileHero = () => {
                 </div>
               </button>
               <button className="flex w-52 cursor-pointer items-center justify-center gap-3 rounded-lg border-2 border-zinc-300 bg-white px-6 py-2 transition-all duration-300 hover:bg-zinc-300 md:w-fit"
-              onClick={handlePlaystoreRedirect}
+              onClick={handleAppstoreRedirect}
               >
                 <AppStore className="h-8 w-8" />
                 <div className="flex flex-col leading-none">

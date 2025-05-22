@@ -7,8 +7,7 @@ import AppStore from '@/assets/svg/apple-logo.svg';
 import { images } from '@/assets/png/images';
 import { Check } from 'lucide-react';
 import { motion } from 'motion/react';
-import { handleAppRedirect } from '@/utils/helper';
-import { handlePlaystoreRedirect } from '@/utils/ios-helper';
+import { handlePlaystoreRedirect, handleAppstoreRedirect } from '@/utils/helper';
 
 const GetAppSection = () => {
   return (
@@ -91,7 +90,7 @@ const GetAppSection = () => {
             className="flex w-full flex-col justify-center gap-2 text-[#0E1633] md:w-fit md:flex-row"
           >
             <button className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-white px-6 py-2 transition-all duration-300 hover:bg-white/80 md:w-fit"
-            onClick={handleAppRedirect}
+            onClick={handlePlaystoreRedirect}
             >
               <PlayStore className="h-8 w-8" />
               <div className="flex flex-col leading-none">
@@ -102,7 +101,7 @@ const GetAppSection = () => {
               </div>
             </button>
             <button className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-white px-6 py-2 transition-all duration-300 hover:bg-white/80 md:w-fit"
-            onClick={handlePlaystoreRedirect}
+            onClick={handleAppstoreRedirect}
             >
               <AppStore className="h-8 w-8" />
               <div className="flex flex-col leading-none">
