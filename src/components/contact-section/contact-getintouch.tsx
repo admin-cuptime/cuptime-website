@@ -154,8 +154,14 @@ const GetinTouch = () => {
                 <div className="h-auto w-7">
                   <MySVGweb />
                 </div>
-                <Link href="mailto:reach@cuptime.in" className='hover:text-cuptime-red'>reach@cuptime.in</Link>
-                <Link href="mailto:franchise@cuptime.in" className='hover:text-cuptime-red flex-col'>franchise@cuptime.in</Link>
+                <div className="flex flex-wrap gap-y-1 gap-x-4">
+                  <Link href="mailto:reach@cuptime.in" className="hover:text-cuptime-red">
+                    reach@cuptime.in
+                  </Link>
+                  <Link href="mailto:franchise@cuptime.in" className="hover:text-cuptime-red">
+                    franchise@cuptime.in
+                  </Link>
+                </div>
               </div>
               <div className="flex flex-row gap-3 py-2 text-black">
                 <div className="h-auto w-7">
