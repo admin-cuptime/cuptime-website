@@ -112,114 +112,74 @@ const BlogsDetailsContent = () => {
                   {blog.mainPara || blog.description}
                 </p>
               </div>
-              <motion.h2
-                className="text-cuptime-midnight text-xl font-bold md:text-2xl"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-              >
-                The Idea Behind CupTime
-              </motion.h2>
-              <motion.p
-                className="py-2 text-sm text-zinc-700 md:py-5 md:text-base"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-              >
-                {blog.ideaPara ||
-                  `CupTime was born from a simple idea: Why should enjoying your
-                  favorite brew be limited to your home or a café visit? What if
-                  you could get premium-quality beverages delivered right to
-                  your desk—fresh, hot, and on time?`}
-              </motion.p>
-              <motion.p
-                className="py-1 text-sm text-zinc-700 md:py-2 md:text-base"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-              >
-                {blog.ideaPara2 ||
-                  `That's exactly what CupTime offers: authentic South Indian tea
-                  and coffee, delivered with care to your workplace or home.`}
-              </motion.p>
-              <motion.h2
-                className="text-cuptime-midnight py-2 text-xl font-bold md:py-5 md:text-2xl"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-              >
-                What Sets Us Apart?
-              </motion.h2>
-              {highlights.map((item, index) => (
+              {/* Remove placeholder heading and paragraph, use API heading1/para1 */}
+              {blog.heading1 && (
+                <motion.h2
+                  className="text-cuptime-midnight text-xl font-bold md:text-2xl"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                >
+                  {blog.heading1}
+                </motion.h2>
+              )}
+              {blog.para1 && (
                 <motion.p
-                  key={index}
+                  className="py-2 text-sm text-zinc-700 md:py-5 md:text-base"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                >
+                  {blog.para1}
+                </motion.p>
+              )}
+              {/* Highlights */}
+              {highlights.slice(1).map((item, index) => (
+                <React.Fragment key={index}>
+                  {item.title && (
+                    <motion.h2
+                      className="text-cuptime-midnight py-2 text-xl font-bold md:py-5 md:text-2xl"
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                    >
+                      {item.title}
+                    </motion.h2>
+                  )}
+                  {item.text && (
+                    <motion.p
+                      className="gap-3 py-3 text-sm text-zinc-700 md:text-base"
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                    >
+                      {item.text}
+                    </motion.p>
+                  )}
+                </React.Fragment>
+              ))}
+              {/* Remove all remaining placeholder headings/paragraphs */}
+              {/* Optionally, render any additional headings/paragraphs from API if present */}
+              {blog.heading5 && (
+                <motion.h2
+                  className="text-cuptime-midnight py-2 text-xl font-bold md:py-5 md:text-2xl"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                >
+                  {blog.heading5}
+                </motion.h2>
+              )}
+              {blog.para5 && (
+                <motion.p
                   className="gap-3 py-3 text-sm text-zinc-700 md:text-base"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                 >
-                  {item.title} {item.text}
+                  {blog.para5}
                 </motion.p>
-              ))}
-              <motion.h2
-                className="text-cuptime-midnight py-1 text-xl font-bold md:py-3 md:text-2xl"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-              >
-                Brewing a Culture of Care at Work
-              </motion.h2>
-              <motion.p
-                className="py-2 text-sm text-zinc-700 md:py-5 md:text-base"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-              >
-                {blog.culturePara ||
-                  `Our clients include busy professionals, startups, co-working
-                  spaces, and factory floors. When a team is energized,
-                  collaboration thrives. A fresh cup of filter coffee or classic
-                  chai can break the monotony and spark new ideas.`}
-              </motion.p>
-              <motion.p
-                className="py-1 text-sm text-zinc-700 md:py-2 md:text-base"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-              >
-                {blog.culturePara2 ||
-                  `At CupTime, we aren't just delivering beverages—we're creating
-                  small moments of joy in your day.`}
-              </motion.p>
-              <motion.h2
-                className="text-cuptime-midnight py-1 text-xl font-bold md:py-3 md:text-2xl"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-              >
-                Join the Cup Time Family
-              </motion.h2>
-              <motion.p
-                className="py-2 text-sm text-zinc-700 md:py-5 md:text-base"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-              >
-                {blog.joinPara ||
-                  `Over the months, we've grown not just in reach, but in love.
-                  Thousands of customers rely on CupTime to power their days. If
-                  you haven't tried us yet, this is your sign!`}
-              </motion.p>
-              <motion.p
-                className="py-1 text-sm text-zinc-700 md:py-2 md:text-base"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-              >
-                {blog.joinPara2 ||
-                  `📱 Download the app, subscribe to your brew, and experience
-                  the magic of a timely cup.`}
-              </motion.p>
+              )}
             </div>
           </div>
         </motion.div>
