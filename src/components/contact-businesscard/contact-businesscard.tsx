@@ -10,19 +10,19 @@ const ContactBusinessCard = () => {
       title: 'Franchise Partnership',
       description: 'We’ll help you build your own success story.',
       subtitle: 'Start a Franchise',
-      link: '/franchise',
+      link: '/contact-us?reason=franchise',
     },
     {
       title: ' Bulk Orders / B2B',
       description: 'Serve your team hot beverages every day.',
       subtitle: 'Order Now',
-      link: 'https://play.google.com/store/apps/details?id=com.cuptime.customer',
+      link: '/contact-us?reason=Others',
     },
     {
       title: 'Support / Feedback',
       description: 'Facing a delivery issue or want to suggest something?',
       subtitle: 'Write to Support',
-      link: '/contact-us',
+      link: '/contact-us?reason=Others',
     },
   ];
 

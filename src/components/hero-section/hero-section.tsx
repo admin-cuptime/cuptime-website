@@ -187,7 +187,7 @@ const HeroSection = () => {
                     className="flex flex-col items-center sm:flex-row"
                   >
                     <Link
-                      href="/franchise"
+                      href="/contact-us?reason=franchise"
                       className="bg-cuptime-black w-50 rounded-lg px-4 py-2 text-sm font-semibold text-white transition-all hover:bg-zinc-700 md:px-6 md:py-3 md:text-base"
                     >
                       Become a Franchise

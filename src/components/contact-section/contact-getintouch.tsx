@@ -10,7 +10,7 @@ import MySVGmobile from '@/assets/svg/call-ringing-02.svg';
 import { TypingAnimation } from '../magicui/typing-animation';
 import { useSearchParams } from 'next/navigation';
 
-// Move all form logic into this component
+
 const GetinTouchForm = () => {
   const searchParams = useSearchParams();
   const reasonParam = searchParams?.get('reason');
@@ -170,14 +170,17 @@ const GetinTouchForm = () => {
           >
             <div className="flex flex-wrap gap-4">
               {options.map((option) => (
-                <label key={option} className="flex items-center">
+                <label
+                  key={option}
+                  className="flex items-center cursor-pointer"
+                >
                   <input
                     type="radio"
                     name="inquiry_type"
                     checked={selectedOption === option}
                     onChange={() => handleCheckboxChange(option)}
                     value={option.toLowerCase()}
-                    className="accent-cuptime-red mr-2 h-4 w-4"
+                    className="accent-cuptime-red mr-2 h-4 w-4 cursor-pointer"
                     required 
                   />
                   <span className="font-medium">{option}</span>
@@ -246,7 +249,7 @@ const GetinTouchForm = () => {
             <div className="text-center">
               <button
                 type="submit"
-                className="from-cuptime-orange to-cuptime-red rounded-lg bg-gradient-to-tr px-4 py-3 text-sm font-semibold text-white md:py-3 md:text-base"
+                className="from-cuptime-orange to-cuptime-red rounded-lg bg-gradient-to-tr px-4 py-3 text-sm font-semibold text-white md:py-3 md:text-base cursor-pointer"
                 disabled={loading}
               >
                 {loading ? 'Sending...' : 'Contact Cuptime'}
