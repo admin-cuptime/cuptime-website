@@ -103,13 +103,13 @@ const BlogsData = () => {
                 href={`/blogs-details?blog=${index}-${slugify(blog.title || '')}`}
                 className="flex flex-col gap-3 overflow-hidden bg-white"
               >
-                <div className="relative h-80 w-full overflow-hidden rounded-2xl md:h-[500px]">
+                <div className="relative h-100 w-auto overflow-hidden rounded-2xl md:h-[800px]">
                   <div
                     style={{
                       backgroundImage: `url(${blog.image})`,
                     }}
-                    className="relative h-full w-full bg-cover bg-center transition-transform duration-500 ease-in-out hover:scale-110"
-                  ></div>
+                    className="h-full w-full bg-cover bg-center transition-transform duration-500 ease-in-out hover:scale-110"
+                  />
                 </div>
                 <div className="flex flex-col gap-2">
                   <div className="flex items-center gap-6">
