@@ -238,7 +238,7 @@ const CuptimeRoadmap = () => {
                 <Link href="mailto:reach@cuptime.in" className='text-cuptime-red'>reach@cuptime.in</Link>
               </p>
               <p>
-                <Link href="tel:+919876543210" className='hover:text-cuptime-red'>Tel: +91 916 9161110</Link>
+                <Link href="tel:+919169161110" className='hover:text-cuptime-red'>Tel: +91 916 9161110</Link>
               </p>
             </div>
           </div>
