@@ -32,7 +32,7 @@ const WhatsAppFloatingButton = () => {
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ 
-            y: 100, 
+            y: 70, 
             opacity: 0,
             transition: {
               type: "spring",
@@ -41,7 +41,7 @@ const WhatsAppFloatingButton = () => {
             }
           }}
           whileHover={{ 
-            y: -6,
+            y: -10,
             transition: {
               type: "spring",
               stiffness: 100,
@@ -54,9 +54,8 @@ const WhatsAppFloatingButton = () => {
             stiffness: 100,
             damping: 10,
             duration: 1,
-            delay: 1.5
           }}
-          className="fixed bottom-6 right-6 z-50"
+          className="fixed bottom-20 right-5 z-50"
         >
           <Link 
             href={whatsappLink}
@@ -65,7 +64,7 @@ const WhatsAppFloatingButton = () => {
             className="block bg-green-500 text-white rounded-full p-3 drop-shadow-xl hover:bg-green-600 transition-colors duration-300"
             aria-label="Chat on WhatsApp"
           >
-            <WhatAppIcon className="w-6 md:w-8 h-auto" />
+            <WhatAppIcon className="w-9 h-auto" />
           </Link>
         </motion.div>
       )}
