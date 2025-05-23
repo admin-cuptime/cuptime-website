@@ -45,14 +45,16 @@ const WhatsAppFloatingButton = () => {
             transition: {
               type: "spring",
               stiffness: 100,
-              damping: 10
+              damping: 10,
+              
             }
           }}
           transition={{
             type: "spring",
             stiffness: 100,
             damping: 10,
-            duration: 1
+            duration: 1,
+            delay: 1.5
           }}
           className="fixed bottom-6 right-6 z-50"
         >
