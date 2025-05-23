@@ -112,74 +112,30 @@ const BlogsDetailsContent = () => {
                   {blog.mainPara || blog.description}
                 </p>
               </div>
-              {/* Remove placeholder heading and paragraph, use API heading1/para1 */}
-              {blog.heading1 && (
-                <motion.h2
-                  className="text-cuptime-midnight text-xl font-bold md:text-2xl"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                >
-                  {blog.heading1}
-                </motion.h2>
-              )}
-              {blog.para1 && (
-                <motion.p
-                  className="py-2 text-sm text-zinc-700 md:py-5 md:text-base"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                >
-                  {blog.para1}
-                </motion.p>
-              )}
-              {/* Highlights */}
-              {highlights.slice(1).map((item, index) => (
-                <React.Fragment key={index}>
-                  {item.title && (
+              {[1, 2, 3, 4, 5].map((n) => (
+                <React.Fragment key={n}>
+                  {blog[`heading${n}`] && (
                     <motion.h2
                       className="text-cuptime-midnight py-2 text-xl font-bold md:py-5 md:text-2xl"
                       initial={{ opacity: 0, y: 30 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                     >
-                      {item.title}
+                      {blog[`heading${n}`]}
                     </motion.h2>
                   )}
-                  {item.text && (
+                  {blog[`para${n}`] && (
                     <motion.p
                       className="gap-3 py-3 text-sm text-zinc-700 md:text-base"
                       initial={{ opacity: 0, y: 30 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                     >
-                      {item.text}
+                      {blog[`para${n}`]}
                     </motion.p>
                   )}
                 </React.Fragment>
               ))}
-              {/* Remove all remaining placeholder headings/paragraphs */}
-              {/* Optionally, render any additional headings/paragraphs from API if present */}
-              {blog.heading5 && (
-                <motion.h2
-                  className="text-cuptime-midnight py-2 text-xl font-bold md:py-5 md:text-2xl"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                >
-                  {blog.heading5}
-                </motion.h2>
-              )}
-              {blog.para5 && (
-                <motion.p
-                  className="gap-3 py-3 text-sm text-zinc-700 md:text-base"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                >
-                  {blog.para5}
-                </motion.p>
-              )}
             </div>
           </div>
         </motion.div>
