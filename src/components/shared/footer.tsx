@@ -9,6 +9,8 @@ import {
   handlePlaystoreRedirect,
   handleAppstoreRedirect,
 } from '@/utils/helper';
+import { IconBrandInstagram, IconBrandLinkedin, IconBrandWhatsapp } from '@tabler/icons-react';
+import { IconBrandFacebook } from '@tabler/icons-react';
 
 type FooterSectionProps = {
   title: string;
@@ -58,10 +60,11 @@ const Footer = () => {
     { text: 'Terms & Conditions', href: '/terms-conditions' },
     { text: 'Privacy Policy', href: '/privacy-policy' },
     { text: 'Cancellation & Refund', href: '/cancellation-refund' },
+    { text: 'Delivery', href: '/delivery' }
   ];
 
   return (
-    <footer className="bg-cuptime-black max-w-screen-3xl mx-auto flex flex-col gap-10 px-4 py-10 md:px-12">
+    <footer className="relative bg-cuptime-black max-w-screen-3xl mx-auto flex flex-col gap-10 px-4 pt-10 md:px-12">
       <div className="flex flex-col justify-between gap-10 md:flex-row">
         <div className="flex w-32 flex-col items-center justify-center gap-4">
           <CuptimeLogoWhite className="h-auto w-20" />
@@ -142,6 +145,24 @@ const Footer = () => {
               </span>
             </div>
           </button>
+        </div>
+      </div>
+
+      <div className='flex items-center justify-between w-full h-10 text-sm text-zinc-500'>
+        <div>Copyright © {new Date().getFullYear()} CupTime. All rights reserved.</div>
+        <div className='flex items-center gap-2'>
+          <Link href="https://www.facebook.com/cuptimemadurai" target="_blank" rel="noopener noreferrer">
+            <IconBrandFacebook className='hover:text-cuptime-red cursor-pointer transition-all'/>
+          </Link>
+          <Link href="https://www.instagram.com/cuptime.in" target="_blank" rel="noopener noreferrer">
+            <IconBrandInstagram className='hover:text-cuptime-red cursor-pointer transition-all'/>
+          </Link>
+          <Link href="https://www.linkedin.com/company/cup-time" target="_blank" rel="noopener noreferrer">
+            <IconBrandLinkedin className='hover:text-cuptime-red cursor-pointer transition-all'/>
+          </Link>
+          <Link href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
+            <IconBrandWhatsapp className='hover:text-cuptime-red cursor-pointer transition-all'/>
+          </Link>
         </div>
       </div>
     </footer>

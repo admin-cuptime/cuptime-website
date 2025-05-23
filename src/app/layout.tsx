@@ -3,6 +3,7 @@ import { Figtree, Geist } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/shared/header';
 import Footer from '@/components/shared/footer';
+import WhatsAppFloatingButton from '@/components/whatsapp-floating-button/whatsapp-floating-button';
 
 const figtree = Figtree({
   variable: '--font-figtree',
@@ -16,8 +17,8 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: 'Cup Time Website',
-  description: 'Cup Time Website',
+  title: 'CupTime Website',
+  description: 'CupTime Website',
 };
 
 export default function RootLayout({
@@ -31,6 +32,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <WhatsAppFloatingButton />
       </body>
     </html>
   );
