@@ -19,7 +19,7 @@ const CuptimeRoadmap = () => {
   });
   const [success, setSuccess] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [radioError, setRadioError] = useState<string | null>(null); 
+  const [radioError, setRadioError] = useState<string | null>(null);
 
   const options = [
     'Price',
@@ -93,7 +93,7 @@ const CuptimeRoadmap = () => {
 
   return (
     <section>
-      <div className="flex flex-col gap-10 px-2 py-8 md:py-16 md:px-8">
+      <div className="flex flex-col gap-10 px-2 py-8 md:px-8 md:py-16">
         <h2 className="text-center text-3xl font-bold text-zinc-900 md:text-4xl">
           Reach Out to CupTime
         </h2>
@@ -116,7 +116,7 @@ const CuptimeRoadmap = () => {
                       onChange={() => handleCheckboxChange(option)}
                       value={option.toLowerCase()}
                       className="accent-cuptime-red mr-2 h-4 w-4"
-                      required 
+                      required
                     />
                     <span className="font-medium">{option}</span>
                   </label>
@@ -130,7 +130,7 @@ const CuptimeRoadmap = () => {
                   placeholder="Name"
                   value={form.name}
                   onChange={handleChange}
-                  className="border-cuptime-gray focus:border-cuptime-red w-full rounded-md border-2 px-4 py-2 md:py-3 focus:outline-none"
+                  className="border-cuptime-gray focus:border-cuptime-red w-full rounded-md border-2 px-4 py-2 focus:outline-none md:py-3"
                   required
                 />
                 <input
@@ -145,7 +145,7 @@ const CuptimeRoadmap = () => {
                   }}
                   pattern="^[0-9+]*$"
                   inputMode="tel"
-                  className="border-cuptime-gray focus:border-cuptime-red w-full rounded-md border-2 px-4 py-2 md:py-3 focus:outline-none"
+                  className="border-cuptime-gray focus:border-cuptime-red w-full rounded-md border-2 px-4 py-2 focus:outline-none md:py-3"
                   required
                 />
               </div>
@@ -157,7 +157,7 @@ const CuptimeRoadmap = () => {
                   placeholder="Company Name"
                   value={form['company-name']}
                   onChange={handleChange}
-                  className="border-cuptime-gray focus:border-cuptime-red w-full rounded-md border-2 px-4 py-2 md:py-3 focus:outline-none"
+                  className="border-cuptime-gray focus:border-cuptime-red w-full rounded-md border-2 px-4 py-2 focus:outline-none md:py-3"
                 />
                 <input
                   type="email"
@@ -165,7 +165,7 @@ const CuptimeRoadmap = () => {
                   placeholder="Email"
                   value={form.email}
                   onChange={handleChange}
-                  className="border-cuptime-gray focus:border-cuptime-red w-full rounded-md border-2 px-4 py-2 md:py-3 focus:outline-none"
+                  className="border-cuptime-gray focus:border-cuptime-red w-full rounded-md border-2 px-4 py-2 focus:outline-none md:py-3"
                   required
                 />
               </div>
@@ -176,7 +176,7 @@ const CuptimeRoadmap = () => {
                 value={form.message}
                 onChange={handleChange}
                 maxLength={250}
-                className="border-cuptime-gray focus:border-cuptime-red w-full rounded-md border-2 px-4 py-2 md:py-3 focus:outline-none"
+                className="border-cuptime-gray focus:border-cuptime-red w-full rounded-md border-2 px-4 py-2 focus:outline-none md:py-3"
               ></textarea>
 
               {success && <div className="text-green-600">{success}</div>}
@@ -185,7 +185,7 @@ const CuptimeRoadmap = () => {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="from-cuptime-orange to-cuptime-red rounded-lg bg-gradient-to-tr px-4 py-2 md:py-3 text-sm font-semibold text-white md:text-base hover:opacity-90 cursor-pointer transition-all"
+                  className="from-cuptime-orange to-cuptime-red cursor-pointer rounded-lg bg-gradient-to-tr px-4 py-2 text-sm font-semibold text-white transition-all hover:opacity-90 md:py-3 md:text-base"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? 'Sending...' : 'Contact Cuptime'}
@@ -228,17 +228,27 @@ const CuptimeRoadmap = () => {
                 </Link>
               </p>
               <p>
-                For franchise Enquiry <br />{' '}
-                <Link href="mailto:⁠franchise@cuptime.in" className='text-cuptime-red'>
-                  ⁠franchise@cuptime.in
-                </Link>
+                For franchise Enquiry <br />
+                <a
+                  href="mailto:franchise@cuptime.in"
+                  className="text-cuptime-red"
+                >
+                  franchise@cuptime.in
+                </a>
               </p>
               <p>
                 For order and other Enquiry <br />
-                <Link href="mailto:reach@cuptime.in" className='text-cuptime-red'>reach@cuptime.in</Link>
+                <a href="mailto:reach@cuptime.in" className="text-cuptime-red">
+                  reach@cuptime.in
+                </a>
               </p>
               <p>
-                <Link href="tel:+919169161110" className='hover:text-cuptime-red'>Tel: +91 916 9161110</Link>
+                <Link
+                  href="tel:+919169161110"
+                  className="hover:text-cuptime-red"
+                >
+                  Tel: +91 916 9161110
+                </Link>
               </p>
             </div>
           </div>
