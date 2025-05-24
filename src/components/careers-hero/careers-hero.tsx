@@ -99,7 +99,7 @@ const CareersHero = () => {
               className="flex-1"
             >
               <CardContainer key={index}>
-                <CardBody className="hover:border-cuptime-red flex h-[250px] w-fit flex-col items-center justify-baseline gap-4 rounded-lg border-2 border-transparent p-6 text-center transition-all duration-300 select-none lg:items-start lg:text-left">
+                <CardBody className="hover:border-cuptime-red flex h-[250px] w-fit flex-col justify-baseline items-center gap-4 rounded-lg border-2 border-transparent p-6 text-center transition-all duration-300 select-none lg:items-start lg:text-left">
                   <CardItem translateZ="30">
                     <feature.icon className="h-auto w-9" />
                   </CardItem>
