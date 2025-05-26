@@ -55,7 +55,7 @@ const WhatsAppFloatingButton = () => {
             damping: 10,
             duration: 1,
           }}
-          className="fixed bottom-20 right-5 z-50"
+          className="fixed bottom-8 right-5 z-50"
         >
           <Link 
             href={whatsappLink}

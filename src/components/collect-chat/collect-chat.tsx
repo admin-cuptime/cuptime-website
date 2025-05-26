@@ -4,6 +4,17 @@ import { useEffect } from 'react';
 
 const CollectChat = () => {
   useEffect(() => {
+    const style = document.createElement('style');
+    style.textContent = `
+      #chat-bot-launcher-container {
+        bottom: 100px !important; 
+      }
+      #chat-bot-message-container {
+          bottom: 150px !important;
+        }
+    `;
+    document.head.appendChild(style);
+
     const script = document.createElement('script');
     script.innerHTML = `
       (function(w, d) {
@@ -21,6 +32,7 @@ const CollectChat = () => {
 
     return () => {
       document.body.removeChild(script);
+      document.head.removeChild(style);
     };
   }, []);
 
