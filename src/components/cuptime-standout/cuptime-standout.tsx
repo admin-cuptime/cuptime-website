@@ -126,7 +126,7 @@ const CuptimeStandout = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            What Makes CupTime Stand Out
+            What Makes Cup Time Stand Out
           </motion.h2>
           <motion.p
             className="flex flex-col items-center justify-between px-0 text-center text-base text-zinc-700 md:px-28 md:text-lg"
@@ -136,7 +136,7 @@ const CuptimeStandout = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             From hassle-free scheduling to personalized flavors and sustainable
-            delivery, CupTime is built to enhance your beverage experience.
+            delivery, Cup Time is built to enhance your beverage experience.
             Discover the features that make every sip smarter, smoother, and
             more satisfying.
           </motion.p>
@@ -145,7 +145,7 @@ const CuptimeStandout = () => {
           {/*section-1*/}
           <div className="relative flex flex-col items-center justify-center gap-6 px-0 lg:px-20">
             <StandoutSection
-              title="About Cuptime"
+              title="About Cup Time"
               links={aboutLinks}
               onLinkClick={handleLinkClick}
               activeIndex={activeIndex}

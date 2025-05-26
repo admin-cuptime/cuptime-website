@@ -73,7 +73,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <FooterSection title="About Cuptime" links={aboutLinks} />
+        <FooterSection title="About Cup Time" links={aboutLinks} />
         <FooterSection title="Join Us / Resources" links={connectedLinks} />
         <div className="flex flex-col gap-10">
           <FooterSection title="Products" links={productLinks} />
@@ -149,7 +149,7 @@ const Footer = () => {
       </div>
 
       <div className='flex items-center justify-between w-full h-10 text-sm text-zinc-500'>
-        <div>Copyright © {new Date().getFullYear()} CupTime. All rights reserved.</div>
+        <div>Copyright © {new Date().getFullYear()} Cup Time. All rights reserved.</div>
         <div className='flex items-center gap-2'>
           <Link href="https://www.facebook.com/cuptimemadurai" target="_blank" rel="noopener noreferrer">
             <IconBrandFacebook className='hover:text-cuptime-red cursor-pointer transition-all'/>

@@ -33,7 +33,7 @@ const TechnologyHero = () => {
               }}
               className="text-base md:text-xl"
             >
-              At Cuptime, we believe great coffee isn’t just about the brew —
+              At Cup Time, we believe great coffee isn’t just about the brew —
               it’s about the experience. We’ve built a smart, seamless
               technology ecosystem that makes your daily beverage routine
               faster, smoother, and more rewarding — all through your phone.

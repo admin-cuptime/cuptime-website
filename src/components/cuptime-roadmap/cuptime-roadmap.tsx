@@ -95,7 +95,7 @@ const CuptimeRoadmap = () => {
     <section>
       <div className="flex flex-col gap-10 px-2 py-8 md:px-8 md:py-16">
         <h2 className="text-center text-3xl font-bold text-zinc-900 md:text-4xl">
-          Reach Out to CupTime
+          Reach Out to Cup Time
         </h2>
         <div className="mx-auto grid grid-cols-1 gap-8 overflow-hidden md:px-36 lg:grid-cols-3">
           <div className="shadow-cuptime-gray row-span-2 rounded-lg border-2 bg-white p-3 md:rounded-4xl md:p-8 lg:col-span-2">

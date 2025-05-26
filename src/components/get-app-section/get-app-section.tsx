@@ -40,7 +40,7 @@ const GetAppSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              Get the CupTime App Now
+              Get the Cup Time App Now
             </motion.div>
             <motion.div
               className="text-sm text-white md:text-base"

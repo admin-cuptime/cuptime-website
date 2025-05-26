@@ -131,7 +131,7 @@ const CuptimeJobApplication = ({
           {/* Application Section */}
           <div className="row-span-2 rounded-lg border-2 bg-white p-7 drop-shadow-2xl md:rounded-4xl lg:col-span-2 lg:w-1/2 lg:px-7">
             <h3 className="text-cuptime-red mb-6 py-3 text-lg font-bold md:py-4 lg:text-2xl">
-              Work. Grow. Brew. – With Cuptime
+              Work. Grow. Brew. – With Cup Time
             </h3>
             {isSubmitted ? (
               <div className="text-green-600 text-center mb-4">
@@ -197,28 +197,6 @@ const CuptimeJobApplication = ({
                   </SelectContent>
                 </Select>
               </div>
-              {/* <div className="grid grid-cols-1 gap-4 md:grid-cols-2"> */}
-                {/* <Select>
-                  <SelectTrigger className="focus:border-cuptime-red border-cuptime-gray text-cuptime-zinc w-full rounded-md border-2 px-4 py-5.5 text-sm focus:outline-none md:py-6.5 md:text-lg">
-                    <SelectValue placeholder="Location" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectGroup>
-                      <SelectLabel>Our Locations</SelectLabel>
-                      <SelectItem value="Madurai">Madurai</SelectItem>
-                      <SelectItem value="Coimbatore">Coimbatore</SelectItem>
-                      <SelectItem value="Trichy">Trichy</SelectItem>
-                    </SelectGroup>
-                  </SelectContent>
-                </Select> */}
-                {/* <input
-                  type="text"
-                  placeholder="Working Location"
-                  className="border-cuptime-gray focus:border-cuptime-red w-full rounded-md border-2 px-4 py-3 focus:outline-none"
-                /> */}
-                
-              {/* </div> */}
-
               <div className="text-center">
                 <button
                   className="from-cuptime-orange to-cuptime-red hover:opacity-80 cursor-pointer transition-all rounded-lg bg-gradient-to-tr px-4 py-3 text-sm font-semibold text-white md:px-8 md:py-3 md:text-base"

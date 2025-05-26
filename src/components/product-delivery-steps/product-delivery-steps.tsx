@@ -75,7 +75,7 @@ const ProductSteps = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          How Cuptime Delivers Tradition to Your Workplace
+          How Cup Time Delivers Tradition to Your Workplace
         </motion.h2>
         <motion.p
           className="flex flex-col items-center justify-between px-0 text-center text-base text-zinc-400 md:px-28 md:text-lg"

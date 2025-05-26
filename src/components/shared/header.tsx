@@ -21,7 +21,7 @@ const navLinks = [
   { href: '/our-products', label: 'Our Products' },
   { href: '/franchise', label: 'Franchise' },
   { href: '/about-us', label: 'About Us' },
-  { href: '/cup-time-mobile', label: 'CupTime Mobile' },
+  { href: '/cup-time-mobile', label: 'Cup Time Mobile' },
   { href: '/contact-us', label: 'Contact Us' },
 ];
 
