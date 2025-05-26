@@ -38,7 +38,7 @@ const EventHero = () => {
             }}
             className="text-cuptime-zinc text-center text-sm md:text-lg"
           >
-            At Cuptime, we do more than serve beverages—we create experiences.
+            At Cup Time, we do more than serve beverages—we create experiences.
             From tech-powered tastings to interactive coffee workshops, discover
             where you can meet us, learn, and celebrate the world of tea and
             coffee.

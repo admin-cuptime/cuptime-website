@@ -15,7 +15,7 @@ const CoreTechnologyPage = () => {
       icon: ReactNative,
       title: 'React Native',
       description:
-        'Enables seamless cross-platform mobile development, ensuring Cuptime runs smoothly on both Android and iOS devices.',
+        'Enables seamless cross-platform mobile development, ensuring Cup Time runs smoothly on both Android and iOS devices.',
     },
     {
       icon: Firebase,
@@ -74,7 +74,7 @@ const CoreTechnologyPage = () => {
                     className="text-base md:px-42 md:text-lg"
                   >
                     From hassle-free scheduling to personalized flavors and
-                    sustainable delivery, CupTime is built to enhance your
+                    sustainable delivery, Cup Time is built to enhance your
                     beverage experience. Discover the features that make every
                     sip smarter, smoother, and more satisfying.
                   </motion.div>

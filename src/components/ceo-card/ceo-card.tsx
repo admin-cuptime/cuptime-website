@@ -35,7 +35,7 @@ const CeoCard = () => {
                 Guided by Purpose, Driven by <br /> Passion
               </h2>
               <p className="text-base text-zinc-300 md:py-3 md:text-lg">
-                At CupTime, we believe leadership is about vision and values.
+                At Cup Time, we believe leadership is about vision and values.
                 Our founders and core team lead with the purpose of making
                 authentic, traditional beverages accessible — all while creating
                 sustainable local opportunities.
@@ -67,7 +67,7 @@ const CeoCard = () => {
                     Prabaharan Venugopal
                   </h3>
                   <p className="text-sm font-bold text-zinc-700 md:text-lg">
-                    CEO Of Cuptime
+                    CEO Of Cup Time
                   </p>
                 </div>
               </div>
@@ -88,7 +88,7 @@ const CeoCard = () => {
                   Prabaharan Venugopal
                 </h3>
                 <p className="text-sm font-bold text-zinc-700 md:text-lg">
-                  CEO Of Cuptime
+                  CEO Of Cup Time
                 </p>
               </div>
             </div>
@@ -107,7 +107,7 @@ const CeoCard = () => {
                   Prabaharan Venugopal
                 </h3>
                 <p className="text-sm font-bold text-zinc-700 md:text-lg">
-                  CEO Of Cuptime
+                  CEO Of Cup Time
                 </p>
               </div>
             </div>
@@ -125,7 +125,7 @@ const CeoCard = () => {
                   Prabaharan Venugopal
                 </h3>
                 <p className="text-sm font-bold text-zinc-700 md:text-lg">
-                  CEO Of Cuptime
+                  CEO Of Cup Time
                 </p>
               </div>
             </div>

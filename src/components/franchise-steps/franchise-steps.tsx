@@ -42,7 +42,7 @@ const deliveryStepsData = [
     title: 'Go Live',
     date: 'Step 4',
     description:
-      'Start preparing and delivering fresh beverages to businesses in your area under the CupTime brand.',
+      'Start preparing and delivering fresh beverages to businesses in your area under the Cup Time brand.',
   },
   {
     icon: <IconMessageDots className="h-7 w-7" />,

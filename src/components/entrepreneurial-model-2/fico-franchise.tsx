@@ -102,7 +102,7 @@ const FicoFranchise = () => {
                   href="/contact-us?reason=franchise"
                   className="rounded-lg bg-white px-6 py-3 text-sm font-bold text-zinc-900 transition-all hover:bg-zinc-200 md:text-base"
                 >
-                  Become a Cuptime Franchise
+                  Become a Cup Time Franchise
                 </Link>
               </div>
             </div>

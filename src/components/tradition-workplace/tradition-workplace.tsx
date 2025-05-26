@@ -63,9 +63,9 @@ const TraditionWorkplace = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            From early mornings to late-night shifts, we serve a wide range of
+            We deliver only 2 times a day, Morning & Evening. We serve a wide range of
             industries with fresh, authentic beverages — brewed the Madurai way.
-            Wherever there are teams that need energy and warmth, CupTime
+            Wherever there are teams that need energy and warmth, Cup Time
             delivers.
           </motion.p>
         </div>
@@ -123,21 +123,6 @@ const TraditionWorkplace = () => {
             </div>
           </div>
         </div>
-        {/* <motion.div 
-          className="flex justify-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ 
-            type: 'spring',
-            damping: 12,
-            stiffness: 100,
-          }}
-        >
-          <button className="bg-cuptime-black hover:bg-cuptime-black/80 cursor-pointer rounded-lg px-6 py-3 text-base font-semibold text-white transition-all">
-            Start Serving Wellness
-          </button>
-        </motion.div> */}
       </div>
     </section>
   );

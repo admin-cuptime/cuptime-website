@@ -268,7 +268,7 @@ const HeroSection = () => {
                     }}
                     className="text-sm text-zinc-100 md:text-lg"
                   >
-                    CupTime blends technology with tradition to serve you the
+                    Cup Time blends technology with tradition to serve you the
                     perfect cup—every time. Experience the future of workplace
                     tea and coffee, crafted with care and delivered with
                     precision.
@@ -391,7 +391,7 @@ const HeroSection = () => {
                         delay: 0.3,
                       }}
                       className="text-sm md:text-lg">
-                      At Cuptime, we blend tradition with innovation. Our smart
+                      At Cup Time, we blend tradition with innovation. Our smart
                       delivery system ensures your favorite brew reaches you at
                       peak freshness — every time, right on schedule. Whether
                       it's a busy office morning or a relaxed afternoon break,

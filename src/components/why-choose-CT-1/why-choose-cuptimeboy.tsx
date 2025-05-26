@@ -56,7 +56,7 @@ const WhyChoose = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Why Choose CupTime?
+            Why Choose Cup Time?
           </motion.h2>
           <motion.p
             className="flex flex-col items-center justify-between px-0 text-center text-base text-zinc-700 md:px-28 md:text-lg"
@@ -65,7 +65,7 @@ const WhyChoose = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            At CupTime, we’re not just brewing beverages — we’re brewing
+            At Cup Time, we’re not just brewing beverages — we’re brewing
             business success. Here's why <br /> entrepreneurs and local partners
             across Tamil Nadu trust us:
           </motion.p>

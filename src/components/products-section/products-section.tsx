@@ -80,10 +80,11 @@ const ProductCard = ({
               <MeasurementFlask className="h-auto w-4 md:h-auto md:w-6" />
               <div>{product.measurement}</div>
             </div>
+            {product.sugar && (
             <div className="flex items-center gap-2 text-xs font-semibold italic md:text-sm">
               <SugarCubes className="h-auto w-4 md:h-auto md:w-6" />
               <div>{product.sugar}</div>
-            </div>
+            </div>)}
             <div className="flex items-center gap-2 text-xs font-bold md:text-sm">
               {product.isServedHot && (
                 <div className="flex items-center gap-1">
