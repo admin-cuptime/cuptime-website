@@ -43,7 +43,12 @@ const CuptimeJobApplication = ({
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement>
   ) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    if (e.target.name === 'phone-number') {
+      const value = e.target.value.replace(/\D/g, '').slice(0, 13);
+      setForm({ ...form, [e.target.name]: value });
+    } else {
+      setForm({ ...form, [e.target.name]: e.target.value });
+    }
   };
 
   // Update position when select changes
@@ -177,6 +182,9 @@ const CuptimeJobApplication = ({
                   onChange={handleChange}
                   className="border-cuptime-gray focus:border-cuptime-red w-full rounded-md border-2 px-4 py-3 focus:outline-none md:text-lg"
                   required
+                  inputMode="numeric"
+                  pattern="\d{0,12}"
+                  maxLength={12}
                 />
                 <Select
                   value={form.position || selectedJob}
