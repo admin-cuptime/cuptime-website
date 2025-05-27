@@ -100,7 +100,7 @@ const EntrepreneurialJourney = () => {
 
               <div className="flex">
                 <button className="rounded-lg bg-white px-6 py-3 text-sm font-bold text-zinc-900 md:text-base">
-                  <Link href="/franchise">Beacome a Cup Time Franchise</Link>
+                  <Link href="/franchise">Become a Cup Time Franchise</Link>
                 </button>
               </div>
             </div>
