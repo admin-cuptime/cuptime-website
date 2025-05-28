@@ -34,7 +34,7 @@ const deliveryStepsData = [
     title: 'Setup & Training',
     date: 'Step 3',
     description:
-      'Once approved, we help with kitchen setup, provide branded materials, and train your team on beverage',
+      'Once approved, we help with Factory setup, provide branded materials, and train your team on beverage',
     subdescription: ' preparation and hygiene.',
   },
   {

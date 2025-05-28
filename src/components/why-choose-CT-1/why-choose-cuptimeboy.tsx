@@ -33,9 +33,9 @@ const WhyChoose = () => {
     },
     {
       Icon: Elements,
-      title: 'Zero Royalty Fee',
+      title: 'Royalty Charges',
       description:
-        'Keep more of what you earn — we don’t charge any percentage of your profits.',
+        'A royalty fee is applicable, calculated as a percentage of your earnings.',
     },
     {
       Icon: Contact,
