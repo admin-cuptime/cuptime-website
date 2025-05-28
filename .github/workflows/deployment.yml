@@ -26,11 +26,11 @@ jobs:
         run: |
           CI=true npm install --legacy-peer-deps
           if [ "${{ github.ref }}" == "refs/heads/main" ]; then
-             npx ng build --configuration=production
+             npx next build
              echo "S3_BUCKET=prod-cuptime-website" >> $GITHUB_ENV
              echo "CLOUDFRONT_ID=${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_PROD }}" >> $GITHUB_ENV
           elif [ "${{ github.ref }}" == "refs/heads/develop" ]; then
-             npx ng build --configuration=development
+             npx next build
              echo "S3_BUCKET=beta.cuptime.in" >> $GITHUB_ENV
              echo "CLOUDFRONT_ID=${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}" >> $GITHUB_ENV
           fi
