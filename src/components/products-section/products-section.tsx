@@ -23,6 +23,7 @@ interface Product {
   sugar: string;
   isServedHot: boolean;
   isNoChemicals: boolean;
+  topOrdered?: boolean;
 }
 
 const SkeletonCard = () => (
@@ -61,12 +62,18 @@ const ProductCard = ({
   return (
     <div onClick={onClick} className="cursor-pointer">
       <CardContainer>
-        <CardBody className="flex h-full w-full flex-col items-center gap-3 rounded-lg bg-white p-5 drop-shadow-xl transition-all select-none hover:drop-shadow-2xl md:h-[300px] md:flex-row md:p-5 lg:w-[560px] hover:border-cuptime-red border-2 border-transparent hover:border-2 transition-all">
+        <CardBody className="hover:border-cuptime-red relative flex h-full w-full flex-col items-center gap-3 rounded-lg border-2 border-transparent bg-white p-5 drop-shadow-xl transition-all select-none hover:border-2 hover:drop-shadow-2xl md:h-[300px] md:flex-row md:p-5 lg:w-[560px] ">
+           {product.topOrdered && (
+              <div className="absolute right-3 z-10 top-3 rounded-full bg-yellow-400 px-2 py-0.5 text-sm font-semibold italic">
+                Top Ordered
+              </div>
+            )} 
           <div
             className="h-[200px] w-full shrink-0 rounded-lg bg-contain bg-center bg-no-repeat md:h-full md:w-[230px] md:bg-cover"
             style={{ backgroundImage: `url(${product.image})` }}
           />
           <div className="flex flex-col gap-2 md:gap-4">
+                
             <div className="flex flex-col">
               <div className="text-lg font-bold text-zinc-900 md:text-2xl">
                 {product.name}
@@ -75,16 +82,18 @@ const ProductCard = ({
                 {product.shortDescription}
               </div>
             </div>
-
-            <div className="flex items-center gap-2 text-xs font-semibold italic md:text-sm">
-              <MeasurementFlask className="h-auto w-4 md:h-auto md:w-6" />
-              <div>{product.measurement}</div>
-            </div>
+            {product.measurement && (
+              <div className="flex items-center gap-2 text-xs font-semibold italic md:text-sm">
+                <MeasurementFlask className="h-auto w-4 md:h-auto md:w-6" />
+                <div>{product.measurement}</div>
+              </div>
+            )}
             {product.sugar && (
-            <div className="flex items-center gap-2 text-xs font-semibold italic md:text-sm">
-              <SugarCubes className="h-auto w-4 md:h-auto md:w-6" />
-              <div>{product.sugar}</div>
-            </div>)}
+              <div className="flex items-center gap-2 text-xs font-semibold italic md:text-sm">
+                <SugarCubes className="h-auto w-4 md:h-auto md:w-6" />
+                <div>{product.sugar}</div>
+              </div>
+            )}
             <div className="flex items-center gap-2 text-xs font-bold md:text-sm">
               {product.isServedHot && (
                 <div className="flex items-center gap-1">
@@ -121,9 +130,11 @@ const ProductModal = ({
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-h-screen w-screen overflow-y-scroll md:min-w-2xl p-3 md:p-6">
+      <DialogContent className="max-h-screen w-screen overflow-y-scroll p-3 md:min-w-2xl md:p-6">
         <DialogHeader>
-          <DialogTitle className='text-lg md:text-2xl text-zinc-900 font-semibold'>{product.name}</DialogTitle>
+          <DialogTitle className="text-lg font-semibold text-zinc-900 md:text-2xl">
+            {product.name}
+          </DialogTitle>
         </DialogHeader>
         <div className="grid grid-cols-1 md:grid-cols-1">
           <div className="flex flex-col gap-4 self-center">
@@ -156,6 +167,7 @@ const ProductsSection = () => {
             ...item,
             isServedHot: item.isServedHot === 'TRUE',
             isNoChemicals: item.isNoChemicals === 'TRUE',
+            topOrdered: item.topOrdered === 'TRUE',
           }))
         );
       }
@@ -192,7 +204,6 @@ const ProductsSection = () => {
               </div>
             ))}
       </div>
-
       <ProductModal
         product={selectedProduct}
         isOpen={selectedProduct !== null}

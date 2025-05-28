@@ -35,25 +35,25 @@ const timelineData = [
     year: '2022',
     title: '2022 – Franchise Model Introduced',
     description:
-      'Our FICO (Franchise Cup Time-Operated) model helped local entrepreneurs to start their own Cup Time kitchen, with products overseen by us, but prepared by them.',
+      'Our Franchise (Franchise Cup Time-Operated) model helped local entrepreneurs to start their own Cup Time kitchen, with products overseen by us, but prepared by them.',
   },
   {
     year: '2023',
     title: '2023 – Franchise Model Introduced',
     description:
-      'Our FICO (Franchise Cup Time-Operated) model helped local entrepreneurs to start their own Cup Time kitchen, with products overseen by us, but prepared by them.',
+      'Our Franchise (Franchise Cup Time-Operated) model helped local entrepreneurs to start their own Cup Time kitchen, with products overseen by us, but prepared by them.',
   },
   {
     year: '2024',
     title: '2024 – Franchise Model Introduced',
     description:
-      'Our FICO (Franchise Cup Time-Operated) model helped local entrepreneurs to start their own Cup Time kitchen, with products overseen by us, but prepared by them.',
+      'Our Franchise (Franchise Cup Time-Operated) model helped local entrepreneurs to start their own Cup Time kitchen, with products overseen by us, but prepared by them.',
   },
   {
     year: '2025',
     title: '2025 – Franchise Model Introduced',
     description:
-      'Our FICO (Franchise Cup Time-Operated) model helped local entrepreneurs to start their own Cup Time kitchen, with products overseen by us, but prepared by them.',
+      'Our Franchise (Franchise Cup Time-Operated) model helped local entrepreneurs to start their own Cup Time kitchen, with products overseen by us, but prepared by them.',
   },
 ];
 
