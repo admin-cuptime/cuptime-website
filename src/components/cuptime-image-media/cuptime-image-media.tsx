@@ -124,6 +124,7 @@ const CuptimeImageMedia = () => {
               ))
             )}
           </CarouselContent>
+          { isMobile && (
           <div className="flex justify-center gap-2 py-1">
             <Button
               variant="outline"
@@ -141,7 +142,7 @@ const CuptimeImageMedia = () => {
             >
               <ArrowRight className="h-4 w-4" />
             </Button>
-          </div>
+          </div>)}
         </Carousel>
       </motion.div>
     </div>

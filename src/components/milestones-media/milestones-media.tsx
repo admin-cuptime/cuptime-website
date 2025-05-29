@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import cmAward from '@/assets/png/milestone-4.png';
 import { motion } from 'motion/react';
 import vikatan from '@/assets/png/milestone-3.png';
@@ -18,8 +18,21 @@ import {
 import { Button } from '../ui/button';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
+const useMediaQuery = (query: string): boolean => {
+  const [matches, setMatches] = useState(false);
+  useEffect(() => {
+    const media = window.matchMedia(query);
+    setMatches(media.matches);
+    const listener = () => setMatches(media.matches);
+    media.addEventListener('change', listener);
+    return () => media.removeEventListener('change', listener);
+  }, [query]);
+  return matches;
+};
+
 const MilestonesMedia = () => {
   const [api, setApi] = React.useState<CarouselApi>();
+  const isMobile = useMediaQuery('(max-width: 640px)');
 
   React.useEffect(() => {
     if (!api) {
@@ -119,6 +132,7 @@ const MilestonesMedia = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
+          { isMobile && (
           <div className="flex justify-center gap-2 py-4">
             <Button
               variant="outline"
@@ -138,7 +152,7 @@ const MilestonesMedia = () => {
               <ArrowRight className="h-4 w-4" />
               <span className="sr-only">Next slide</span>
             </Button>
-          </div>
+          </div>)}
         </Carousel>
       </motion.div>
     </div>
