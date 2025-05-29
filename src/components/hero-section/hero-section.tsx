@@ -184,7 +184,7 @@ const HeroSection = () => {
                       stiffness: 100,
                       delay: 0.4,
                     }}
-                    className="flex flex-col items-center sm:flex-row"
+                    className=" flex-col items-center sm:flex-row"
                   >
                     <Link
                       href="/contact-us?reason=franchise"

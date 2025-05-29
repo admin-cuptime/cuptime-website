@@ -138,7 +138,7 @@ const WhyChoose = () => {
             href="/contact-us?reason=franchise"
             className="bg-cuptime-black hover:bg-cuptime-black/80 cursor-pointer rounded-lg px-6 py-3 text-base font-semibold text-white transition-all"
           >
-            Become a Franchise
+            Become a Franchisee
           </Link>
         </motion.div>
       </div>
