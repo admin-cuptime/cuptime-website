@@ -49,7 +49,7 @@ const CuptimeStandout = () => {
     { text: 'Product Selection' },
     { text: 'Monthly Subscriptions' },
     { text: 'My Orders & Invoice' },
-    { text: 'Track My Delivery' },
+    { text: 'Track My Cup' },
     { text: 'Flask Management' },
     { text: 'Event Booking' },
     { text: 'Refer & Earn' },
@@ -78,7 +78,7 @@ const CuptimeStandout = () => {
       features: ['Track your orders easily', 'Download invoices anytime'],
     },
     {
-      title: 'Track My Delivery',
+      title: 'Track My Cup',
       image: images.appScreenshot.screenTrack,
       features: [
         'Real-time delivery tracking',
