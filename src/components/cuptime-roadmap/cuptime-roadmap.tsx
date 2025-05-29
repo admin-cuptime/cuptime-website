@@ -247,7 +247,7 @@ const CuptimeRoadmap = () => {
                   href="tel:+919169161110"
                   className="hover:text-cuptime-red"
                 >
-                  Tel: +91 916 9161110
+                  Tel: +91 916 916 1110
                 </Link>
               </p>
             </div>

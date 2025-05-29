@@ -129,7 +129,7 @@ const CuptimeJobApplication = ({
               <div className="h-auto w-7">
                 <MySVGmobile />
               </div>
-              <Link href="tel:+919169161110" className='hover:text-cuptime-red'>Tel: +91 916 9161110</Link>
+              <Link href="tel:+919169161110" className='hover:text-cuptime-red'>Tel: +91 916 916 1110</Link>
             </div>
           </div>
 

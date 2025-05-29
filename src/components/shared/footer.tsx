@@ -96,8 +96,8 @@ const Footer = () => {
               >
                 ⁠franchise@cuptime.in
               </Link>
-              <Link href="tel:+919876543210" className="hover:text-cuptime-red">
-                +91 98765 43210
+              <Link href="tel:+916 9161110" className="hover:text-cuptime-red">
+                +91 916 916 1110
               </Link>
               <Link
                 href="https://maps.app.goo.gl/UHChYbATqTrxVKp78"
@@ -160,7 +160,7 @@ const Footer = () => {
           <Link href="https://www.linkedin.com/company/cup-time" target="_blank" rel="noopener noreferrer">
             <IconBrandLinkedin className='hover:text-cuptime-red cursor-pointer transition-all'/>
           </Link>
-          <Link href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
+          <Link href="https://wa.me/916 9161110" target="_blank" rel="noopener noreferrer">
             <IconBrandWhatsapp className='hover:text-cuptime-red cursor-pointer transition-all'/>
           </Link>
         </div>

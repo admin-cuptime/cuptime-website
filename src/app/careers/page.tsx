@@ -8,9 +8,9 @@ import ReviewMarquee from '@/components/review-marquee/review-marquee';
 
 const jobPositions = [
   'Delivery Executive (Hot Beverages)',
-  'Android App Developer',
+  'Customer Care Executive (Female)',
   'Franchise Support Coordinator',
-  'Graphic Designer – Marketing',
+  'Marketing Executive (Male)',
 ];
 
 const CareersPage = () => {
