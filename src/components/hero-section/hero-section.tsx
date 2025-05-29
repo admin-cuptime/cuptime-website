@@ -343,6 +343,8 @@ const HeroSection = () => {
                   autoPlay
                   loop
                   muted
+                  playsInline
+                  preload="auto"
                   className="pointer-events-none h-full w-full object-cover"
                   aria-label="Background video showing tea cup"
                 >
