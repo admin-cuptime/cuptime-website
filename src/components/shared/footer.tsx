@@ -97,7 +97,7 @@ const Footer = () => {
                 ⁠franchise@cuptime.in
               </Link>
               <Link href="tel:+916 9161110" className="hover:text-cuptime-red">
-                +91 916 9161110
+                +91 916 916 1110
               </Link>
               <Link
                 href="https://maps.app.goo.gl/UHChYbATqTrxVKp78"

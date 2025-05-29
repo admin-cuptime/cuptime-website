@@ -100,6 +100,13 @@ const JobApplySection = ({
       experience: '0–2 years',
     },
     {
+      title: 'Franchise Support Coordinator',
+      description:
+        'As our Franchise Support Coordinator, you’ll help new franchise partners onboard, train staff, and ensure quality service across locations. Strong communication and multitasking skills are key.',
+      location: 'Madurai & Coimbatore',
+      experience: '0–2 years',
+    },
+    {
       title: 'Marketing Executives (Male)',
       description:
         'We are looking for dynamic and self-driven Marketing Executives to join our team. This is a field-based role involving direct interaction with customers at their doorstep. If you’re passionate about marketing and love meeting people, we’d like to meet you!',
