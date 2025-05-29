@@ -88,7 +88,7 @@ const JobApplySection = ({
     {
       title: 'Delivery Executive (Hot Beverages)',
       description:
-        'Vehicles will be provided.Candidate with Smart phone and driving licence. Attractive Incentives with ESI & PF',
+        'Vehicles will be provided. Candidate with Smart phone and driving licence. Attractive Incentives with ESI & PF',
       location: 'Madurai & Coimbatore',
       experience: '0–2 years',
     },
