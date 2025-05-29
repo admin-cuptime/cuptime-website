@@ -103,15 +103,22 @@ const BlogsData = () => {
                 href={`/blogs-details?blog=${index}-${slugify(blog.title || '')}`}
                 className="flex flex-col gap-3 overflow-hidden bg-white"
               >
-                <div className="relative h-100 w-auto overflow-hidden rounded-2xl md:h-[800px]">
-                  <div
+                <div className="relative h-auto w-auto lg:px-32 overflow-hidden rounded-2xl lg:h-auto">
+                  {/* <div
                     style={{
                       backgroundImage: `url(${blog.image})`,
                     }}
                     className="h-full w-full bg-cover bg-center transition-transform duration-500 ease-in-out hover:scale-110"
+                  /> */}
+                  <div
+                    style={{
+                      backgroundImage: `url(${blog.image})`,
+                      aspectRatio: '16 / 11',
+                    }}
+                    className="relative w-full shrink-0 rounded-2xl bg-cover bg-center"
                   />
                 </div>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-2 lg:px-32">
                   <div className="flex items-center gap-6">
                     <div className="flex items-center gap-2">
                       {(blog.tags

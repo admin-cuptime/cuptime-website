@@ -9,9 +9,6 @@ import EntrepreneurialBg from '@/assets/png/entrepreneurial-bg.png';
 const FicoFranchise = () => {
   const ficoJourney = [
     {
-      description: 'Min. Investment: ₹X – ₹Y',
-    },
-    {
       description: 'Space Required: 100–200 sq ft',
     },
     {

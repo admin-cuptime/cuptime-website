@@ -84,9 +84,10 @@ const BlogsDetailsContent = () => {
             <div
               style={{
                 backgroundImage: `url(${blog.image})`,
+                aspectRatio: '16 / 11',
               }}
-              className="relative h-80 w-full rounded-2xl bg-cover bg-center md:h-[500px]"
-            ></div>
+              className="relative shrink-0 md:px-32 w-full rounded-2xl bg-cover bg-center lg:h-auto"
+            />
             <div className="py-2 md:py-5">
               <div className="flex items-center gap-5 py-2 sm:gap-2 md:py-5">
                 {(blog.tags ? blog.tags.split(',').map((tag: string) => tag.trim()) : []).map((tag: string, i: number) => (
