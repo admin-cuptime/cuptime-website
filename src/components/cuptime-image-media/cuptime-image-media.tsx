@@ -29,6 +29,7 @@ const CuptimeImageMedia = () => {
   const [images, setImages] = useState<{ src: string; alt?: string }[]>([]);
   const [loading, setLoading] = useState(true);
   const isMobile = useMediaQuery('(max-width: 640px)');
+  const isTablet = useMediaQuery('(min-width: 641px) and (max-width: 1024px)');
 
   useEffect(() => {
     const getGallery = async () => {
@@ -124,7 +125,7 @@ const CuptimeImageMedia = () => {
               ))
             )}
           </CarouselContent>
-          { isMobile && (
+          { (isMobile ||isTablet) && (
           <div className="flex justify-center gap-2 py-1">
             <Button
               variant="outline"

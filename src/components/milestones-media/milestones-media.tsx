@@ -33,6 +33,7 @@ const useMediaQuery = (query: string): boolean => {
 const MilestonesMedia = () => {
   const [api, setApi] = React.useState<CarouselApi>();
   const isMobile = useMediaQuery('(max-width: 640px)');
+  const isTablet = useMediaQuery('(min-width: 641px) and (max-width: 1024px)');
 
   React.useEffect(() => {
     if (!api) {
@@ -132,7 +133,7 @@ const MilestonesMedia = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          { isMobile && (
+          { (isMobile || isTablet) && (
           <div className="flex justify-center gap-2 py-4">
             <Button
               variant="outline"

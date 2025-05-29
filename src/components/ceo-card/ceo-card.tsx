@@ -1,10 +1,10 @@
 'use client';
 
 import Image from 'next/image';
-import ceoImage from '@/assets/png/freepik.jpg';
 import ceoImage1 from '@/assets/png/Prabaharan Venugopal[1].jpg';
 import ceoImage2 from '@/assets/png/Tech-Advisor.jpg';
 import ceoImage3 from '@/assets/png/Krishnaswamy.jpg';
+import ceoImage4 from '@/assets/png/Dawood.jpg';
 import CuptimeLogo from '@/assets/svg/cuptime-logo-white.svg';
 import { motion } from 'framer-motion';
 
@@ -88,7 +88,7 @@ const CeoCard = () => {
             <div className="rounded-b-3 absolute bottom-0 left-0 w-full p-3">
               <div className="absolute bottom-0 left-0 w-full rounded-b-3xl bg-white/40 p-3 text-center">
                 <h3 className="text-cuptime-red text-sm font-bold italic md:text-xl">
-                  Ramanathan Alagappan
+                  Mr. Ramanathan Alagappan
                 </h3>
                 <p className="text-sm font-bold text-zinc-700 md:text-lg">
                   Tech Advisor
@@ -117,17 +117,17 @@ const CeoCard = () => {
 
           <div className="relative flex w-fit justify-center">
             <img
-              src={ceoImage.src}
+              src={ceoImage4.src}
               alt="CEO Image"
               className="h-auto md:h-80 w-full rounded-3xl md:w-[300px]"
             />
             <div className="rounded-b-3 absolute bottom-0 left-0 w-full p-3">
               <div className="absolute bottom-0 left-0 w-full rounded-b-3xl bg-white/40 p-3 text-center">
                 <h3 className="text-cuptime-red text-sm font-bold italic md:text-xl">
-                  Prabaharan Venugopal
+                  Mr. Dawood Farhan
                 </h3>
                 <p className="text-sm font-bold text-zinc-700 md:text-lg">
-                  CEO Of Cup Time
+                  Manager - Operations
                 </p>
               </div>
             </div>
