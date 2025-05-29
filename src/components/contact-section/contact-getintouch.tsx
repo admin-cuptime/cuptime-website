@@ -153,7 +153,7 @@ const GetinTouchForm = () => {
               <div className="h-auto w-7">
                 <MySVGmobile />
               </div>
-              <Link href="tel:+919876543210" className='hover:text-cuptime-red'>+91 98765 43210</Link>
+              <Link href="tel:+91 916 9161110" className='hover:text-cuptime-red'>+91 916 9161110</Link>
             </div>
           </div>
         </div>
