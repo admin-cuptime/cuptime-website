@@ -9,7 +9,7 @@ import ReviewMarquee from '@/components/review-marquee/review-marquee';
 const jobPositions = [
   'Delivery Executive (Hot Beverages)',
   'Customer Care Executive (Female)',
-  'Franchise Support Coordinator',
+  'Franchisee Support Coordinator',
   'Marketing Executive (Male)',
 ];
 

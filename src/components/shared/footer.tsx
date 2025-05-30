@@ -44,7 +44,7 @@ const Footer = () => {
   const productLinks = [
     { text: 'Our Products', href: '/our-products' },
     { text: 'Mobile App', href: '/cup-time-mobile' },
-    { text: 'Franchise Opportunities', href: '/franchise' },
+    { text: 'Franchisee Opportunities', href: '/franchise' },
   ];
 
   const connectedLinks = [

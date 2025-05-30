@@ -96,13 +96,13 @@ const JobApplySection = ({
       title: 'Customer Care Executives (Female)',
       description:
         'We are looking for enthusiastic and customer-focused individuals to join our team as Customer Care Executives. If you have a passion for communication and enjoy helping customers, we’d love to hear from you!',
-      location: 'Madhurai',
+      location: 'Madhurai & Nearby Areas',
       experience: '0–2 years',
     },
     {
-      title: 'Franchise Support Coordinator',
+      title: 'Franchisee Support Coordinator',
       description:
-        'As our Franchise Support Coordinator, you’ll help new franchise partners onboard, train staff, and ensure quality service across locations. Strong communication and multitasking skills are key.',
+        'As our Franchisee Support Coordinator, you’ll help new franchisee partners onboard, train staff, and ensure quality service across locations. Strong communication and multitasking skills are key.',
       location: 'Madurai & Coimbatore',
       experience: '0–2 years',
     },
