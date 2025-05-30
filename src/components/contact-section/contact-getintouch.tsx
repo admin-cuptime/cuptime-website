@@ -29,7 +29,7 @@ const GetinTouchForm = () => {
 
   const options = [
     'Price',
-    'Franchise',
+    'Franchisee',
     'Services we offer',
     'Call Back',
     'Others',
@@ -164,7 +164,7 @@ const GetinTouchForm = () => {
           <div className="space-y-2 text-sm font-medium md:space-y-4 md:text-base">
             <p>
               We'd love to hear from you — whether you're a business looking
-              to serve traditional beverages, a franchise <br />
+              to serve traditional beverages, a franchisee <br />
               enthusiast, or someone who just loves great coffee.
             </p>
             <div className="flex flex-row gap-3 py-2 text-black">

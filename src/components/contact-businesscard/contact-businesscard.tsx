@@ -7,9 +7,9 @@ import { CardContainer, CardItem } from '../ui/3d-card';
 const ContactBusinessCard = () => {
   const businessData = [
     {
-      title: 'Franchise Partnership',
+      title: 'Franchisee Partnership',
       description: 'We’ll help you build your own success story.',
-      subtitle: 'Start a Franchise',
+      subtitle: 'Start a Franchisee',
       link: '/contact-us?reason=franchise',
     },
     {

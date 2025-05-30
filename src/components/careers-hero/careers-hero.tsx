@@ -27,7 +27,7 @@ const CareersHero = () => {
       icon: Favourite,
       title: 'Work with Heart',
       description:
-        'Whether you’re brewing coffee, coding the app, or managing franchise support—you’re part of a tight-knit, purpose-driven team.',
+        'Whether you’re brewing coffee, coding the app, or managing franchisee support—you’re part of a tight-knit, purpose-driven team.',
     },
     {
       icon: Muscle,

@@ -58,8 +58,8 @@ const EntrepreneurialJourney = () => {
                 with Cup Time
               </h2>
               <p className="py-1.5 text-base text-white md:py-3 md:text-xl">
-                Join Cup Time’s growing franchise network with our flexible,
-                profitable franchise model.
+                Join Cup Time’s growing franchisee network with our flexible,
+                profitable franchisee model.
               </p>
               <div className="flex flex-col items-start justify-center">
                 {entrepreneurialJourney.map((tradition, index) => (
@@ -83,7 +83,7 @@ const EntrepreneurialJourney = () => {
 
               <div className="flex">
                 <button className="rounded-lg bg-white px-6 py-3 text-sm font-bold text-zinc-900 md:text-base">
-                  <Link href="/franchise">Become a Cup Time Franchise</Link>
+                  <Link href="/franchise">Become a Cup Time Franchisee</Link>
                 </button>
               </div>
             </div>
