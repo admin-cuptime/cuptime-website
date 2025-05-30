@@ -33,27 +33,27 @@ const timelineData = [
   },
   {
     year: '2022',
-    title: '2022 – Franchise Model Introduced',
+    title: '2022 – Franchisee Model Introduced',
     description:
-      'Our Franchise (Franchise Cup Time-Operated) model helped local entrepreneurs to start their own Cup Time kitchen, with products overseen by us, but prepared by them.',
+      'Our Franchisee (Franchisee Cup Time-Operated) model helped local entrepreneurs to start their own Cup Time kitchen, with products overseen by us, but prepared by them.',
   },
   {
     year: '2023',
-    title: '2023 – Franchise Model Introduced',
+    title: '2023 – Franchisee Model Introduced',
     description:
-      'Our Franchise (Franchise Cup Time-Operated) model helped local entrepreneurs to start their own Cup Time kitchen, with products overseen by us, but prepared by them.',
+      'Our Franchisee (Franchisee Cup Time-Operated) model helped local entrepreneurs to start their own Cup Time kitchen, with products overseen by us, but prepared by them.',
   },
   {
     year: '2024',
-    title: '2024 – Franchise Model Introduced',
+    title: '2024 – Franchisee Model Introduced',
     description:
-      'Our Franchise (Franchise Cup Time-Operated) model helped local entrepreneurs to start their own Cup Time kitchen, with products overseen by us, but prepared by them.',
+      'Our Franchisee (Franchisee Cup Time-Operated) model helped local entrepreneurs to start their own Cup Time kitchen, with products overseen by us, but prepared by them.',
   },
   {
     year: '2025',
-    title: '2025 – Franchise Model Introduced',
+    title: '2025 – Franchisee Model Introduced',
     description:
-      'Our Franchise (Franchise Cup Time-Operated) model helped local entrepreneurs to start their own Cup Time kitchen, with products overseen by us, but prepared by them.',
+      'Our Franchisee (Franchisee Cup Time-Operated) model helped local entrepreneurs to start their own Cup Time kitchen, with products overseen by us, but prepared by them.',
   },
 ];
 

@@ -19,7 +19,7 @@ import { useEffect, useState, useRef } from 'react';
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/our-products', label: 'Our Products' },
-  { href: '/franchise', label: 'Franchise' },
+  { href: '/franchise', label: 'Franchisee' },
   { href: '/about-us', label: 'About Us' },
   { href: '/cup-time-mobile', label: 'Cup Time Mobile' },
   { href: '/contact-us', label: 'Contact Us' },
@@ -186,7 +186,7 @@ const Header = () => {
           href="/contact-us?reason=franchise"
           className={`${isAboutUsPage && !scrolled ? 'border-white text-white' : 'text-cuptime-red border-foreground transition-all hover:bg-zinc-200'} cursor-pointer rounded-xl border-2 px-6 py-2 font-semibold`}
         >
-          Franchise
+          Franchisee
         </Link>
         <button
           onClick={handleAppRedirect}
@@ -264,7 +264,7 @@ const Header = () => {
                   onClick={() => setIsMobileNavOpen(false)}
                   className="text-cuptime-red border-foreground cursor-pointer rounded-xl border-2 bg-white px-6 py-2 font-semibold transition-all hover:bg-zinc-400"
                 >
-                  Franchise
+                  Franchisee
                 </button>
                 <button
                   onClick={handleAppRedirect}

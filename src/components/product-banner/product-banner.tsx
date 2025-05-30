@@ -40,7 +40,7 @@ const ProductBanner = () => {
           >
             <div className="space-y-6">
               <h2 className="mb-2 text-center md:text-3xl font-bold text-white md:text-left text-2xl">
-                Want to Partner or Franchise with Us?
+                Want to Partner or Franchisee with Us?
               </h2>
             </div>
           </motion.div>

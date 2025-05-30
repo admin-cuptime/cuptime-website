@@ -20,7 +20,7 @@ const deliveryStepsData = [
     title: 'Apply Online',
     date: 'Step 1',
     description:
-      'Fill out our franchise application form. We’ll review your interest and connect with you quickly.',
+      'Fill out our franchisee application form. We’ll review your interest and connect with you quickly.',
   },
   {
     icon: <IconMapPin className="h-7 w-7" />,
@@ -93,7 +93,7 @@ const FranchiseSteps = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            How It Works – Start Your Franchise in 5 Easy Steps
+            How It Works – Start Your Franchisee in 5 Easy Steps
           </motion.h2>
           <motion.p
             className="flex flex-col items-center justify-between px-0 text-center text-base text-zinc-400 md:px-28 md:text-lg"

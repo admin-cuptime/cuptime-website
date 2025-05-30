@@ -23,7 +23,7 @@ const CuptimeRoadmap = () => {
 
   const options = [
     'Price',
-    'Franchise',
+    'Franchisee',
     'Services we offer',
     'Call Back',
     'Others',
@@ -228,7 +228,7 @@ const CuptimeRoadmap = () => {
                 </Link>
               </p>
               <p>
-                For franchise Enquiry <br />
+                For franchisee Enquiry <br />
                 <a
                   href="mailto:franchise@cuptime.in"
                   className="text-cuptime-red"
