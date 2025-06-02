@@ -106,9 +106,9 @@ const Footer = () => {
                 className="hover:text-cuptime-red"
               >
                 <div className="text-wrap">
-                  No. 12, Main Street
-                  <div>Madurai – 625001,</div>
-                  <div>Tamil Nadu, India</div>
+                  No 35, Alagaradi 1st Street, <br />
+                  (Next to Madurai Muthu Middle School) <br />
+                  Arappalayam, Madurai – 625016
                 </div>
               </Link>
             </div>
