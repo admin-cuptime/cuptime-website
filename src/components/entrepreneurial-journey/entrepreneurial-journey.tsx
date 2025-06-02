@@ -106,7 +106,6 @@ const EntrepreneurialJourney = () => {
               loop
               muted
               playsInline
-              controls
               className="[&:not(:hover)]:controls-hidden h-auto w-full rounded-lg md:h-150"
             >
               <source src="/franchise-out.webm" type="video/webm" />
