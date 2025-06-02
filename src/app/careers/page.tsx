@@ -1,4 +1,5 @@
-"use client";
+'use client';
+
 import React, { useState } from 'react';
 import CareersHero from '@/components/careers-hero/careers-hero';
 import CuptimeJobApplication from '@/components/cuptime-job-grow/cuptime-job-application';
@@ -23,7 +24,7 @@ const CareersPage = () => {
         selectedJob={selectedJob}
         setSelectedJob={setSelectedJob}
       />
-      <div id="job-application-section" className='scroll-mt-24'>
+      <div id="job-application-section" className="scroll-mt-24">
         <CuptimeJobApplication
           selectedJob={selectedJob}
           setSelectedJob={setSelectedJob}
