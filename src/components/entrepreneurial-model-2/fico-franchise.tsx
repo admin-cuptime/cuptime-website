@@ -106,7 +106,6 @@ const FicoFranchise = () => {
             loop
             muted
             playsInline
-            controls
             className="md:h-150 h-auto w-full rounded-lg [&:not(:hover)]:controls-hidden"
           >
             <source src="/franchise-out.webm" type="video/webm" />

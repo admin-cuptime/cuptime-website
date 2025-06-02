@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useEffect, useState } from 'react';
 import MeasurementFlask from '@/assets/svg/measurement.svg';
 import SugarCubes from '@/assets/svg/sugar-cube.svg';

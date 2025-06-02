@@ -1,8 +1,6 @@
-'use client';
 import TermsConditionsHero from '@/components/terms-conditions-hero/terms-conditions-hero';
 import TermsConditionsQuestion from '@/components/terms-conditions-questions/terms-conditions-section';
-
-import React from 'react'
+import React from 'react';
 
 const TermsConditionsPage = () => {
   return (
