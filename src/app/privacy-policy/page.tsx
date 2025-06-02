@@ -1,5 +1,3 @@
-'use client';
-
 import PrivacypolicyHero from '@/components/privacy-policy-hero/privacy-policy-hero';
 import PrivacyPolicyQuestion from '@/components/privacy-policy-questions/privacy-policy-section';
 import { Metadata } from 'next';
