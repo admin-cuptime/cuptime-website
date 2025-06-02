@@ -33,9 +33,9 @@ const WhyChoose = () => {
     },
     {
       Icon: Elements,
-      title: 'Zero Royalty Fee',
+      title: 'Royalty Charges',
       description:
-        'Keep more of what you earn — we don’t charge any percentage of your profits.',
+        'A royalty fee is applicable, calculated as a percentage of your earnings.',
     },
     {
       Icon: Contact,
@@ -56,7 +56,7 @@ const WhyChoose = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Why Choose CupTime?
+            Why Choose Cup Time?
           </motion.h2>
           <motion.p
             className="flex flex-col items-center justify-between px-0 text-center text-base text-zinc-700 md:px-28 md:text-lg"
@@ -65,7 +65,7 @@ const WhyChoose = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            At CupTime, we’re not just brewing beverages — we’re brewing
+            At Cup Time, we’re not just brewing beverages — we’re brewing
             business success. Here's why <br /> entrepreneurs and local partners
             across Tamil Nadu trust us:
           </motion.p>
@@ -138,7 +138,7 @@ const WhyChoose = () => {
             href="/contact-us?reason=franchise"
             className="bg-cuptime-black hover:bg-cuptime-black/80 cursor-pointer rounded-lg px-6 py-3 text-base font-semibold text-white transition-all"
           >
-            Become a Franchise
+            Become a Franchisee
           </Link>
         </motion.div>
       </div>

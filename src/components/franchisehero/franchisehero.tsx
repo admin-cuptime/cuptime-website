@@ -40,7 +40,7 @@ const FranchiseHero = () => {
               }}
               className="text-base md:text-lg"
             >
-              Become a part of the CupTime family. Bring authentic South Indian
+              Become a part of the Cup Time family. Bring authentic South Indian
               beverages to your community with a proven business model rooted in
               tradition and trust.
             </motion.div>

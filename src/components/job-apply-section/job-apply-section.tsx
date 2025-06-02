@@ -88,29 +88,29 @@ const JobApplySection = ({
     {
       title: 'Delivery Executive (Hot Beverages)',
       description:
-        'Our beverages are made using time-honored recipes from Madurai — no chemicals, no preservatives, only natural goodness.',
-      location: 'Madurai & Nearby Areas',
+        'Vehicles will be provided. Candidate with Smart phone and driving licence. Attractive Incentives with ESI & PF',
+      location: 'Madurai & Coimbatore',
       experience: '0–2 years',
     },
     {
-      title: 'Android App Developer',
+      title: 'Customer Care Executives (Female)',
       description:
-        'We’re looking for a skilled Android Developer to work on our customer-facing mobile app. You’ll work closely with the UI/UX and backend teams to build, maintain, and optimize a smooth ordering experience for our users.',
-      location: 'Remote / Chennai',
-      experience: '2–4 years',
-    },
-    {
-      title: 'Franchise Support Coordinator',
-      description:
-        'As our Franchise Support Coordinator, you’ll help new franchise partners onboard, train staff, and ensure quality service across locations. Strong communication and multitasking skills are key.',
-      location: 'Madurai & Nearby Areas',
+        'We are looking for enthusiastic and customer-focused individuals to join our team as Customer Care Executives. If you have a passion for communication and enjoy helping customers, we’d love to hear from you!',
+      location: 'Madhurai & Nearby Areas',
       experience: '0–2 years',
     },
     {
-      title: 'Graphic Designer – Marketing',
+      title: 'Franchisee Support Coordinator',
       description:
-        'Bring our brand to life through social media creatives, ad banners, packaging designs, and more. Ideal for a designer who can combine creativity with fast-paced execution.',
-      location: 'Tools: Figma, Illustrator, Canva',
+        'As our Franchisee Support Coordinator, you’ll help new franchisee partners onboard, train staff, and ensure quality service across locations. Strong communication and multitasking skills are key.',
+      location: 'Madurai & Coimbatore',
+      experience: '0–2 years',
+    },
+    {
+      title: 'Marketing Executives (Male)',
+      description:
+        'We are looking for dynamic and self-driven Marketing Executives to join our team. This is a field-based role involving direct interaction with customers at their doorstep. If you’re passionate about marketing and love meeting people, we’d like to meet you!',
+      location: 'Madurai & Coimbatore',
       experience: '0–2 years',
     },
   ];

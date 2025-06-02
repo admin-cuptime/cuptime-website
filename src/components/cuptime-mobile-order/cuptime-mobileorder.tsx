@@ -70,7 +70,7 @@ const CupTimeMobileOrder = () => {
                 Your Daily Brew, Made Smarter
               </h2>
               <p className="text-sm md:text-lg">
-                CupTime brings you fresh, flavorful coffee and tea exactly when
+                Cup Time brings you fresh, flavorful coffee and tea exactly when
                 and how you want it. With smart scheduling, customizable
                 options, and eco-friendly practices, we make your daily beverage
                 break seamless and sustainable—right at your doorstep.

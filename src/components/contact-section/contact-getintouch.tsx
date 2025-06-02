@@ -29,7 +29,7 @@ const GetinTouchForm = () => {
 
   const options = [
     'Price',
-    'Franchise',
+    'Franchisee',
     'Services we offer',
     'Call Back',
     'Others',
@@ -59,18 +59,36 @@ const GetinTouchForm = () => {
     }
 
     try {
-      await fetch(
-        'https://script.google.com/macros/s/AKfycbxGp1oat2ce5Yh6lrnvcg6lRj8DcOYgHzGlgHErRqPWdHili0H07TkggIJArz8vJMlrRw/exec',
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          mode: 'no-cors',
-          body: JSON.stringify({
-            ...form,
-            reason: selectedOption || '',
-          }),
-        }
-      );
+      // Call Cuptime API
+      const response = await fetch('https://api.cuptime.in/api/user-service/users/leads', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'user-current-view': 'cuptime-cron'
+        },
+        body: JSON.stringify({
+          name: form.name,
+          phoneNumber: "+91" + form['mobile-number'],
+          emailId: form.email,
+          businessName: form['company-name'] || '',
+          serviceableArea: selectedOption || '',
+          industryType: 'any',
+          invoiceCycle: 'Monthly',
+          discountPercentage: 0,
+          tdsPercentage: 0,
+          pendingInvoiceLimitAllowed: 1,
+          advanceAmount: 0,
+          bniMember: false,
+          bniReferredBy: ''
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit lead');
+      }
+
+      const data = await response.json();
+      console.log('API Response:', data);
 
       setSuccess(
         'Thank you! Your message has been sent. We will reach out to you soon.'
@@ -83,12 +101,42 @@ const GetinTouchForm = () => {
         message: '',
       });
       setSelectedOption(null);
+    
     } catch (err: any) {
       setError(
         `Network error. Please try again. ${err?.message ? 'Details: ' + err.message : ''}`
       );
     } finally {
       setLoading(false);
+    }
+
+    try {
+      // Call Kit19 API
+      const kit19Params = new URLSearchParams({
+        UserName: process.env.NEXT_PUBLIC_KIT_19_USERNAME || '',
+        Password: process.env.NEXT_PUBLIC_KIT_19_PASSWORD || '',
+        PersonName: form.name,
+        MobileNo: form['mobile-number'],
+        EmailID: form.email,
+        CompanyName: form['company-name'] || '',
+        SourceName: "CupTime-Customer-App",
+        Remarks: form.message || '',
+        LeadNo: "0",
+        Update: "0"
+      });
+    
+      const kit19Url = `https://www.kit19.com/UserCRMCampaign/AddLeadAPI.aspx?${kit19Params.toString()}`;
+     
+      const kit19Response = await fetch(kit19Url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      console.log(kit19Response);
+    
+    } catch (err) {
+      console.error('Kit19 API Error:', err);
     }
   };
 
@@ -111,12 +159,12 @@ const GetinTouchForm = () => {
         {/* Left Image Section */}
         <div className="flex flex-col gap-3 lg:w-1/2">
           <h3 className="mb-4 text-start text-lg font-bold text-zinc-900 md:text-2xl">
-            Let’s Brew a Conversation
+            Let's Brew a Conversation
           </h3>
           <div className="space-y-2 text-sm font-medium md:space-y-4 md:text-base">
             <p>
-              We’d love to hear from you — whether you’re a business looking
-              to serve traditional beverages, a franchise <br />
+              We'd love to hear from you — whether you're a business looking
+              to serve traditional beverages, a franchisee <br />
               enthusiast, or someone who just loves great coffee.
             </p>
             <div className="flex flex-row gap-3 py-2 text-black">
@@ -129,7 +177,7 @@ const GetinTouchForm = () => {
                 rel="noopener noreferrer"
                 className="hover:text-cuptime-red"
               >
-                No 35, Alagaradi 1st Street, 
+                No 35, Alagaradi 1st Street,
                 <br />
                 (Next to Madurai Muthu Middle School)
                 <br />
@@ -153,7 +201,7 @@ const GetinTouchForm = () => {
               <div className="h-auto w-7">
                 <MySVGmobile />
               </div>
-              <Link href="tel:+919876543210" className='hover:text-cuptime-red'>+91 98765 43210</Link>
+              <Link href="tel:+91 916 9161110" className='hover:text-cuptime-red'>+91 916 9161110</Link>
             </div>
           </div>
         </div>

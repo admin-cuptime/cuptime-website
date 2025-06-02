@@ -20,7 +20,7 @@ const deliveryStepsData = [
     title: 'Apply Online',
     date: 'Step 1',
     description:
-      'Fill out our franchise application form. We’ll review your interest and connect with you quickly.',
+      'Fill out our franchisee application form. We’ll review your interest and connect with you quickly.',
   },
   {
     icon: <IconMapPin className="h-7 w-7" />,
@@ -34,7 +34,7 @@ const deliveryStepsData = [
     title: 'Setup & Training',
     date: 'Step 3',
     description:
-      'Once approved, we help with kitchen setup, provide branded materials, and train your team on beverage',
+      'Once approved, we help with Factory setup, provide branded materials, and train your team on beverage',
     subdescription: ' preparation and hygiene.',
   },
   {
@@ -42,7 +42,7 @@ const deliveryStepsData = [
     title: 'Go Live',
     date: 'Step 4',
     description:
-      'Start preparing and delivering fresh beverages to businesses in your area under the CupTime brand.',
+      'Start preparing and delivering fresh beverages to businesses in your area under the Cup Time brand.',
   },
   {
     icon: <IconMessageDots className="h-7 w-7" />,
@@ -93,7 +93,7 @@ const FranchiseSteps = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            How It Works – Start Your Franchise in 5 Easy Steps
+            How It Works – Start Your Franchisee in 5 Easy Steps
           </motion.h2>
           <motion.p
             className="flex flex-col items-center justify-between px-0 text-center text-base text-zinc-400 md:px-28 md:text-lg"

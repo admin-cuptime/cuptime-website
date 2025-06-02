@@ -184,13 +184,13 @@ const HeroSection = () => {
                       stiffness: 100,
                       delay: 0.4,
                     }}
-                    className="flex flex-col items-center sm:flex-row"
+                    className=" flex-col items-center sm:flex-row"
                   >
                     <Link
                       href="/contact-us?reason=franchise"
                       className="bg-cuptime-black w-50 rounded-lg px-4 py-2 text-sm font-semibold text-white transition-all hover:bg-zinc-700 md:px-6 md:py-3 md:text-base"
                     >
-                      Become a Franchise
+                      Become a Franchisee
                     </Link>
                   </motion.div>
                 </div>
@@ -268,7 +268,7 @@ const HeroSection = () => {
                     }}
                     className="text-sm text-zinc-100 md:text-lg"
                   >
-                    CupTime blends technology with tradition to serve you the
+                    Cup Time blends technology with tradition to serve you the
                     perfect cup—every time. Experience the future of workplace
                     tea and coffee, crafted with care and delivered with
                     precision.
@@ -343,6 +343,8 @@ const HeroSection = () => {
                   autoPlay
                   loop
                   muted
+                  playsInline
+                  preload="auto"
                   className="pointer-events-none h-full w-full object-cover"
                   aria-label="Background video showing tea cup"
                 >
@@ -391,7 +393,7 @@ const HeroSection = () => {
                         delay: 0.3,
                       }}
                       className="text-sm md:text-lg">
-                      At Cuptime, we blend tradition with innovation. Our smart
+                      At Cup Time, we blend tradition with innovation. Our smart
                       delivery system ensures your favorite brew reaches you at
                       peak freshness — every time, right on schedule. Whether
                       it's a busy office morning or a relaxed afternoon break,

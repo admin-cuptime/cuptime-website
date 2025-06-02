@@ -15,7 +15,7 @@ const CareersHero = () => {
       icon: Ranking,
       title: 'Opportunities for Growth:',
       description:
-        'From interns to full-time roles, Cuptime nurtures talent. With learning paths, mentorship, and leadership visibility, you’ll have the tools to grow.',
+        'From interns to full-time roles, Cup Time nurtures talent. With learning paths, mentorship, and leadership visibility, you’ll have the tools to grow.',
     },
     {
       icon: Cash,
@@ -27,7 +27,7 @@ const CareersHero = () => {
       icon: Favourite,
       title: 'Work with Heart',
       description:
-        'Whether you’re brewing coffee, coding the app, or managing franchise support—you’re part of a tight-knit, purpose-driven team.',
+        'Whether you’re brewing coffee, coding the app, or managing franchisee support—you’re part of a tight-knit, purpose-driven team.',
     },
     {
       icon: Muscle,
@@ -59,7 +59,7 @@ const CareersHero = () => {
                     }}
                     className="text-3xl font-bold text-zinc-900 md:text-4xl lg:text-5xl"
                   >
-                    Brew Your Future With Cuptime
+                    Brew Your Future With Cup Time
                   </motion.div>
                   <motion.div
                     initial={{ opacity: 0, y: 30 }}

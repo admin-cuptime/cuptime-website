@@ -28,7 +28,7 @@ const PrivacypolicyHero = () => {
                     Privacy Policies
                   </div>
                   <div className="text-base md:text-lg md:px-42">
-                    At Cuptime, we’re committed to protecting your personal data and ensuring transparency in how we
+                    At Cup Time, we’re committed to protecting your personal data and ensuring transparency in how we
                     collect, use, and safeguard your information. Whether you’re ordering your favorite brew or applying for a 
                     career, your trust matters. Explore our privacy policy to learn more about how we keep your data safe,
                     secure, and never shared without consent.

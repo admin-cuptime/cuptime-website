@@ -3,27 +3,39 @@ name: Build and Deploy to S3
 on:
   push:
     branches:
+      - main
       - develop
 
 jobs:
-  dev-build:
-    if: github.ref == 'refs/heads/develop'
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
+      # Checkout the repository
       - name: Checkout Code
         uses: actions/checkout@v3
 
+      # Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '22'
+          node-version: '20'
 
-      - name: Install Dependencies
+      # Install dependencies and build project
+      - name: Install Dependencies and Build
         run: |
-          npm install --legacy-peer-deps
-          npx next build
+          CI=true npm install --legacy-peer-deps
+          if [ "${{ github.ref }}" == "refs/heads/main" ]; then
+             npx next build
+             echo "S3_BUCKET=prod-cuptime-website" >> $GITHUB_ENV
+             echo "CLOUDFRONT_ID=${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_PROD }}" >> $GITHUB_ENV
+          elif [ "${{ github.ref }}" == "refs/heads/develop" ]; then
+             npx next build
+             echo "S3_BUCKET=beta.cuptime.in" >> $GITHUB_ENV
+             echo "CLOUDFRONT_ID=${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}" >> $GITHUB_ENV
+          fi
 
+      # Configure AWS credentials
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
@@ -31,16 +43,11 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-south-1
 
-      - name: Upload build/ to S3
+      # Upload to S3
+      - name: Upload to S3
         run: |
-          if [ "${{ github.ref }}" == "refs/heads/develop" ]; then
-            BUCKET="beta.cuptime.in"
-          fi
-          aws s3 sync build/ s3://$BUCKET/
+          aws s3 sync build/ s3://$S3_BUCKET/
 
-      - name: Invalidate CloudFront Cache
-        run: |
-          if [ "${{ github.ref }}" == "refs/heads/develop" ]; then
-            DIST_ID=${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
-          fi
-          aws cloudfront create-invalidation --distribution-id $DIST_ID --paths "/*"
+      # Create CloudFront Invalidation
+      - name: Create CloudFront Invalidation
+        run: aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_ID --paths "/*"

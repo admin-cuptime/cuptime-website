@@ -44,7 +44,7 @@ const Footer = () => {
   const productLinks = [
     { text: 'Our Products', href: '/our-products' },
     { text: 'Mobile App', href: '/cup-time-mobile' },
-    { text: 'Franchise Opportunities', href: '/franchise' },
+    { text: 'Franchisee Opportunities', href: '/franchise' },
   ];
 
   const connectedLinks = [
@@ -73,7 +73,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <FooterSection title="About Cuptime" links={aboutLinks} />
+        <FooterSection title="About Cup Time" links={aboutLinks} />
         <FooterSection title="Join Us / Resources" links={connectedLinks} />
         <div className="flex flex-col gap-10">
           <FooterSection title="Products" links={productLinks} />
@@ -96,8 +96,8 @@ const Footer = () => {
               >
                 ⁠franchise@cuptime.in
               </Link>
-              <Link href="tel:+919876543210" className="hover:text-cuptime-red">
-                +91 98765 43210
+              <Link href="tel:+916 9161110" className="hover:text-cuptime-red">
+                +91 916 916 1110
               </Link>
               <Link
                 href="https://maps.app.goo.gl/UHChYbATqTrxVKp78"
@@ -106,9 +106,9 @@ const Footer = () => {
                 className="hover:text-cuptime-red"
               >
                 <div className="text-wrap">
-                  No. 12, Main Street
-                  <div>Madurai – 625001,</div>
-                  <div>Tamil Nadu, India</div>
+                  No 35, Alagaradi 1st Street, <br />
+                  (Next to Madurai Muthu Middle School) <br />
+                  Arappalayam, Madurai – 625016
                 </div>
               </Link>
             </div>
@@ -149,7 +149,7 @@ const Footer = () => {
       </div>
 
       <div className='flex items-center justify-between w-full h-10 text-sm text-zinc-500'>
-        <div>Copyright © {new Date().getFullYear()} CupTime. All rights reserved.</div>
+        <div>Copyright © {new Date().getFullYear()} Cup Time. All rights reserved.</div>
         <div className='flex items-center gap-2'>
           <Link href="https://www.facebook.com/cuptimemadurai" target="_blank" rel="noopener noreferrer">
             <IconBrandFacebook className='hover:text-cuptime-red cursor-pointer transition-all'/>
@@ -160,7 +160,7 @@ const Footer = () => {
           <Link href="https://www.linkedin.com/company/cup-time" target="_blank" rel="noopener noreferrer">
             <IconBrandLinkedin className='hover:text-cuptime-red cursor-pointer transition-all'/>
           </Link>
-          <Link href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
+          <Link href="https://wa.me/916 9161110" target="_blank" rel="noopener noreferrer">
             <IconBrandWhatsapp className='hover:text-cuptime-red cursor-pointer transition-all'/>
           </Link>
         </div>

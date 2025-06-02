@@ -4,9 +4,7 @@ import Link from 'next/link';
 import { Check } from 'lucide-react';
 import { motion } from 'framer-motion';
 import EntrepreneurialBg from '@/assets/png/entrepreneurial-bg.png';
-import journeygirl from '@/assets/png/journeygirl.png';
 import React, { useState, useEffect } from 'react';
-import { fetchJourneyData } from '@/app/api/journey';
 
 const EntrepreneurialJourney = () => {
   const entrepreneurialJourney = [
@@ -20,21 +18,6 @@ const EntrepreneurialJourney = () => {
       description: 'Full training & tech support provided',
     },
   ];
-
-  const [imageUrl, setImageUrl] = useState('');
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const getGallery = async () => {
-      setLoading(true);
-      const data = await fetchJourneyData();
-      if (Array.isArray(data) && data.length > 0) {
-        setImageUrl(data[0].images || ''); // Assume Cloudinary URL
-      }
-      setLoading(false);
-    };
-    getGallery();
-  }, []);
 
   return (
     <section className="flex items-center justify-center overflow-hidden px-0 md:px-8">
@@ -75,8 +58,8 @@ const EntrepreneurialJourney = () => {
                 with Cup Time
               </h2>
               <p className="py-1.5 text-base text-white md:py-3 md:text-xl">
-                Join Cup Time’s growing franchise network with our flexible,
-                profitable franchise model.
+                Join Cup Time’s growing franchisee network with our flexible,
+                profitable franchisee model.
               </p>
               <div className="flex flex-col items-start justify-center">
                 {entrepreneurialJourney.map((tradition, index) => (
@@ -100,7 +83,7 @@ const EntrepreneurialJourney = () => {
 
               <div className="flex">
                 <button className="rounded-lg bg-white px-6 py-3 text-sm font-bold text-zinc-900 md:text-base">
-                  <Link href="/franchise">Beacome a Cup Time Franchise</Link>
+                  <Link href="/franchise">Become a Cup Time Franchisee</Link>
                 </button>
               </div>
             </div>
@@ -116,21 +99,19 @@ const EntrepreneurialJourney = () => {
               stiffness: 100,
               delay: 0.4,
             }}
-            className="flex shrink-0 justify-center lg:w-1/2"
+            className="image-section flex items-center justify-between lg:w-1/2"
           >
-           {imageUrl ? (
-              <img
-                src={imageUrl}
-                alt="Entrepreneurial Journey"
-                className="h-auto w-full rounded-lg"
-              />
-            ) : (
-              <img
-                src={journeygirl.src}
-                alt="Entrepreneurial Journey"
-                className="h-auto w-full rounded-lg"
-              />
-            )}
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              controls
+              className="[&:not(:hover)]:controls-hidden h-auto w-full rounded-lg md:h-150"
+            >
+              <source src="/franchise-out.webm" type="video/webm" />
+              Your browser does not support the video tag.
+            </video>
           </motion.div>
         </div>
       </motion.div>

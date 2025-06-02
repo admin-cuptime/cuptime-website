@@ -21,39 +21,39 @@ const timelineData = [
   },
   {
     year: '2020',
-    title: '2020 – Officially Brewed: CupTime Launched',
+    title: '2020 – Officially Brewed: Cup Time Launched',
     description:
-      'We launched CupTime with one goal: serve businesses fresh, hot, preservative-free beverages in a sustainable and scalable way — prepared with love, not machines.',
+      'We launched Cup Time with one goal: serve businesses fresh, hot, preservative-free beverages in a sustainable and scalable way — prepared with love, not machines.',
   },
   {
     year: '2021',
     title: '2021 – First B2B Deliveries',
     description:
-      'Offices, hospitals, and educational institutions started ordering and sipping our products — quickly making CupTime a part of their morning refreshments.',
+      'Offices, hospitals, and educational institutions started ordering and sipping our products — quickly making Cup Time a part of their morning refreshments.',
   },
   {
     year: '2022',
-    title: '2022 – Franchise Model Introduced',
+    title: '2022 – Franchisee Model Introduced',
     description:
-      'Our FICO (Franchise CupTime-Operated) model helped local entrepreneurs to start their own CupTime kitchen, with products overseen by us, but prepared by them.',
+      'Our Franchisee (Franchisee Cup Time-Operated) model helped local entrepreneurs to start their own Cup Time kitchen, with products overseen by us, but prepared by them.',
   },
   {
     year: '2023',
-    title: '2023 – Franchise Model Introduced',
+    title: '2023 – Franchisee Model Introduced',
     description:
-      'Our FICO (Franchise CupTime-Operated) model helped local entrepreneurs to start their own CupTime kitchen, with products overseen by us, but prepared by them.',
+      'Our Franchisee (Franchisee Cup Time-Operated) model helped local entrepreneurs to start their own Cup Time kitchen, with products overseen by us, but prepared by them.',
   },
   {
     year: '2024',
-    title: '2024 – Franchise Model Introduced',
+    title: '2024 – Franchisee Model Introduced',
     description:
-      'Our FICO (Franchise CupTime-Operated) model helped local entrepreneurs to start their own CupTime kitchen, with products overseen by us, but prepared by them.',
+      'Our Franchisee (Franchisee Cup Time-Operated) model helped local entrepreneurs to start their own Cup Time kitchen, with products overseen by us, but prepared by them.',
   },
   {
     year: '2025',
-    title: '2025 – Franchise Model Introduced',
+    title: '2025 – Franchisee Model Introduced',
     description:
-      'Our FICO (Franchise CupTime-Operated) model helped local entrepreneurs to start their own CupTime kitchen, with products overseen by us, but prepared by them.',
+      'Our Franchisee (Franchisee Cup Time-Operated) model helped local entrepreneurs to start their own Cup Time kitchen, with products overseen by us, but prepared by them.',
   },
 ];
 

@@ -1,7 +1,10 @@
 'use client';
 
 import Image from 'next/image';
-import ceoImage from '@/assets/png/cuptime-ceo.png';
+import ceoImage1 from '@/assets/png/Prabaharan Venugopal[1].jpg';
+import ceoImage2 from '@/assets/png/Tech-Advisor -2.jpg';
+import ceoImage3 from '@/assets/png/Krishnaswamy.jpg';
+import ceoImage4 from '@/assets/png/Dawood.jpg';
 import CuptimeLogo from '@/assets/svg/cuptime-logo-white.svg';
 import { motion } from 'framer-motion';
 
@@ -35,7 +38,7 @@ const CeoCard = () => {
                 Guided by Purpose, Driven by <br /> Passion
               </h2>
               <p className="text-base text-zinc-300 md:py-3 md:text-lg">
-                At CupTime, we believe leadership is about vision and values.
+                At Cup Time, we believe leadership is about vision and values.
                 Our founders and core team lead with the purpose of making
                 authentic, traditional beverages accessible — all while creating
                 sustainable local opportunities.
@@ -57,17 +60,17 @@ const CeoCard = () => {
           >
             <div className="relative">
               <img
-                src={ceoImage.src}
+                src={ceoImage1.src}
                 alt="CEO Image"
                 className="h-auto w-full rounded-3xl md:w-[350px]"
               />
               <div className="rounded-b-3 absolute bottom-0 left-0 w-full p-3">
                 <div className="absolute bottom-0 left-0 w-full rounded-b-3xl bg-white/40 p-3 text-center">
                   <h3 className="text-cuptime-red text-sm font-bold italic md:text-xl">
-                    Prabaharan Venugopal
+                    Mr.Prabaharan Venugopal
                   </h3>
                   <p className="text-sm font-bold text-zinc-700 md:text-lg">
-                    CEO Of Cuptime
+                    Founder & Director
                   </p>
                 </div>
               </div>
@@ -78,36 +81,35 @@ const CeoCard = () => {
         <div className="grid grid-cols-1 items-center justify-items-center gap-3 rounded-lg p-6 px-10 md:grid-cols-2 md:p-16 lg:grid-cols-3">
           <div className="relative flex w-fit justify-center">
             <img
-              src={ceoImage.src}
+              src={ceoImage2.src}
               alt="CEO Image"
-              className="h-auto w-full rounded-3xl md:w-[300px]"
+              className="h-auto md:h-80 w-full rounded-3xl md:w-[300px]"
             />
             <div className="rounded-b-3 absolute bottom-0 left-0 w-full p-3">
               <div className="absolute bottom-0 left-0 w-full rounded-b-3xl bg-white/40 p-3 text-center">
                 <h3 className="text-cuptime-red text-sm font-bold italic md:text-xl">
-                  Prabaharan Venugopal
+                  Mr. Ramanathan Alagappan
                 </h3>
                 <p className="text-sm font-bold text-zinc-700 md:text-lg">
-                  CEO Of Cuptime
+                  Tech Advisor
                 </p>
               </div>
             </div>
           </div>
-
           
           <div className="relative flex w-fit justify-center">
             <img
-              src={ceoImage.src}
+              src={ceoImage3.src}
               alt="CEO Image"
-              className="h-auto w-full rounded-3xl md:w-[300px]"
+              className="h-auto md:h-80 w-full rounded-3xl md:w-[300px]"
             />
             <div className="rounded-b-3 absolute bottom-0 left-0 w-full p-3">
               <div className="absolute bottom-0 left-0 w-full rounded-b-3xl bg-white/40 p-3 text-center">
                 <h3 className="text-cuptime-red text-sm font-bold italic md:text-xl">
-                  Prabaharan Venugopal
+                  Mr. Mahendran Krishnasamy
                 </h3>
                 <p className="text-sm font-bold text-zinc-700 md:text-lg">
-                  CEO Of Cuptime
+                  Branding Coordinator
                 </p>
               </div>
             </div>
@@ -115,17 +117,17 @@ const CeoCard = () => {
 
           <div className="relative flex w-fit justify-center">
             <img
-              src={ceoImage.src}
+              src={ceoImage4.src}
               alt="CEO Image"
-              className="h-auto w-full rounded-3xl md:w-[300px]"
+              className="h-auto md:h-80 w-full rounded-3xl md:w-[300px]"
             />
             <div className="rounded-b-3 absolute bottom-0 left-0 w-full p-3">
               <div className="absolute bottom-0 left-0 w-full rounded-b-3xl bg-white/40 p-3 text-center">
                 <h3 className="text-cuptime-red text-sm font-bold italic md:text-xl">
-                  Prabaharan Venugopal
+                  Mr. Dawood Farhan
                 </h3>
                 <p className="text-sm font-bold text-zinc-700 md:text-lg">
-                  CEO Of Cuptime
+                  Manager - Operations
                 </p>
               </div>
             </div>
