@@ -1,51 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.cuptime.in</loc>
-    <lastmod>2025-06-02T15:02:24.021Z</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>1</priority>
+    <loc>https://www.cuptime.in/</loc>
+    <lastmod>2025-06-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
   </url>
-   <url>
+    <url>
     <loc>https://www.cuptime.in/our-products</loc>
-    <lastmod>2025-06-02T15:02:24.021Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2025-06-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
   </url>
+ 
   <url>
     <loc>https://www.cuptime.in/franchise</loc>
-    <lastmod>2025-06-02T15:02:24.021Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.cuptime.in/about-us</loc>
-    <lastmod>2025-06-02T15:02:24.021Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.cuptime.in/cuptime-mobile</loc>
-    <lastmod>2025-06-02T15:02:24.021Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.cuptime.in/contact-us</loc>
-    <lastmod>2025-06-02T15:02:24.021Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
+    <lastmod>2025-06-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.cuptime.in/careers</loc>
-    <lastmod>2025-06-02T15:02:24.021Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
+    <lastmod>2025-06-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.cuptime.in/contact-us?reason=franchise</loc>
+    <lastmod>2025-06-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.cuptime.in/contact-us</loc>
+    <lastmod>2025-06-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.cuptime.in/about-us</loc>
+    <lastmod>2025-06-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.cuptime.in/cup-time-mobile</loc>
+    <lastmod>2025-06-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.cuptime.in/blogs</loc>
-    <lastmod>2025-06-02T15:02:24.021Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.2</priority>
+    <lastmod>2025-06-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
   </url>
-  
+  <url>
+    <loc>https://www.cuptime.in/technology</loc>
+    <lastmod>2025-06-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.cuptime.in/events</loc>
+    <lastmod>2025-06-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.cuptime.in/cancellation-refund</loc>
+    <lastmod>2025-06-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+ <url>
+    <loc>https://www.cuptime.in/privacy-policy</loc>
+    <lastmod>2025-06-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.cuptime.in/terms-conditions</loc>
+    <lastmod>2025-06-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.cuptime.in/delivery</loc>
+    <lastmod>2025-06-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.cuptime.in/contact-us?reason=Others</loc>
+    <lastmod>2025-06-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
