@@ -67,12 +67,11 @@ const GetinTouchForm = () => {
           'user-current-view': 'cuptime-cron'
         },
         body: JSON.stringify({
-          name: form.name,
+          name: selectedOption ? `${form.name} (${selectedOption})` : form.name,
           phoneNumber: "+91" + form['mobile-number'],
           emailId: form.email,
           businessName: form['company-name'] || '',
           serviceableArea: selectedOption || '',
-          industryType: 'any',
           invoiceCycle: 'Monthly',
           discountPercentage: 0,
           tdsPercentage: 0,
