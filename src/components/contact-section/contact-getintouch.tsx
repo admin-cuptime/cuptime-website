@@ -71,7 +71,7 @@ const GetinTouchForm = () => {
           phoneNumber: "+91" + form['mobile-number'],
           emailId: form.email,
           businessName: form['company-name'] || '',
-          serviceableArea: selectedOption || '',
+          industryType: 'any',
           invoiceCycle: 'Monthly',
           discountPercentage: 0,
           tdsPercentage: 0,
