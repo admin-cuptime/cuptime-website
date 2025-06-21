@@ -10,7 +10,9 @@ import ProductOverview from '@/components/product-overview/product-overview';
 import ReviewMarquee from '@/components/review-marquee/review-marquee';
 import TraditionWorkplace from '@/components/tradition-workplace/tradition-workplace';
 import TrustDelivery from '@/components/trust-delivery-time/trust-delivery';
+import AppRedirectHandler from '@/components/app-redirect-handler/app-redirect-handler';
 import { Metadata } from 'next';
+import { Suspense } from 'react';
 
 export const metadata: Metadata = {
   title: {
@@ -66,21 +68,26 @@ export const metadata: Metadata = {
 export default function Home() {
   
   return (
-    <main className="max-w-screen-3xl mx-auto space-y-16 md:space-y-32">
-      <HeroSection />
-      <FeatureCard />
-      <ProductOverview />
-      <MilestonesMedia />
-      <TrustDelivery />
-      <TraditionWorkplace />
-      <DeliverySteps />
-      <EntrepreneurialJourney />
-      <FAQsection />
-      <section>
-        <ReviewMarquee />
-        <GetAppSection />
-        <CuptimeRoadmap />
-      </section>
-    </main>
+    <>
+      <Suspense fallback={null}>
+        <AppRedirectHandler />
+      </Suspense>
+      <main className="max-w-screen-3xl mx-auto space-y-16 md:space-y-32">
+        <HeroSection />
+        <FeatureCard />
+        <ProductOverview />
+        <MilestonesMedia />
+        <TrustDelivery />
+        <TraditionWorkplace />
+        <DeliverySteps />
+        <EntrepreneurialJourney />
+        <FAQsection />
+        <section>
+          <ReviewMarquee />
+          <GetAppSection />
+          <CuptimeRoadmap />
+        </section>
+      </main>
+    </>
   );
 }
