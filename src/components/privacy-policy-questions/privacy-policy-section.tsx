@@ -17,7 +17,7 @@ const PrivacyPolicyQuestion = () => {
         <div className="flex flex-col gap-8 md:p-12">
           <div className="space-y-6">
             <h2 className="text-sm font-bold text-zinc-900 md:text-lg">
-              1. Introduction
+              Introduction
             </h2>
             <p className="text-sm md:text-lg">
               Cup Time is committed to protecting the privacy and security of
@@ -40,16 +40,18 @@ const PrivacyPolicyQuestion = () => {
                   {item.title}
                 </h3>
                 <p className="text-sm md:text-lg">{item.content}</p>
-                <ul className="list-disc space-y-2 pl-6">
-                  {item.points.map((point, pointIndex) => (
-                    <li
-                      key={pointIndex}
-                      className="text-sm text-zinc-600 md:text-base"
-                    >
-                      {point}
-                    </li>
-                  ))}
-                </ul>
+                {item.points && (
+                  <ul className="list-disc space-y-2 pl-6">
+                    {item.points.map((point, pointIndex) => (
+                      <li
+                        key={pointIndex}
+                        className="text-sm text-zinc-600 md:text-base"
+                      >
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             </motion.div>
           ))}
