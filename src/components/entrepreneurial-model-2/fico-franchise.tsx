@@ -9,7 +9,7 @@ import EntrepreneurialBg from '@/assets/png/entrepreneurial-bg.png';
 const FicoFranchise = () => {
   const ficoJourney = [
     {
-      description: 'Space Required: 100–200 sq ft',
+      description: 'Space Required: 1500–2000 sq ft',
     },
     {
       description: 'Passion for customer service',
