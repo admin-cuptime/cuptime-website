@@ -40,31 +40,22 @@ const WhatsAppFloatingButton = () => {
               damping: 15
             }
           }}
-          whileHover={{ 
-            y: -10,
-            transition: {
-              type: "spring",
-              stiffness: 100,
-              damping: 10,
-              
-            }
-          }}
           transition={{
             type: "spring",
             stiffness: 100,
             damping: 10,
             duration: 1,
           }}
-          className="fixed bottom-8 right-5 z-50"
+          className="fixed bottom-18 right-2.5 z-40"
         >
           <Link 
             href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="block bg-green-500 text-white rounded-full p-3 drop-shadow-xl hover:bg-green-600 transition-colors duration-300"
+            className="block bg-green-500 text-white rounded-full p-3 drop-shadow-xl transition-colors duration-300"
             aria-label="Chat on WhatsApp"
           >
-            <WhatAppIcon className="w-9 h-auto" />
+            <WhatAppIcon className="w-8 h-auto" />
           </Link>
         </motion.div>
       )}
