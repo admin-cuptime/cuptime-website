@@ -5,6 +5,7 @@ import Header from '@/components/shared/header';
 import Footer from '@/components/shared/footer';
 import WhatsAppFloatingButton from '@/components/whatsapp-floating-button/whatsapp-floating-button';
 import CollectChat from '@/components/collect-chat/collect-chat';
+import SalesIQ from '@/components/sales-iq/sales-iq';
 
 const figtree = Figtree({
   variable: '--font-figtree',
@@ -30,7 +31,8 @@ export default function RootLayout({
         {children}
         <Footer />
         <WhatsAppFloatingButton />
-        <CollectChat />
+        {/* <CollectChat /> */}
+        <SalesIQ /> 
       </body>
     </html>
   );
