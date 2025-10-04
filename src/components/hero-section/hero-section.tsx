@@ -18,6 +18,8 @@ import {
 import { cn } from '@/lib/utils';
 import Autoplay from 'embla-carousel-autoplay';
 import { motion } from 'framer-motion';
+import popupCuptime from '@/assets/png/popup-cuptime.png';
+import { X } from 'lucide-react';
 import {
   BicepsFlexed,
   Coffee,
@@ -50,6 +52,7 @@ const HeroSection = () => {
   }, [api]);
 
   const [isLargeScreen, setIsLargeScreen] = useState(false);
+  const [showPopup, setShowPopup] = useState(true);
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -59,6 +62,16 @@ const HeroSection = () => {
     checkScreenSize();
     window.addEventListener('resize', checkScreenSize);
     return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
+
+  // close popup on Escape
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setShowPopup(false);
+    };
+
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
   }, []);
 
   const backgroundImages = isLargeScreen
@@ -116,6 +129,31 @@ const HeroSection = () => {
 
   return (
     <section className="bg-cuptime-light h-full w-full">
+      {/* Popup overlay (dismissible) */}
+      {showPopup && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
+          role="dialog"
+          aria-modal="true"
+          aria-label="CupTime popup"
+        >
+          <div className="relative w-full max-w-[520px] rounded-lg bg-white p-3 shadow-lg">
+            <button
+              aria-label="Close popup"
+              className="absolute top-2 right-2 z-10 inline-flex items-center justify-center rounded-full bg-white p-1 text-zinc-900 hover:bg-zinc-100"
+              onClick={() => setShowPopup(false)}
+            >
+              <X className="h-5 w-5" />
+            </button>
+
+            <img
+              src={popupCuptime.src}
+              alt="CupTime popup"
+              className="w-full rounded-md object-contain"
+            />
+          </div>
+        </div>
+      )}
       <Carousel
         setApi={setApi}
         opts={{
@@ -124,7 +162,7 @@ const HeroSection = () => {
         }}
         plugins={[
           Autoplay({
-             delay: (scrollSnapList, emblaApi) => [5000, 5000, 10000],
+            delay: (scrollSnapList, emblaApi) => [5000, 5000, 10000],
             stopOnInteraction: true,
           }),
         ]}
@@ -184,7 +222,7 @@ const HeroSection = () => {
                       stiffness: 100,
                       delay: 0.4,
                     }}
-                    className=" flex-col items-center sm:flex-row"
+                    className="flex-col items-center sm:flex-row"
                   >
                     <Link
                       href="/contact-us?reason=franchise"
@@ -392,7 +430,8 @@ const HeroSection = () => {
                         stiffness: 100,
                         delay: 0.3,
                       }}
-                      className="text-sm md:text-lg">
+                      className="text-sm md:text-lg"
+                    >
                       At Cup Time, we blend tradition with innovation. Our smart
                       delivery system ensures your favorite brew reaches you at
                       peak freshness — every time, right on schedule. Whether
@@ -401,7 +440,8 @@ const HeroSection = () => {
                       with just a tap.
                     </motion.div>
 
-                    <motion.div initial={{ opacity: 0, y: 30 }}
+                    <motion.div
+                      initial={{ opacity: 0, y: 30 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{
@@ -409,7 +449,9 @@ const HeroSection = () => {
                         damping: 12,
                         stiffness: 100,
                         delay: 0.4,
-                      }} className="flex flex-col items-center gap-2 sm:flex-row">
+                      }}
+                      className="flex flex-col items-center gap-2 sm:flex-row"
+                    >
                       <button
                         onClick={handleAppRedirect}
                         className="bg-cuptime-black cursor-pointer rounded-lg px-4 py-2 text-sm font-semibold text-white transition-all hover:opacity-80 md:px-6 md:py-3 md:text-base"
