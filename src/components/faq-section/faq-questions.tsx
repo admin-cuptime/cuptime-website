@@ -1,6 +1,7 @@
 'use client';
 
 import TeaCup from '@/assets/svg/cuptime-faq.svg';
+import TeaCupNew from '@/assets/png/fad-img-cuptime.png';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { fetchFaqData } from '@/app/api/faq';
@@ -60,8 +61,8 @@ const FAQsection = () => {
         <div className="relative flex flex-col justify-start gap-6 lg:w-1/2">
           {deliveries.map((faqsec, index) => (
             <motion.div key={index} className="items-start gap-4">
-              <div className="flex-shrink-0 w-35 h-auto lg:mb-6 mb-4">
-                <TeaCup className="w-35 h-auto" />
+              <div className="flex-shrink-0 w-50 h-auto lg:mb-6 mb-4">
+                <img src={TeaCupNew.src} alt="FAQ Tea Cup" className="w-3xl h-auto mr-5" />
               </div>
               <div>
                 <h3 className="text-3xl md:text-4xl font-bold text-zinc-900 lg:mb-6 mb-4">
