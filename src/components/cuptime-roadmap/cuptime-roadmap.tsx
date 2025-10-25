@@ -1,9 +1,11 @@
 'use client';
 
-import React, { useState } from 'react';
+import * as React from 'react';
+import { useState } from 'react';
 // import Image from 'next/image';
 import Link from 'next/link';
 import MySVG from '@/assets/svg/contact.svg';
+import { LeadTypes } from '@/types/leadTypes';
 const CuptimeRoadmap = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -28,6 +30,24 @@ const CuptimeRoadmap = () => {
     'Call Back',
     'Others',
   ];
+
+  // Map display names to enum values
+  const getLeadTypeEnum = (displayName: string): string => {
+    switch (displayName) {
+      case 'Price':
+        return LeadTypes.PRICE;
+      case 'Franchisee':
+        return LeadTypes.FRANCHISEE;
+      case 'Services we offer':
+        return LeadTypes.SERVICE_WE_OFFER;
+      case 'Call Back':
+        return LeadTypes.CALL_BACK;
+      case 'Others':
+        return LeadTypes.OTHER;
+      default:
+        return '';
+    }
+  };
 
   const handleCheckboxChange = (option: string) => {
     if (selectedOption === option) {
@@ -65,7 +85,8 @@ const CuptimeRoadmap = () => {
           mode: 'no-cors',
           body: JSON.stringify({
             ...form,
-            reason: selectedOption || '',
+            leadType: selectedOption ? getLeadTypeEnum(selectedOption) : '',
+            message: form.message || ''
           }),
         }
       );
