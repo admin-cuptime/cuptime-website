@@ -9,6 +9,7 @@ import MySVGweb from '@/assets/svg/web-protection.svg';
 import MySVGmobile from '@/assets/svg/call-ringing-02.svg';
 import { TypingAnimation } from '../magicui/typing-animation';
 import { useSearchParams } from 'next/navigation';
+import { LeadTypes } from '@/types/leadTypes';
 
 
 const GetinTouchForm = () => {
@@ -34,6 +35,24 @@ const GetinTouchForm = () => {
     'Call Back',
     'Others',
   ];
+
+  // Map display names to enum values
+  const getLeadTypeEnum = (displayName: string): string => {
+    switch (displayName) {
+      case 'Price':
+        return LeadTypes.PRICE;
+      case 'Franchisee':
+        return LeadTypes.FRANCHISEE;
+      case 'Services we offer':
+        return LeadTypes.SERVICE_WE_OFFER;
+      case 'Call Back':
+        return LeadTypes.CALL_BACK;
+      case 'Others':
+        return LeadTypes.OTHER;
+      default:
+        return '';
+    }
+  };
 
   const handleCheckboxChange = (option: string) => {
     setSelectedOption(selectedOption === option ? null : option);
@@ -67,18 +86,12 @@ const GetinTouchForm = () => {
           'user-current-view': 'cuptime-cron'
         },
         body: JSON.stringify({
-          name: selectedOption ? `${form.name} (${selectedOption})` : form.name,
+          name: form.name,
           phoneNumber: "+91" + form['mobile-number'],
           emailId: form.email,
           businessName: form['company-name'] || '',
-          industryType: 'any',
-          invoiceCycle: 'Monthly',
-          discountPercentage: 0,
-          tdsPercentage: 0,
-          pendingInvoiceLimitAllowed: 1,
-          advanceAmount: 0,
-          bniMember: false,
-          bniReferredBy: ''
+          leadType: selectedOption ? getLeadTypeEnum(selectedOption) : '',
+          message: form.message || ''
         })
       });
 
@@ -107,35 +120,6 @@ const GetinTouchForm = () => {
       );
     } finally {
       setLoading(false);
-    }
-
-    try {
-      // Call Kit19 API
-      const kit19Params = new URLSearchParams({
-        UserName: process.env.NEXT_PUBLIC_KIT_19_USERNAME || '',
-        Password: process.env.NEXT_PUBLIC_KIT_19_PASSWORD || '',
-        PersonName: form.name,
-        MobileNo: form['mobile-number'],
-        EmailID: form.email,
-        CompanyName: form['company-name'] || '',
-        SourceName: "CupTime-Customer-App",
-        Remarks: form.message || '',
-        LeadNo: "0",
-        Update: "0"
-      });
-    
-      const kit19Url = `https://www.kit19.com/UserCRMCampaign/AddLeadAPI.aspx?${kit19Params.toString()}`;
-     
-      const kit19Response = await fetch(kit19Url, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-      console.log(kit19Response);
-    
-    } catch (err) {
-      console.error('Kit19 API Error:', err);
     }
   };
 
