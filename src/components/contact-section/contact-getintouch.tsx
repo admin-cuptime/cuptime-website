@@ -121,35 +121,6 @@ const GetinTouchForm = () => {
     } finally {
       setLoading(false);
     }
-
-    try {
-      // Call Kit19 API
-      const kit19Params = new URLSearchParams({
-        UserName: process.env.NEXT_PUBLIC_KIT_19_USERNAME || '',
-        Password: process.env.NEXT_PUBLIC_KIT_19_PASSWORD || '',
-        PersonName: form.name,
-        MobileNo: form['mobile-number'],
-        EmailID: form.email,
-        CompanyName: form['company-name'] || '',
-        SourceName: "CupTime-Customer-App",
-        Remarks: `Lead Type: ${selectedOption || ''} | Message: ${form.message || ''}`,
-        LeadNo: "0",
-        Update: "0"
-      });
-    
-      const kit19Url = `https://www.kit19.com/UserCRMCampaign/AddLeadAPI.aspx?${kit19Params.toString()}`;
-     
-      const kit19Response = await fetch(kit19Url, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-      console.log(kit19Response);
-    
-    } catch (err) {
-      console.error('Kit19 API Error:', err);
-    }
   };
 
   useEffect(() => {
