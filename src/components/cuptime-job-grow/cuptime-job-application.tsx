@@ -16,7 +16,7 @@ import {
 } from '@/components/ui/select';
 import Link from 'next/link';
 
-const APPSCRIPT_URL = "https://script.google.com/macros/s/AKfycbzaATDfXTLxbKoDBRMe20ZeS8bt1VIf_iCMn1AyEDRvKIX_lM25472bLKsKLwN33cOR/exec";
+const APPSCRIPT_URL = "https://script.google.com/macros/s/AKfycbznJm0ruhzmBISqiqakv2uulRDuLjlNwd2pu6ThjpEAlfw7ASKTqGPkgg704pSZhM1VwA/exec";
 
 const CuptimeJobApplication = ({
   selectedJob,
