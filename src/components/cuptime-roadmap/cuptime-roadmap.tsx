@@ -78,7 +78,7 @@ const CuptimeRoadmap = () => {
 
     try {
       await fetch(
-        'https://script.google.com/macros/s/AKfycbxGp1oat2ce5Yh6lrnvcg6lRj8DcOYgHzGlgHErRqPWdHili0H07TkggIJArz8vJMlrRw/exec',
+        'https://script.google.com/macros/s/AKfycbwfusQxqnZae0YFLcItjO53Tx-WLc_-oR86UMYYNp75Jyvc1DAgYhoqbS7mqf3hPMK2/exec',
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
