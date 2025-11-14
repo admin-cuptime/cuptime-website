@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import React from 'react';
 import Image from 'next/image';
-import deliveryBoyImage from '@/assets/png/deliveryboy.png';
+import deliveryBoyImage from '@/assets/png/deliveryboy1.png';
 import { motion } from 'framer-motion';
 import Okfinger from '@/assets/svg/ok-finger.svg';
 import Retail from '@/assets/svg/shops.svg';

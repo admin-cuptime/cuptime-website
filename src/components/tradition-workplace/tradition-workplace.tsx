@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import deliveryImage from '@/assets/png/tradition-girl.png';
+import deliveryImage from '@/assets/png/tradition-girl1.png';
 import { motion } from 'framer-motion';
 import Office from '@/assets/svg/office.svg';
 import Retail from '@/assets/svg/shops.svg';
