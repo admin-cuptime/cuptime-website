@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import ceoImage1 from '@/assets/png/Prabaharan Venugopal[1].jpg';
-import ceoImage2 from '@/assets/png/Tech-Advisor -2.jpg';
+import ceoImage2 from '@/assets/png/Tech-Advisor -2.jpeg';
 import ceoImage3 from '@/assets/png/Krishnaswamy.jpg';
 import ceoImage4 from '@/assets/png/Dawood.jpg';
 import CuptimeLogo from '@/assets/svg/cuptime-logo-white.svg';
