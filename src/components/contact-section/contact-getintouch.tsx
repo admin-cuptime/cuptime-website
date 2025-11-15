@@ -21,6 +21,7 @@ const GetinTouchForm = () => {
     'mobile-number': '',
     email: '',
     'company-name': '',
+    location:'',
     message: '',
   });
   const [loading, setLoading] = useState(false);
@@ -90,6 +91,7 @@ const GetinTouchForm = () => {
           phoneNumber: "+91" + form['mobile-number'],
           emailId: form.email,
           businessName: form['company-name'] || '',
+          location :form.location,
           leadType: selectedOption ? getLeadTypeEnum(selectedOption) : '',
           message: form.message || ''
         })
@@ -110,6 +112,7 @@ const GetinTouchForm = () => {
         'mobile-number': '',
         email: '',
         'company-name': '',
+        location:'',
         message: '',
       });
       setSelectedOption(null);
@@ -254,6 +257,15 @@ const GetinTouchForm = () => {
                 onChange={handleChange}
                 className="border-cuptime-gray focus:border-cuptime-red w-full rounded-md border-2 px-4 py-3 focus:outline-none"
               />
+             <input
+                type="text"
+                name="location"
+                placeholder="Location"
+                value={form.location}
+                onChange={handleChange}
+                className="border-cuptime-gray focus:border-cuptime-red w-full rounded-md border-2 px-4 py-3 focus:outline-none"
+              />
+              <div className="md:col-span-2">
               <input
                 type="email"
                 name="email"
@@ -263,6 +275,7 @@ const GetinTouchForm = () => {
                 className="border-cuptime-gray focus:border-cuptime-red w-full rounded-md border-2 px-4 py-3 focus:outline-none"
                 required
               />
+              </div>
             </div>
             <textarea
               name="message"

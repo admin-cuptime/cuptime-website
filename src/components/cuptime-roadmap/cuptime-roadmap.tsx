@@ -17,6 +17,7 @@ const CuptimeRoadmap = () => {
     'mobile-number': '',
     email: '',
     'company-name': '',
+    location: '',
     message: '',
   });
   const [success, setSuccess] = useState<string | null>(null);
@@ -99,6 +100,7 @@ const CuptimeRoadmap = () => {
         'mobile-number': '',
         email: '',
         'company-name': '',
+        location: '',
         message: '',
       });
       setSelectedOption(null);
@@ -181,6 +183,15 @@ const CuptimeRoadmap = () => {
                   className="border-cuptime-gray focus:border-cuptime-red w-full rounded-md border-2 px-4 py-2 focus:outline-none md:py-3"
                 />
                 <input
+                  type="text"
+                  name="location"
+                  placeholder="Location"
+                  value={form.location}
+                  onChange={handleChange}
+                  className="border-cuptime-gray focus:border-cuptime-red w-full rounded-md border-2 px-4 py-2 focus:outline-none md:py-3"
+                />
+                <div className="md:col-span-2">
+                <input
                   type="email"
                   name="email"
                   placeholder="Email"
@@ -189,6 +200,7 @@ const CuptimeRoadmap = () => {
                   className="border-cuptime-gray focus:border-cuptime-red w-full rounded-md border-2 px-4 py-2 focus:outline-none md:py-3"
                   required
                 />
+                </div>
               </div>
               <textarea
                 name="message"
